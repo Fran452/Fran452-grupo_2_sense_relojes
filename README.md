@@ -1,18 +1,18 @@
-# Proyecto integrado: sense
+# Proyecto integrado: human
 ## Descripcion
     Para este proyecto se va a diseñar una pagina weg para una tienda de relojes, cadenas y billeteras. La empresa en la actuailida tiene un intagram. los intengrantes de este proyecto son: Agustin Enriquez, Yamila Bogarín, Francisco Lema, Federico Fores
 
 ## Creacion de los wireframe
-- Pagina de incio : <a href="https://vincerocollective.com"> Vinceros </a>
-- Pagina de reloj y tienda: <a href = "https://www.valkur.com.ar/relojes/hombre1/"> valkur </a> / <a href = "https://vincerocollective.com/collections/mens-watches"> vilcerus </a>
+- Pagina de incio : <a href="https://vincerocollective.com"> vincero </a>
+- Pagina de reloj y tienda: <a href = "https://abaco.la/shop/enrico-toffee/"> abaco </a> 
 
 - Detalle del preocuto: <a href = "https://abaco.la/shop/colt-acero/"> abaco </a> / <a href = "https://www.valkur.com.ar/productos/reloj-varallx/"> valkur </a>
 
-- Carrito de compras:  <a href = "https://vincerocollective.com/pages/international-checkout#Global-e_International_Checkout"> valkur </a> 
+- Carrito de compras:  <a href = "https://vincerocollective.com/pages/international-checkout#Global-e_International_Checkout"> vincero </a> 
 
-- Formulario de registro: <a href = "https://www.valkur.com.ar/account/register/"> valkur </a>
+- Formulario de registro: <a href = "https://www.valkur.com.ar/account/register/"> valkur y </a> <a href = "https://vincerocollective.com/account/register"> vincero </a>
 
-- Formulario de registro: <a href = "https://www.valkur.com.ar/"> valkur</a>
+- Formulario de login: <a href = "https://abaco.la/my-account/edit-account/"> Abaco</a>
 
 ## Estilos de la marca
 
@@ -40,3 +40,19 @@
 
 <a href = "https://color.adobe.com/es/create/color-wheel#"> <img src = "./stiles/colors/PaletaDeColores.png" height = 200>
 </a> <br>
+
+## wireframe
+### Home
+<img src = "./wireframe/Home.png" height = 800> <br>
+
+### Productos
+<img src = "./wireframe/Product.png" height = 500> <br>
+
+### Registro
+<img src = "./wireframe/Registro.png" height = 500>
+
+### Login
+<img src = "./wireframe/login.png" height = 450>
+
+### Carrito
+<img src = "./wireframe/login.png" height = 450>
