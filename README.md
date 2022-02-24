@@ -43,16 +43,37 @@
 
 ## wireframe
 ### Home
+#### Computadora 
 <img src = "./wireframe/Home.png" height = 800> <br>
 
+#### Celular
+<img src = "./wireframe/homeCel.png" height = 800> <br>
+
 ### Productos
+#### Computadora
 <img src = "./wireframe/Product.png" height = 500> <br>
 
+#### Celular
+<img src = "./wireframe/ProductCel.png" height = 500> <br> cambiar
+
 ### Registro
-<img src = "./wireframe/Registro.png" height = 500>
+#### Computadora
+<img src = "./wireframe/Registro.png" height = 500> 
+
+#### Celular
+<img src = "./wireframe/RegistroCel.png" height = 500> 
 
 ### Login
+#### Computadora
 <img src = "./wireframe/login.png" height = 450>
 
+#### Celular
+<img src = "./wireframe/loginCel.png" height = 450>
+
 ### Carrito
-<img src = "./wireframe/login.png" height = 450>
+#### Computadora
+<img src = "./wireframe/Carrito.png" height = 450>
+
+#### Celular
+<img src = "./wireframe/CarritoCel.png" height = 450>
+
