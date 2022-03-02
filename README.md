@@ -77,3 +77,10 @@
 #### Celular
 <img src = "./wireframe/CarritoCel.png" height = 450>
 
+# Metodologia de desarrollo
+
+Nuestro metodologia de desarrollo se va a basar en una reunion principal (por sprints) y reuniones semanales para ver el avance de nuestro trabajo.
+## Tablero de trabajo
+
+Para nuestro tablero de trabajo estaremos usando la plataforma Trello con el link <br>
+<a href = "https://trello.com/b/TzbIGMPS/proyecto-integrador">Nuestro Tablero</a>
