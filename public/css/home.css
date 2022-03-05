@@ -1,0 +1,68 @@
+@import url(normalize.css); 
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+header{
+    background-color: black;
+    color: white
+}
+
+.divSuperiorHead{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.logo{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: -20px;
+}
+
+.buscadores{
+    padding: 10px;
+    margin-top: 5px;
+    margin-left: 200px;
+    margin-right: 0.8px;
+}
+
+#carrito{
+    margin-right: 2px;
+    color: white;
+}
+
+#barrita{
+    margin-left: 1px;
+    color: white;
+}
+
+#lupa{
+    margin-right: 1px;
+    color: white;
+}
+
+main{
+    width: 100%;
+    display: block;
+}
+.bannerShop{
+    position: relative;
+}
+
+.botonShop{
+    border: 1px solid #000000; /*anchura, estilo y color borde*/
+    padding: 10px; /*espacio alrededor texto*/
+    background-color: #000000; /*color botón*/
+    color: #ffffff; /*color texto*/
+    text-decoration: none; /*decoración texto*/
+    text-transform: uppercase; /*capitalización texto*/
+    font-family: 'Helvetica', sans-serif; /*tipografía texto*/
+    border-radius: 50px; /*bordes redondos*/
+    position: absolute;
+    left: 165px;
+    bottom: 30px
+}
+
