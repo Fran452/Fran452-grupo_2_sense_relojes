@@ -8,39 +8,35 @@
 
 header{
     background-color: black;
-    color: white
+    color: white;
+    width: 100vw;
 }
 
 .divSuperiorHead{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo{
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left: -20px;
+    width: 50%;
 }
 
 .buscadores{
+    font-size: 20px;
     padding: 10px;
-    margin-top: 5px;
-    margin-left: 200px;
-    margin-right: 0.8px;
 }
 
 #carrito{
-    margin-right: 2px;
     color: white;
 }
 
 #barrita{
-    margin-left: 1px;
     color: white;
 }
 
 #lupa{
-    margin-right: 1px;
     color: white;
 }
 
@@ -50,6 +46,10 @@ main{
 }
 .bannerShop{
     position: relative;
+}
+
+.fotoBanner{
+    width: 100%;
 }
 
 .botonShop{
@@ -62,7 +62,51 @@ main{
     font-family: 'Helvetica', sans-serif; /*tipografía texto*/
     border-radius: 50px; /*bordes redondos*/
     position: absolute;
-    left: 165px;
-    bottom: 30px
+    left: 40%;
+    bottom: 10%
+}
+.tituloCategoria{
+    text-align: center;
+    font-size: 25px;
+}  
+
+.bannerCategorias{
+    background-color: #000000;
+    width: 100%;
+    display: flex;
+    align-items:center;
+    justify-content:space-around;
+}
+
+.left{
+    order: -1;
+    font-size: 20px;
+}
+
+.right{
+    font-size: 20px;
+}
+
+.imagenCategoria{
+    padding: 20px;
+    width: 50%;
+}
+
+.tituloProductosDestacados{
+    text-align: center;
+    font-size: 25px;
+}
+
+.bannerProductosDestacados{
+    background-color: #000000;
+    width: 100%;
+    display: flex;
+    align-items:center;
+    justify-content:space-around;
+}
+
+.imagenProductoDestacado{
+    width: 40%;
+    padding: 20px;
 }
 
