@@ -7,18 +7,20 @@ const publicPath = path.join(__dirname,"../","public");
 app.use(express.static(publicPath));
 
 app.listen(id, () => {
-    console.log("Servidor en funcionamiento en el puerto"+ id);
-});
-
-app.get('/', function(req,res){
-    res.sendFile(path.join(dirname,"./views/home.html"));
+    console.log("Servidor en funcionamiento en el puerto "+ id);
 });
 
 app.get('/producto', function(req,res){
-    res.sendFile(path.join(dirname,"./views/...")); /* poner su archivo donde estan los puntitos */
+    res.sendFile(path.join(__dirname,"views","productDetail.html"));
 });
 
-app.get('/login', function(req,res){
+/*app.get('/', function(req,res){
+    res.sendFile(path.join(dirname,"./views/home.html"));
+});*/
+
+
+
+/*app.get('/login', function(req,res){
     res.sendFile(path.join(dirname,"./views/..."));
 });
 
@@ -28,4 +30,4 @@ app.get('/register', function(req,res){
 
 app.get('/carrito', function(req,res){
     res.sendFile(path.join(__dirname,"./views/..."));
-});
+});*/
