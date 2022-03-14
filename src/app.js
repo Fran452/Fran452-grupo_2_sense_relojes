@@ -15,17 +15,17 @@ app.get('/producto', function(req,res){
 });
 
 /*app.get('/', function(req,res){
-    res.sendFile(path.join(dirname,"./views/home.html"));
+    res.sendFile(path.join(__dirname,"./views/home.html"));
 });*/
 
 
 
 /*app.get('/login', function(req,res){
-    res.sendFile(path.join(dirname,"./views/..."));
+    res.sendFile(path.join(__dirname,"./views/..."));
 });
 
 app.get('/register', function(req,res){
-    res.sendFile(path.join(dirname,"./views/..."));
+    res.sendFile(path.join(__dirname,"./views/..."));
 });
 
 app.get('/carrito', function(req,res){

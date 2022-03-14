@@ -9,30 +9,37 @@
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100&family=Libre+Baskerville:ital@1&family=Oswald:wght@200&display=swap" rel="stylesheet">
     
     <title>Human</title>
+    <link rel="stylesheet" href="css/styleHeader.css">
     <link rel="stylesheet" href="css/productDetail.css">
 </head>
 <body>
     <header>
         <nav class = "menu-productos"> 
-            <a href="#"><i class="fa-solid fa-bars"></i></a> 
-            <ul>
-                <li>relojes</li>
-                <li>pulseras</li>
-                <li>billeteras</li>
-                <li>otrs</li>
-            </ul>
+            <i class="fa-solid fa-bars"></i>
+            <div class="menu-productos-expand">
+                <ul>
+                    <li><a> relojes </a></li>
+                    <li><a> pulseras </a></li>
+                    <li><a> billeteras </a></li>
+                    <li><a> otrs </a></li>
+                </ul> 
+            </div>
         </nav>
-        <img src = "img/Human.png" name= "logo">
+        <div id = "icon-header">
+            <a href = "/"id = "icon-cel" > <img src = "img/Human.png" name= "logo"> </a>
+            <a href = "/" id = "icon-destok"> <img src = "img/logo.jpg" name= "logo"> </a>
+        </div>
+        
         <div class = "personal">
             <nav> 
-               <a href="#"><i class="fa-solid fa-user"></i></a>
-                <a href="#"><i class="fa-solid fa-cart-shopping"></i> </a>
+               <a href="/"><i class="fa-solid fa-user"></i></a>
+                <a href="/"><i class="fa-solid fa-cart-shopping"></i> </a>
             </nav>
         </div>
         
     </header>
     <main>
-        <img src = "img/Producto.png"name= "logo">
+        <img src = "img/Producto.png"name= "logo" id="imagenProducto">
         
         <div class = "imagenes-descriptivas">
             <img src = "img/Producto.png"name= "logo">
@@ -43,7 +50,7 @@
 
         <div class="informacion">
             <h1> reloj X3433</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita maxime eius alias accusantium velit natus voluptas fuga doloremque! Vitae earum rerum totam odit recusandae alias natus dolorum corporis eum voluptate.</p>
+            <p id ="infoProducto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita maxime eius alias accusantium velit natus voluptas fuga doloremque! Vitae earum rerum totam odit recusandae alias natus dolorum corporis eum voluptate.</p>
             <div class = "descripcion">
                 <h2>Descripcion</h2>
                 <ul>
@@ -57,6 +64,7 @@
                     <li>correa intercambiable</li>
                 </ul>
             </div>
+            
             <div class = "formas-de-pago descripcion" >
                 <h2>Forma de pago</h2>
                 <ul>
@@ -65,10 +73,12 @@
                     <li>efectivo</li>
                 </ul>
             </div>
+
             <div class = "garantia descripcion">
                 <h2>Garantia</h2>
                 <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi ipsa cumque, libero sapiente molestias praesentium est saepe minima blanditiis repellendus iste, quas distinctio illo aspernatur? Hic voluptatibus temporibus placeat quis.</p>
             </div>
+
             <div class="envio descripcion">
                 <h2> Forma de envio</h2>
                 <ul>
@@ -77,9 +87,12 @@
                     <li>local</li>
                 </ul>
             </div>
-
+            <div id = "comprarProducto">
+                <p> Precio : $XXXX</p>
+                <button type="button" class="carrito"><i class="fa-solid fa-cart-shopping"></i></button>
+            </div>
         </div>
-        <a href = "#" class="carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+        
         <div class="productos-recomendados">
             <section> 
                 <a href="#"><img src = "img/Producto.png"name= "logo"></a>
