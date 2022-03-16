@@ -115,7 +115,6 @@ header #icon-cel img{
     }
 
     .menu-productos .menu-productos-expand ul li{
-        border: red 1px solid;
         margin: 10%;
     }
 
@@ -148,6 +147,8 @@ header #icon-cel img{
     #icon-destok{
         display: block;
         width: 70%;
+        position: relative;
+        right: 5vw;
     }
 
 }
