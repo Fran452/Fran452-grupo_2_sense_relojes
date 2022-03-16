@@ -110,3 +110,28 @@ main{
     padding: 20px;
 }
 
+.fotoBannerHistoria{
+    width: 100%;
+}
+
+.ubicacion{
+    text-align: center;
+    font-size: 25px;
+}
+
+.bannerUbicaciones{
+    background-color: #000000;
+    width: 100%;
+    display: flex;
+    justify-content:space-around;
+}
+
+.ubicacionLocal{
+    width: 45%;
+}
+
+footer{
+    text-align: center;
+    margin: 20px
+}
+
