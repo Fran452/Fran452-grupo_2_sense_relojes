@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/6157b502e6.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100&family=Libre+Baskerville:ital@1&family=Oswald:wght@200&display=swap" rel="stylesheet">
+    
+    <title>Human</title>
+    <link rel="stylesheet" href="css/styleHeader.css">
+    <link rel="stylesheet" href="css/productDetail.css">
+</head>
+<body>
+    <header>
+        <nav class = "menu-productos"> 
+            <i class="fa-solid fa-bars"></i>
+            <div class="menu-productos-expand">
+                <ul>
+                    <li><a> relojes </a></li>
+                    <li><a> pulseras </a></li>
+                    <li><a> billeteras </a></li>
+                    <li><a> otros </a></li>
+                </ul> 
+            </div>
+        </nav>
+        <div id = "icon-header">
+            <a href = "/"id = "icon-cel" > <img src = "img/Human.png" name= "logo"> </a>
+            <a href = "/" id = "icon-destok"> <img src = "img/logo.jpg" name= "logo"> </a>
+        </div>
+        
+        <div class = "personal">
+            <nav> 
+               <a href="/"><i class="fa-solid fa-user"></i></a>
+                <a href="/"><i class="fa-solid fa-cart-shopping"></i> </a>
+            </nav>
+        </div>
+    </header>
+    <main>
+      <table class ="table">
+    <thead>
+    <tr>
+          <th>Producto</th>
+          <th>Cantidad</th>
+          <th>Precio Unitario</th>
+          <th>Total</th>
+        </tr> 
+    </thead>
+    <tbody>
+    <tr>
+        <td> <img src="img/Producto.png"> </td>
+             <td>1</td>
+             <td>$29.000</td>
+             <td>$29.000</td>
+    </tr>
+    <tr>
+        <td> <img src="img/Producto.png"> </td>
+             <td>1</td>
+             <td>$19.000</td>
+             <td>$19.000</td>
+    </tr>
+</tbody>
+<tfoot>
+    <tr class = "total">
+    <td> Precio Total: $xxxx </td>
+</tr>
+</tfoot>
+      </table> 
+      <div>
+      <div class="infocliente">
+      <h2>Informacion del cliente</h2>
+           <form action="/" method="POST">
+              
+                  <label for="Nombre">Nombre: </label>
+                  <input type="text" name="Nombre" id="Nombre">
+                  <br/> <br/>
+                  <label for="Apellido">Apellido: </label>
+                  <input type="text" name="Apellido" id="Apellido">
+                  <br/> <br/>
+                  <label for="Email">Email: </label>
+                  <input type="text" name="Email id="Email">
+                  <br/> <br/>
+                  <label for="Domicilio">Domicilio: </label>
+                  <input type="text" name="Domicilio" id="Domicilio">
+                  <br/> <br/>
+                  <label for="Localidad">Localidad</label>
+                  <input type="text" name="Localidad" id="Localidad">
+                  <br/> <br/>
+                  <label for="Codigo Posta">Codigo Postal </label>
+                  <input type="text" name="Codigo Postal" id="Codigo Postal">
+                  <br/> <br/>
+                  <label for="Cel">Cel </label>
+                  <input type="number" name="Cel" id="Cel">
+                  <br/> <br/>
+                </div>
+          </form>
+          <div>
+      <h2>Metodo de envio</h2>
+          
+          <form  action="/" method="POST">
+            
+                    <input type="radio" name="hm" value="h"> Mismo Domicilio
+                    <input type="radio" name="hm" value="m"> Cambiar Domicilio Destino
+                    <input type="radio" name="hm" value="m"> Buscar en Sucursal
+                </div>
+        <div>
+      <h2>Lugar de envio</h2>
+                <form  action="/" method="POST">
+                     
+                              <label for="Nombre y Apellido">Nombre y Apellido</label>
+                              <input type="text" name="Nombre y Apellido" id="Nombre y Apellido">
+                              <br/> <br/>
+                              <label for="DNI">DNI</label>
+                              <input type="DNI" name="DNI" id="DNI"> 
+                              <br/> <br/>
+                              <label for="Horario">Horario</label>
+                              <input type="text" name="Horario" id="Horario">   
+                              <br/> <br/>
+                              <select name="menu">
+                                <option>Sucursal : Direccion: XXXXX</option>
+                                <option value="3">Sucursal : Direccion: XXXXX</option>
+                                <option value="4">Sucursal : Direccion: XXXXX</option>
+                
+                              </select>
+         </div>
+        <div>                 
+       <h2>Forma de pago</h2>
+                <form  action="/" method="POST">
+                    
+                            <select name="menu">
+                                <option>Efectivo </option>
+                                <option value="2">Credito Visa</option>
+                                <option value="3">Debito Visa</option>
+                                <option value="4">Credito MasterCard</option>
+                                <option value="5">Debito MasterCard</option>
+                                <option value="6">Credito Amex</option>
+                                <option value="7">Debito Amex</option>
+                              </select>
+                              <br/> <br/>
+                              <label for="Adjuntar Comprobante">Adjuntar Comprobante"</label>
+                              <input type="file" name="Adjuntar Comprobante" accept=".pdf,.jpg,.png" multiple />    
+                              <br/> <br/>
+                              <label for="Numero de la tarjeta">Numero de la tarjeta</label>
+                              <input type="text" name="Numero de la tarjeta" id="Numero de la tarjeta">
+                              <br/> <br/>
+                              <label for="Fecha de venc">Fecha de venc</label>
+                              <input type="text" name="Fecha de venc" id="Fecha de venc">
+                              <br/> <br/>
+                              <label for="CVV">CVV</label>
+                              <input type="text" name="CVV" id="CVV">
+                              <br/> <br/>
+                
+                  <input type="submit" value="Enviar">
+                  <input type="submit" value="Cancelar">
+          </form>
+        </div>
+    </div>
+    
+    </main>
+
+        <footer>
+            
+         </footer> 
+    
+</body>
+</html>
