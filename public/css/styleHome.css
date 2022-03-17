@@ -138,7 +138,7 @@ h2{
     display: none;
 }
 
-.productoPC{
+#producto3{
     display: none;
 }
 
@@ -239,10 +239,6 @@ h2{
     font-size: 15px;
 }
 
-footer{
-    text-align: center;
-    margin: 20px
-}
 #segundaCategoria{
     display: none;
 }
@@ -314,7 +310,7 @@ footer{
         width: 60%;
         font-size: 3vw;
     }
-    .productoPC{
+    #producto3{
         display: block;
     }
 

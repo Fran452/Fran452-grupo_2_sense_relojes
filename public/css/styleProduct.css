@@ -204,9 +204,12 @@ main img{
 }
 
 @media(min-width: 1080px){
-    
+    body{
+        width: 100%;
+    }
     main{
         position: relative;
+        box-sizing: border-box;
     }
     main #imagenProducto{
         width: 40%;
