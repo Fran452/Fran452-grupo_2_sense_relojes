@@ -2,6 +2,9 @@
 ## Descripcion
     Para este proyecto se va a diseñar una pagina weg para una tienda de relojes, cadenas y billeteras. La empresa en la actuailida tiene un intagram. los intengrantes de este proyecto son: Agustin Enriquez, Yamila Bogarín, Francisco Lema, Federico Fores
 
+## Pagina web pre beta
+<a href = "https://human-accesorios.herokuapp.com/"> Human accesorios</a>
+
 ## Creacion de los wireframe
 - Pagina de incio : <a href="https://vincerocollective.com"> vincero </a>
 - Pagina de reloj y tienda: <a href = "https://abaco.la/shop/enrico-toffee/"> abaco </a> 
