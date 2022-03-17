@@ -6,12 +6,10 @@
     padding: 0px;
 }
 
-header{
-    background-color: black;
-    color: white;
-    width: 100vw;
+main{
+    width: 100%;
+    display: block;
 }
-
 h2{
     text-align: center;
     padding-bottom: 5px;
@@ -19,39 +17,6 @@ h2{
     display: block;
     margin:auto;
     width: 50%;
-}
-
-.divSuperiorHead{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo{
-    width: 50%;
-}
-
-.buscadores{
-    font-size: 20px;
-    padding: 10px;
-}
-
-#carrito{
-    color: white;
-}
-
-#barrita{
-    color: white;
-}
-
-#lupa{
-    color: white;
-}
-
-main{
-    width: 100%;
-    display: block;
 }
 .bannerShop{
     position: relative;
@@ -194,7 +159,7 @@ main{
     align-items: center;
     justify-content: center;
     position:absolute;
-    top: 30px;
+    top: -2vw;
 }
 
 .bannerHistoria h3{
@@ -278,4 +243,108 @@ footer{
     text-align: center;
     margin: 20px
 }
+#segundaCategoria{
+    display: none;
+}
+@media(min-width:480px){
+    .botonShop{
+        width: 30%;
+        text-align: center;
+        left: 35%;
+    }
 
+    .bannerHistoria div{
+        top: 15vw;
+    }
+    .bannerHistoria p{
+        font-size: 35px;
+    }
+    .botonHistoria{
+        top: 20vw;
+    }
+    #producto2{
+        display: block;
+    }
+}
+
+@media(min-width:1080px){
+    .fotoBanner{
+        height: 45vw;
+    }
+    .botonShop{
+        font-size: 4vw;
+    }
+
+    h2{
+        font-size: 3vw;
+        border-width: 2px;
+    }
+
+    .bannerCategorias{
+        width: 80%;
+        margin: auto;
+    }
+    #segundaCategoria{
+        display: block;
+    }
+
+    .fotoBannerHistoria{
+        height: 45vw;
+    }
+
+    .bannerHistoria div{
+        top: 1vw;
+    }
+
+    .bannerHistoria h3{
+        font-size: 2vw;
+    }
+    .bannerHistoria p{
+        font-size: 5vw;
+        width: 55%;
+    }
+
+    .botonHistoria{
+        font-size: 3vw;
+        width: 40vw;
+        text-align: center;
+        top: 10vw;
+    }
+    .tituloProductosDestacados{
+        width: 60%;
+        font-size: 3vw;
+    }
+    .productoPC{
+        display: block;
+    }
+
+    .bannerUbicaciones{
+        flex-direction: row;
+    }
+    .ubicaciones{
+        width: 45%;
+    }
+    .ubicaciones img{
+        width: 50%;
+    }
+    .ubicaciones div{
+        width: 30%;
+    }
+    .ubicaciones div h3{
+        font-size: 150%;
+    }
+
+    .ubicaciones div p{
+        font-size: 20px;
+    }
+    .ubicaciones div a{
+        font-size: 20px;
+    }
+    .bannerUbicaciones{
+        position: relative;
+        left: 4vw;
+    }
+    .ubicacion{
+        font-size: 3vw;
+    }
+}
