@@ -1,0 +1,103 @@
+body{
+font-family: 'Libre Baskerville',serif;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.table {
+    font-size: 15px;
+    text-align: center;
+}
+main table  .total {
+    width: 50%;
+    height: 100px;
+    font-size: 30px;
+    text-align: center;
+}
+main table  .form{
+    width: 20%;
+    height: 30px;
+    font-size: 30;
+    text-align: left;
+}
+
+main div{
+    display: flex;
+    align-self: baseline;
+    flex-direction: column;
+    position: relative;
+}
+
+#metodoDeEnvio{
+    position: absolute;
+    top: 37vw;
+    left: 35vw;
+}
+
+#lugaresDeEnvio{
+    position: absolute;
+    top: 49vw;
+    left: 35vw;
+}
+#formaDePago{
+    /*align-self: center;*/
+    position: absolute;
+    top: 80vw;
+    left: 35vw;
+    margin: auto;
+   
+}
+
+.Controles{
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 14px;
+    border:2px solid black;
+    font-size: 13px;
+}
+
+h2{
+    width: 100%;
+    /*background:grey;*/
+    font-size: 14x;
+    text-align: center;
+    font-family: 'Georgia'
+}
+/*  font-family: 'Arial';*/
+
+
+label option{
+    font-family: 'Georgia'
+    
+}
+
+@media (max-width: 450px){
+    div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main div{
+    position: static;
+}
+#metodoDeEnvio{
+    position: static; 
+}
+#lugaresDeEnvio{
+    position: static; 
+}
+#formaDePago{
+    position: static; 
+}
+  
+}
+input {
+    width: 35%;
+    border: 0;
+    border-bottom: 2px solid #010203;
+    opacity: 50%;
+    padding: 6px;
+    margin: 10px;
+}

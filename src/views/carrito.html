@@ -5,14 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/6157b502e6.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100&family=Libre+Baskerville:ital@1&family=Oswald:wght@200&display=swap" rel="stylesheet">
     
     <title>Human</title>
 
-    <link rel="stylesheet" href="css/probando.css">
+    <link rel="stylesheet" href="css/CarritoStyles.css">
 </head>
 <body>
+    <header>
+        <nav>
+            
+        </nav>
     <main>
         <table class ="table">
             <thead>
@@ -44,32 +49,32 @@
 </tfoot>
     </table> 
     <div class = "formulario">
-        <div class="infocliente">
-            <h2>Informacion del cliente</h2>
+        <div i ="infocliente">
+            <h2> Datos del Cliente </h2>
             <form action="/" method="POST">
                         
                             <label for="Nombre">Nombre: </label>
-                            <input type="text" name="Nombre" id="Nombre">
+                            <input class="Controles" type="text" name="Nombre" id="Nombre">
                             <br/> <br/>
-                            <label for="Apellido">Apellido: </label>
-                            <input type="text" name="Apellido" id="Apellido">
+                            <label  for="Apellido">Apellido: </label>
+                            <input class="Controles" type="text" name="Apellido" id="Apellido">
                             <br/> <br/>
                             <label for="Email">Email: </label>
-                            <input type="text" name="Email id="Email">
+                            <input class="Controles" type="text" name="Email id="Email">
                             <br/> <br/>
                             <label for="Domicilio">Domicilio: </label>
-                            <input type="text" name="Domicilio" id="Domicilio">
+                            <input class="Controles" type="text" name="Domicilio" id="Domicilio">
                             <br/> <br/>
                             <label for="Localidad">Localidad</label>
-                            <input type="text" name="Localidad" id="Localidad">
+                            <input class="Controles" type="text" name="Localidad" id="Localidad">
                             <br/> <br/>
-                            <label for="Codigo Posta">Codigo Postal </label>
-                            <input type="text" name="Codigo Postal" id="Codigo Postal">
+                            <label for="Codigo Postal">Codigo Postal </label>
+                            <input class="Controles" type="text" name="Codigo Postal" id="Codigo Postal">
                             <br/> <br/>
-                            <label for="Cel">Cel </label>
-                            <input type="number" name="Cel" id="Cel">
+                            <label for="Mobile">Mobile</label>
+                            <input class="Controles" type="number" name="Mobile" id="Mobile">
                             <br/> <br/>
-                            </div>
+                            </div> 
                     </form>
         </div>
 
@@ -85,17 +90,20 @@
         <div id = "lugaresDeEnvio">
                 <h2>Lugar de envio</h2>
                 <form  action="/" method="POST">
-                    <label for="Nombre y Apellido">Nombre y Apellido</label>
-                    <input type="text" name="Nombre y Apellido" id="Nombre y Apellido">
+                    <label for="Nombre">Nombre: </label>
+                    <input class="Controles" type="text" name="Nombre" id="Nombre">
+                    <br/> <br/>
+                    <label  for="Apellido">Apellido: </label>
+                    <input class="Controles" type="text" name="Apellido" id="Apellido">
                     <br/> <br/>
                     <label for="DNI">DNI</label>
-                    <input type="DNI" name="DNI" id="DNI"> 
+                    <input  class="Controles" type="DNI" name="DNI" id="DNI"> 
                     <br/> <br/>
                     <label for="Horario">Horario</label>
-                    <input type="text" name="Horario" id="Horario">   
+                    <input  class="Controles" type="text" name="Horario" id="Horario">   
                     <br/> <br/>
-                    <select name="menu">
-                    <option>Sucursal : Direccion: XXXXX</option>
+                    <select   class="Controles" name="menu">
+                    <option>  Sucursal : Direccion: XXXXX</option>
                     <option value="3">Sucursal : Direccion: XXXXX</option>
                     <option value="4">Sucursal : Direccion: XXXXX</option>
                     </select>
@@ -105,7 +113,7 @@
                 <h2>Forma de pago</h2>
                 <form  action="/" method="POST">
                         
-                    <select name="menu">
+                    <select  class="Controles" name="menu">
                         <option>Efectivo </option>
                         <option value="2">Credito Visa</option>
                         <option value="3">Debito Visa</option>
@@ -115,17 +123,17 @@
                         <option value="7">Debito Amex</option>
                     </select>
                     <br/> <br/>
-                    <label for="Adjuntar Comprobante">Adjuntar Comprobante"</label>
-                    <input type="file" name="Adjuntar Comprobante" accept=".pdf,.jpg,.png" multiple />    
+                    <label for="Adjuntar Comprobante">Adjuntar Comprobante</label>
+                    <input  type="file" name="Adjuntar Comprobante" accept=".pdf,.jpg,.png" multiple />    
                     <br/> <br/>
                     <label for="Numero de la tarjeta">Numero de la tarjeta</label>
-                    <input type="text" name="Numero de la tarjeta" id="Numero de la tarjeta">
+                    <input class="Controles" type="text" name="Numero de la tarjeta" id="Numero de la tarjeta">
                     <br/> <br/>
                     <label for="Fecha de venc">Fecha de venc</label>
-                    <input type="text" name="Fecha de venc" id="Fecha de venc">
+                    <input  class="Controles" type="text" name="Fecha de venc" id="Fecha de venc">
                     <br/> <br/>
                     <label for="CVV">CVV</label>
-                    <input type="text" name="CVV" id="CVV">
+                    <input class="Controles"  type="text" name="CVV" id="CVV">
                     <br/> <br/>
                     
                     <input type="submit" value="Enviar">
