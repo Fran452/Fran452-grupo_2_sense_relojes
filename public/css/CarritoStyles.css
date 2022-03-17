@@ -42,10 +42,10 @@ main div{
     left: 35vw;
 }
 #formaDePago{
-    /*align-self: center;*/
+    align-self: center;
     position: absolute;
     top: 80vw;
-    left: 35vw;
+    left: 50vw;
     margin: auto;
    
 }
@@ -74,25 +74,26 @@ label option{
 }
 
 @media (max-width: 450px){
-    div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+  
 main div{
     position: static;
+
 }
 #metodoDeEnvio{
     position: static; 
+
 }
+
 #lugaresDeEnvio{
     position: static; 
 }
+  
 #formaDePago{
     position: static; 
+} 
+
 }
-  
-}
+
 input {
     width: 35%;
     border: 0;
