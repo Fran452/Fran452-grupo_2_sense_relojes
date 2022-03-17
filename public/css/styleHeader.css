@@ -1,0 +1,154 @@
+:root{
+    --negro:#010203;
+    --fondo:#FFFFFF;
+    --azul-oscuro:#0d3a66;
+    --azul-claro: #074df0;
+    --blanco:#FFFFFF;
+
+}
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: auto;
+    background: var(--negro);
+    position: relative; 
+}
+
+/* MENU CEL*/
+.menu-productos{
+    width: 10%;
+}
+.menu-productos .menu-productos-expand ul{
+    display: none;
+}
+
+.menu-productos:hover  .menu-productos-expand ul{
+    display: block; 
+    color: var(--blanco);
+    padding: 5px;
+    background-color: var(--negro);
+    position: absolute;
+}
+
+.menu-productos:hover  .menu-productos-expand ul li a{
+    font-size: 30px;
+    line-height: 40px;
+    font-family: 'League Spartan', sans-serif;
+    padding: 0%;
+}
+.menu-productos i{
+    padding: 10px;
+    font-size: 10vw;
+    text-align: center;
+    color: var(--blanco)
+}
+.menu-productos:hover  .menu-productos-expand ul{
+    display: block; 
+    color: var(--blanco);
+    padding: 5px;
+    background-color: var(--negro);
+    position: absolute;
+}
+
+/* LOGO */
+header #icon-cel{
+    width: 60%;
+}
+
+header #icon-cel img{
+    width: 100%;
+    position: relative;
+    left: 20%;
+}
+
+#icon-destok{
+    display: none;
+}
+
+/* MENU PERSONAL*/
+.personal{
+    width: 30%;
+}
+.personal i{
+    font-size: 7vw;
+    text-align: center;
+    color: var(--blanco);
+    margin: 5px;
+    position: relative;
+    left: 20%;
+}
+
+@media(min-width: 768px){
+    .personal{
+        position: relative;
+        left: 5%;
+    }
+    header #icon-header{
+        position: relative;
+        left: 5vw;
+    }
+}
+@media(min-width: 1080px){
+
+    .menu-productos .menu-productos-expand ul{
+        display: flex;
+        color: var(--blanco);
+        padding: 5px;
+        background-color: var(--negro);
+        list-style: none;
+        position: relative;
+        right: 10vw;
+    }
+
+    .menu-productos:hover .menu-productos-expand ul{
+        display: flex;
+        color: var(--blanco);
+        padding: 5px;
+        background-color: var(--negro);
+        list-style: none;
+        position: relative;
+        right: 10vw;
+    }
+
+    .menu-productos .menu-productos-expand ul li{
+        margin: 10%;
+    }
+
+    .menu-productos:hover  .menu-productos-expand ul li a{
+        font-size: 40px;
+        line-height: 40px;
+        font-family: 'League Spartan', sans-serif;
+        padding: 0%;
+    }
+    .menu-productos .menu-productos-expand ul li a{
+        font-size: 40px;
+        line-height: 40px;
+        font-family: 'League Spartan', sans-serif;
+        padding: 0%;
+    }
+    
+    .menu-productos i{
+        display: none;
+    }
+    
+    header #icon-header{
+        order: -1;
+        width: 20%;
+        padding: 20px;
+       
+    }
+    #icon-cel{
+        display: none;
+    }
+    #icon-destok{
+        display: block;
+        width: 70%;
+        position: relative;
+        right: 5vw;
+    }
+
+}

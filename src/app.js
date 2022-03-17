@@ -16,7 +16,7 @@ app.get('/', function(req,res){
 });
 
 app.get('/producto', function(req,res){
-    res.sendFile(path.join(__dirname,"./views/...")); /* poner su archivo donde estan los puntitos */
+    res.sendFile(path.join(__dirname,"./views/productDetail.html")); /* poner su archivo donde estan los puntitos */
 });
 
 app.get('/login', function(req,res){
@@ -29,4 +29,4 @@ app.get('/register', function(req,res){
 
 app.get('/carrito', function(req,res){
     res.sendFile(path.join(__dirname,"./views/..."));
-});
+});*/

@@ -18,27 +18,27 @@
 
 ### Logo: <br>
 
-<a href = "https://www.fontsquirrel.com/fonts/league-spartan"> <img src= "./stiles/typography/LeagueSpartan.png" height = 100> </a> <br>
+<a href = "https://www.fontsquirrel.com/fonts/league-spartan"> <img src= "./public/typography/LeagueSpartan.png" height = 100> </a> <br>
 
 ### Textos con serifa: <br>
-<a href = "https://www.fontsquirrel.com/fonts/libre-baskerville"> <img src = "./stiles/typography/LibreBarskeville.png" height = 100>
+<a href = "https://www.fontsquirrel.com/fonts/libre-baskerville"> <img src = "./public/typography/LibreBarskeville.png" height = 100>
 </a> <br>
 
 ### Todo el resto
-<a href = "https://www.fontsquirrel.com/fonts/oswald"> <img src = "./stiles/typography/Oswald.png" height = 100>
+<a href = "https://www.fontsquirrel.com/fonts/oswald"> <img src = "./public/typography/Oswald.png" height = 100>
 </a> <br>
 
 ### Colores:
 #### Principal
-<a href = "https://encycolorpedia.es/010203"> <img src = "./stiles/colors/010203.svg" height = 100>
+<a href = "https://encycolorpedia.es/010203"> <img src = "./public/colors/010203.svg" height = 100>
 </a> <br>
 #### Destacar
-<a href = "https://encycolorpedia.es/084df0"> <img src = "./stiles/colors/084df0.svg" height = 100>
+<a href = "https://encycolorpedia.es/084df0"> <img src = "./public/colors/084df0.svg" height = 100>
 </a> <br>
 
 #### Paleta de colores <Esto aun no se decidio>
 
-<a href = "https://color.adobe.com/es/create/color-wheel#"> <img src = "./stiles/colors/PaletaDeColores.png" height = 200>
+<a href = "https://color.adobe.com/es/create/color-wheel#"> <img src = "./public/colors/PaletaDeColores.png" height = 200>
 </a> <br>
 
 ## wireframe
