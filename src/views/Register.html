@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Registro Human</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Oswald:wght@300;400&family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <link rel="stylesheet" href="css/styleRegister.css">
+    </head>
+    <body>
+        <header>
+            <div class="arriba">
+                <div class="logo"> 
+                    <img src="/imagenes/Human.jpg " alt="Logo de Human">          
+            </div>
+            <i class="fas fa-search"></i>
+            <i class="fas fa-user"></i>
+            <i class="fas fa-shopping-cart"></i>
+        </div>
+            <nav>
+                <div>
+                    <ul class="Lista">
+                        <li>Categorias</li>
+                        <li>Relojes</li>
+                        <li>Lentes</li>
+                        <li>Ayuda</li>
+                    </ul>
+                       </div>
+                <h1> Crear cuenta</h1>  
+            </nav>
+        </header>
+  
+            <main>
+                <form action="/" method="POST">
+                    <p>Nombre</p>
+                    <input type="text" name="name" class="inputt">
+                    <br>
+                    <br>
+                    <p>Email</p>
+                    <input type="email" name="email" class="inputt">
+                    <br>
+                    <br>
+                    <p>Telefono</p>
+                    <input type="number" name="telefono" class="inputt">
+                    <br>
+                    <br>    
+                    <p>Fecha de Nacimiento</p>
+                    <input type="date" name="birth_date" id="birth_date" class="inputt">
+                <br>
+                <br>
+                <input type="password" name="pass" placeholder="Elegí tu contraseña" class="inputt">
+                <br>
+                <br>
+                <input type="password" name="pass_confirm" placeholder="Confirmá tu contraseña" class="inputt">
+                <br>
+                <br>
+                <input type="submit" value="Crear" class="crear">
+                <br>
+                <br>
+                <p>¿Ya tenes una cuenta? <a href="/Login.html">Inicia Sesión</a></p>
+                <br>
+                <br>
+                <input class="Facebook" type="submit" value="Ingresar con Facebook">
+                <br>
+                <input class="Google" type="submit" value="Ingresar con Google">
+                <br>
+            </form>
+        </main>
+        <footer>
+
+            <p>pie de pagina igual que login</p>
+        </footer>
+    </body>
+</html>
