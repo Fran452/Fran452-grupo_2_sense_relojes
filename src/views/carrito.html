@@ -14,12 +14,7 @@
     <link rel="stylesheet" href="css/CarritoStyles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            
-        </nav>
-    </header>  
-    
+
     <main>
         <table class ="table">
             <thead>
@@ -30,66 +25,64 @@
                 <th>Total</th>
                 </tr> 
             </thead>
-        <tbody>
-    <tr>
-        <td> <img src="img/producto.png"> </td>
-             <td>1</td>
-             <td>$29.000</td>
-             <td>$29.000</td>
-        </tr>
-    <tr>
-        <td> <img src="img/producto.png"> </td>
-            <td>1</td>
-            <td>$19.000</td>
-            <td>$19.000</td>
-    </tr>
-</tbody>
-<tfoot>
-    <tr class = "total">
-    <td> Precio Total: $xxxx </td>
-</tr>
-</tfoot>
-    </table> 
-    <div class = "formulario">
-        <div i ="infocliente">
-            <h2> Datos del Cliente </h2>
-            <form action="/" method="POST">
-                        
-                            <label for="Nombre">Nombre: </label>
-                            <input class="Controles" type="text" name="Nombre" id="Nombre">
-                            <br/> <br/>
-                            <label  for="Apellido">Apellido: </label>
-                            <input class="Controles" type="text" name="Apellido" id="Apellido">
-                            <br/> <br/>
-                            <label for="Email">Email: </label>
-                            <input class="Controles" type="text" name="Email id="Email">
-                            <br/> <br/>
-                            <label for="Domicilio">Domicilio: </label>
-                            <input class="Controles" type="text" name="Domicilio" id="Domicilio">
-                            <br/> <br/>
-                            <label for="Localidad">Localidad</label>
-                            <input class="Controles" type="text" name="Localidad" id="Localidad">
-                            <br/> <br/>
-                            <label for="Codigo Postal">Codigo Postal </label>
-                            <input class="Controles" type="text" name="Codigo Postal" id="Codigo Postal">
-                            <br/> <br/>
-                            <label for="Mobile">Mobile</label>
-                            <input class="Controles" type="number" name="Mobile" id="Mobile">
-                            <br/> <br/>
-                            </div> 
-                    </form>
-        </div>
+            <tbody>
+                <tr>
+                    <td> 
+                        <img src="img/producto.png"> </td>
+                        <td>1</td>
+                        <td>$29.000</td>
+                        <td>$29.000</td>
+                    </tr>
+                <tr>
+                    <td>
+                        <img src="img/producto.png"> </td>
+                        <td>1</td>
+                        <td>$19.000</td>
+                        <td>$19.000</td>
+                    </tr>
+            </tbody>
+        </table> 
+        <p class = "total"> Precio Total: $xxxx </p>
+        <div class = "formulario">
 
-        <div id = "metodoDeEnvio">
-                <h2>Metodo de envío</h2>
-            
-                <form  action="/" method="POST">
-                    <input type="radio" name="hm" value="h"> Mismo Domicilio
-                    <input type="radio" name="hm" value="m"> Cambiar Domicilio Destino
-                    <input type="radio" name="hm" value="m"> Buscar en Sucursal
+            <div i ="infocliente">
+                <h2> Datos del Cliente </h2>
+                <form action="/" method="POST">
+                
+                    <label for="Nombre">Nombre: </label>
+                    <input class="Controles" type="text" name="Nombre" id="Nombre">
+                    <br/> <br/>
+                    <label  for="Apellido">Apellido: </label>
+                    <input class="Controles" type="text" name="Apellido" id="Apellido">
+                    <br/> <br/>
+                    <label for="Email">Email: </label>
+                    <input class="Controles" type="text" name="Email id="Email">
+                    <br/> <br/>
+                    <label for="Domicilio">Domicilio: </label>
+                    <input class="Controles" type="text" name="Domicilio" id="Domicilio">
+                    <br/> <br/>
+                    <label for="Localidad">Localidad</label>
+                    <input class="Controles" type="text" name="Localidad" id="Localidad">
+                    <br/> <br/>
+                    <label for="Codigo Postal">Codigo Postal </label>
+                    <input class="Controles" type="text" name="Codigo Postal" id="Codigo Postal">
+                    <br/> <br/>
+                    <label for="Mobile">Mobile</label>
+                    <input class="Controles" type="number" name="Mobile" id="Mobile">
+                    <br/> <br/>
                 </form>
-        </div>
-        <div id = "lugaresDeEnvio">
+            </div>
+
+            <div id = "metodoDeEnvio">
+                <h2>Metodo de envío</h2>
+                <form  action="/" method="POST">
+                    <div><input type="radio" name="hm" value="h"> <p> Mismo Domicilio </p> </div>
+                    <div><input type="radio" name="hm" value="m"><p> Cambiar Domicilio Destino</p></div>
+                    <div><input type="radio" name="hm" value="m"> <p> Buscar en Sucursal </p> </div>
+                </form>
+            </div>
+
+            <div id = "lugaresDeEnvio">
                 <h2>Lugar de envío</h2>
                 <form  action="/" method="POST">
                     <label for="Nombre">Nombre: </label><br>
@@ -110,11 +103,11 @@
                     <option value="4">Sucursal : Direccion: XXXXX</option>
                     </select>
                 </form>
-        </div>
-        <div id = "formaDePago">                 
+            </div>
+
+            <div id = "formaDePago">                 
                 <h2>Forma de pago</h2>
                 <form  action="/" method="POST">
-                        
                     <select  class="Controles" name="menu">
                         <option>Efectivo </option>
                         <option value="2">Credito Visa</option>
@@ -126,7 +119,7 @@
                     </select>
                     <br/> <br/>
                     <label for="Adjuntar Comprobante">Adjuntar Comprobante</label>
-                    <input  type="file" name="Adjuntar Comprobante" accept=".pdf,.jpg,.png" multiple />    
+                    <input id = "comprobante" type="file" name="Adjuntar Comprobante" accept=".pdf,.jpg,.png" multiple />    
                     <br/> <br/>
                     <label for="Numero de la tarjeta">Numero de la tarjeta</label>
                     <input class="Controles" type="text" name="Numero de la tarjeta" id="Numero de la tarjeta">
@@ -136,14 +129,15 @@
                     <br/> <br/>
                     <label for="CVV">CVV</label> <br>
                     <input class="Controles"  type="text" name="CVV" id="CVV">
-                    <br/> <br/>
-                    
-                    <input class="botones" type="submit" value="Enviar">
-                    <input class="botones" type="submit" value="Cancelar">
-            </form>
+                    <br/> <br/>  
+                    <div id = botonesCarrito>
+                        <input class="botones" type="submit" value="Enviar">
+                        <input class="botones" type="submit" value="Cancelar">
+                    </div>  
+                </form>
+            </div>
+
         </div>
-        
-    </div>
     </main>
 
         <footer>

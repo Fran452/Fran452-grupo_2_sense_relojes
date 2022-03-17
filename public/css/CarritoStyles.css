@@ -1,107 +1,312 @@
 body{
 font-family: 'Libre Baskerville',serif;
 }
-main{
-    flex-direction: column;
-    align-items: center;
-}
-.table {
-    font-size: 15px;
-    width: 100%;
-}
-main table  .total {
-    width: 50%;
-    height: 100px;
-    font-size: 15px;
-    text-align: center;
-    position: relative;
-    left: 200px;
-}
-main table  .form{
-    width: 20%;
-    height: 30px;
-    font-size: 30;
-    text-align: left;
-    
+
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
 }
 
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+.table{
+    width: 60%;
+    margin: auto;
+}
+th{
+    font-size: 2vw;
+    text-align: center;
+}
+.total{
+    display: block;
+    width: 30%;
+    font-size: 2vw;
+    align-self: flex-end;
+    margin-bottom: 5vw;
+}
 main div{
     display: flex;
     align-self: baseline;
     flex-direction: column;
+    flex-wrap: wrap;
     position: relative;
+
 }
-input {
-    width: 35%;
+main div div{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 50vw;
+    padding-left: 10vw;
+    margin-bottom: 5%;
+}
+label{
+    width: 100%;
+    display: block;
+    margin-bottom: 3%;
+}
+input{
+    width: 100%;
     border: 0;
     border-bottom: 2px solid #010203;
     opacity: 50%;
+    font-size: 3vw;
 }
-th{
-    font-size: 15px;
-}
-
-#metodoDeEnvio{
-    position: absolute;
-    top: 37vw;
-    left: 35vw;
-}
-
-#lugaresDeEnvio{
-    position: absolute;
-    top: 49vw;
-    left: 35vw;
-}
-#formaDePago{
-    align-self: center;
-    /* top: 80vw;
-    left: 50vw;
-    margin: auto; */
-    width: 100%;
-   
-}
-
-.Controles{
-    width: 80%;
-    border-radius: 4px;
-    margin-bottom: 14px;
-    border:1px solid black;
-    font-size: 13px;
-}
-.botones{
-    width: 30%;
-    letter-spacing: 3px;
-    background-color:#2151c0;
-    color: white;
-    cursor: pointer;
-    line-height: 50px;
-}
-
 h2{
     width: 80%;
     font-size: 14x;
     border-bottom: black solid 1px;
+    margin-bottom: 5%;
 }
+select{
+    width: 100%;
+    font-size: 1vw;
+}
+
+
+
+#metodoDeEnvio{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: absolute;
+    left: 44vw;
+}
+#metodoDeEnvio div{
+    padding: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#metodoDeEnvio input{
+    width: 7%;
+}
+
+
+#lugaresDeEnvio{
+    position: absolute;
+    left: 44vw;
+    top: 12.5vw;
+}
+
+#formaDePago{
+    align-self: center;
+    margin: auto;
+    margin-top: 3vw;
+    position: relative;
+    left: 20vw; 
+}
+#comprobante{
+    font-size: 1vw;
+}
+
+#botonesCarrito{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.botones{
+    width: 40%;
+    background-color:#2151c0;
+    color: white;
+    cursor: pointer;
+    line-height: 50px;
+    margin: 2%;
+    padding: 1vw;
+    font-size: 3vw;
+}
+
 
 
 @media (max-width: 480px){
+    
+    *{
+        padding: 0%;
+        margin: 0%;
+    }
+    .table{
+        font-size: 3vw;
+        text-align: center;
+    }
+    .total{
+        text-align: end;
+    }
+    .table tbody tr td img{
+        width: 80%;
+    }
+    main table .total{
+        font-size: 4vw;
+    }
+    main{
+        max-width: 100vw;
+    }
+    h2{
+        margin-bottom: 5%;
+        width: 75vw;
+    }
+    input{
+        width: 100%;
+    }
+    main div{
+        padding: 2%;
+    }
+    main div div{
+        max-width: 80vw;
+    }
+
+    #metodoDeEnvio form div{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 2vw;
+    }
+    #metodoDeEnvio form div input{
+        display: block;
+        width: 20%;
+    }
+    #metodoDeEnvio form div p{
+        display: block;
+        width: 80%;
+    }
+    main div{
+        position: static;
+    }
+    
+    .Controles{
+        width: 100%;
+    }
+    #infocliente form{
+        width: 100%;
+    }
+    #metodoDeEnvio{
+        position: static;
+    }
+    #metodoDeEnvio input{
+        width: 100%;
+    }
+
+    #lugaresDeEnvio{
+        position: static; 
+    }
+    #lugaresDeEnvio input{
+        width: 100%;
+    }
+    #formaDePago{
+        position: static;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap; 
+        align-self: start;
+    }
+    #formaDePago label{
+        width: 100%;
+    }
+
+    #formaDePago input{
+        width: 100%;
+    }
+    
+}
+
+@media (max-width: 1080px){
   
-main div{
-    position: static;
+    *{
+        padding: 0%;
+        margin: 0%;
+    }
+    .table{
+        font-size: 3vw;
+        text-align: center;
+    }
+    .total{
+        text-align: end;
+        padding-right: 3%;
+        font-size: 2vw;
+    }
+    .table tbody tr td img{
+        width: 80%;
+    }
+    main table .total{
+        font-size: 4vw;
+    }
+    main{
+        max-width: 100vw;
+    }
+    h2{
+        margin-bottom: 5%;
+        width: 75vw;
+    }
+    input{
+        width: 100%;
+    }
+    main div{
+        padding: 2%;
+        margin: auto;
+    }
+    main div div{
+        max-width: 80vw;
+    }
 
-}
-#metodoDeEnvio{
-    position: static; 
+    #metodoDeEnvio form div{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 2vw;
+    }
+    #metodoDeEnvio form div input{
+        display: block;
+        width: 20%;
+    }
+    #metodoDeEnvio form div p{
+        display: block;
+        width: 80%;
+    }
+    main div{
+        position: static;
+    }
+    
+    .Controles{
+        width: 100%;
+    }
+    #infocliente form{
+        width: 100%;
+    }
+    #metodoDeEnvio{
+        position: static;
+    }
+    #metodoDeEnvio input{
+        width: 100%;
+    }
 
-}
+    #lugaresDeEnvio{
+        position: static; 
+    }
+    #lugaresDeEnvio input{
+        width: 100%;
+    }
+    #formaDePago{
+        position: static;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap; 
+        align-self: start;
+    }
+    #formaDePago label{
+        width: 100%;
+    }
 
-#lugaresDeEnvio{
-    position: static; 
-}
-  
-#formaDePago{
-    position: static; 
-} 
+    #formaDePago input{
+        width: 100%;
+    }
 
 }
 
