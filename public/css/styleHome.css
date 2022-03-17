@@ -9,6 +9,7 @@
 main{
     width: 100%;
     display: block;
+    margin-bottom: 2vw;
 }
 h2{
     text-align: center;
