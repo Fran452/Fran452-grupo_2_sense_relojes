@@ -7,6 +7,10 @@
 
 }
 
+img{
+    width: 100%;
+    height: auto;
+}
 
 header{
     display: flex;
@@ -85,7 +89,7 @@ header #icon-cel img{
 @media(min-width: 768px){
     .personal{
         position: relative;
-        left: 5%;
+        
     }
     header #icon-header{
         position: relative;
@@ -146,7 +150,7 @@ header #icon-cel img{
     }
     #icon-destok{
         display: block;
-        width: 70%;
+        width: 30%;
         position: relative;
         right: 5vw;
     }

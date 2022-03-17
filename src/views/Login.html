@@ -4,39 +4,48 @@
         <meta charset="UTF-8">
         <title>Human</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/6157b502e6.js" crossorigin="anonymous"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Oswald:wght@300;400&family=Roboto:wght@300&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Oswald:wght@300;400&family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/styleHeader.css">
         <link rel="stylesheet" href="css/styleLogin.css">
+       
+        
+
+        
     </head>
     <body>
         <header>
-            <div class="topbar">
-                
-                <p>Hasta 12 cuotas sin interés</p>
-
-                <div> 
-                    <img src="/imagenes/Human.jpg " alt="Logo de Human" class="logo">
-                 </div>
-
-            <div>
-             <i class="fa fa-bars burger"></i>
-            </div>
-                    <div>   
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
+            <nav class = "menu-productos"> 
+                <i class="fa-solid fa-bars"></i>
+                <div class="menu-productos-expand">
+                    <ul>
+                        <li><a> relojes </a></li>
+                        <li><a> pulseras </a></li>
+                        <li><a> billeteras </a></li>
+                        <li><a> otrs </a></li>
+                    </ul> 
                 </div>
-            <nav>
-                <h1> Detalles de la cuenta</h1> 
-
             </nav>
-         
+            <div id = "icon-header">
+                <a href = "/"id = "icon-cel" > <img src = "img/Human.png" name= "logo"> </a>
+                <a href = "/" id = "icon-destok"> <img src = "img/logo.jpg" name= "logo"> </a>
+            </div>
+            
+            <div class = "personal">
+                <nav> 
+                   <a href="/login"><i class="fa-solid fa-user"></i></a>
+                    <a href="/"><i class="fa-solid fa-cart-shopping"></i> </a>
+                </nav>
+            </div>
+            
         </header>
-        <div class="Inicio">
-            <h3>Iniciar sesión</h3>
-        </div>
         <main>
+            <div class="Inicio">
+                <h3>Iniciar sesión</h3>
+            </div>
+
             <form action="/" method="POST">
                 <input class="Usuario" type="text" name="user" placeholder="Nombre de Usuario">
                 <br>
@@ -58,7 +67,6 @@
 
 
         <footer>
-           <p> diseño pie de pagina </p> 
         </footer>
     </body>
 </html>

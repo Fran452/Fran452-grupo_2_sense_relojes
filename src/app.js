@@ -20,13 +20,17 @@ app.get('/producto', function(req,res){
 });
 
 app.get('/login', function(req,res){
-    res.sendFile(path.join(__dirname,"./views/..."));
+    res.sendFile(path.join(__dirname,"./views/Login.html"));
 });
 
 app.get('/register', function(req,res){
-    res.sendFile(path.join(__dirname,"./views/..."));
+    res.sendFile(path.join(__dirname,"./views/Register.html"));
 });
 
 app.get('/carrito', function(req,res){
     res.sendFile(path.join(__dirname,"./views/..."));
+});
+
+app.get('/hola', function(req,res){
+    res.sendFile(path.join(__dirname,"./views/prueba.html"));
 });
