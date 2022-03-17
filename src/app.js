@@ -1,14 +1,17 @@
 const express = require("express");
 const path = require("path");
-const PORT = process.env.PORT || 3000;;
+
+const PORT = process.env.PORT || 3000;
+
 const app = express();
 
 const publicPath = path.join(__dirname,"../","public");
 
 app.use(express.static(publicPath));
 
+
 app.listen(PORT, () => {
-    console.log("Servidor en funcionamiento en el puerto"+ PORT);
+    console.log("Servidor en funcionamiento en el puerto "+ PORT);
 });
 
 app.get('/', function(req,res){
@@ -16,6 +19,7 @@ app.get('/', function(req,res){
 });
 
 app.get('/producto', function(req,res){
+
     res.sendFile(path.join(__dirname,"./views/productDetail.html")); /* poner su archivo donde estan los puntitos */
 });
 
@@ -27,10 +31,10 @@ app.get('/register', function(req,res){
     res.sendFile(path.join(__dirname,"./views/Register.html"));
 });
 
-app.get('/carrito', function(req,res){
-    res.sendFile(path.join(__dirname,"./views/..."));
+app.post('/register', function(req,res){
+    res.sendFile(path.join(__dirname,"./views/Register.html"));
 });
 
-app.get('/hola', function(req,res){
-    res.sendFile(path.join(__dirname,"./views/prueba.html"));
+app.get('/carrito', function(req,res){
+    res.sendFile(path.join(__dirname,"./views/..."));
 });
