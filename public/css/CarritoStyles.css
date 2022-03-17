@@ -2,25 +2,27 @@ body{
 font-family: 'Libre Baskerville',serif;
 }
 main{
-    display: flex;
     flex-direction: column;
     align-items: center;
 }
 .table {
     font-size: 15px;
-    text-align: center;
+    width: 100%;
 }
 main table  .total {
     width: 50%;
     height: 100px;
-    font-size: 30px;
+    font-size: 15px;
     text-align: center;
+    position: relative;
+    left: 200px;
 }
 main table  .form{
     width: 20%;
     height: 30px;
     font-size: 30;
     text-align: left;
+    
 }
 
 main div{
@@ -28,6 +30,15 @@ main div{
     align-self: baseline;
     flex-direction: column;
     position: relative;
+}
+input {
+    width: 35%;
+    border: 0;
+    border-bottom: 2px solid #010203;
+    opacity: 50%;
+}
+th{
+    font-size: 15px;
 }
 
 #metodoDeEnvio{
@@ -43,37 +54,37 @@ main div{
 }
 #formaDePago{
     align-self: center;
-    position: absolute;
-    top: 80vw;
+    /* top: 80vw;
     left: 50vw;
-    margin: auto;
+    margin: auto; */
+    width: 100%;
    
 }
 
 .Controles{
-    width: 100%;
+    width: 80%;
     border-radius: 4px;
     margin-bottom: 14px;
-    border:2px solid black;
+    border:1px solid black;
     font-size: 13px;
+}
+.botones{
+    width: 30%;
+    letter-spacing: 3px;
+    background-color:#2151c0;
+    color: white;
+    cursor: pointer;
+    line-height: 50px;
 }
 
 h2{
-    width: 100%;
-    /*background:grey;*/
+    width: 80%;
     font-size: 14x;
-    text-align: center;
-    font-family: 'Georgia'
-}
-/*  font-family: 'Arial';*/
-
-
-label option{
-    font-family: 'Georgia'
-    
+    border-bottom: black solid 1px;
 }
 
-@media (max-width: 450px){
+
+@media (max-width: 480px){
   
 main div{
     position: static;
@@ -94,11 +105,3 @@ main div{
 
 }
 
-input {
-    width: 35%;
-    border: 0;
-    border-bottom: 2px solid #010203;
-    opacity: 50%;
-    padding: 6px;
-    margin: 10px;
-}
