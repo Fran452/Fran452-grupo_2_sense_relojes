@@ -10,3 +10,16 @@ Deveriamos empezar a reunirnos mas seguido al menos una vez por semana ya que au
 Dejar de hacer nada ya que la metodologia actual funciono correctamente
 
 ## Segundo Sprint
+### que hicimos bien
+- division de las tareas
+- comunicacion
+### que hicimos mal
+- falta de reuniones
+- mala distribucion de tiempo
+- trello
+### deberían empezar a hacer
+- usar mas trello <3
+- mas reuniones de poco tiempo que una de mucho
+- distribuir mejor el tiempo
+### dejar de hacer
+- en general nada, solo agregar las cosas del item anterior
