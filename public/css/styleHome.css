@@ -171,21 +171,25 @@ h2{
     align-items: center;
     justify-content: center;
     position:absolute;
-    top: -2vw;
+    top: 18vw;
 }
 
 .bannerHistoria h3{
     color:white;
     display: block;
     margin-top: 40px;
+    font-weight: 300;
+    text-transform: uppercase;
 }
 
 .bannerHistoria p{
     color: white;
-    font-size: 25px;
-    width: 90%;
+    font-size: 30px;
+    width: 80%;
     display: block;
     text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 .fotoBannerHistoria{
@@ -243,13 +247,45 @@ h2{
 }
 @media(min-width:480px){
     .botonShop{
-        width: 30%;
-        text-align: center;
-        left: 35%;
+        width: 320px;
+        height: 68px;
+        font-size: 21px;
+        padding-top: 20px;
+    }
+
+    .bannerCategorias{
+        width: 90%;
+        margin: auto;
+    }
+    .bannerCategorias article h3{
+        font-size: 30px;
+    }
+    .bannerCategorias article p{
+        font-size: 20px;
+    }   
+
+    .bannerHistoria div{
+        top: 27vw;
+    }
+
+    .productoDestacado h3{
+        font-size: 25px;
+        font-weight: 700;
+        margin-bottom: 3px ;
+    }
+    .productoDestacado p{
+        font-size: 20px;
+        margin-bottom: 8px;
+        font-weight: 500;
+    }
+    .productoDestacado h4{
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: 5px ;
     }
 
     .bannerHistoria div{
-        top: 15vw;
+        top: 19vw;
     }
     .bannerHistoria p{
         font-size: 35px;
@@ -260,16 +296,13 @@ h2{
     #producto2{
         display: block;
     }
+
 }
 
 @media(min-width:1080px){
     .fotoBanner{
         height: 45vw;
     }
-    .botonShop{
-        font-size: 4vw;
-    }
-
     h2{
         font-size: 3vw;
         border-width: 2px;
@@ -317,23 +350,26 @@ h2{
         flex-direction: row;
     }
     .ubicaciones{
+        display: flex;
+        flex-direction: column;
         width: 45%;
     }
     .ubicaciones img{
-        width: 50%;
+        width: 90%;
     }
     .ubicaciones div{
-        width: 30%;
+        width: 60%;
+        align-self: baseline;
     }
     .ubicaciones div h3{
         font-size: 150%;
     }
 
     .ubicaciones div p{
-        font-size: 20px;
+        font-size: 15px;
     }
     .ubicaciones div a{
-        font-size: 20px;
+        font-size: 15px;
     }
    
     .ubicacion{
