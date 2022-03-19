@@ -98,7 +98,7 @@ footer section{
     footer{
        text-align: start;
        position: relative;
-       height: 25vw;
+       height: 265;
        padding: 2vw;
     }
    
@@ -121,14 +121,14 @@ footer section{
         flex-direction: row;
     }
     #registrateFoot h5{
-        font-size: 2vw;
+        font-size: 15px;
         margin-top: 1vw;
         margin-bottom: 1vw;
         width: 50%;
     }
     #registrateFoot a{
-        font-size: 1.5vw;
-        padding: 2%;
+        font-size: 20px;
+        padding: 15px;
         width: 30%;
         height: 50px;
         margin-left: 10px;
@@ -139,27 +139,32 @@ footer section{
 
     #redesSocialesFoot{
         width: 40%;
-        align-self: flex-end;
+        justify-content: center;
         position: absolute;
-        top: 10vw;
+        bottom: 45px;
+        right: 40px;
         margin: 0%;
     }
     #redesSocialesFoot h5{
         text-align: center;
-        font-size: 2vw;
+        font-size: 15px;
+        width: 100%;
     }
     #redesSocialesFoot div i{
-        font-size: 3vw;
+        font-size: 20px;
         margin-right: 0vw;
     }
     #redesSocialesFoot div a{
-        font-size: 2vw;
+        font-size: 10px;
         width: 80%;
     }
-
+    #redesSocialesFoot div{
+        width: 20%;
+        margin: 5px;
+    }
     #copyright{
         position: absolute;
-        bottom: 1vw;
+        bottom: 10px;
         font-size: 15px;
     }
 }
