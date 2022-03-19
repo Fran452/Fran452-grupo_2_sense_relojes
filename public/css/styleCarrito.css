@@ -69,7 +69,7 @@ h2{
     font-size: 14x;
     border-bottom: black solid 1px;
     margin-bottom: 5%;
-    color: var(--azul-oscuro);
+    color: var(--azul-claro);
     
 }
 select{
@@ -137,7 +137,7 @@ select{
 }
 .botones{
     width: 40%;
-    background-color: var(--azul-oscuro);
+    background-color: var(--azul-o);
     opacity: 1;
     color: white;
     cursor: pointer;

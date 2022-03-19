@@ -1,0 +1,19 @@
+:root{
+    --negro:#010203;
+    --fondo:#FFFFFF;
+    --azul-oscuro:#0d3a66;
+    --azul-claro: #074df0;
+    --blanco:#FFFFFF;
+    --rojo:#880200;
+
+}
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Oswald', sans-serif;
+    text-transform:uppercase;
+}
+p{
+    text-transform:none;
+}

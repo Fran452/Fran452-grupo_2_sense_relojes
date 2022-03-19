@@ -1,21 +1,9 @@
-@import url(../colors/colors.css); 
+@import url(./styles.css); 
 *{
     box-sizing: border-box;
 }
 
-h4{
-    font-family: 'League Spartan', sans-serif;
-}
-h5{
-    font-family: 'League Spartan', sans-serif;
-    line-height: auto;
-}
-p{
-    font-family: 'Oswald', sans-serif;
-}
 
-a{font-family: 'Libre Baskerville', serif;}
-    
 footer{
     width: 100%;
     display: flex;
@@ -28,32 +16,34 @@ footer{
     text-align: center;
 }
 footer section{
-    margin-bottom: 10%;
-}
-#infoEmpresaFoot h4{
-    font-size: 9vw;
+    margin-bottom: 5%;
 }
 
-#infoEmpresaFoot p{
-    font-size: 6vw;
+.footer h5{
+    font-size: 4vw;  
 }
+.footer p{
+    font-size: 3vw; 
+}
+
 #registrateFoot h5{
-    font-size: 7vw;
+    font-size: 3vw;
     text-align: center;
-    margin-bottom: 5vw;
+    margin-bottom: 1vw;
 }
 
 #registrateFoot a{
     display: block;
-    width: 50%;
+    width: 30%;
     color: var(--blanco);
-    border:  1px var(--azul-oscuro) solid;
-    border-radius: 50px;
+    border:  1px var(--rojo) solid;
     text-align: center;
-    font-size: 16px;
-    padding: 2%;
-    background-color:var(--azul-oscuro);
+    font-size: 14px;
+    padding: 1%;
+    background-color:var(--rojo);
     margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 #redesSocialesFoot{
     display: flex;
@@ -65,7 +55,7 @@ footer section{
 }
 #redesSocialesFoot h5{
     text-align: start;
-    font-size: 4vw;
+    font-size: 3vw;
 }
 
 #redesSocialesFoot div{
@@ -79,32 +69,47 @@ footer section{
     display: flex;
     color: white;
     text-align: center;
-    font-size: 5vw;
+    font-size: 3vw;
 }
 #redesSocialesFoot div i{
     display: block;
     width: 16vw;
-    font-size: 9vw;
+    font-size: 6vw;
     margin-right: 2vw ;
     text-align: center;
 }
-
+#copyright{
+    text-align:left;
+    font-size: 2vw;
+}
+@media(min-width: 480px){
+    .footer h5{
+        font-size: 3vw;
+    }
+    
+    .footer p{
+        font-size: 2vw;
+    }
+    #registrateFoot h5{
+        margin-bottom: -1vw;
+    }
+}
 @media(min-width: 1080px){
     footer{
        text-align: start;
        position: relative;
-       height: 28vw;
+       height: 25vw;
        padding: 2vw;
     }
    
     #infoEmpresaFoot{
         margin-bottom: 2vw ;
     }
-    #infoEmpresaFoot h4{
-        font-size: 3vw;
-    }
-    #infoEmpresaFoot p{
+    .footer h5{
         font-size: 2vw;
+    }
+    .footer p{
+        font-size: 15px;
     }
 
 
@@ -124,9 +129,11 @@ footer section{
     #registrateFoot a{
         font-size: 1.5vw;
         padding: 2%;
-        width: 45%;
-        margin: 0vw;
-        margin-top: 2vw;
+        width: 30%;
+        height: 50px;
+        margin-left: 10px;
+        margin-top: 2px;
+        margin-bottom: 2px ;
     }
 
 
@@ -134,7 +141,7 @@ footer section{
         width: 40%;
         align-self: flex-end;
         position: absolute;
-        top: 14vw;
+        top: 10vw;
         margin: 0%;
     }
     #redesSocialesFoot h5{
@@ -153,5 +160,6 @@ footer section{
     #copyright{
         position: absolute;
         bottom: 1vw;
+        font-size: 15px;
     }
 }
