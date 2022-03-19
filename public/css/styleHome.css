@@ -14,7 +14,7 @@ main{
 h2{
     text-align: center;
     padding-bottom: 5px;
-    border-bottom: #000000 1px solid;
+    border-bottom: var(--negro) 1px solid;
     display: block;
     margin:auto;
     width: 50%;
@@ -27,17 +27,18 @@ h2{
     width: 100%;
 }
 
-.botonShop{
-    border: 1px solid #000000; /*anchura, estilo y color borde*/
-    padding: 6px; /*espacio alrededor texto*/
-    background-color: #ffffff; /*color botón*/
-    color: #000000; /*color texto*/
-    text-decoration: none; /*decoración texto*/
-    text-transform: uppercase; /*capitalización texto*/
-    font-family: 'Helvetica', sans-serif; /*tipografía texto*/
+
+.botonShop {
+    width: 20%;
+    color: var(--blanco);
+    border: 1px var(--azul) solid;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 3vw;
+    padding: 5px;
+    background-color: var(--azul-oscuro);
     position: absolute;
-    left: 40%;
-    bottom: 10%
+    bottom: 4vw;
 }
 
 
@@ -177,19 +178,6 @@ h2{
     text-align: center;
 }
 
-.botonHistoria{
-    border: 1px solid #000000; /*anchura, estilo y color borde*/
-    padding: 6px; /*espacio alrededor texto*/
-    background-color: white; /*color botón*/
-    color: black;
-    text-decoration: none; /*decoración texto*/
-    text-transform: uppercase; /*capitalización texto*/
-    font-family: 'Helvetica', sans-serif; /*tipografía texto*/
-    position: relative;
-    top: 65px;
-}
-
-
 .fotoBannerHistoria{
     width: 100%;
 }
@@ -290,7 +278,7 @@ h2{
     }
 
     .bannerHistoria div{
-        top: 1vw;
+        top: 6vw;
     }
 
     .bannerHistoria h3{

@@ -1,3 +1,4 @@
+@import url(../colors/colors.css); 
 body{
     font-family: 'Oswald', sans-serif;
 }
@@ -59,7 +60,7 @@ label{
 input{
     width: 100%;
     border: 0;
-    border-bottom: 2px solid #010203;
+    border-bottom: 2px solid var(--negro);
     opacity: 50%;
     font-size: 3vw;
 }
@@ -68,7 +69,7 @@ h2{
     font-size: 14x;
     border-bottom: black solid 1px;
     margin-bottom: 5%;
-    color: #11224b;;
+    color: var(--azul-oscuro);
     
 }
 select{
@@ -136,7 +137,7 @@ select{
 }
 .botones{
     width: 40%;
-    background-color: #11224b;
+    background-color: var(--azul-oscuro);
     opacity: 1;
     color: white;
     cursor: pointer;

@@ -1,11 +1,4 @@
-:root{
-    --negro:#010203;
-    --fondo:#FFFFFF;
-    --azul-oscuro:#0d3a66;
-    --azul-claro: #074df0;
-    --blanco:#FFFFFF;
-
-}
+@import url(../colors/colors.css); 
 
 img{
     width: 100%;
@@ -164,7 +157,11 @@ header #icon-cel img{
         width: 100%;
     }
     .personal {
-       width: 20%;
+       width: 13%;
+    }
+    .personal i{
+        font-size: 4vw;
+        text-align: end;
     }
 
 }

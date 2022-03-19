@@ -1,3 +1,4 @@
+@import url(../colors/colors.css); 
 *{
     margin: 0px;
     padding: 0px;    
@@ -11,7 +12,7 @@ h1{
     font-size: 35px;
 }
 h3{
-    color: #010203;
+    color: var(--negro);
 }
 
 p{
@@ -24,13 +25,9 @@ main{
     padding: 20px;
 }  
 
-footer{
-    background-color: #010203;
-}
-
 
 .topbar{
-background-color: #010203;
+background-color: var(--negro);
 padding: 10px;
 color: white;
 }
