@@ -98,15 +98,15 @@ footer section{
     footer{
        text-align: start;
        position: relative;
-       height: 265;
-       padding: 2vw;
+       height: 280px;
+       padding: 20px;
     }
    
     #infoEmpresaFoot{
-        margin-bottom: 2vw ;
+        margin-bottom: 10px ;
     }
     .footer h5{
-        font-size: 2vw;
+        font-size: 30px;
     }
     .footer p{
         font-size: 15px;
@@ -115,20 +115,22 @@ footer section{
 
     #registrateFoot{
         width: 60%;
-        margin-bottom: 0vw;
+        margin-bottom: 0;
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
     }
     #registrateFoot h5{
         font-size: 15px;
-        margin-top: 1vw;
-        margin-bottom: 1vw;
+        margin-top: 10px;
+        padding-right: 5%;
+        margin-bottom: 10px;
         width: 50%;
+        text-align: end;
     }
     #registrateFoot a{
         font-size: 20px;
-        padding: 15px;
+        padding-top: 10px;
         width: 30%;
         height: 50px;
         margin-left: 10px;
@@ -141,8 +143,8 @@ footer section{
         width: 40%;
         justify-content: center;
         position: absolute;
-        bottom: 45px;
-        right: 40px;
+        bottom: 30%;
+        right: 2%;
         margin: 0%;
     }
     #redesSocialesFoot h5{

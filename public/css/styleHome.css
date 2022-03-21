@@ -301,6 +301,7 @@ h2{
 }
 
 @media(min-width:1080px){
+    
     .fotoBanner{
         height: 45vw;
     }
