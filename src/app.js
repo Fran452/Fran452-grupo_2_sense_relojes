@@ -25,15 +25,15 @@ app.get('/producto', function(req,res){
 });
 
 app.get('/login', function(req,res){
-    res.sendFile(path.join(__dirname,"./views/Login.html"));
+    res.sendFile(path.join(__dirname,"./views/login.html"));
 });
 
 app.get('/register', function(req,res){
-    res.sendFile(path.join(__dirname,"./views/Register.html"));
+    res.sendFile(path.join(__dirname,"./views/register.html"));
 });
 
 app.post('/register', function(req,res){
-    res.sendFile(path.join(__dirname,"./views/Register.html"));
+    res.sendFile(path.join(__dirname,"./views/register.html"));
 })
 
 app.get('/carrito', function(req,res){

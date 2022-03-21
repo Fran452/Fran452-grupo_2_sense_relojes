@@ -56,19 +56,36 @@
             </thead>
             <tbody>
                 <tr>
-                    <td> 
-                        <img src="img/producto.png"> </td>
-                        <td>1</td>
-                        <td>$29.000</td>
-                        <td>$29.000</td>
-                    </tr>
+                    <td class="imagenProducto"> <img src="img/producto.png"> </td>
+                    <td class = "cantidadProducto">
+                        <select name="cantidad"> 
+                            <option value="1"> 1 </option>
+                            <option value="2"> 2 </option>
+                            <option value="3"> 3 </option>
+                            <option value="4"> 4 </option>
+                            <option value="5"> 5 </option>
+                            <option value="6"> 6 </option>
+                        </select> 
+                        </td>
+                    <td class = "precioProducto">$19.000</td>
+                    <td class = "precioTotalProducto">$19.000</td>
+                </tr>
                 <tr>
-                    <td>
-                        <img src="img/producto.png"> </td>
-                        <td>1</td>
-                        <td>$19.000</td>
-                        <td>$19.000</td>
-                    </tr>
+                    <td class="imagenProducto"><img src="img/producto.png"> </td>
+                    <td class = "cantidadProducto">
+                        <select name="cantidad"> 
+                            <option value="1"> 1 </option>
+                            <option value="2"> 2 </option>
+                            <option value="3"> 3 </option>
+                            <option value="4"> 4 </option>
+                            <option value="5"> 5 </option>
+                            <option value="6"> 6 </option>
+                        </select> 
+                             
+                    </td>
+                    <td class = "precioProducto">$19.000</td>
+                    <td class = "precioTotalProducto">$19.000</td>
+                </tr>
             </tbody>
         </table> 
         <p class = "total"> Precio Total: $xxxx </p>
@@ -80,52 +97,61 @@
                 
                     <label for="Nombre">Nombre: </label>
                     <input class="Controles" type="text" name="Nombre" id="Nombre">
-                    <br/> <br/>
+
                     <label  for="Apellido">Apellido: </label>
                     <input class="Controles" type="text" name="Apellido" id="Apellido">
-                    <br/> <br/>
+
                     <label for="Email">Email: </label>
                     <input class="Controles" type="text" name="Email id="Email">
-                    <br/> <br/>
+
                     <label for="Domicilio">Domicilio: </label>
                     <input class="Controles" type="text" name="Domicilio" id="Domicilio">
-                    <br/> <br/>
+
                     <label for="Localidad">Localidad</label>
                     <input class="Controles" type="text" name="Localidad" id="Localidad">
-                    <br/> <br/>
+
                     <label for="Codigo Postal">Codigo Postal </label>
                     <input class="Controles" type="text" name="Codigo Postal" id="Codigo Postal">
-                    <br/> <br/>
+
                     <label for="Mobile">Mobile</label>
                     <input class="Controles" type="number" name="Mobile" id="Mobile">
-                    <br/> <br/>
+
                 </form>
             </div>
 
             <div id = "metodoDeEnvio">
                 <h2>Metodo de envío</h2>
                 <form  action="/" method="POST">
-                    <div><input type="radio" name="hm" value="h"> <p> Mismo Domicilio </p> </div>
-                    <div><input type="radio" name="hm" value="m"><p> Cambiar Domicilio Destino</p></div>
-                    <div><input type="radio" name="hm" value="m"> <p> Buscar en Sucursal </p> </div>
+                    <div>
+                        <input type="radio" name="hm" value="h">
+                        <label for = "Domicilio"> Mismo Domicilio </label> 
+                    </div>
+                    <div>
+                        <input type="radio" name="hm" value="m">
+                        <label for ="camDomicilio"> Cambiar Domicilio Destino</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="hm" value="m">
+                        <label> Buscar en Sucursal </label> 
+                    </div>
                 </form>
             </div>
 
             <div id = "lugaresDeEnvio">
                 <h2>Lugar de envío</h2>
                 <form  action="/" method="POST">
-                    <label for="Nombre">Nombre: </label><br>
+                    <label for="Nombre">Nombre: </label>
                     <input class="Controles" type="text" name="Nombre" id="Nombre">
-                    <br/> <br/>
-                    <label  for="Apellido">Apellido: </label> <br>
+                    
+                    <label  for="Apellido">Apellido: </label> 
                     <input class="Controles" type="text" name="Apellido" id="Apellido">
-                    <br/> <br/>
-                    <label for="DNI">DNI: </label> <br>
+                    
+                    <label for="DNI">DNI: </label> 
                     <input  class="Controles" type="DNI" name="DNI" id="DNI"> 
-                    <br/> <br/>
-                    <label for="Horario">Horario: </label> <br>
+                    
+                    <label for="Horario">Horario: </label> 
                     <input  class="Controles" type="text" name="Horario" id="Horario">   
-                    <br/> <br/>
+                    
                     <select   class="Controles" name="menu">
                     <option>  Sucursal : Direccion: XXXXX</option>
                     <option value="3">Sucursal : Direccion: XXXXX</option>
@@ -146,19 +172,14 @@
                         <option value="6">Credito Amex</option>
                         <option value="7">Debito Amex</option>
                     </select>
-                    <br/> <br/>
                     <label for="Adjuntar Comprobante">Adjuntar Comprobante</label>
                     <input id = "comprobante" type="file" name="Adjuntar Comprobante" accept=".pdf,.jpg,.png" multiple />    
-                    <br/> <br/>
                     <label for="Numero de la tarjeta">Numero de la tarjeta</label>
                     <input class="Controles" type="text" name="Numero de la tarjeta" id="Numero de la tarjeta">
-                    <br/> <br/>
                     <label for="Fecha de vencimiento">Fecha de vencimiento</label>
                     <input  class="Controles" type="text" name="Fecha de venc" id="Fecha de venc">
-                    <br/> <br/>
-                    <label for="CVV">CVV</label> <br>
+                    <label for="CVV">CVV</label>
                     <input class="Controles"  type="text" name="CVV" id="CVV">
-                    <br/> <br/>  
                     <div id = botonesCarrito>
                         <input class="botones" type="submit" value="Enviar">
                         <input class="botones" type="submit" value="Cancelar">
