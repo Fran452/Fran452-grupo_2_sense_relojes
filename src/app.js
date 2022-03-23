@@ -39,3 +39,8 @@ app.post('/register', function(req,res){
 app.get('/carrito', function(req,res){
     res.sendFile(path.join(__dirname,"./views/carrito.html"));
 });
+
+app.get('/agregarproducto', function(req,res){
+    res.sendFile(path.join(__dirname,"./views/agregarProducto.html"));
+});
+
