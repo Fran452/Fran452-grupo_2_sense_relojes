@@ -15,158 +15,110 @@ footer{
     padding: 5%;
     text-align: center;
 }
-footer section{
-    margin-bottom: 5%;
-}
-
-.footer h5{
-    font-size: 4vw;  
-}
-.footer p{
-    font-size: 3vw; 
-}
-
-#registrateFoot h5{
-    font-size: 3vw;
-    text-align: center;
-    margin-bottom: 1vw;
-}
-
-#registrateFoot a{
-    display: block;
-    width: 30%;
-    color: var(--blanco);
-    border:  1px var(--rojo) solid;
-    text-align: center;
-    font-size: 14px;
-    padding: 1%;
-    background-color:var(--rojo);
-    margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-#redesSocialesFoot{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: baseline;
-    color: white;
-}
-#redesSocialesFoot h5{
-    text-align: start;
-    font-size: 3vw;
-}
-
-#redesSocialesFoot div{
-    display: flex;
-    justify-items: center;
-    width: 30%;
-    margin-top: 3vw;
-}
-#redesSocialesFoot div a{
-    width: 60%;
-    display: flex;
-    color: white;
-    text-align: center;
-    font-size: 3vw;
-}
-#redesSocialesFoot div i{
-    display: block;
-    width: 16vw;
-    font-size: 6vw;
-    margin-right: 2vw ;
-    text-align: center;
-}
-#copyright{
-    text-align:left;
-    font-size: 2vw;
-}
-@media(min-width: 480px){
-    .footer h5{
-        font-size: 3vw;
+    footer section{
+        margin-bottom: 5%;
     }
-    
-    .footer p{
-        font-size: 2vw;
+
+    footer img{
+        width: 30%;
+        margin: auto;
+        padding-bottom: 3%;
+        border-bottom: 1px var(--blanco) solid ;
     }
-    #registrateFoot h5{
-        margin-bottom: -1vw;
+
+    #tel-Direc{
+        display: none;
     }
-}
+    #registrateFoot{
+        border-bottom: 1px var(--blanco) solid ;
+        width: 30%;
+        margin: auto;
+    }
+        #registrateFoot a{
+            display: block;
+            width: 100%;
+            height: 100%;
+            color: var(--blanco);
+            border:  1px var(--rojo) solid;
+            text-align: center;
+            font-size: 14px;
+            padding: 1%;
+            background-color:var(--rojo);
+            margin: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+    #redesSocialesFoot{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: baseline;
+        color: white;
+        width: 30%;
+        margin: auto;
+    }
+        #redesSocialesFoot a{
+            display: flex;
+            color: white;
+            text-align: center;
+            font-size: 129%;
+            margin-top: 9%;
+        }
+    #copyright{
+        width: 30%;
+        margin: auto;
+        margin-top: 10%;
+        font-size: 50%;
+    }
+
 @media(min-width: 1080px){
     footer{
        text-align: start;
        position: relative;
-       height: 280px;
        padding: 20px;
+       flex-direction: row;
+       display: flex;
+       justify-content: center;
     }
-   
-    #infoEmpresaFoot{
-        margin-bottom: 10px ;
-    }
-    .footer h5{
-        font-size: 30px;
-    }
-    .footer p{
-        font-size: 15px;
-    }
+        footer img{
+            border-bottom:none ;
+            margin: 0px;
+            padding-bottom: 0px;
+            padding: 3%;
+        }
+        #registrateFoot{
+            margin: 0px;
+            border-bottom:none ;
+            border-right: 1px var(--blanco) solid ;
+            border-left: 1px var(--blanco) solid ;
+            padding-bottom: 0px;
+            padding-right: 3%;
+            padding-left: 3%;
+            
+        }
+            #registrateFoot a{
+                height: 25%;
+            }
 
+            
+        #redesSocialesFoot{
+            width: 20%;
+            margin: 0px;
+            flex-direction: column;
+            margin: 0;
+            padding: 1%;
+            padding-left: 3%;
+        }
+            #redesSocialesFoot a{
+                margin: 0;
+            }
+        #copyright{
+            width: 100%;
+            margin-top:3%;
+            text-align: center;
 
-    #registrateFoot{
-        width: 60%;
-        margin-bottom: 0;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-    }
-    #registrateFoot h5{
-        font-size: 15px;
-        margin-top: 10px;
-        padding-right: 5%;
-        margin-bottom: 10px;
-        width: 50%;
-        text-align: end;
-    }
-    #registrateFoot a{
-        font-size: 20px;
-        padding-top: 10px;
-        width: 30%;
-        height: 50px;
-        margin-left: 10px;
-        margin-top: 2px;
-        margin-bottom: 2px ;
-    }
+        }
 
-
-    #redesSocialesFoot{
-        width: 40%;
-        justify-content: center;
-        position: absolute;
-        bottom: 30%;
-        right: 2%;
-        margin: 0%;
-    }
-    #redesSocialesFoot h5{
-        text-align: center;
-        font-size: 15px;
-        width: 100%;
-    }
-    #redesSocialesFoot div i{
-        font-size: 20px;
-        margin-right: 0vw;
-    }
-    #redesSocialesFoot div a{
-        font-size: 10px;
-        width: 80%;
-    }
-    #redesSocialesFoot div{
-        width: 20%;
-        margin: 5px;
-    }
-    #copyright{
-        position: absolute;
-        bottom: 10px;
-        font-size: 15px;
-    }
 }

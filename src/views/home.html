@@ -35,10 +35,10 @@
             <a id = "usuario" href="/login"><img src = "img/Usuario.png"></a> 
             <nav class = "menu-productos-expand"> 
                 <ul>
-                    <li><a> Relojes </a></li>
-                    <li><a> Billeteras </a></li>
-                    <li><a> Accesorios</a></li>
-                    <li><a> Otros </a></li>
+                    <li><a href="/producto"> Relojes </a></li>
+                    <li><a href="/producto"> Billeteras </a></li>
+                    <li><a href="/producto"> Accesorios</a></li>
+                    <li><a href="/producto"> Otros </a></li>
                 </ul> 
             </nav>                 
         </nav>    
@@ -49,17 +49,17 @@
     <main>
         <section class="bannerShop">
             <img class="fotoBanner" src="/img/FotoDePruebaCopia.jpg">
-            <a class="botonShop" href="#">Tienda</a>
+            <a class="botonShop" href="/producto">Tienda</a>
         </section>
         <h2>Categorias</h2>
         <section class="bannerCategorias">
             <article class="categorias">
-                <img class="imagenCategoria" src="/img/Abaco Black S.jpg">
+                <a href="/producto"><img class="imagenCategoria"  src="/img/Abaco Black S.jpg"></a>
                 <h3>Relojes</h3>
                 <p>Diseñado para usted</p>
             </article>
             <article class="categorias" id = "segundaCategoria">
-                <img class="imagenCategoria"  src="/img/Abaco Black S.jpg">
+                <a href="/producto"><img class="imagenCategoria"  src="/img/Abaco Black S.jpg"></a>
                 <h3>Relojes</h3>
                 <p>Diseñado para usted</p>
             </article>
@@ -77,19 +77,19 @@
         <h2 class="tituloProductosDestacados">Productos Destacados</h2>
         <section class="bannerProductosDestacados">
             <article class="productoDestacado">
-                <a href="/producto"><img class="imagenProductoDestacado" src="/img/Onix S.jpg"></a>
+                <a href="/productoEspesifico"><img class="imagenProductoDestacado" src="/img/Onix S.jpg"></a>
                 <h3>Onix</h3>
                 <p>Silver</p>
                 <h4>$1700</h4>
             </article>
             <article class="productoDestacado" id = "producto2">
-                <a href="/producto"><img class="imagenProductoDestacado" src="/img/Onix S.jpg"></a>
+                <a href="/productoEspesifico"><img class="imagenProductoDestacado" src="/img/Onix S.jpg"></a>
                 <h3>Onix</h3>
                 <p>Silver</p>
                 <h4>$1700</h4>
             </article>
             <article class="productoDestacado" id="producto3">
-                <a href="/producto"><img class="imagenProductoDestacado" src="/img/Onix S.jpg"></a>
+                <a href="/productoEspesifico"><img class="imagenProductoDestacado" src="/img/Onix S.jpg"></a>
                 <h3>Onix</h3>
                 <p>Silver</p>
                 <h4>$1700</h4>
@@ -122,32 +122,20 @@
         </section>
     </main>
     <footer>
-        <section id="infoEmpresaFoot" class = "footer">
-            <h5>Human Accesorios</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex explicabo distinctio amet debitis, minus facere perspiciatis voluptates ipsam ab alias? Perspiciatis minus maiores repellat cum facere ut quaerat vero a!</p>
-        </section>
+ 
+        <img src = "/img/Human.png">
         <section id="registrateFoot" class = "footer">
-            <h5>Registrate para recibir diferentes veneficios</h5>
             <a href="/register"> REGISTRATE </a>
-            <h5> Si ya tiene una cuenta ingresa</h5>
             <a href="/login">INGRESAR</a>
         </section>
         <section id="redesSocialesFoot" class = "footer">
-            <h5>Unete a nuestras redes sociales para no perderte de ninguna novedad</h5>
-                <div>
-                    <i class="fa-brands fa-instagram"></i>
-                    <a href="instagram"> Intagram</a></div>
-                <div>
-                    <i class="fa-brands fa-facebook"></i>
-                    <a href="">Facebook</a>
-                </div>
-                <div>
-                    <i class="fa-brands fa-twitter"></i>
-                    <a href="">Twitter</a>
-                </div> 
-        </section>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
 
-        <p id = "copyright"> Copyright © 2021-2022 Human Accesorios </p>
+        </section>
+    
+        <p id = "copyright"> © 2021-2022 Human Accesorios </p>
 
     </footer>
 </body>

@@ -58,6 +58,7 @@
 
 #### Celular
 <img src = "./wireframe/ProdGeneralCelular.svg" height = 500> <br>
+
 ### Productos Detalle
 #### Computadora
 <img src = "./wireframe/Product.svg" height = 500> <br>

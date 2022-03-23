@@ -1,5 +1,7 @@
 const express = require("express");
 const path = require("path");
+
+
 const PORT = process.env.PORT || 3000;
 
 const app = express();
@@ -19,11 +21,6 @@ app.get('/', function(req,res){
     res.sendFile(path.join(__dirname,"./views/home.html"));
 });
 
-app.get('/producto', function(req,res){
-
-    res.sendFile(path.join(__dirname,"./views/productDetail.html")); /* poner su archivo donde estan los puntitos */
-});
-
 app.get('/login', function(req,res){
     res.sendFile(path.join(__dirname,"./views/login.html"));
 });
@@ -38,4 +35,12 @@ app.post('/register', function(req,res){
 
 app.get('/carrito', function(req,res){
     res.sendFile(path.join(__dirname,"./views/carrito.html"));
+});
+
+app.get('/productoEspesifico', function(req,res){
+    res.sendFile(path.join(__dirname,"./views/productDetail.html"));
+});
+
+app.get('/producto', function(req,res){
+    res.sendFile(path.join(__dirname,"./views/productosGeneral.html"));
 });
