@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%-include('./partials/head') %>
+    <link rel="stylesheet" href="css/styleLogin.css">
+</head>
+<body>
+    <%-include('./partials/header') %>
+    <main>
+        <div class="Inicio">
+            <h3>Iniciar sesión</h3>
+        </div>
+
+        <form action="/" method="get">
+            <input class="Usuario" type="text" name="user" placeholder="Nombre de Usuario">
+            <input class="Usuario" type="password" name="pass" placeholder="Elegí tu contraseña">
+            <input type="radio" name="profile">
+            <label for="buy">Recuérdame</label>
+            <input class="botonRegistro" href="/register" type="submit" value="Registrarme">
+            <input class="botonContraseña" href=" " type="submit" value="¿Olvidaste tu contraseña?">
+        </form>
+    </main>
+    <%-include('./partials/header') %>
+</body>
+</html>

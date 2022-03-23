@@ -46,6 +46,8 @@ header #icon-cel img{
 }
 .personal a{
     width: 33%;
+    color: var(--blanco);
+    text-decoration: none;
 }
 .personal a img{
     width: 70%;

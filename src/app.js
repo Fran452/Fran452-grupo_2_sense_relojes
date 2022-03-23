@@ -1,5 +1,8 @@
 const express = require("express");
 const path = require("path");
+const rutasUser = require("./routes/user")
+const rutasProductos = require("./routes/productos")
+const rutasMain = require("./routes/main")
 
 
 const PORT = process.env.PORT || 3000;
@@ -11,36 +14,15 @@ const publicPath = path.join(__dirname,"../","public");
 
 app.use(express.static(publicPath));
 
-
+app.set("view engine","ejs");
 
 app.listen(PORT, () => {
     console.log("Servidor en funcionamiento en el puerto "+ PORT);
 });
 
-app.get('/', function(req,res){
-    res.sendFile(path.join(__dirname,"./views/home.html"));
-});
+app.use('/',rutasMain);
 
-app.get('/login', function(req,res){
-    res.sendFile(path.join(__dirname,"./views/login.html"));
-});
+app.use('/user', rutasUser);
 
-app.get('/register', function(req,res){
-    res.sendFile(path.join(__dirname,"./views/register.html"));
-});
 
-app.post('/register', function(req,res){
-    res.sendFile(path.join(__dirname,"./views/register.html"));
-})
-
-app.get('/carrito', function(req,res){
-    res.sendFile(path.join(__dirname,"./views/carrito.html"));
-});
-
-app.get('/productoEspesifico', function(req,res){
-    res.sendFile(path.join(__dirname,"./views/productDetail.html"));
-});
-
-app.get('/producto', function(req,res){
-    res.sendFile(path.join(__dirname,"./views/productosGeneral.html"));
-});
+app.use('/producto',rutasProductos);

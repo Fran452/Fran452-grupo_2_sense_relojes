@@ -2,50 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Human Accesorios</title>
-    <!-- tipografia-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100&family=Libre+Baskerville:ital@1&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-    <!--Iconos-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-    <!-- estiulos propios-->
-    <link rel="stylesheet" href="css/styleFooter.css">
-    <link rel="stylesheet" href="css/styleHeader.css">
+    <%-include('./partials/head') %>
     <link rel="stylesheet" href="css/styleHome.css">
-
 </head>
 
 <body>
-    <header>
-        
-        <div id = "icon-header">
-            <a href = "/"id = "icon-cel" > <img src = "img/Human.png" name= "logo"> </a>
-            <a href = "/" id = "icon-destok"> <img src = "img/logo.jpg" name= "logo"> </a>
-        </div>
-        
-        
-        <nav class = "personal"> 
-            <a href="#"><img src="img/Lupa.png"></a>                 
-            <a href="/carrito"><img src ="img/Tienda.png"></a>  
-            <a id = "menuHamburguesa"><img src="img/Menu.png"></a>
-            <a id = "usuario" href="/login"><img src = "img/Usuario.png"></a> 
-            <nav class = "menu-productos-expand"> 
-                <ul>
-                    <li><a href="/producto"> Relojes </a></li>
-                    <li><a href="/producto"> Billeteras </a></li>
-                    <li><a href="/producto"> Accesorios</a></li>
-                    <li><a href="/producto"> Otros </a></li>
-                </ul> 
-            </nav>                 
-        </nav>    
-        
-        </div>
-        
-    </header>
+    <%-include('./partials/header') %>
     <main>
         <section class="bannerShop">
             <img class="fotoBanner" src="/img/FotoDePruebaCopia.jpg">
@@ -77,19 +39,19 @@
         <h2 class="tituloProductosDestacados">Productos Destacados</h2>
         <section class="bannerProductosDestacados">
             <article class="productoDestacado">
-                <a href="/productoEspesifico"><img class="imagenProductoDestacado" src="/img/Onix S.jpg"></a>
+                <a href="/producto/4"><img class="imagenProductoDestacado" src="/img/Onix S.jpg"></a>
                 <h3>Onix</h3>
                 <p>Silver</p>
                 <h4>$1700</h4>
             </article>
             <article class="productoDestacado" id = "producto2">
-                <a href="/productoEspesifico"><img class="imagenProductoDestacado" src="/img/Onix S.jpg"></a>
+                <a href="/producto/4"><img class="imagenProductoDestacado" src="/img/Onix S.jpg"></a>
                 <h3>Onix</h3>
                 <p>Silver</p>
                 <h4>$1700</h4>
             </article>
             <article class="productoDestacado" id="producto3">
-                <a href="/productoEspesifico"><img class="imagenProductoDestacado" src="/img/Onix S.jpg"></a>
+                <a href="/producto/4"><img class="imagenProductoDestacado" src="/img/Onix S.jpg"></a>
                 <h3>Onix</h3>
                 <p>Silver</p>
                 <h4>$1700</h4>
@@ -121,23 +83,7 @@
             </article>
         </section>
     </main>
-    <footer>
- 
-        <img src = "/img/Human.png">
-        <section id="registrateFoot" class = "footer">
-            <a href="/register"> REGISTRATE </a>
-            <a href="/login">INGRESAR</a>
-        </section>
-        <section id="redesSocialesFoot" class = "footer">
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-
-        </section>
-    
-        <p id = "copyright"> © 2021-2022 Human Accesorios </p>
-
-    </footer>
+    <%-include('./partials/footer') %>
 </body>
 
 </html>
