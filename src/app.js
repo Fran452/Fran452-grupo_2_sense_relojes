@@ -24,5 +24,5 @@ app.use('/',rutasMain);
 
 app.use('/user', rutasUser);
 
-
+app.use('/4', (req,res) => {res.render(path.join(__dirname,"./views/productDetail.ejs"))});
 app.use('/producto',rutasProductos);

@@ -2,7 +2,7 @@
 <html>
 <head>
     <%-include('./partials/head') %>
-    <link rel="stylesheet" href="css/styleLogin.css">
+    <link rel="stylesheet" href="/css/styleLogin.css">
 </head>
 <body>
     <%-include('./partials/header') %>
@@ -12,14 +12,18 @@
         </div>
 
         <form action="/" method="get">
-            <input class="Usuario" type="text" name="user" placeholder="Nombre de Usuario">
-            <input class="Usuario" type="password" name="pass" placeholder="Elegí tu contraseña">
-            <input type="radio" name="profile">
-            <label for="buy">Recuérdame</label>
-            <input class="botonRegistro" href="/register" type="submit" value="Registrarme">
+            <div>
+                <input class="Usuario" type="text" name="user" placeholder="Nombre de Usuario">
+                <input class="Usuario" type="password" name="pass" placeholder="Elegí tu contraseña">
+            </div>
+            <div id = "GuardarPassword">
+                <input type="radio" name="profile">
+                <label for="buy">Recuérdame</label>
+            </div>
+            <input class="botonRegistro" href="/user/register" type="submit" value="Registrarme">
             <input class="botonContraseña" href=" " type="submit" value="¿Olvidaste tu contraseña?">
         </form>
     </main>
-    <%-include('./partials/header') %>
+    <%-include('./partials/footer') %>
 </body>
 </html>
