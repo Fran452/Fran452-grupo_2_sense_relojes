@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
@@ -38,4 +38,10 @@ app.post('/register', function(req,res){
 
 app.get('/carrito', function(req,res){
     res.sendFile(path.join(__dirname,"./views/carrito.html"));
+});
+
+
+
+app.get('/modificarProducto', function(req,res){
+    res.sendFile(path.join(__dirname,"./views/modificarproducto.html"));
 });
