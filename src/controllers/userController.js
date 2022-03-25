@@ -1,7 +1,7 @@
 const path = require("path");
 const controlador = {
-    login:(req,res) => {res.render(path.join(__dirname,"../views/login.ejs"))},
-    register:(req,res) => {res.render(path.join(__dirname,"../views/register.ejs"))},
+    login:(req,res) => {res.render("login")},
+    register:(req,res) => {res.render("register")},
 }
 
 module.exports = controlador;

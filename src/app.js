@@ -14,7 +14,10 @@ const publicPath = path.join(__dirname,"../","public");
 
 app.use(express.static(publicPath));
 
+
 app.set("view engine","ejs");
+app.set("views","./src/views");
+
 
 app.listen(PORT, () => {
     console.log("Servidor en funcionamiento en el puerto "+ PORT);
