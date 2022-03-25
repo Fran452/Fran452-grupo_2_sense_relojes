@@ -1,0 +1,146 @@
+*{
+    box-sizing: border-box;
+}
+h4{
+    font-family: 'League Spartan', sans-serif;
+}
+h5{
+    font-family: 'League Spartan', sans-serif;
+    line-height: auto;
+}
+p{
+    font-family: 'Oswald', sans-serif;
+}
+
+a{font-family: 'Libre Baskerville', serif;}
+    
+footer{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: baseline;
+    background-color: #000;
+    color: white;
+    padding: 5%;
+    text-align: center;
+}
+footer section{
+    margin-bottom: 10%;
+}
+#infoEmpresaFoot h4{
+    font-size: 9vw;
+}
+
+#infoEmpresaFoot p{
+    font-size: 6vw;
+}
+#registrateFoot h5{
+    font-size: 7vw;
+    text-align: center;
+    margin-bottom: 5vw;
+}
+
+#registrateFoot a{
+    display: block;
+    width: 50%;
+    color: var(--blanco);
+    border:  1px var(--azul-oscuro) solid;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 16px;
+    padding: 2%;
+    background-color:var(--azul-oscuro);
+    margin: auto;
+}
+#redesSocialesFoot{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: baseline;
+    color: white;
+}
+#redesSocialesFoot h5{
+    text-align: start;
+    font-size: 4vw;
+}
+
+#redesSocialesFoot div{
+    display: flex;
+    justify-items: center;
+    width: 30%;
+    margin-top: 3vw;
+}
+#redesSocialesFoot div a{
+    width: 60%;
+    display: flex;
+    color: white;
+    text-align: center;
+    font-size: 5vw;
+}
+#redesSocialesFoot div i{
+    display: block;
+    width: 16vw;
+    font-size: 9vw;
+    margin-right: 2vw ;
+    text-align: center;
+}
+
+@media(min-width: 1080px){
+    footer{
+       text-align: start;
+       position: relative;
+       height: 41vw;
+       padding: 2vw;
+    }
+    #infoEmpresaFoot{
+        margin-bottom: 5vw ;
+    }
+    #infoEmpresaFoot h4{
+        font-size: 3vw;
+    }
+    #infoEmpresaFoot p{
+        font-size: 2vw;
+    }
+
+    #registrateFoot{
+        width: 60%;
+        margin-bottom: 5vw;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+    }
+    #registrateFoot h5{
+        font-size: 2vw;
+        margin-top: 1vw;
+        margin-bottom: 1vw;
+        width: 40%;
+    }
+    #registrateFoot a{
+        font-size: 1.5vw;
+        padding: 2%;
+        width: 45%;
+    }
+
+    #redesSocialesFoot{
+        width: 40%;
+        align-self: flex-end;
+        position: absolute;
+        bottom: 4vw;
+    }
+    #redesSocialesFoot h5{
+        text-align: center;
+        font-size: 2vw;
+    }
+    
+    #redesSocialesFoot div i{
+        font-size: 3vw;
+        margin-right: 0vw;
+    }
+    #redesSocialesFoot div a{
+        font-size: 2vw;
+        width: 80%;
+    }
+}

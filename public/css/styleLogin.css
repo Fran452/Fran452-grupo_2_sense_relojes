@@ -1,0 +1,76 @@
+*{
+    margin: 0px;
+    padding: 0px;    
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Libre Baskerville', serif;
+}
+
+h1{
+    font-size: 35px;
+}
+h3{
+    color: #010203;
+}
+
+p{
+    font-size: 16px;
+}
+
+main{
+    text-align: center;
+    display: block;
+    padding: 20px;
+}  
+
+footer{
+    background-color: #010203;
+}
+
+
+.topbar{
+background-color: #010203;
+padding: 10px;
+color: white;
+}
+
+.Inicio{
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+
+}
+
+.Usuario{
+    width: 35%;
+    border: 0;
+    border-bottom: 2px solid #010203;
+    opacity: 50%;
+    padding: 6px;
+    margin: 10px;
+}
+
+.botonContraseña{
+    color: #010203;
+    border-bottom: 2px solid;
+    padding-bottom: 6px;
+    background-color: transparent;
+    text-transform: uppercase;
+    width: 100%;
+    border: none;
+}
+.botonRegistro{
+    width: 40%;
+    letter-spacing: 3px;
+    background-color:#11224b;
+    color: white;
+    cursor: pointer;
+    line-height: 50px;
+}
+
+
+
+
+
+
