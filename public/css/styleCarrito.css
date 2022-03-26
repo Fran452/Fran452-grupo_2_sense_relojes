@@ -125,15 +125,6 @@ main div{
             #comprobante{
                 font-size: 70%;
             }
-            .botones{
-                width: 100%;
-                color: var(--blanco);
-                border: 1px var(--azul) solid;
-                text-align: center;
-                font-size: 100%;
-                padding: 5px;
-                background-color: var(--rojo);
-            }   
 
 
 @media(min-width:1080px){

@@ -112,14 +112,8 @@ main{
 .carrito{
     display: block;
     width: 50%;
-    color: var(--blanco);
-    border:  1px var(--rojo) solid;
     border-radius: 50px;
-    text-align: center;
-    font-size: 16px;
-    padding: 5px;
     margin-bottom: 10px;
-    background-color:var(--rojo);
     margin-left: 10%;
     position: relative;
     right: 20px;

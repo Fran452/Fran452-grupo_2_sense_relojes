@@ -39,16 +39,8 @@ h2{
 
 .botonShop {
     width: 25%;
-    color: var(--blanco);
-    border: 1px var(--azul) solid;
-    text-align: center;
-    font-size: 100%;
-    padding: 5px;
-    background-color: var(--rojo);
     position: absolute;
     bottom: 8vw;
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
     width: 160px;
     height: 34px;
 }
