@@ -44,43 +44,45 @@
         
     </header>
     <main>
-            <div id ="infoproducto">
+            <div>
                 <h2> Nuevo Producto </h2>
                 <form action="/" method="POST">
                 
-                    <label for="Nombre">Titulo Producto: </label>
+                    <label for="Nombre">Título Producto: </label>
                     <input class="Controles" type="text" name="Nombre" id="Nombre">
-                    <br/> <br/>
-                    <select  class="Controles" name="menu">
+
+                    <select  class="Productos" name="menu">
                         <option> Relojes </option>
                         <option value="2">Pulseras</option>
                         <option value="3">Lentes</option>
                     </select>
-                    <br/> <br/>
+
                     <label for="Imagen de producto">Imágen de Producto</label>
                     <input id = "imagen" type="file" name="Adjuntar Imagen" accept=".pdf,.jpg,.png" multiple /> 
-                    <br/> <br/>
+
                     <label for="Marca">Marca: </label>
                     <input class="Controles" type="text" name="Marca">
-                    <br/> <br/>
+
                     <label for="Modelo">Modelo: </label>
                     <input class="Controles" type="text" name="Modelo">
-                    <br/> <br/>
+
                     <label for="Descripcion">Descripción: </label>
                     <input class="Controles" type="text" name="Descripcion">
-                    <br/> <br/>
+
                     <label for="Precio">Precio</label> 
                     <input class="Controles"  type="number" name="Precio">
-                    <br/> <br/>
+
                     <label for="Cantidad">Cantidad</label> 
                     <input class="Controles"  type="number" name="Cantidad">
-                    <br/> <br/>
-                    <label for="Forma de Pago">Forma de Pago Aceptada </label> <br>
-                    <input class=""  type="checkbox" name="efectivo" value="Ef">Efectivo </br>
-                    <input class=""  type="checkbox" name="tarjetaD" value="TD">Tarjeta Débito </br> 
-                    <input class=""  type="checkbox" name="tarjetaC" value="TC">Tarjeta Crédito </br>       
+                    
+                    <label for="Forma de Pago">Forma de Pago Aceptada </label> 
+                    <input class="check"  type="checkbox" name="efectivo" value="Ef">Efectivo 
+                    <input class="check"  type="checkbox" name="tarjetaD" value="TD">Tarjeta Débito
+                    <input class="check"  type="checkbox" name="tarjetaC" value="TC">Tarjeta Crédito     
+
                 </form>
             </div>
+
             <div id = botonesCarrito>
                 <input class="botones" type="submit" value="Enviar">
                 <input class="botones" type="submit" value="Cancelar">
