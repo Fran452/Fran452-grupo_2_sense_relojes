@@ -27,4 +27,5 @@ app.use('/',rutasMain);
 
 app.use('/user', rutasUser);
 
-app.use('/producto',rutasProductos);
+app.use('/produc',rutasProductos);
+

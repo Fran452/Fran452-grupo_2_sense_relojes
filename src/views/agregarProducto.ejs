@@ -1,56 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%-include('./partials/header') %>
-    <link rel="stylesheet" href="css/styleNuevoProducto.css">
+    <%-include('./partials/head') %>
+    <link rel="stylesheet" href="/css/styleNuevoProducto.css">
 
 </head>
 <body>
     <%-include('./partials/header') %>
     <main>
-            <div>
-                <h2> Nuevo Producto </h2>
-                <form action="/" method="POST">
-                
-                    <label for="Nombre">Título Producto: </label>
-                    <input class="Controles" type="text" name="Nombre" id="Nombre">
+        <div>
+            <h2> Nuevo Producto </h2>
+            <form action="/" method="POST">
+            
+                <label for="Nombre">Título Producto: </label>
+                <input class="Controles" type="text" name="Nombre" id="Nombre">
 
-                    <select  class="Productos" name="menu">
-                        <option> Relojes </option>
-                        <option value="2">Pulseras</option>
-                        <option value="3">Lentes</option>
-                    </select>
+                <select  class="button Productos" name="menu">
+                    <option> Relojes </option>
+                    <option value="2">Pulseras</option>
+                    <option value="3">Lentes</option>
+                </select>
 
-                    <label for="Imagen de producto">Imágen de Producto</label>
-                    <input id = "imagen" type="file" name="Adjuntar Imagen" accept=".pdf,.jpg,.png" multiple /> 
+                <label for="Imagen de producto">Imágen de Producto</label>
+                <input id = "imagen" type="file" name="Adjuntar Imagen" accept=".pdf,.jpg,.png" multiple /> 
 
-                    <label for="Marca">Marca: </label>
-                    <input class="Controles" type="text" name="Marca">
+                <label for="Marca">Marca: </label>
+                <input class="Controles" type="text" name="Marca">
 
-                    <label for="Modelo">Modelo: </label>
-                    <input class="Controles" type="text" name="Modelo">
+                <label for="Modelo">Modelo: </label>
+                <input class="Controles" type="text" name="Modelo">
 
-                    <label for="Descripcion">Descripción: </label>
-                    <input class="Controles" type="text" name="Descripcion">
+                <label for="Descripcion">Descripción: </label>
+                <input class="Controles" type="text" name="Descripcion">
 
-                    <label for="Precio">Precio</label> 
-                    <input class="Controles"  type="number" name="Precio">
+                <label for="Precio">Precio</label> 
+                <input class="Controles"  type="number" name="Precio">
 
-                    <label for="Cantidad">Cantidad</label> 
-                    <input class="Controles"  type="number" name="Cantidad">
-                    <div id = "formaDePagoDiv">
-                        <label for="Forma de Pago">Forma de Pago Aceptada </label> 
-                        <input class="check"  type="checkbox" name="efectivo" value="Ef">
-                        <label for="Forma de Pago" class = "formaDePago">Efectivo</label> 
-                        <input class="check"  type="checkbox" name="tarjetaD" value="TD">
-                        <label for="Forma de Pago" class = "formaDePago"> Tarjeta Débito</label> 
-                        <input class="check"  type="checkbox" name="tarjetaC" value="TC">   
-                        <label for="Forma de Pago" class = "formaDePago">Tarjeta Crédito  </label> 
-                    </div>
-                    <div id = botonesCarrito>
-                        <input class="botones" type="submit" value="Enviar">
-                        <input class="botones" type="reset" value="Cancelar">
-                    </div>      
+                <label for="Cantidad">Cantidad</label> 
+                <input class="Controles"  type="number" name="Cantidad">
+
+                <div id = "formaDePagoDiv">
+                    <label for="Forma de Pago">Forma de Pago Aceptada </label> 
+                    <input class="check"  type="checkbox" name="efectivo" value="Ef">
+                    <label for="Forma de Pago" class = "formaDePago">Efectivo</label> 
+                    <input class="check"  type="checkbox" name="tarjetaD" value="TD">
+                    <label for="Forma de Pago" class = "formaDePago"> Tarjeta Débito</label> 
+                    <input class="check"  type="checkbox" name="tarjetaC" value="TC">   
+                    <label for="Forma de Pago" class = "formaDePago">Tarjeta Crédito  </label> 
+                </div>
+
+                <div id = botonesEnvio>
+                    <input class="button" type="submit" value="Enviar">
+                    <input class="button" type="reset" value="Cancelar">
+                </div>      
                 </form>
                 
             </div>
