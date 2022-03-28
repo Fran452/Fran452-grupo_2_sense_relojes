@@ -1,398 +1,220 @@
-body{
-    font-family: 'Oswald', sans-serif;
-}
-
-*{
-    padding: 0%;
-    margin: 0%;
-    box-sizing: border-box;
-}
-
+@import url(./styles.css); 
 main{
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-}
-.table{
-    width: 60%;
+    max-width: 1080px;
     margin: auto;
-}
-th{
-    font-size: 2vw;
-    text-align: center;
-}
-td{
-    text-align: center;
-    font-size: 2vw;
-}
-.total{
-    display: block;
-    width: 30%;
-    font-size: 2vw;
-    align-self: flex-end;
-    margin-bottom: 5vw;
-}
-main div{
-    display: flex;
-    align-self: baseline;
-    flex-direction: column;
-    flex-wrap: wrap;
-    position: relative;
-
-}
-main div div{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    width: 40vw;
-    padding: 3vw;
+} 
+h2{
     margin-bottom: 5%;
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
-
+    margin-top: 5%;
+    font-size: 100%;
+    border-bottom: black 1px solid;
+    color: var(--rojo);
 }
 label{
-    width: 100%;
-    display: block;
-    margin-bottom: 3%;
+    font-size: 70%;
+    margin-bottom: 5%;
 }
 input{
     width: 100%;
-    border: 0;
-    border-bottom: 2px solid #010203;
-    opacity: 50%;
-    font-size: 3vw;
-}
-h2{
-    width: 80%;
-    font-size: 14x;
-    border-bottom: black solid 1px;
     margin-bottom: 5%;
-    color: #11224b;;
-    
+    font-size: 100%;
+    border: none;
+    border-bottom: 1px var(--azul-oscuro) solid;
+}
+form{
+    width: 100%;;
 }
 select{
     width: 100%;
-    font-size: 1vw;
+    font-size: 70%;
+    margin-bottom: 5%;
+}
+option{
+    font-size: 100%;
 }
 
-#infocliente{
-    margin-left: 3vw;
-}
-#metodoDeEnvio{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    position: absolute;
-    left: 44vw;
-}
-#metodoDeEnvio div{
-    padding: 0;
-    flex-direction: row;
-    flex-wrap: wrap;
-    box-shadow: 0px 0px 0px rgb(100, 100, 100);
-
-}
-
-#metodoDeEnvio input{
-    width: 7%;
-}
-
-
-#lugaresDeEnvio form input{
-    font-size: 2vw;
-}
-#lugaresDeEnvio {
-    position: absolute;
-    left: 44vw;
-    top: 20vw;
-}
-
-#formaDePago{
-    align-self: center;
+.table{
+    text-align: center;
+    width: 100%;
+    padding: 1%;
+    max-width: 900px;
     margin: auto;
-    margin-top: 3vw;
-    padding: 1vw;
-    margin-left: 3vw;
 }
-#formaDePago form{
-    width: 90%;
+    .table thead tr th{
+        font-size: 70%;
+    }
+        .imagenProducto{
+            width: 30%;
+        }
+            .imagenProducto img{
+                width: 100%;
+            }
+        .cantidadProducto{
+            width: 10%;
+            font-size: 100%;
+        }
+            .cantidadProducto select{
+                font-size: 100%;
+            }
+            .cantidadProducto select option{
+                font-size: 150%;
+            }
+        .precioProducto{
+            width: 20%;
+        }
+        .precioTotalProducto{
+            width: 20%;
+        }
+        
+        .total{
+            font-size: 90%;
+            padding-right: 10%;
+            text-align: end;
+        }
+
+main div{
+    width: 100%;
+    padding: 2%;
+    position: static;
 }
-
-#comprobante{
-    font-size: 1vw;
-}
-
-
-
-#botonesCarrito{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    box-shadow: 0px 0px 0px rgb(100 100 100);
-    position: absolute;
-    left: 50vw;
-    top: 28vw;
-}
-.botones{
-    width: 40%;
-    background-color: #11224b;
-    opacity: 1;
-    color: white;
-    cursor: pointer;
-    line-height: 50px;
-    margin: 2%;
-    padding: 1vw;
-    font-size: 3vw;
-}
-main{
-    margin-bottom: 2vw;
-}
-
-
-
-@media (max-width: 1080px){
-  
-    *{
-        padding: 0%;
-        margin: 0%;
-    }
-    main div div{
-        box-shadow: 0px 0px 0px rgb(100 100 100);
-    }
-    .table{
-        font-size: 3vw;
-        text-align: center;
-    }
-    .total{
-        padding-right: 3%;
-        font-size: 4vw;
-        width: 50%;
-    }
-    .table tbody tr td img{
-        width: 80%;
-    }
-    main table .total{
-        font-size: 4vw;
-    }
-    main{
-        max-width: 100vw;
-    }
-    h2{
-        margin-bottom: 5%;
-        width: 75vw;
-    }
-    input{
-        width: 100%;
-    }
-    main div{
-        padding: 2%;
-        /* margin: auto; */
-    }
-    main div div{
-        max-width: 80vw;
-    }
-
-    #metodoDeEnvio form div{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        margin: 2vw;
-    }
-    #metodoDeEnvio form div input{
-        display: block;
-        width: 20%;
-    }
-    #metodoDeEnvio form div p{
-        display: block;
-        width: 80%;
-    }
-    main div{
-        position: static;
-    }
-    
-    .Controles{
-        width: 100%;
-    }
-    #infocliente form{
-        width: 100%;
-    }
-    #metodoDeEnvio{
-        position: static;
-    }
-    #metodoDeEnvio input{
-        width: 100%;
-    }
-
-    #lugaresDeEnvio{
-        position: static; 
-    }
-    #lugaresDeEnvio input{
-        width: 100%;
-    }
-    #formaDePago{
-        position: static;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap; 
-        align-self: start;
-        width: 100%;
-        padding: 0;
-        margin-left: 3vw;
-    }
-    #formaDePago form{
-        width: 100%;
-    }
-    #formaDePago label{
-        width: 100%;
-    }
-
-    #formaDePago input{
-        width: 100%;
-    }
-    select{
-    font-size: 2.5vw;}
-
-    #comprobante{
-        font-size: 2.5vw;
-    }
-
-    label{
-        font-size: 3vw;
-    }
-    #botonesCarrito {
-        position: static;
-        text-align: center;
-        margin: auto;
-        width: 100%;
-        justify-self: center;
-    }
-
-}
-@media (max-width: 480px){
-    
-    *{
-        padding: 0%;
-        margin: 0%;
-    }
-    main div div{
-        box-shadow: 0px 0px 0px rgb(100 100 100);
-    }
-    .table{
-        font-size: 3vw;
-        text-align: center;
-    }
-    .total{
-       
-        width: 40%;
-        font-size: 4vw;
-    }
-    .table tbody tr td img{
-        width: 80%;
-    }
-    main table .total{
-        font-size: 4vw;
-    }
-    main{
-        max-width: 100vw;
-    }
-    h2{
-        margin-bottom: 5%;
-        width: 75vw;
-        margin-top: 5vw;
-    }
-    input{
-        width: 100%;
-    }
-    main div{
-        padding: 2%;
-    }
-    main div div{
-        max-width: 80vw;
-    }
-
-    #metodoDeEnvio form div{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        margin: 2vw;
-    }
-    #metodoDeEnvio form div input{
-        display: block;
-        width: 20%;
-    }
-    #metodoDeEnvio form div p{
-        display: block;
-        width: 80%;
-    }
-    main div{
-        position: static;
-    }
-    
-    .Controles{
-        width: 100%;
-        font-size: 4vw;
-    }
-    #infocliente form{
-        width: 100%;
-    }
-    #metodoDeEnvio{
-        position: static;
-    }
-    #metodoDeEnvio input{
-        width: 100%;
-    }
-
-    #lugaresDeEnvio{
-        position: static; 
-        width: 50%;
-        padding: 0;
-    }
    
-    #lugaresDeEnvio input{
+    main div div{
+        box-shadow: 0px 0px 0px rgb(100 100 100);
         width: 100%;
+        margin: 0%;
     }
-    #formaDePago{
-        position: static;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap; 
-        align-self: start;
-        width: 100%;
-        padding: 0;
-        margin: 0;
-    }
-    #formaDePago form{
-        width: 100%;
-    }
-    #formaDePago label{
-        width: 100%;
-    }
+        #infocliente{
+            margin-left: 0%;
+        }
+        #metodoDeEnvio{
+            position: static;
+        }
+            #metodoDeEnvio input{
+                width: 100%;
+            }
+            #metodoDeEnvio form div{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                margin: 2%;
+            }
+                #metodoDeEnvio form div input{
+                    display: block;
+                    width: 20%;
+                }
+                #metodoDeEnvio form div p{
+                    display: block;
+                    width: 80%;
+                }
+        
+        #lugaresDeEnvio{
+            position: static; 
+            padding: 0;
+        }
+        #formaDePago{
+            position: static;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap; 
+            align-self: start;
+            padding: 0;
+            margin: 0;
+        }
+            #comprobante{
+                font-size: 70%;
+            }
 
-    #formaDePago input{
-        width: 100%;
+
+@media(min-width:1080px){
+    main{
+        max-width: 100vw;
+        margin: auto;
+        max-width: 1080px;
+    }
+    label{
+        font-size: 20px;
+    }
+    input{
+        font-size: 30px;
+    }
+    h2{
+        font-size: 50px;
     }
     select{
-        font-size: 2.5vw;
+        font-size: 25px;
     }
 
-    #comprobante{
-        font-size: 2.5vw;
+    table tbody tr td{
+        font-size: 40px;
     }
+    .table thead tr th{
+        font-size: 20px;
+    }
+   .total{
+    font-size: 30px;
+   }
     
-    label{
-        font-size: 5vw;
+    
+
+    main div{
+       position: relative;
     }
-    #botonesCarrito {
-        position: static;
-        text-align: center;
-        margin: auto;
-        width: 100%;
-        justify-self: center;
-    }
-  
+        main div div{
+            width: 40%;
+            padding: 1%;
+            margin: 5%;
+            box-shadow: 0px 0px 10px var(--rojo);
+            
+        }
+            #infocliente{
+                margin-bottom: 5%;
+            }
+            #metodoDeEnvio{
+                position: absolute;
+                left:  50%;
+                top: 6%;
+                margin: 0%;
+            }
+                #metodoDeEnvio form div{
+                    box-shadow: 0px 0px 0px var(--rojo);
+                    font-size: 30px;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                }
+                #metodoDeEnvio form div label{
+                    width: 80%;
+                }
+                #metodoDeEnvio form div input{
+                    font-size: 70px;
+                }
+            #lugaresDeEnvio{
+                position: absolute;
+                left:  50%;
+                top: 33%;
+                padding: 1%;
+                margin: 0%;
+            }
+            #formaDePago{
+                padding: 1%;
+            }
+                #comprobante{
+                    font-size: 20px;
+                }
+                #botonesCarrito{
+                    box-shadow: 0px 0px 0px var(--rojo);
+                    position: relative;
+                    left: 130%;
+                    margin: 0%;
+                    width: 110%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-around;
+                }
+                    .botones{
+                        display: block;
+                        width: 45%;
+                    }
 }

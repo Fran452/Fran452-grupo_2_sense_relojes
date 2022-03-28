@@ -10,7 +10,7 @@
 - Pagina de reloj y tienda: <a href = "https://abaco.la/shop/enrico-toffee/"> abaco </a> 
 
 - Detalle del preocuto: <a href = "https://abaco.la/shop/colt-acero/"> abaco </a> / <a href = "https://www.valkur.com.ar/productos/reloj-varallx/"> valkur </a>
-
+- Producto Generico: <a href="https://www.valkur.com.ar/relojes/hombre1/?sort_by=user&mpage=3">valkur </a>
 - Carrito de compras:  <a href = "https://vincerocollective.com/pages/international-checkout#Global-e_International_Checkout"> vincero </a> 
 
 - Formulario de registro: <a href = "https://www.valkur.com.ar/account/register/"> valkur y </a> <a href = "https://vincerocollective.com/account/register"> vincero </a>
@@ -52,9 +52,16 @@
 #### Celular
 <img src = "./wireframe/homeCel.png" height = 800> <br>
 
-### Productos
+### Producto General
 #### Computadora
-<img src = "./wireframe/Product.png" height = 500> <br>
+<img src = "./wireframe/ProdGeneral.svg" height = 500> <br>
+
+#### Celular
+<img src = "./wireframe/ProdGeneralCelular.svg" height = 500> <br>
+
+### Productos Detalle
+#### Computadora
+<img src = "./wireframe/Product.svg" height = 500> <br>
 
 #### Celular
 <img src = "./wireframe/ProductCel.png" height = 500> <br> cambiar
@@ -71,7 +78,7 @@
 <img src = "./wireframe/login.png" height = 450>
 
 #### Celular
-<img src = "./wireframe/loginCel.png" height = 450>
+<img src = "./wireframe/loginCel.svg" height = 450>
 
 ### Carrito
 #### Computadora
