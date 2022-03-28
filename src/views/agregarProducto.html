@@ -74,20 +74,24 @@
 
                     <label for="Cantidad">Cantidad</label> 
                     <input class="Controles"  type="number" name="Cantidad">
-                    
-                    <label for="Forma de Pago">Forma de Pago Aceptada </label> 
-                    <input class="check"  type="checkbox" name="efectivo" value="Ef">Efectivo 
-                    <input class="check"  type="checkbox" name="tarjetaD" value="TD">Tarjeta Débito
-                    <input class="check"  type="checkbox" name="tarjetaC" value="TC">Tarjeta Crédito     
-
+                    <div id = "formaDePagoDiv">
+                        <label for="Forma de Pago">Forma de Pago Aceptada </label> 
+                        <input class="check"  type="checkbox" name="efectivo" value="Ef">
+                        <label for="Forma de Pago" class = "formaDePago">Efectivo</label> 
+                        <input class="check"  type="checkbox" name="tarjetaD" value="TD">
+                        <label for="Forma de Pago" class = "formaDePago"> Tarjeta Débito</label> 
+                        <input class="check"  type="checkbox" name="tarjetaC" value="TC">   
+                        <label for="Forma de Pago" class = "formaDePago">Tarjeta Crédito  </label> 
+                    </div>
+                    <div id = botonesCarrito>
+                        <input class="botones" type="submit" value="Enviar">
+                        <input class="botones" type="reset" value="Cancelar">
+                    </div>      
                 </form>
+                
             </div>
 
-            <div id = botonesCarrito>
-                <input class="botones" type="submit" value="Enviar">
-                <input class="botones" type="submit" value="Cancelar">
-            </div>  
-
+            
     </main>
     <footer>
         <section id="infoEmpresaFoot">
