@@ -87,6 +87,20 @@
 #### Celular
 <img src = "./wireframe/CarritoCel.png" height = 450>
 
+### Productos edicion
+#### Computadora
+<img src = "./wireframe/modificación Producto.png" height = 450>
+
+#### Celular
+<img src = "./wireframe/modificación Producto Cel.png" height = 450>
+
+### Productos nuevos
+#### Computadora
+<img src = "./wireframe/NuevoProducto.png" height = 450>
+
+#### Celular
+<img src = "./wireframe/NuevoProductoCel.png" height = 450>
+
 # Metodologia de desarrollo
 
 Nuestro metodologia de desarrollo se va a basar en una reunion principal (por sprints) y reuniones semanales para ver el avance de nuestro trabajo.
