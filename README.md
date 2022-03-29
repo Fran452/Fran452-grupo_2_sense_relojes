@@ -99,7 +99,7 @@
 <img src = "./wireframe/NuevoProducto.png" height = 450>
 
 #### Celular
-<img src = "./wireframe/NuevoProductoCel.png" height = 450>
+<img src = "./wireframe/NuevoProducto.png" height = 450>
 
 # Metodologia de desarrollo
 
