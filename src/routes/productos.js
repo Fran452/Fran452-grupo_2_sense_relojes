@@ -11,8 +11,9 @@ router.get('/newProduct',productoController.create);
 
 router.get('/:id',productoController.id);
 
+
+router.get('/:id/editProducto',productoController.editProduct);
 /*
-router.get('/:id/editProducto',productoController.editProducto);
 router.get('/:id',productoController.productFinish);
 */
 

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('./partials/head') %>
+    <link rel="stylesheet" href="/css/styleModificarproducto.css">
+</head>
+<body>
+    <%-include('./partials/header') %>
+    <main>
+        <img src = "/img/Kairos Black S.jpg">
+        <div class = "descripcion">
+            <h1> Nombre Producto</h1>
+            <h2>Descripcion: Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro autem tempora impedit ratione? Optio, omnis, aut voluptas ipsa ab necessitatibus consequuntur modi laudantium nam culpa reiciendis? At unde nisi expedita?</h2>
+            <ul>
+                <li>diametro</li>
+                <li>alto</li>
+                <li>material</li>
+                <li>aguja</li>
+                <li>correa</li>
+                <li>ancho de correa</li>
+                <li>correa intercambiable</li>
+                <li>Precio:</li>
+            </ul>
+        </div>
+        <div id = botonesUno>
+            <button type="button" class = "button"> sin stock</button> 
+            <button type="button" class = "button"> eliminar producto</button>
+        </div>
+        <form action="/" method="post">
+            <label for="newMoney">precio</label>
+            <input type="number" name="newMoney">
+
+            <label for = "newPhoto">cambiar foto</label>
+            <input type="file" accept = ".jpg, .png" name = "newPhoto">
+
+            <label for = "formaDePago"> Formas de pago aceptadas</label>
+            <div> 
+                <div>
+                    <input type="checkbox" name = "efectivo">
+                    <label for="efectivo">efectivo</label></div>
+                <div>
+                    <input type="checkbox"  name = "tarjeta">
+                    <label for="tarjeta">tarjeta</label></div>
+                <div>
+                    <input type="checkbox"  name = "cuotas">
+                    <label for="cuotas">cuotas</label>
+                </div>  
+            </div>
+
+
+            <div id = botonesDos>
+                <button type= "reset" class= "button">resetear</button>
+                <button type= "submit"  class= "button">enviar</button> 
+            </div>
+        </form>
+    </main>
+    <%-include('./partials/footer') %>
+</body>
