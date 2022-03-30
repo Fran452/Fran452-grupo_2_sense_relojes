@@ -21,7 +21,6 @@
             </select>
         </div>
         <div class="MainProductos"> 
-            <% let productos = [{id : 4,nombre : "Onix", tipo : "reloj",modelo : "Silver",img : "Onix S.jpg", precio : 1700},{id : 4,nombre : "Onix", tipo : "reloj",modelo : "Silver",img : "Onix S.jpg", precio : 1700},{id : 4,nombre : "Onix", tipo : "reloj",modelo : "Silver",img : "Onix S.jpg", precio : 1700},{id : 4,nombre : "Onix", tipo : "reloj",modelo : "Silver",img : "Onix S.jpg", precio : 1700},{id : 4,nombre : "Onix", tipo : "reloj",modelo : "Silver",img : "Onix S.jpg", precio : 1700},] %> 
             <% for(producto of productos){ %> 
             <article class="productoDestacado">
                 <a href="/product/<%= producto.id %> "><img class="imagenProductoDestacado" src="/img/<%= producto.img %> "></a>
