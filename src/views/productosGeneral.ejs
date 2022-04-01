@@ -23,7 +23,7 @@
         <div class="MainProductos"> 
             <% for(producto of productos){ %> 
             <article class="productoDestacado">
-                <a href="/product/<%= producto.id %> "><img class="imagenProductoDestacado" src="/img/<%= producto.img %> "></a>
+                <a href="/product/<%= producto.id %> "><img class="imagenProductoDestacado" src="/img/product/<%= producto.img %> "></a>
                 <h3><%= producto.nombre %></h3>
                 <p><%= producto.modelo %></p>
                 <h4><%= producto.precio %></h4>
