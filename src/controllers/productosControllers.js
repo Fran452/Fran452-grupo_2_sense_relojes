@@ -19,12 +19,13 @@ const controlador = {
     },
     createFuction: (req,res) => {
         console.log("entro al creation");
-        let products =  fuctionGeneric.archivoJSON(dataBase)
+        let products =  fuctionGeneric.archivoJSON(dataBase);
+        let img = req.files.map(foto => foto.filename).length > 0 ? req.files.map(foto => foto.filename) : ["default-image.png","default-image.png","default-image.png","default-image.png"];
         let newProduct = {
             id : fuctionGeneric.crearID(products),
             ... req.body,
             datosDetacados : [],
-            img :  req.files.map(foto => foto.filename),
+            img :  img,
             show : true
         }
         console.log("creo el objeto:",newProduct);
@@ -35,7 +36,7 @@ const controlador = {
     },
 
     editProduct: (req,res) => {
-        res.render("modificarproducto")
+        res.render("modificarproducto");
     },
     editProductFuction: (req,res) => {
        

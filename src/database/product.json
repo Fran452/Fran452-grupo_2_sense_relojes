@@ -148,6 +148,21 @@
     "show": true
   },
   {
+    "id": 7,
+    "nombre": "dwedwdwdwddw",
+    "tipo": "Reojes",
+    "descripcion": "dwdwdwdwdwd",
+    "precio": "2222",
+    "cantidad": "2222",
+    "formaDePago": [
+      "efectivo",
+      "targetaD"
+    ],
+    "datosDetacados": [],
+    "img": ["default-image.jpg","default-image.jpg","default-image.jpg","default-image.jpg"],
+    "show": true
+  },
+  {
     "id": 8,
     "nombre": "Hades Acero",
     "tipo": "Reojes",
@@ -162,8 +177,27 @@
     "img": [
       "1649273314571.webp",
       "1649273314573.webp",
-      "1649273314575.webp",
-      "1649273314576.webp"
+      "1649273314575.webp"
+    ],
+    "show": true
+  },
+  {
+    "id": 9,
+    "nombre": "dwedwdwdwddw",
+    "tipo": "Reojes",
+    "descripcion": "dwdwdwdwdwd",
+    "precio": "2222",
+    "cantidad": "2222",
+    "formaDePago": [
+      "efectivo",
+      "targetaD"
+    ],
+    "datosDetacados": [],
+    "img": [
+      "Onix S.jpg",
+      "Onix S.jpg",
+      "Onix S.jpg",
+      "Onix S.jpg"
     ],
     "show": true
   }
