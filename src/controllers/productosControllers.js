@@ -1,57 +1,36 @@
 const path = require("path");
-let productos = [
-    {
-        id : 1,
-        nombre : "Onix",
-        tipo : "reloj",
-        modelo : "Silver",
-        img : "Onix S.jpg",
-        precio : 1700,
-        descripcion : "es un porducto miy lindo y bla bal bla con mucho ams vla bla bla y todo eso con mas bla bla bla",
-        cantidad: 5,
-        formaDePago: ["efectivo"],
-        datosDestacados: ["diametro: 25", "material: oro", "correa: cuero" ],
-    },
-    {
-        id : 2,
-        nombre : "Onix v2",
-        tipo : "reloj",
-        modelo : "Silver",
-        img : "Onix S.jpg",
-        precio : 1700,
-        descripcion : "es un porducto miy lindo y bla bal bla con mucho ams vla bla bla y todo eso con mas bla bla bla",
-        cantidad: 5,
-        formaDePago: ["efectivo"],
-        datosDestacados: ["diametro: 25", "material: oro", "correa: cuero" ]
-    },
-    {
-        id : 3,
-        nombre : "Onix v3",
-        tipo : "reloj",
-        modelo : "Silver",
-        img : "Onix S.jpg",
-        precio : 1700,
-        descripcion : "es un porducto miy lindo y bla bal bla con mucho ams vla bla bla y todo eso con mas bla bla bla",
-        cantidad: 5,
-        formaDePago: ["efectivo"],
-        datosDestacados: ["diametro: 25", "material: oro", "correa: cuero" ]
-    },
-]
+
+const fuctionGeneric = require("../generalFuction");
+const dataBase = path.join(__dirname,"../database/product.json")
 
 const controlador = {
     index:(req,res) => {
-        res.render("productosGeneral",{productos})
+        let productos = fuctionGeneric.archivoJSON(dataBase);
+        res.render("productosGeneral",{productos : productos});
     },
     id:(req,res) => {
-        let productoSeleccionado = productos.find(producto => producto.id == req.params.id )
-        res.render("productDetail",{producto:productoSeleccionado})
+        let productoSeleccionado = fuctionGeneric.archivoJSON(dataBase).find(producto => producto.id == req.params.id )
+        res.render("productDetail",{producto:productoSeleccionado, productRecomiend : fuctionGeneric.archivoJSON(dataBase)})
     },
 
     create: (req,res) => {
-        res.render("agregarProducto")
+        res.render("agregarProducto");
     },
     createFuction: (req,res) => {
-
+        console.log("entro al creation");
+        let products =  fuctionGeneric.archivoJSON(dataBase)
+        let newProduct = {
+            id : fuctionGeneric.crearID(products),
+            ... req.body,
+            datosDetacados : [],
+            img :  req.file?.filename ?? "default-image.png",
+            show : true
+        }
+        console.log("creo el objeto:",newProduct);
+        products.push(newProduct);
+        products = fuctionGeneric.ordenarSegundID(products);
+        fuctionGeneric.subirArchivo(dataBase,products);
+        res.redirect("/");
     },
 
     editProduct: (req,res) => {
