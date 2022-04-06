@@ -8,9 +8,11 @@ function archivoJSON(direccion){
 function subirArchivo(direccion,array){
 	fs.writeFileSync(direccion,JSON.stringify(array,null,2));
 }
+
 function ordenarSegundID(array){
 	return array.sort((a,b)=> a.id - b.id)
 }
+
 function crearID(array){
 	if(array[0].id != 1){
 		return 1;
@@ -25,7 +27,4 @@ function crearID(array){
 	return array[array.length - 1].id + 1;
 }
 
-const dataBase = path.join(__dirname,"./database/product.json")
-let product = archivoJSON(dataBase)
-console.log(crearID(product));
 module.exports = {archivoJSON ,subirArchivo,ordenarSegundID,crearID};

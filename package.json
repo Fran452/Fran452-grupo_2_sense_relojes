@@ -74,6 +74,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./src/app.js"
   },
+  "nodemonConfig": { 
+    "ignore": ["./src/database/*"], 
+    "delay": 2500 
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Fran452/grupo_2_human_relojes.git"

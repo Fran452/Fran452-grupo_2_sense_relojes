@@ -1,75 +1,170 @@
 [
-    {
-        "id" : 1,
-        "nombre" : "Lee Mesh",
-        "tipo" : "reloj",
-        "img" : ["LeeMesh01.jpg","LeeMesh02.jpg","LeeMesh03.jpg","LeeMesh04.jpg"],
-        "precio" : 16500,
-        "descripcion" : "Reloj negro de 40 milímetros y correa mesh de acero inoxidable con hebilla imantada. El Reloj Perfecto no exist…",
-        "cantidad": 5,
-        "formaDePago": ["efectivo"],
-        "datosDestacados": ["Diámetro: 40 mm.", "Alto: 9 mm", "Agujas: Negras" ],
-        "show": true
-    },
-    {
-        "id" : 2,
-        "nombre" : "Enrico Toffee",
-        "tipo" : "reloj",
-        "img" : ["EnricoToffee01.webp","EnricoToffee02.webp","EnricoToffee03.webp","EnricoToffee04.webp"],
-        "precio" : 15900,
-        "descripcion" : "No vas a conocer un reloj tan clásico y minimalista como el Enrico Toffee.",
-        "cantidad": 5,
-        "formaDePago": ["efectivo","Targeta de Debito"],
-        "datosDestacados": ["Diámetro: 42 mm.", "Alto: 11 mm", "Agujas: Plateadas. Segundero naranja","Sumergibilidad: 5 ATM." ],
-        "show": true
-    },
-    {
-        "id" : 3,
-        "nombre" : "Tesla Sepia",
-        "tipo" : "reloj",
-        "img" : ["TeslaSepia01.webp","TeslaSepia02.webp","TeslaSepia03.webp","TeslaSepia04.webp"],
-        "precio" : 15900,
-        "descripcion" : "El Reloj Tesla Sepia fue diseñado como el compañero para todo el día. Es un reloj que te lo vas a querer sacar nunca más.",
-        "cantidad": 5,
-        "formaDePago": ["efectivo", "Targeta de Credito", "Targeta de Debito","Mercado Libre"],
-        "datosDestacados": ["Diámetro: 42 mm.","Alto: 11 mm","Material: Aleación."],
-        "show": true
-    },
-    {
-        "id" : 4,
-        "nombre" : "Lee Mesh",
-        "tipo" : "reloj",
-        "img" : ["LeeMesh01.jpg","LeeMesh02.jpg","LeeMesh03.jpg","LeeMesh04.jpg"],
-        "precio" : 16500,
-        "descripcion" : "Reloj negro de 40 milímetros y correa mesh de acero inoxidable con hebilla imantada. El Reloj Perfecto no exist…",
-        "cantidad": 5,
-        "formaDePago": ["efectivo"],
-        "datosDestacados": ["Diámetro: 40 mm.", "Alto: 9 mm", "Agujas: Negras" ],
-        "show": true
-    },
-    {
-        "id" : 5,
-        "nombre" : "Enrico Toffee",
-        "tipo" : "reloj",
-        "img" : ["EnricoToffee01.webp","EnricoToffee02.webp","EnricoToffee03.webp","EnricoToffee04.webp"],
-        "precio" : 15900,
-        "descripcion" : "No vas a conocer un reloj tan clásico y minimalista como el Enrico Toffee.",
-        "cantidad": 5,
-        "formaDePago": ["efectivo","Targeta de Debito"],
-        "datosDestacados": ["Diámetro: 42 mm.", "Alto: 11 mm", "Agujas: Plateadas. Segundero naranja","Sumergibilidad: 5 ATM." ],
-        "show": true
-    },
-    {
-        "id" : 6,
-        "nombre" : "Tesla Sepia",
-        "tipo" : "reloj",
-        "img" : ["TeslaSepia01.webp","TeslaSepia02.webp","TeslaSepia03.webp","TeslaSepia04.webp"],
-        "precio" : 15900,
-        "descripcion" : "El Reloj Tesla Sepia fue diseñado como el compañero para todo el día. Es un reloj que te lo vas a querer sacar nunca más.",
-        "cantidad": 5,
-        "formaDePago": ["efectivo", "Targeta de Credito", "Targeta de Debito","Mercado Libre"],
-        "datosDestacados": ["Diámetro: 42 mm.","Alto: 11 mm","Material: Aleación."],
-        "show": true
-    }
-    
+  {
+    "id": 1,
+    "nombre": "Lee Mesh",
+    "tipo": "reloj",
+    "img": [
+      "LeeMesh01.jpg",
+      "LeeMesh02.jpg",
+      "LeeMesh03.jpg",
+      "LeeMesh04.jpg"
+    ],
+    "precio": 16500,
+    "descripcion": "Reloj negro de 40 milímetros y correa mesh de acero inoxidable con hebilla imantada. El Reloj Perfecto no exist…",
+    "cantidad": 5,
+    "formaDePago": [
+      "efectivo"
+    ],
+    "datosDestacados": [
+      "Diámetro: 40 mm.",
+      "Alto: 9 mm",
+      "Agujas: Negras"
+    ],
+    "show": true
+  },
+  {
+    "id": 2,
+    "nombre": "Enrico Toffee",
+    "tipo": "reloj",
+    "img": [
+      "EnricoToffee01.webp",
+      "EnricoToffee02.webp",
+      "EnricoToffee03.webp",
+      "EnricoToffee04.webp"
+    ],
+    "precio": 15900,
+    "descripcion": "No vas a conocer un reloj tan clásico y minimalista como el Enrico Toffee.",
+    "cantidad": 5,
+    "formaDePago": [
+      "efectivo",
+      "Targeta de Debito"
+    ],
+    "datosDestacados": [
+      "Diámetro: 42 mm.",
+      "Alto: 11 mm",
+      "Agujas: Plateadas. Segundero naranja",
+      "Sumergibilidad: 5 ATM."
+    ],
+    "show": true
+  },
+  {
+    "id": 3,
+    "nombre": "Tesla Sepia",
+    "tipo": "reloj",
+    "img": [
+      "TeslaSepia01.webp",
+      "TeslaSepia02.webp",
+      "TeslaSepia03.webp",
+      "TeslaSepia04.webp"
+    ],
+    "precio": 15900,
+    "descripcion": "El Reloj Tesla Sepia fue diseñado como el compañero para todo el día. Es un reloj que te lo vas a querer sacar nunca más.",
+    "cantidad": 5,
+    "formaDePago": [
+      "efectivo",
+      "Targeta de Credito",
+      "Targeta de Debito",
+      "Mercado Libre"
+    ],
+    "datosDestacados": [
+      "Diámetro: 42 mm.",
+      "Alto: 11 mm",
+      "Material: Aleación."
+    ],
+    "show": true
+  },
+  {
+    "id": 4,
+    "nombre": "Lee Mesh",
+    "tipo": "reloj",
+    "img": [
+      "LeeMesh01.jpg",
+      "LeeMesh02.jpg",
+      "LeeMesh03.jpg",
+      "LeeMesh04.jpg"
+    ],
+    "precio": 16500,
+    "descripcion": "Reloj negro de 40 milímetros y correa mesh de acero inoxidable con hebilla imantada. El Reloj Perfecto no exist…",
+    "cantidad": 5,
+    "formaDePago": [
+      "efectivo"
+    ],
+    "datosDestacados": [
+      "Diámetro: 40 mm.",
+      "Alto: 9 mm",
+      "Agujas: Negras"
+    ],
+    "show": true
+  },
+  {
+    "id": 5,
+    "nombre": "Enrico Toffee",
+    "tipo": "reloj",
+    "img": [
+      "EnricoToffee01.webp",
+      "EnricoToffee02.webp",
+      "EnricoToffee03.webp",
+      "EnricoToffee04.webp"
+    ],
+    "precio": 15900,
+    "descripcion": "No vas a conocer un reloj tan clásico y minimalista como el Enrico Toffee.",
+    "cantidad": 5,
+    "formaDePago": [
+      "efectivo",
+      "Targeta de Debito"
+    ],
+    "datosDestacados": [
+      "Diámetro: 42 mm.",
+      "Alto: 11 mm",
+      "Agujas: Plateadas. Segundero naranja",
+      "Sumergibilidad: 5 ATM."
+    ],
+    "show": true
+  },
+  {
+    "id": 6,
+    "nombre": "Tesla Sepia",
+    "tipo": "reloj",
+    "img": [
+      "TeslaSepia01.webp",
+      "TeslaSepia02.webp",
+      "TeslaSepia03.webp",
+      "TeslaSepia04.webp"
+    ],
+    "precio": 15900,
+    "descripcion": "El Reloj Tesla Sepia fue diseñado como el compañero para todo el día. Es un reloj que te lo vas a querer sacar nunca más.",
+    "cantidad": 5,
+    "formaDePago": [
+      "efectivo",
+      "Targeta de Credito",
+      "Targeta de Debito",
+      "Mercado Libre"
+    ],
+    "datosDestacados": [
+      "Diámetro: 42 mm.",
+      "Alto: 11 mm",
+      "Material: Aleación."
+    ],
+    "show": true
+  },
+  {
+    "id": 8,
+    "nombre": "Hades Acero",
+    "tipo": "Reojes",
+    "descripcion": "igual que el dios fuerte como el acero",
+    "precio": "233333",
+    "cantidad": "23",
+    "formaDePago": [
+      "efectivo",
+      "targetaD"
+    ],
+    "datosDetacados": [],
+    "img": [
+      "1649273314571.webp",
+      "1649273314573.webp",
+      "1649273314575.webp",
+      "1649273314576.webp"
+    ],
+    "show": true
+  }
 ]

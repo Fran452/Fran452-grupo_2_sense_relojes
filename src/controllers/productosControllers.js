@@ -1,4 +1,5 @@
 const path = require("path");
+const { clearScreenDown } = require("readline");
 
 const fuctionGeneric = require("../generalFuction");
 const dataBase = path.join(__dirname,"../database/product.json")
@@ -23,7 +24,7 @@ const controlador = {
             id : fuctionGeneric.crearID(products),
             ... req.body,
             datosDetacados : [],
-            img :  req.file?.filename ?? "default-image.png",
+            img :  req.files.map(foto => foto.filename),
             show : true
         }
         console.log("creo el objeto:",newProduct);

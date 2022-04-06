@@ -21,20 +21,22 @@
             <div class="informacion">
                 <h1> <%= producto.nombre %></h1>
                 <p id ="infoProducto"><%= producto.descripcion %></p>
-                <div class = "descripcion">
-                    <h2>Descripcion</h2>
-                    <ul class = "infoInterna">
-                        <% for(dato of producto.datosDestacados){ %> 
-                            <li><%= dato %></li>
-                        <% } %> 
-                    </ul>
-                </div>
+                    <div class = "descripcion">
+                        <h2>Descripcion</h2>
+                        <ul class = "infoInterna">
+                            <% if(producto.datosDestacados){ %> 
+                                <% for(dato of producto.datosDestacados){ %> 
+                                    <li><%= dato %></li>
+                                <% } %> 
+                            <% } %> 
+                        </ul>
+                    </div>
                 
                 <div class = "formas-de-pago descripcion" >
                     <h2>Forma de pago</h2>
                     <ul class = "infoInterna">
                         <% for(pagos of producto.formaDePago){ %> 
-                        <li><%= pagos %></li>
+                            <li><%= pagos %></li>
                         <% } %> 
                     </ul>
                 </div>
@@ -60,7 +62,7 @@
         </div>
         <div class="productos-recomendados">
             <section> 
-                <a href="#"><img src = "/img/product/<%= productRecomiend[0].img[0] %> "name= "logo"></a>
+                <a href="<%= productRecomiend[0].id %>"><img src = "/img/product/<%= productRecomiend[0].img[0] %> "name= "logo"></a>
                 <div class="descripcion-recomendado">
                     <h3><%= productRecomiend[0].nombre %></h3>
                     <p><%= productRecomiend[0].descripcion %></p>
@@ -68,7 +70,7 @@
             </section>
 
             <section> 
-                <a href="#"><img src = "/img/product/<%= productRecomiend[1].img[0] %> "name= "logo"></a>
+                <a href="<%= productRecomiend[1].id %>"><img src = "/img/product/<%= productRecomiend[1].img[0] %> "name= "logo"></a>
                 <div class="descripcion-recomendado">
                     <h3><%= productRecomiend[1].nombre %></h3>
                     <p><%= productRecomiend[1].descripcion %></p>
@@ -76,7 +78,7 @@
             </section>
 
             <section id = "tercer-Producto"> 
-                <a href="#"><img src = "/img/product/<%= productRecomiend[2].img[0] %>"name= "logo"></a>
+                <a href="<%= productRecomiend[2].id %>"><img src = "/img/product/<%= productRecomiend[2].img[0] %>"name= "logo"></a>
                 <div class="descripcion-recomendado">
                     <h3><%= productRecomiend[2].nombre %></h3>
                     <p><%= productRecomiend[2].descripcion %></p>
