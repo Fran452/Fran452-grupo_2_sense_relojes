@@ -35,8 +35,8 @@ router.get('/:id',productoController.id);
 
 
 // Edicion de producto
-router.get('/:id/editProducto',productoController.editProduct);
-router.put('/:id/editProducto',productoController.editProductFuction);
+router.get('/:id/edit',productoController.editProduct);
+router.put('/:id/edit',productoController.editProductFuction);
 
 // Eliminar producto
 router.delete('/:id/delete',productoController.delete)

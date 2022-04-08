@@ -148,21 +148,6 @@
     "show": true
   },
   {
-    "id": 7,
-    "nombre": "dwedwdwdwddw",
-    "tipo": "Reojes",
-    "descripcion": "dwdwdwdwdwd",
-    "precio": "2222",
-    "cantidad": "2222",
-    "formaDePago": [
-      "efectivo",
-      "targetaD"
-    ],
-    "datosDetacados": [],
-    "img": ["default-image.jpg","default-image.jpg","default-image.jpg","default-image.jpg"],
-    "show": true
-  },
-  {
     "id": 8,
     "nombre": "Hades Acero",
     "tipo": "Reojes",
