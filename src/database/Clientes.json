@@ -11,7 +11,9 @@
 			"calle": "LIBERTAD 943",
 			"codigoPostar": 1278,
 			"Localidad": "BUENOS AIRES"
-		}
+		},
+		"favoritos" : [],
+		"ComprasAnteriores" : []
 	},
 	{
 		"id": 9005435,
@@ -25,7 +27,9 @@
 			"calle": "25 DE MAYO 1075",
 			"codigoPostar": 5000,
 			"Localidad": "BUENOS AIRES"
-		}
+		},
+		"favoritos" : [],
+		"ComprasAnteriores" : []
 	},
 	{
 		"id": 18005795,
@@ -39,7 +43,9 @@
 			"calle": "J.B.JUSTO 352",
 			"codigoPostar": 5967,
 			"Localidad": "BUENOS AIRES"
-		}
+		},
+		"favoritos" : [],
+		"ComprasAnteriores" : []
 	},
 	{
 		"id": 73008304,
@@ -53,7 +59,9 @@
 			"calle": "BELELLI 1264 E/ GRIGERA Y LARROQUE",
 			"codigoPostar": 5500,
 			"Localidad": "MENDOZA"
-		}
+		},
+		"favoritos" : [],
+		"ComprasAnteriores" : []
 	},
 	{
 		"id": 37004560,
@@ -67,7 +75,9 @@
 			"calle": "AMEGHINO 515",
 			"codigoPostar": 1437,
 			"Localidad": "CABA"
-		}
+		},
+		"favoritos" : [],
+		"ComprasAnteriores" : []
 	},
 	{
 		"id": 9002215,
@@ -81,7 +91,9 @@
 			"calle": "25 DE MAYO S/N",
 			"codigoPostar": 1440,
 			"Localidad": "BUENOS AIRES"
-		}
+		},
+		"favoritos" : [],
+		"ComprasAnteriores" : []
 	},
 	{
 		"id": 9004075,
@@ -95,7 +107,9 @@
 			"calle": "MADRID 6991 1º C",
 			"codigoPostar": 5000,
 			"Localidad": "CORDOBA"
-		}
+		},
+		"favoritos" : [],
+		"ComprasAnteriores" : []
 	},
 	{
 		"id": 9005527,
@@ -109,7 +123,9 @@
 			"calle": "CANNING 116",
 			"codigoPostar": 5008,
 			"Localidad": "CORDOBA"
-		}
+		},
+		"favoritos" : [],
+		"ComprasAnteriores" : []
 	},
 	{
 		"id": 37007438,
@@ -123,7 +139,9 @@
 			"calle": "ALBERDI 965",
 			"codigoPostar": 5016,
 			"Localidad": "CORDOBA"
-		}
+		},
+		"favoritos" : [],
+		"ComprasAnteriores" : []
 	},
 	{
 		"id": 20010679,
@@ -137,7 +155,9 @@
 			"calle": "MITRE 1660",
 			"codigoPostar": 1057,
 			"Localidad": "BUENOS AIRES"
-		}
+		},
+		"favoritos" : [],
+		"ComprasAnteriores" : []
 	},
 	{
 		"id": 37003192,
@@ -151,7 +171,9 @@
 			"calle": "MITRE 554",
 			"codigoPostar": 4600,
 			"Localidad": "JUJUY"
-		}
+		},
+		"favoritos" : [],
+		"ComprasAnteriores" : []
 	},
 	{
 		"id": 60001722,
@@ -165,7 +187,9 @@
 			"calle": "LIBERTAD 168",
 			"codigoPostar": 1098,
 			"Localidad": "BUENOS AIRES"
-		}
+		},
+		"favoritos" : [],
+		"ComprasAnteriores" : []
 	},
 	{
 		"id": 37001837,
@@ -179,7 +203,9 @@
 			"calle": "VAQUERIAS 116",
 			"codigoPostar": 1602,
 			"Localidad": "BUENOS AIRES"
-		}
+		},
+		"favoritos" : [],
+		"ComprasAnteriores" : []
 	},
 	{
 		"id": 2005411,
@@ -193,7 +219,9 @@
 			"calle": "CANGALLO 2222",
 			"codigoPostar": 1640,
 			"Localidad": "BUENOS AIRES"
-		}
+		},
+		"favoritos" : [],
+		"ComprasAnteriores" : []
 	},
 	{
 		"id": 17009954,
@@ -207,7 +235,9 @@
 			"calle": "B°JOSE DOLORES M A - C 4",
 			"codigoPostar": 3080,
 			"Localidad": "SANTA FE"
-		}
+		},
+		"favoritos" : [],
+		"ComprasAnteriores" : []
 	},
 	{
 		"id": 20007496,
@@ -221,7 +251,9 @@
 			"calle": "LUIS BRAILE 3666",
 			"codigoPostar": 4400,
 			"Localidad": "BUENOS AIRES"
-		}
+		},
+		"favoritos" : [],
+		"ComprasAnteriores" : []
 	},
 	{
 		"id": 37008820,
@@ -235,7 +267,9 @@
 			"calle": "MENDOZA 997",
 			"codigoPostar": 4600,
 			"Localidad": "JUJUY"
-		}
+		},
+		"favoritos" : [],
+		"ComprasAnteriores" : []
 	},
 	{
 		"id": 25008060,
@@ -249,7 +283,9 @@
 			"calle": "GUITIERREZ 3458",
 			"codigoPostar": 1748,
 			"Localidad": "BUENOS AIRES"
-		}
+		},
+		"favoritos" : [],
+		"ComprasAnteriores" : []
 	},
 	{
 		"id": 11004143,
@@ -263,7 +299,9 @@
 			"calle": "PASAJE QUINTANA 4645",
 			"codigoPostar": 5300,
 			"Localidad": "LA RIOJA"
-		}
+		},
+		"favoritos" : [],
+		"ComprasAnteriores" : []
 	},
 	{
 		"id": 18001207,
@@ -277,7 +315,9 @@
 			"calle": "URQUIZA 1947",
 			"codigoPostar": 3300,
 			"Localidad": "MISIONES"
-		}
+		},
+		"favoritos" : [],
+		"ComprasAnteriores" : []
 	},
 	{
 		"id": 37005075,
@@ -291,7 +331,9 @@
 			"calle": "CONESA 1676",
 			"codigoPostar": 5531,
 			"Localidad": "MENDOZA"
-		}
+		},
+		"favoritos" : [],
+		"ComprasAnteriores" : []
 	},
 	{
 		"id": 26002039,
@@ -305,7 +347,9 @@
 			"calle": "Bº 50 VIV NORTE - 1º ETAPA - CASA Nº 20",
 			"codigoPostar": 1096,
 			"Localidad": "BUENOS AIRES"
-		}
+		},
+		"favoritos" : [],
+		"ComprasAnteriores" : []
 	},
 	{
 		"id": 646003245,
@@ -319,7 +363,9 @@
 			"calle": "MENDOZA 2190",
 			"codigoPostar": 4700,
 			"Localidad": "CATAMARCA"
-		}
+		},
+		"favoritos" : [],
+		"ComprasAnteriores" : []
 	},
 	{
 		"id": 37008449,
@@ -333,7 +379,9 @@
 			"calle": "BUSCHIAZZO N° 1743",
 			"codigoPostar": 1868,
 			"Localidad": "BUENOS AIRES"
-		}
+		},
+		"favoritos" : [],
+		"ComprasAnteriores" : []
 	},
 	{
 		"id": 37005551,
@@ -347,7 +395,9 @@
 			"calle": "Bª MUNICIPAL M:45 C:19",
 			"codigoPostar": 1430,
 			"Localidad": "BUENOS AIRES"
-		}
+		},
+		"favoritos" : [],
+		"ComprasAnteriores" : []
 	},
 	{
 		"id": 37002541,
@@ -361,7 +411,9 @@
 			"calle": "RIO PARANA 1678",
 			"codigoPostar": 1231,
 			"Localidad": "BUENOS AIRES"
-		}
+		},
+		"favoritos" : [],
+		"ComprasAnteriores" : []
 	},
 	{
 		"id": 60008600,
@@ -375,7 +427,9 @@
 			"calle": "ELPIDIO GONZALEZ 5686",
 			"codigoPostar": 1704,
 			"Localidad": "BUENOS AIRES"
-		}
+		},
+		"favoritos" : [],
+		"ComprasAnteriores" : []
 	},
 	{
 		"id": 37010486,
@@ -389,7 +443,9 @@
 			"calle": "RUMIPAL 2742",
 			"codigoPostar": 1614,
 			"Localidad": "BUENOS AIRES"
-		}
+		},
+		"favoritos" : [],
+		"ComprasAnteriores" : []
 	},
 	{
 		"id": 37005407,
@@ -403,7 +459,9 @@
 			"calle": "SAN JUAN 521",
 			"codigoPostar": 1687,
 			"Localidad": "BUENOS AIRES"
-		}
+		},
+		"favoritos" : [],
+		"ComprasAnteriores" : []
 	},
 	{
 		"id": 61007154,
@@ -417,7 +475,9 @@
 			"calle": "QUINQUELA MARTIN 478",
 			"codigoPostar": 1618,
 			"Localidad": "BUENOS AIRES"
-		}
+		},
+		"favoritos" : [],
+		"ComprasAnteriores" : []
 	},
 	{
 		"id": 243010120,
@@ -431,7 +491,9 @@
 			"calle": "FONAVI DON BOSCO T 6 P 1 DPTO 257",
 			"codigoPostar": 1003,
 			"Localidad": "CAPITAL FEDERAL"
-		}
+		},
+		"favoritos" : [],
+		"ComprasAnteriores" : []
 	},
 	{
 		"id": 9007636,
@@ -445,7 +507,9 @@
 			"calle": "B° OBRERO RAWSON - CATAMARCA 139 SUR",
 			"codigoPostar": 1868,
 			"Localidad": "BUENOS AIRES"
-		}
+		},
+		"favoritos" : [],
+		"ComprasAnteriores" : []
 	},
 	{
 		"id": 6001850,
@@ -459,6 +523,8 @@
 			"calle": "JUAN LUIS NOUGUES 518",
 			"codigoPostar": 5000,
 			"Localidad": "CORDOBA"
-		}
+		},
+		"favoritos" : [],
+		"ComprasAnteriores" : []
 	}
 ]
