@@ -8,39 +8,40 @@
     <body>
         <%-include('./partials/header') %>
         <main>
-                <form action="/" method="POST">
-                    <p>Nombre</p>
+            <form action="/" method="POST">
+                <div class = "formuItem">
+                    <label>Nombre</label>
                     <input type="text" name="name" class="inputt">
-                    <br>
-                    <br>
-                    <p>Email</p>
+                </div>
+                <div class = "formuItem">
+                    <label>Email</label>
                     <input type="email" name="email" class="inputt">
-                    <br>
-                    <br>
-                    <p>Telefono</p>
+                </div>
+                <div class = "formuItem">
+                    <label>Telefono</label>
                     <input type="number" name="telefono" class="inputt">
-                    <br>
-                    <br>    
-                    <p>Fecha de Nacimiento</p>
+                </div>
+                <div class = "formuItem">
+                    <label>Fecha de Nacimiento</label>
                     <input type="date" name="birth_date" id="birth_date" class="inputt">
-                <br>
-                <br>
-                <input type="password" name="pass" placeholder="Elegí tu contraseña" class="inputt">
-                <br>
-                <br>
-                <input type="password" name="pass_confirm" placeholder="Confirmá tu contraseña" class="inputt">
-                <br>
-                <br>
+                </div>
+                <div class = "formuItem">
+                    <label for="password"> elige tu contraseña</label>
+                    <input type="password" name="pass" placeholder="Elegí tu contraseña" class="inputt"></div>
+                <div class = "formuItem">
+                    <label for="password"> repite tu contraseña</label>
+                    <input type="password" name="pass_confirm" placeholder="Confirmá tu contraseña" class="inputt">
+                </div>
+
                 <input type="submit" value="Crear" class="button crear">
-                <br>
-                <br>
-                <p>¿Ya tenes una cuenta? <a href="/login">Inicia Sesión</a></p>
-                <br>
-                <br>
-                <input class="Facebook" type="submit" value="Ingresar con Facebook">
-                <br>
-                <input class="Google" type="submit" value="Ingresar con Google">
-                <br>
+
+                <label class="cuentaRegistrada">¿Ya tenes una cuenta? <a href="/login">Inicia Sesión</a></label>
+                <div class="redes">
+                    <input class="Facebook" type="submit" value="Ingresar con Facebook">
+                    <input class="Google" type="submit" value="Ingresar con Google">
+                </div>
+                
+                
             </form>
         </main>
         <%-include('./partials/footer') %>

@@ -12,6 +12,7 @@ const app = express();
 const publicPath = path.join(__dirname,"../","public");
 app.use(express.static(publicPath));
 app.use(methodOverride('_method'));
+app.use(express.urlencoded({extended : false}));
 
 app.set("view engine","ejs");
 app.set("views","./src/views");
