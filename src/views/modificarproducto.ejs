@@ -10,12 +10,12 @@
         <img src = "/img/product/<%=product.img[0] %>">
         <div class = "descripcion">
             <h1> <%= product.nombre  %> </h1>
-            <h2><%= product.descripcion %> </h2>
+            <h2> <%= product.descripcion %> </h2>
             <ul>
                 <% if(product.datosDestacados ){ %> 
-                <% for(detalles of product.datosDestacados){ %>
-                    <li> <%= detalles %> </li>     
-                <% } %> 
+                    <% for(detalles of product.datosDestacados){ %>
+                        <li> <%= detalles %> </li>     
+                    <% } %> 
                 <% } %>  
             </ul>
         </div>

@@ -41,9 +41,15 @@ const controlador = {
         console.log(req.body);
         products.forEach(producto => {
             if(producto.id == req.params.id){
-                
+                producto.name = req.body.name;
+                producto.descripcion = req.body.descripcion;
+                producto.precio = req.body.precio;
+                producto.foto = req.body.foto;
+                producto.formaDePago = req.body.formaDePago;
             }
         });
+        fuctionGeneric.subirArchivo(dataBase,products);
+        res.redirect(`/product`);
     },
 
     delete: (req,res) => {
