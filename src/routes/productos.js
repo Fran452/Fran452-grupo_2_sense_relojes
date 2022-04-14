@@ -17,4 +17,6 @@ router.get('/:id/editProducto',productoController.editProduct);
 router.get('/:id',productoController.productFinish);
 */
 
+router.delete('/:id/deleteProduct',productoController.deleteProduct);
+
 module.exports = router

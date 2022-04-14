@@ -3,6 +3,7 @@ const path = require("path");
 const rutasUser = require("./routes/user")
 const rutasProductos = require("./routes/productos")
 const rutasMain = require("./routes/main")
+const methodOverride = require ("method_override");
 
 
 const PORT = process.env.PORT || 3000;
@@ -28,4 +29,6 @@ app.use('/',rutasMain);
 app.use('/user', rutasUser);
 
 app.use('/produc',rutasProductos);
+
+app.use(methodOverride("_method"));
 
