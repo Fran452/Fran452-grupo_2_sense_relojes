@@ -1,7 +1,10 @@
 /************* Metodos requeridos ****************/ 
 const express = require("express");
 const path = require("path");
-const methodOverride = require('method-override');
+const rutasUser = require("./routes/user")
+const rutasProductos = require("./routes/productos")
+const rutasMain = require("./routes/main")
+const methodOverride = require ("method_override");
 
 /*********** Rutas inportada ***************************/
 const rutasUser = require("./routes/user");
@@ -21,7 +24,6 @@ app.use(express.urlencoded({extended : false}));
 app.set("view engine","ejs");
 app.set("views","./src/views");
 
-
 /***************** Rutas **********************/
 app.use('/',rutasMain);
 
@@ -30,6 +32,8 @@ app.use('/user', rutasUser);
 app.use('/product',rutasProductos);
 
 /**************** Inicio de apliacion ***************************/
+
 app.listen(PORT, () => {
     console.log("Servidor en funcionamiento en el puerto "+ PORT);
 });
+

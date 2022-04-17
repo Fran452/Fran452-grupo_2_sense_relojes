@@ -1,9 +1,15 @@
 const path = require("path");
-
 const fuctionGeneric = require("../generalFuction");
 const dataBase = path.join(__dirname,"../database/product.json")
 
 const controlador = {
+//  HEAD
+    index:(req,res) => {res.render("productosGeneral")},
+    id:(req,res) => {res.render("productDetail")},
+    create: (req,res) => {res.render("agregarProducto")},
+    editProduct: (req,res) => {res.render("modificarproducto")},
+    deleteProduct: (req,res) => {res.render("eliminarproducto")},
+
     index:(req,res) => {
         let productos = fuctionGeneric.archivoJSON(dataBase);
         res.render("productosGeneral",{productos : productos});
@@ -53,8 +59,10 @@ const controlador = {
     },
 
     delete: (req,res) => {
-
+        let productoSeleccionado = fuctionGeneric.archivoJSON(dataBase).find(producto => producto.id == req.params.id )
+        res.render("eliminarproducto",{product : productoSeleccionado});
     }
+
 }
 module.exports = controlador;
 

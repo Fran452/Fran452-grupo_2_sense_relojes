@@ -36,4 +36,5 @@ router.put('/:id/edit',productoController.editProductFuction);
 // Eliminar producto
 router.delete('/:id/delete',productoController.delete)
 
+
 module.exports = router
