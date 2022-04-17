@@ -3,19 +3,15 @@ const fuctionGeneric = require("../generalFuction");
 const dataBase = path.join(__dirname,"../database/product.json")
 
 const controlador = {
-//  HEAD
-    index:(req,res) => {res.render("productosGeneral")},
-    id:(req,res) => {res.render("productDetail")},
-    create: (req,res) => {res.render("agregarProducto")},
-    editProduct: (req,res) => {res.render("modificarproducto")},
-    deleteProduct: (req,res) => {res.render("eliminarproducto")},
+
 
     index:(req,res) => {
-        let productos = fuctionGeneric.archivoJSON(dataBase);
+        let productos = fuctionGeneric.archivoJSON(dataBase).filter(producto => producto.show);
         res.render("productosGeneral",{productos : productos});
     },
+
     id:(req,res) => {
-        let productoSeleccionado = fuctionGeneric.archivoJSON(dataBase).find(producto => producto.id == req.params.id )
+        let productoSeleccionado = fuctionGeneric.archivoJSON(dataBase).find(producto => producto.id == req.params.id)
         res.render("productDetail",{producto:productoSeleccionado, productRecomiend : fuctionGeneric.archivoJSON(dataBase)})
     },
 
@@ -33,7 +29,6 @@ const controlador = {
             show : true
         }
         products.push(newProduct);
-        products = fuctionGeneric.ordenarSegundID(products);
         fuctionGeneric.subirArchivo(dataBase,products);
         res.redirect(`/product/${newProduct.id}`);
     },
@@ -42,6 +37,7 @@ const controlador = {
         let productoSeleccionado = fuctionGeneric.archivoJSON(dataBase).find(producto => producto.id == req.params.id )
         res.render("modificarproducto",{product : productoSeleccionado});
     },
+    
     editProductFuction: (req,res) => {
         let products =  fuctionGeneric.archivoJSON(dataBase);
         console.log(req.body);
@@ -59,7 +55,12 @@ const controlador = {
     },
 
     delete: (req,res) => {
-        let productoSeleccionado = fuctionGeneric.archivoJSON(dataBase).find(producto => producto.id == req.params.id )
+        let listaSinProducto = fuctionGeneric.archivoJSON(dataBase).forEach(producto => {
+            if(producto.id == req.params.id){
+                producto.show = false;
+            }
+        })
+        fuctionGeneric.subirArchivo(dataBase,listaSinProducto);
         res.render("eliminarproducto",{product : productoSeleccionado});
     }
 
