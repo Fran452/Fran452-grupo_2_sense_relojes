@@ -3,7 +3,7 @@ const express = require("express");
 const path = require("path");
 const methodOverride = require('method-override');
 
-/*********** Rutas exportadas ***************************/
+/*********** Rutas inportada ***************************/
 const rutasUser = require("./routes/user");
 const rutasProductos = require("./routes/productos");
 const rutasMain = require("./routes/main");
@@ -21,10 +21,6 @@ app.use(express.urlencoded({extended : false}));
 app.set("view engine","ejs");
 app.set("views","./src/views");
 
-/**************** Inicio de apliacion ***************************/
-app.listen(PORT, () => {
-    console.log("Servidor en funcionamiento en el puerto "+ PORT);
-});
 
 /***************** Rutas **********************/
 app.use('/',rutasMain);
@@ -33,3 +29,7 @@ app.use('/user', rutasUser);
 
 app.use('/product',rutasProductos);
 
+/**************** Inicio de apliacion ***************************/
+app.listen(PORT, () => {
+    console.log("Servidor en funcionamiento en el puerto "+ PORT);
+});
