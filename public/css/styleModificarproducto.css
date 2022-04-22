@@ -33,7 +33,14 @@ main{
         flex-direction: column;
         margin-top: 2%;
     }
-       
+        #botonDeEliminar{
+            width: 100%;
+        }
+        #botonDeEliminar:hover{
+            box-shadow: 0px 0px 0px rgba(116, 2, 2, 0.746);
+            color: #fff;
+            transform: translateY(0);
+        }   
     main form{
         padding: 20px;
         text-align: center;
@@ -115,6 +122,9 @@ main{
         }
             #botonesUno .button{
                 width: 40%;
+            }
+            #botonesUno .button button{
+                width: 100%;
             }
         main form{
             width: 90%;

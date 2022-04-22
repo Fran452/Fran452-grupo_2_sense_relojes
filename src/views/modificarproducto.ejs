@@ -7,40 +7,50 @@
 <body>
     <%-include('./partials/header') %>
     <main>
-        <img src = "/img/<%=product.img %>">
+        <img src = "/img/product/<%=product.img[0] %>">
         <div class = "descripcion">
             <h1> <%= product.nombre  %> </h1>
-            <h2><%= product.descripcion %> </h2>
+            <h2> <%= product.descripcion %> </h2>
             <ul>
-                <% for(detalles of product.datosDestacados){ %>
-                    <li> <%= detaalles %> </li>     
+                <% if(product.datosDestacados ){ %> 
+                    <% for(detalles of product.datosDestacados){ %>
+                        <li> <%= detalles %> </li>     
+                    <% } %> 
                 <% } %>  
             </ul>
         </div>
+
         <div id = botonesUno>
             <button type="button" class = "button"> sin stock</button>
-            <form action="/delete/<%= producto.id %>?_method=DELETE" method="post"> 
-                <button type="submit" class = "button"> eliminar producto</button>
+            <form action="/delete/<%= product.id %>?_method=DELETE" method="post"  class = "button"> 
+                <button type="submit" class = "button" id = "botonDeEliminar"> eliminar producto</button>
             </form>
         </div>
-        <form action="/edit/<%= product.id%>?_method=PUT " method="post">
-            <label for="newMoney">precio</label>
-            <input type="number" name="precio" value = "<%= producto.precio %>" >
 
-            <label for = "newPhoto">cambiar foto</label>
-            <input type="file" accept = ".jpg, .png" name = "foto" value = "<%= producto.img %>">
+        <form action="/product/<%= product.id%>/edit?_method=PUT" method="post">
+            <label for="nombre">nombre</label>
+            <input type="text" name="nombre" value = "<%= product.nombre %>" >
+
+            <label for="descripcion">descripcion</label>
+            <input type="text" name="descripcion" value = "<%= product.descripcion %>" >
+
+            <label for="precio">precio</label>
+            <input type="number" name="precio" value = "<%= product.precio %>" >
+
+            <label for = "foto">cambiar foto</label>
+            <input type="file" accept = ".jpg, .png" name = "foto" value = "<%= product.img %>">
 
             <label for = "formaDePago"> Formas de pago aceptadas</label>
             <div> 
                 <div>
-                    <input type="checkbox" name = "efectivo" <%= product.formasDePago.includes('efectivo')? "selected" : null%> >
+                    <input type="checkbox" name = "efectivo" <%= product.formaDePago.includes('efectivo')? "checked" : null%> >
                     <label for="efectivo">efectivo</label>
                 </div>
                 <div>
-                    <input type="checkbox"  name = "tarjeta" <%= product.formasDePago.includes('tarjeta')? "selected" : null%> >
+                    <input type="checkbox"  name = "tarjeta" <%= product.formaDePago.includes('tarjeta')? "checked" : null%> >
                     <label for="tarjeta">tarjeta</label></div>
                 <div>
-                    <input type="checkbox"  name = "cuotas" <%= product.formasDePago.includes('cuotas')? "selected" : null%> >
+                    <input type="checkbox"  name = "cuotas" <%= product.formaDePago.includes('cuotas')? "checked" : null%> >
                     <label for="cuotas">cuotas</label>
                 </div>  
             </div>
