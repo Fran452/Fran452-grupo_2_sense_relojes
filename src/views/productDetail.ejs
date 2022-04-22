@@ -9,37 +9,35 @@
     <main>
         <div id ="productosEnSI">
             <div id = "fotosProducto">
-                <img src = "/img/150x150.png"name= "logo" id="imagenProducto">
+                <img src = "/img/product/<%= producto.img[0] %>" name= "logo" id="imagenProducto">
                 <div class = "imagenes-descriptivas">
-                    <img src = "/img/150x150.png"name= "logo">
-                    <img src = "/img/150x150.png"name= "logo">
-                    <img src = "/img/150x150.png"name= "logo">
-                    <img src = "/img/150x150.png"name= "logo">
+                    <% if(producto.img.length - 1 > 0){ %> 
+                        <% for(let i = 1 ; i < producto.img.length;i++){ %> 
+                            <img src = "/img/product/<%=producto.img[i]%>" name= "logo">
+                        <% } %>
+                    <% } %> 
                 </div>
             </div>
             <div class="informacion">
-                <h1> reloj X3433</h1>
-                <p id ="infoProducto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita maxime eius alias accusantium velit natus voluptas fuga doloremque! Vitae earum rerum totam odit recusandae alias natus dolorum corporis eum voluptate.</p>
-                <div class = "descripcion">
-                    <h2>Descripcion</h2>
-                    <ul class = "infoInterna">
-                        <li>diametro</li>
-                        <li>alto</li>
-                        <li>material</li>
-                        <li>sumergible</li>
-                        <li>aguja</li>
-                        <li>correa</li>
-                        <li>ancho de correa</li>
-                        <li>correa intercambiable</li>
-                    </ul>
-                </div>
+                <h1> <%= producto.nombre %></h1>
+                <p id ="infoProducto"><%= producto.descripcion %></p>
+                    <div class = "descripcion">
+                        <h2>Descripcion</h2>
+                        <ul class = "infoInterna">
+                            <% if(producto.datosDestacados){ %> 
+                                <% for(dato of producto.datosDestacados){ %> 
+                                    <li><%= dato %></li>
+                                <% } %> 
+                            <% } %> 
+                        </ul>
+                    </div>
                 
                 <div class = "formas-de-pago descripcion" >
                     <h2>Forma de pago</h2>
                     <ul class = "infoInterna">
-                        <li>cuotas</li>
-                        <li>targetas</li>
-                        <li>efectivo</li>
+                        <% for(pagos of producto.formaDePago){ %> 
+                            <li><%= pagos %></li>
+                        <% } %> 
                     </ul>
                 </div>
 
@@ -57,39 +55,36 @@
                     </ul>
                 </div>
                 <div id = "comprarProducto">
-                    <p> Precio : $XXXX</p>
+                    <p> Precio : <%= producto.precio %>  </p>
                     <button type="button" class="button carrito"><i class="fa-solid fa-cart-shopping"></i></button>
                 </div>
             </div>
         </div>
         <div class="productos-recomendados">
             <section> 
-                <a href="#"><img src = "/img/150x150.png"name= "logo"></a>
+                <a href="<%= productRecomiend[0].id %>"><img src = "/img/product/<%= productRecomiend[0].img[0] %> "name= "logo"></a>
                 <div class="descripcion-recomendado">
-                    <h3>nombre del producto</h3>
-                    <p>descripcion</p>
+                    <h3><%= productRecomiend[0].nombre %></h3>
+                    <p><%= productRecomiend[0].descripcion %></p>
                 </div>
             </section>
 
             <section> 
-                <a href="#"><img src = "/img/150x150.png"name= "logo"></a>
+                <a href="<%= productRecomiend[1].id %>"><img src = "/img/product/<%= productRecomiend[1].img[0] %> "name= "logo"></a>
                 <div class="descripcion-recomendado">
-                    <h3>nombre del producto</h3>
-                    <p>descripcion</p>
+                    <h3><%= productRecomiend[1].nombre %></h3>
+                    <p><%= productRecomiend[1].descripcion %></p>
                 </div>
             </section>
 
             <section id = "tercer-Producto"> 
-                <a href="#"><img src = "/img/150x150.png"name= "logo"></a>
+                <a href="<%= productRecomiend[2].id %>"><img src = "/img/product/<%= productRecomiend[2].img[0] %>"name= "logo"></a>
                 <div class="descripcion-recomendado">
-                    <h3>nombre del producto</h3>
-                    <p>descripcion</p>
+                    <h3><%= productRecomiend[2].nombre %></h3>
+                    <p><%= productRecomiend[2].descripcion %></p>
                 </div>
             </section>
 
-        </div>
-        <div class="baners">
-            <img src="/img/350x150.png">
         </div>
     </main>
     <%-include('./partials/footer') %>

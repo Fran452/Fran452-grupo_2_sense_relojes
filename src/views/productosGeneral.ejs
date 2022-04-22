@@ -21,54 +21,14 @@
             </select>
         </div>
         <div class="MainProductos"> 
+            <% for(producto of productos){ %> 
             <article class="productoDestacado">
-                <a href="/product/4"><img class="imagenProductoDestacado" src="/img/Onix S.jpg"></a>
-                <h3>Onix</h3>
-                <p>Silver</p>
-                <h4>$1700</h4>
+                <a href="/product/<%= producto.id %> "><img class="imagenProductoDestacado" src="/img/product/<%= producto.img[0] %> "></a>
+                <h3><%= producto.nombre %></h3>
+                <p><%= producto.modelo %></p>
+                <h4><%= producto.precio %></h4>
             </article>
-            <article class="productoDestacado">
-                <a href="/product/4"><img class="imagenProductoDestacado" src="/img/Onix S.jpg"></a>
-                <h3>Onix</h3>
-                <p>Silver</p>
-                <h4>$1700</h4>
-            </article>
-            <article class="productoDestacado">
-                <a href="/product/"><img class="imagenProductoDestacado" src="/img/Onix S.jpg"></a>
-                <h3>Onix</h3>
-                <p>Silver</p>
-                <h4>$1700</h4>
-            </article>
-            <article class="productoDestacado">
-                <a href="/product/4"><img class="imagenProductoDestacado" src="/img/Onix S.jpg"></a>
-                <h3>Onix</h3>
-                <p>Silver</p>
-                <h4>$1700</h4>
-            </article>
-            <article class="productoDestacado">
-                <a href="/product/4"><img class="imagenProductoDestacado" src="/img/Onix S.jpg"></a>
-                <h3>Onix</h3>
-                <p>Silver</p>
-                <h4>$1700</h4>
-            </article>
-            <article class="productoDestacado">
-                <a href="/product/4"><img class="imagenProductoDestacado" src="/img/Onix S.jpg"></a>
-                <h3>Onix</h3>
-                <p>Silver</p>
-                <h4>$1700</h4>
-            </article>
-            <article class="productoDestacado">
-                <a href="/product/4"><img class="imagenProductoDestacado" src="/img/Onix S.jpg"></a>
-                <h3>Onix</h3>
-                <p>Silver</p>
-                <h4>$1700</h4>
-            </article>
-            <article class="productoDestacado">
-                <a href="/product/4"><img class="imagenProductoDestacado" src="/img/Onix S.jpg"></a>
-                <h3>Onix</h3>
-                <p>Silver</p>
-                <h4>$1700</h4>
-            </article>
+            <% } %> 
         </div>
         
 

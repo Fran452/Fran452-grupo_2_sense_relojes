@@ -23,3 +23,25 @@ Dejar de hacer nada ya que la metodologia actual funciono correctamente
 - distribuir mejor el tiempo
 ### dejar de hacer
 - en general nada, solo agregar las cosas del item anterior
+
+## Tercer Sprint
+### que hicimos bien
+- Cominucacion
+- divicion de tareas
+### que hicimos mal
+- hasta el momento no concideramos que hicieromas nada mal
+### deberían empezar a hacer
+- dividir un poco mas las tareas pero nada mas alla de eso
+### dejar de hacer
+- nada
+## Cuarto Sprint
+### que hicimos bien
+- Cominucacion
+- divicion de tareas
+- lograrlo en el tiempo esperado/ antes 
+### que hicimos mal
+- hasta el momento no concideramos que hicieromas nada mal
+### deberían empezar a hacer
+- dividir un poco mas las tareas pero nada mas alla de eso
+### dejar de hacer
+- nada

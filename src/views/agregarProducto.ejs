@@ -10,45 +10,40 @@
     <main>
         <div>
             <h2> Nuevo Producto </h2>
-            <form action="/" method="POST">
+            <form action="/product/new" method="POST" enctype="multipart/form-data">
             
-                <label for="Nombre">Título Producto: </label>
-                <input class="Controles" type="text" name="Nombre" id="Nombre">
+                <label for="nombre">Título Producto: </label>
+                <input class="Controles" type="text" name="nombre" id="Nombre">
 
-                <select  class="button Productos" name="menu">
-                    <option> Relojes </option>
-                    <option value="2">Pulseras</option>
-                    <option value="3">Lentes</option>
+                <select  class="button Productos" name="tipo">
+                    <option value = "Reojes"> Relojes </option>
+                    <option value="Pulseras">Pulseras</option>
+                    <option value="Lentes">Lentes</option>
                 </select>
 
                 <label for="Imagen de producto">Imágen de Producto</label>
-                <input id = "imagen" type="file" name="Adjuntar Imagen" accept=".pdf,.jpg,.png" multiple /> 
-
-                <label for="Marca">Marca: </label>
-                <input class="Controles" type="text" name="Marca">
-
-                <label for="Modelo">Modelo: </label>
-                <input class="Controles" type="text" name="Modelo">
+                <input name = "img"id = "imagen" type="file" name="Adjuntar Imagen" accept=".pdf,.jpg,.png" multiple /> 
 
                 <label for="Descripcion">Descripción: </label>
-                <input class="Controles" type="text" name="Descripcion">
+                <input class="Controles" type="text" name="descripcion">
 
                 <label for="Precio">Precio</label> 
-                <input class="Controles"  type="number" name="Precio">
+                <input class="Controles"  type="number" name="precio">
 
                 <label for="Cantidad">Cantidad</label> 
-                <input class="Controles"  type="number" name="Cantidad">
+                <input class="Controles"  type="number" name="cantidad">
 
-                <div id = "formaDePagoDiv">
+                <div id = "formaDePagoDiv" >
                     <label for="Forma de Pago">Forma de Pago Aceptada </label> 
-                    <input class="check"  type="checkbox" name="efectivo" value="Ef">
+                    <input class="check"  type="checkbox" name="formaDePago" value="efectivo">
                     <label for="Forma de Pago" class = "formaDePago">Efectivo</label> 
-                    <input class="check"  type="checkbox" name="tarjetaD" value="TD">
+                    <input class="check"  type="checkbox" name="formaDePago" value="targetaD">
                     <label for="Forma de Pago" class = "formaDePago"> Tarjeta Débito</label> 
-                    <input class="check"  type="checkbox" name="tarjetaC" value="TC">   
+                    <input class="check"  type="checkbox" name="formaDePago" value="targetaC">   
                     <label for="Forma de Pago" class = "formaDePago">Tarjeta Crédito  </label> 
                 </div>
 
+                
                 <div id = botonesEnvio>
                     <input class="button" type="submit" value="Enviar">
                     <input class="button" type="reset" value="Cancelar">

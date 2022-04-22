@@ -10,5 +10,6 @@ router.get('/register',userController.register);
 router.get('/',userController.login);
 
 router.get('/login',userController.login);
+/*router.post('/login',userController.fuctionloLogin);*/
 
 module.exports = router

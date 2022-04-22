@@ -69,13 +69,11 @@
     }
 
     .MainProductos{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: space-around;
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(30%  ,1fr));
     }
         .productoDestacado{
-            width: 30%;
+            width: 90%;
         }
 
         .MainProductos  section:hover{
