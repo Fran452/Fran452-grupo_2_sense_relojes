@@ -109,10 +109,13 @@ main{
             }
             main .descripcion h2{
                 width: 80%;
+                font-size: 100%;
                 margin: auto;
+                margin-bottom: 3%;
             }
             main .descripcion ul li{
                 text-align:justify;
+                font-size: 100%;
             }
         #botonesUno{
             width: 60%;

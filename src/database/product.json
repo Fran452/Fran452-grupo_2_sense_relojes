@@ -167,21 +167,5 @@
     ],
     "show": false,
     "foto": ""
-  },
-  {
-    "id": 9,
-    "nombre": "Hades Acero",
-    "tipo": "Reojes",
-    "descripcion": "francisco lema estevez",
-    "precio": "23000",
-    "cantidad": "23",
-    "formaDePago": [
-      "efectivo"
-    ],
-    "datosDetacados": [],
-    "img": [
-      "1650937661285.png"
-    ],
-    "show": false
   }
 ]
