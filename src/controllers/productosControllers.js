@@ -21,9 +21,11 @@ const controlador = {
     createFuction: (req,res) => {
         let products =  fuctionGeneric.archivoJSON(dataBase);
         let img = req.files.map(foto => foto.filename).length > 0 ? req.files.map(foto => foto.filename) : ["default-image.png","default-image.png","default-image.png","default-image.png"];
+        let formaDePago = [].concat(req.body.formaDePago)
         let newProduct = {
             id : fuctionGeneric.crearID(products),
             ... req.body,
+            formaDePago : formaDePago,
             datosDetacados : [],
             img :  img,
             show : true
@@ -40,7 +42,6 @@ const controlador = {
     
     editProductFuction: (req,res) => {
         let products =  fuctionGeneric.archivoJSON(dataBase);
-        console.log(req.body);
         products.forEach(producto => {
             if(producto.id == req.params.id){
                 producto.name = req.body.name;
@@ -55,13 +56,14 @@ const controlador = {
     },
 
     delete: (req,res) => {
-        let listaSinProducto = fuctionGeneric.archivoJSON(dataBase).forEach(producto => {
+        let listaSinProducto = fuctionGeneric.archivoJSON(dataBase)
+        listaSinProducto.forEach(producto => {
             if(producto.id == req.params.id){
                 producto.show = false;
             }
         })
         fuctionGeneric.subirArchivo(dataBase,listaSinProducto);
-        res.render("eliminarproducto",{product : productoSeleccionado});
+        res.redirect("/product");
     }
 
 }

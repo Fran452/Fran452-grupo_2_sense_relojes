@@ -22,7 +22,7 @@
 
         <div id = botonesUno>
             <button type="button" class = "button"> sin stock</button>
-            <form action="/delete/<%= product.id %>?_method=DELETE" method="post"  class = "button"> 
+            <form action="/product/<%=product.id%>/delete?_method=DELETE" method="post"  class = "button"> 
                 <button type="submit" class = "button" id = "botonDeEliminar"> eliminar producto</button>
             </form>
         </div>
@@ -43,14 +43,14 @@
             <label for = "formaDePago"> Formas de pago aceptadas</label>
             <div> 
                 <div>
-                    <input type="checkbox" name = "efectivo" <%= product.formaDePago.includes('efectivo')? "checked" : null%> >
+                    <input type="checkbox" name = "formaDePago" <%= product.formaDePago.includes('efectivo')? "checked" : null%> value = "Efectivo">
                     <label for="efectivo">efectivo</label>
                 </div>
                 <div>
-                    <input type="checkbox"  name = "tarjeta" <%= product.formaDePago.includes('tarjeta')? "checked" : null%> >
+                    <input type="checkbox"  name = "formaDePago" <%= product.formaDePago.includes('tarjeta')? "checked" : null%> value = "tarjeta">
                     <label for="tarjeta">tarjeta</label></div>
                 <div>
-                    <input type="checkbox"  name = "cuotas" <%= product.formaDePago.includes('cuotas')? "checked" : null%> >
+                    <input type="checkbox"  name = "formaDePago" <%= product.formaDePago.includes('cuotas')? "checked" : null%> value = "cuotas">
                     <label for="cuotas">cuotas</label>
                 </div>  
             </div>

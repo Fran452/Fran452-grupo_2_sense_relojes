@@ -155,8 +155,9 @@
     "precio": "233333",
     "cantidad": "23",
     "formaDePago": [
-      "efectivo",
-      "targetaD"
+      "Efectivo",
+      "tarjeta",
+      "on"
     ],
     "datosDetacados": [],
     "img": [
@@ -164,26 +165,23 @@
       "1649273314573.webp",
       "1649273314575.webp"
     ],
-    "show": true
+    "show": false,
+    "foto": ""
   },
   {
     "id": 9,
-    "nombre": "dwedwdwdwddw",
+    "nombre": "Hades Acero",
     "tipo": "Reojes",
-    "descripcion": "dwdwdwdwdwd",
-    "precio": "2222",
-    "cantidad": "2222",
+    "descripcion": "francisco lema estevez",
+    "precio": "23000",
+    "cantidad": "23",
     "formaDePago": [
-      "efectivo",
-      "targetaD"
+      "efectivo"
     ],
     "datosDetacados": [],
     "img": [
-      "Onix S.jpg",
-      "Onix S.jpg",
-      "Onix S.jpg",
-      "Onix S.jpg"
+      "1650937661285.png"
     ],
-    "show": true
+    "show": false
   }
 ]
