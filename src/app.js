@@ -1,10 +1,7 @@
 /************* Metodos requeridos ****************/ 
 const express = require("express");
 const path = require("path");
-const rutasUser = require("./routes/user")
-const rutasProductos = require("./routes/productos")
-const rutasMain = require("./routes/main")
-const methodOverride = require ("method_override");
+const methodOverride = require ("method-override");
 
 /*********** Rutas inportada ***************************/
 const rutasUser = require("./routes/user");
