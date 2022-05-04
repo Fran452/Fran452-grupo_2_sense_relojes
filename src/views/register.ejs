@@ -8,7 +8,7 @@
     <body>
         <%-include('./partials/header') %>
         <main>
-            <form action="/user/" method="POST">
+            <form action="/user/" method="POST" enctype="multipart/form-data">
                 <div class = "formuItem">
                     <label>Nombre</label>
                     <input type="text" name="nombre" class="inputt" placeholder="apellido, nombre" required>
@@ -37,6 +37,17 @@
                         <p class="error"> <%= error.fechaDeNacimiento.msg %> </p>
                     <% } %>
                 </div>
+
+
+                <div class = "formuItem">
+                    <label>Foto de Usuario</label>
+                    <input type="file" name="fotoDeUsuario" class="inputt" accept=".jpg, .png" >
+                    <% if(locals.error && error.fotoDeUsuario){ %>
+                        <p class="error"> <%= error.fotoDeUsuario.msg %> </p>
+                    <% } %>
+                </div>
+
+
                 <div class = "formuItem">
                     <label for="contraseña"> elige tu contraseña</label>
                     <input type="password" name="contraseña" placeholder="Elegí tu contraseña" class="inputt"></div>
