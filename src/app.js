@@ -8,6 +8,7 @@ const rutasUser = require("./routes/user");
 const rutasProductos = require("./routes/productos");
 const rutasMain = require("./routes/main");
 const { applyEachSeries } = require("async");
+const cookieParser = require("cookie-parser");
 
 /******** Diferentes funcionamientos ****************/
 const PORT = process.env.PORT || 3000;

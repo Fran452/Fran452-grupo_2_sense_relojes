@@ -8,39 +8,62 @@
     <body>
         <%-include('./partials/header') %>
         <main>
-                <form action="/" method="POST">
-                    <p>Nombre</p>
-                    <input type="text" name="name" class="inputt">
-                    <br>
-                    <br>
-                    <p>Email</p>
-                    <input type="email" name="email" class="inputt">
-                    <br>
-                    <br>
-                    <p>Telefono</p>
-                    <input type="number" name="telefono" class="inputt">
-                    <br>
-                    <br>    
-                    <p>Fecha de Nacimiento</p>
-                    <input type="date" name="birth_date" id="birth_date" class="inputt">
-                <br>
-                <br>
-                <input type="password" name="pass" placeholder="Elegí tu contraseña" class="inputt">
-                <br>
-                <br>
-                <input type="password" name="pass_confirm" placeholder="Confirmá tu contraseña" class="inputt">
-                <br>
-                <br>
+            <form action="/user/" method="POST" enctype="multipart/form-data">
+                <div class = "formuItem">
+                    <label>Nombre</label>
+                    <input type="text" name="nombre" class="inputt" placeholder="apellido, nombre" required>
+                    <% if(locals.error && error.nombre ){ %>
+                        <p class="error"> <%= error.nombre.msg %> </p>
+                    <% } %>  
+                </div>
+                <div class = "formuItem">
+                    <label>Email</label>
+                    <input type="email" name="email" class="inputt" placeholder="tumail@dominio.com" required>
+                    <% if(locals.error && error.email){ %>
+                        <p class="error"> <%= error.email.msg %> </p>
+                    <% } %>
+                </div>
+                <div class = "formuItem">
+                    <label>Telefono</label>
+                    <input type="number" name="telefono" class="inputt" placeholder="11 56223221" required>
+                    <% if(locals.error && error.telefono){ %>
+                        <p class="error"> <%= error.telefono.msg %> </p>
+                    <% } %>
+                </div>
+                <div class = "formuItem">
+                    <label>Fecha de Nacimiento</label>
+                    <input type="date" name="fechaDeNacimiento" id="birth_date" class="inputt">
+                    <% if(locals.error && error.fechaDeNacimiento){ %>
+                        <p class="error"> <%= error.fechaDeNacimiento.msg %> </p>
+                    <% } %>
+                </div>
+                <div class = "formuItem">
+                    <label>Foto de Usuario</label>
+                    <input type="file" name="fotoDeUsuario" class="inputt" accept=".jpg, .png" >
+                </div>
+                <div class = "formuItem">
+                    <label for="contraseña"> elige tu contraseña</label>
+                    <input type="password" name="contraseña" placeholder="Elegí tu contraseña" class="inputt"></div>
+                    <% if(locals.error && error.contraseña){ %>
+                        <p class="error"> <%= error.contraseña.msg %> </p>
+                    <% } %>
+                <div class = "formuItem">
+                    <label for="contraseñaConfirm"> repite tu contraseña</label>
+                    <input type="password" name="contraseñaConfirm" placeholder="Confirmá tu contraseña" class="inputt">
+                    <% if(locals.error && error.contraseñaConfirm){ %>
+                        <p class="error"> <%= error.contraseñaConfirm.msg %> </p>
+                    <% } %>
+                </div>
+
                 <input type="submit" value="Crear" class="button crear">
-                <br>
-                <br>
-                <p>¿Ya tenes una cuenta? <a href="/login">Inicia Sesión</a></p>
-                <br>
-                <br>
-                <input class="Facebook" type="submit" value="Ingresar con Facebook">
-                <br>
-                <input class="Google" type="submit" value="Ingresar con Google">
-                <br>
+
+                <label class="cuentaRegistrada">¿Ya tenes una cuenta? <a href="/login">Inicia Sesión</a></label>
+                <div class="redes">
+                    <input class="Facebook" type="submit" value="Ingresar con Facebook">
+                    <input class="Google" type="submit" value="Ingresar con Google">
+                </div>
+                
+                
             </form>
         </main>
         <%-include('./partials/footer') %>
