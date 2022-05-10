@@ -1,10 +1,10 @@
 const path = require("path");
 const {validationResult} = require("express-validator");
 const fs = require ("fs");
-const { dirname } = require("path");
-const bd = path.join(__dirname, ("../../database"))
-const bcrypts = require ("bcryptjs")
+const bcrypts = require ("bcryptjs");
 
+const db = path.join(__dirname,"../database/user.json");
+const functionGeneric = require ("generalFuction.js");
 // base datos ruta
 const controlador = {
     login:(req,res) => {
@@ -16,31 +16,36 @@ const controlador = {
     },
     processRegister : (req,res) => {
         let validaciones = validationResult(req);
+        let userInDb = funcionesGenerales.archivoJSON(db);
+        let mailRepetido = userInDb.find(user => req.body.email == user.email);
+
+        if (mailRepetido) {
+                validaciones.errors.email.msg = "Este email ya esta registrado";
+        };
 
         if(validaciones.errors.length > 0){
             return res.render("register",{error:validaciones.mapped()});
         }
-        return res.send("usuario validado")},
-    };
 
-    // // Mensaje por email duplicado
-    // let userInDb = user.findByField("email",req.body.email);
-    // if (userInDb) {
-    //     return res.render("user register form"),{
-    //         errors: {
-    //             email: {msg: "Este email ya esta registrado" }},
-    //     }
-    // };
+        let userToCreate = {
+            id : functionGeneric.crearID(userInDb),
+            ...req.body,
+            constraseña: bcrypts.hashSync(req.body.constraseña,10),     
+            img: req.file.filename
+        };
 
-    // let userToCreate = {
-    //     ...req.body,
-    //     constraseña: bcrypts.hashSync(req.body.constraseña,10)   
-    //     // imagen: req.file.filename
-    // };
+        //conecta con funcion login
+        if(req.body.guardarCook){
+            res.cookie(user,userToCreate.id,{maxAge: 90000000000000000000000000000000000})
+        }
+        req.session.user = userToCreate
+        userInDb.push(userToCreate);
+        funcionesGenerales.subirArchiv(db,userInDb);
 
-    // // conecta con funcion login
-    // let usuarioCreado = User.create (userToCreate); 
-    // return res.redirect ("/views/login")
+        return res.redirect ("/home");
+    }
+}
+
 
     
    
