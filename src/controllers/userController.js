@@ -64,15 +64,18 @@ const controlador = {
             res.cookie(user,userToCreate.id,{maxAge: 90000000000000000000000000000000000})
         }*/
 
-        /* 
-            -imagen generica
-            -validar mail duplicado
-        */
+        
         req.session.user = userToCreate
         userInDb.push(userToCreate);
         funcionesGenericas.subirArchivo(db,userInDb);
 
         return res.redirect ("/");
+        
+        /* 
+            -imagen generica
+            -validar mail duplicado
+            -campo de guardar perfil
+        */
     }
 }
 
