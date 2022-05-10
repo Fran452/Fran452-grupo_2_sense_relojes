@@ -19,6 +19,8 @@ const validaciones = [
         return true;
       }).withMessage('Las contraseñas no coinciden'),
 ]
+ 
+
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, path.resolve (__dirname,"../../public/img/user"))

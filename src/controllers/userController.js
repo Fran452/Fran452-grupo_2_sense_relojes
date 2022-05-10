@@ -3,6 +3,7 @@ const {validationResult} = require("express-validator");
 const fs = require ("fs");
 const { dirname } = require("path");
 const bd = path.join(__dirname, ("../../database"))
+const bcrypts = require ("bcryptjs")
 
 // base datos ruta
 const controlador = {
@@ -13,27 +14,40 @@ const controlador = {
     register:(req,res) => {
         res.render("register")
     },
-    newUser : (req,res) => {
+    processRegister : (req,res) => {
         let validaciones = validationResult(req);
 
         if(validaciones.errors.length > 0){
             return res.render("register",{error:validaciones.mapped()});
         }
-        return res.send("usuario validado")
-    }
-}
+        return res.send("usuario validado")},
+    };
 
-function archivoJSON(direccion){
-    return JSON.parse(fs.readFileSync(direccion, 'utf-8'));
-}
+    // // Mensaje por email duplicado
+    // let userInDb = user.findByField("email",req.body.email);
+    // if (userInDb) {
+    //     return res.render("user register form"),{
+    //         errors: {
+    //             email: {msg: "Este email ya esta registrado" }},
+    //     }
+    // };
 
-function subirArchivo(direccion,array){
-    fs.writeFileSync(direccion,JSON.stringify(array,null,2));
-}
+    // let userToCreate = {
+    //     ...req.body,
+    //     constraseña: bcrypts.hashSync(req.body.constraseña,10)   
+    //     // imagen: req.file.filename
+    // };
 
-function crearID(array){
-    return array[array.length - 1].id + 1
-}
+    // // conecta con funcion login
+    // let usuarioCreado = User.create (userToCreate); 
+    // return res.redirect ("/views/login")
+
+    
+   
+
+   
+
+  
 
 module.exports = controlador;
 

@@ -5,6 +5,7 @@ const methodOverride = require('method-override');
 const rutasUser = require("./routes/user");
 const rutasProductos = require("./routes/productos");
 const rutasMain = require("./routes/main");
+const cookieParser = require("cookie-parser");
 
 
 const PORT = process.env.PORT || 3000;
@@ -14,6 +15,7 @@ app.use(express.static(publicPath));
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended : false}));
 app.use(express.json());
+app.use(cookieParser());
 
 app.set("view engine","ejs");
 app.set("views","./src/views");
