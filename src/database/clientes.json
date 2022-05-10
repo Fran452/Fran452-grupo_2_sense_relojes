@@ -1,5 +1,21 @@
 [
 	{
+	"id": 9003886,
+	"nombre": "Francisco",
+	"apellido": "Lema",
+	"email": "franLema@gmail.com",
+	"telefono": 1141930102,
+	"fechaDeNacimiento": "5/3/1998",
+	"contraseña": "$2b$10$dNM3uQ2KUoTLZwaLmhEzXeAoXnluexMZHdtD5jx4k40eciabIspP6",
+	"Domicilio": {
+		"calle": "LIBERTAD 943",
+		"codigoPostar": 1278,
+		"Localidad": "BUENOS AIRES"
+	},
+	"favoritos" : [],
+	"ComprasAnteriores" : []
+	},
+	{
 		"id": 9003886,
 		"nombre": "JERONIMO",
 		"apellido": "QUIRICO",

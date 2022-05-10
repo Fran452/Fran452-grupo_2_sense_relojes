@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const bcrypt = require("bcrypt")
 
 function archivoJSON(direccion){
     return JSON.parse(fs.readFileSync(direccion, 'utf-8'));

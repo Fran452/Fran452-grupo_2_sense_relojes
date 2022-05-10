@@ -11,10 +11,10 @@
             <h3>Iniciar sesión</h3>
         </div>
 
-        <form action="/" method="get">
+        <form action="/user/login" method="POST">
             <div>
-                <input class="Usuario" type="text" name="user" placeholder="Nombre de Usuario">
-                <input class="Usuario" type="password" name="pass" placeholder="Elegí tu contraseña">
+                <input class="Usuario" type="text" name="user" placeholder = "Ingrese su email" required>
+                <input class="Usuario" type="password" name="pass" placeholder = "Elegí tu contraseña" required>
             </div>
             <div id = "GuardarPassword">
                 <input type="radio" name="profile">

@@ -12,6 +12,7 @@ const controlador = {
 
     id:(req,res) => {
         let productoSeleccionado = fuctionGeneric.archivoJSON(dataBase).find(producto => producto.id == req.params.id)
+        console.log(`Se ingreso al producto: ${productoSeleccionado}`);
         res.render("productDetail",{producto:productoSeleccionado, productRecomiend : fuctionGeneric.archivoJSON(dataBase)})
     },
 
@@ -31,6 +32,7 @@ const controlador = {
             show : true
         }
         products.push(newProduct);
+        console.log(`Se creo el producto: ${newProduct}`);
         fuctionGeneric.subirArchivo(dataBase,products);
         res.redirect(`/product/${newProduct.id}`);
     },
@@ -49,6 +51,7 @@ const controlador = {
                 producto.precio = req.body.precio;
                 producto.foto = req.body.foto;
                 producto.formaDePago = req.body.formaDePago;
+                console.log(`Se edito el producto: ${product}`);
             }
         });
         fuctionGeneric.subirArchivo(dataBase,products);
@@ -60,6 +63,7 @@ const controlador = {
         listaSinProducto.forEach(producto => {
             if(producto.id == req.params.id){
                 producto.show = false;
+                console.log(`Producto a eliminar ${producto}`);
             }
         })
         fuctionGeneric.subirArchivo(dataBase,listaSinProducto);
