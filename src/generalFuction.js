@@ -14,4 +14,4 @@ function crearID(array){
 }
 
 
-module.exports = {archivoJSON ,subirArchivo,ordenarSegundID,crearID};
+module.exports = {archivoJSON ,subirArchivo,crearID};
