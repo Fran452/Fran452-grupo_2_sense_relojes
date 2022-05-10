@@ -92,5 +92,6 @@
   "bugs": {
     "url": "https://github.com/Fran452/grupo_2_human_relojes/issues"
   },
-  "homepage": "https://github.com/Fran452/grupo_2_human_relojes#readme"
+  "homepage": "https://github.com/Fran452/grupo_2_human_relojes#readme",
+  "devDependencies": {}
 }
