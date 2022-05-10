@@ -12,12 +12,12 @@ const validaciones = [
     body("fechaDeNacimiento"),
     body("fotoDeUsuario"),
     body("contraseña").isLength({ min: 8 }).withMessage('la contraseña debe tener al menos 8 caracteres'),
-    body("contraseñaConfirm").custom((value, { req }) => {
-        if (value !== req.body.password) {
-          throw new Error('Password confirmation does not match password');
-        }
-        return true;
-      }).withMessage('Las contraseñas no coinciden'),
+    /*body("contraseñaConfirm").custom((value, { req }) => {
+      if (value !== req.body.password) {
+        throw new Error('Password confirmation does not match password');
+      }
+      return true;
+    }).withMessage('Las contraseñas no coinciden'),*/
 ]
  
 
@@ -37,7 +37,7 @@ const upload = multer({ storage});
 router.get('/',userController.login);
 
 router.get('/register',userController.register);
-router.post('/',upload.single("fotoDeUsuario"),validaciones,userController.newUser);
+router.post('/',upload.single("fotoDeUsuario"),validaciones,userController.processRegister);
 
 router.get('/login',userController.login);
 router.post('/login',userController.fuctionloLogin);

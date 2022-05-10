@@ -2,7 +2,7 @@ const funcionesGenericas = require("../generalFuction");
 const path = require("path");
 const bcrypt = require("bcrypt");
 const {validationResult} = require("express-validator");
-const db = path.join(__dirname,"../database/user.json");
+const db = path.join(__dirname,"../database/clientes.json");
 // base datos ruta
 
 const controlador = {
@@ -40,33 +40,35 @@ const controlador = {
     },
     processRegister : (req,res) => {
         let validaciones = validationResult(req);
-        let userInDb = funcionesGenerales.archivoJSON(db);
+        let userInDb = funcionesGenericas.archivoJSON(db);
         let mailRepetido = userInDb.find(user => req.body.email == user.email);
 
-        if (mailRepetido) {
-                validaciones.errors.email.msg = "Este email ya esta registrado";
-        };
+        /*if (mailRepetido) {
+            validaciones.errors.email.msg = "Este email ya esta registrado";
+        };*/
 
         if(validaciones.errors.length > 0){
             return res.render("register",{error:validaciones.mapped()});
         }
 
         let userToCreate = {
-            id : functionGeneric.crearID(userInDb),
+            id : funcionesGenericas.crearID(userInDb),
             ...req.body,
-            constraseña: bcrypts.hashSync(req.body.constraseña,10),     
-            img: req.file.filename
+            contraseña: bcrypt.hashSync(req.body.contraseña,10),     
+            img: req.file.filename,
+            favoritos: [],
+            ComprasAnteriores: []
         };
 
         //conecta con funcion login
-        if(req.body.guardarCook){
+        /*if(req.body.guardarCook){
             res.cookie(user,userToCreate.id,{maxAge: 90000000000000000000000000000000000})
-        }
+        }*/
         req.session.user = userToCreate
         userInDb.push(userToCreate);
-        funcionesGenerales.subirArchiv(db,userInDb);
+        funcionesGenericas.subirArchivo(db,userInDb);
 
-        return res.redirect ("/home");
+        return res.redirect ("/");
     }
 }
 
