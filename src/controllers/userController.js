@@ -60,10 +60,14 @@ const controlador = {
             ComprasAnteriores: []
         };
 
-        //conecta con funcion login
         /*if(req.body.guardarCook){
             res.cookie(user,userToCreate.id,{maxAge: 90000000000000000000000000000000000})
         }*/
+
+        /* 
+            -imagen generica
+            -validar mail duplicado
+        */
         req.session.user = userToCreate
         userInDb.push(userToCreate);
         funcionesGenericas.subirArchivo(db,userInDb);
