@@ -1,9 +1,6 @@
 /************* Metodos requeridos ****************/ 
 const express = require("express");
 const path = require("path");
-const rutasUser = require("./routes/user")
-const rutasProductos = require("./routes/productos")
-const rutasMain = require("./routes/main")
 const methodOverride = require ("method_override");
 
 /*********** Rutas inportada ***************************/
@@ -15,7 +12,7 @@ const { applyEachSeries } = require("async");
 /******** Diferentes funcionamientos ****************/
 const PORT = process.env.PORT || 3000;
 const app = express();
-const publicPath = path.join(__dirname,"../","public");
+const publicPath = path.join(__dirname,"../"z,"public");
 
 /*************** Middlewares *************************/
 app.use(express.static(publicPath));
