@@ -23,8 +23,6 @@ const validaciones = [
     body("fotoDeUsuario"),
     body("contraseña").isLength({ min: 8 }).withMessage('la contraseña debe tener al menos 8 caracteres'),
     body("contraseñaConfirm").custom((value, { req }) => {
-      console.log("value : ",value);
-      console.log("password : ",req.body.contraseña);
         if (value !== req.body.contraseña) {
         throw new Error('Password confirmation does not match password');
       }
@@ -49,7 +47,7 @@ const upload = multer({ storage});
 router.get('/',userController.login);
 
 router.get('/register',userController.register);
-router.post('/',upload.single("fotoDeUsuario"),validaciones,userController.processRegister);
+router.post('/',upload.single("img"),validaciones,userController.processRegister);
 
 router.get('/login',userController.login);
 router.post('/login',userController.fuctionLogin);

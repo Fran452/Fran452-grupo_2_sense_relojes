@@ -1,22 +1,6 @@
 [
   {
     "id": 9003886,
-    "nombre": "Francisco",
-    "apellido": "Lema",
-    "email": "franLema@gmail.com",
-    "telefono": 1141930102,
-    "fechaDeNacimiento": "5/3/1998",
-    "contraseña": "$2b$10$dNM3uQ2KUoTLZwaLmhEzXeAoXnluexMZHdtD5jx4k40eciabIspP6",
-    "Domicilio": {
-      "calle": "LIBERTAD 943",
-      "codigoPostar": 1278,
-      "Localidad": "BUENOS AIRES"
-    },
-    "favoritos": [],
-    "ComprasAnteriores": []
-  },
-  {
-    "id": 9003886,
     "nombre": "JERONIMO",
     "apellido": "QUIRICO",
     "email": "ventas@freiberg.com.ar",
@@ -545,22 +529,14 @@
   },
   {
     "id": 6001851,
-    "nombre": "Francisco F.",
+    "nombre": "Francisco F. Lema Estevez",
     "email": "franciscolemacr@gmail.com",
-    "telefono": "1234567891",
-    "fechaDeNacimiento": "2022-05-12",
-    "contraseña": "$2b$10$0RPQ44McWTawntwTSocvFukcVc6oyib.SWz2HqhPMY0KoGtINzn9m",
+    "telefono": "12345678912",
+    "fechaDeNacimiento": "2022-05-19",
+    "contraseña": "$2b$10$vTZe1nkUQPnTsyOxsGMJuuyl3Cm2VQpjHac5fNGWHivyQx64iQbdW",
     "contraseñaConfirm": "12345678",
-    "img": "fotoDeUsuario-1652224780471-959178087.png"
-  },
-  {
-    "id": 6001852,
-    "nombre": "Francisco F.",
-    "email": "franciscolemacr@gmail.com",
-    "telefono": "1234567891",
-    "fechaDeNacimiento": "2022-05-12",
-    "contraseña": "$2b$10$61RF.SZ.VEHpVtakRZGVsuljOWZ3FZce2nOpuFzoUJepObPX9EJJa",
-    "contraseñaConfirm": "",
-    "img": "fotoDeUsuario-1652224860719-343410105.png"
+    "img": "default-image.png",
+    "favoritos": [],
+    "ComprasAnteriores": []
   }
 ]

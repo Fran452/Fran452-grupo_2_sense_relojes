@@ -29,7 +29,6 @@ const controlador = {
         return res.redirect("/user")
     },
     perfile : (req,res) => {
-        console.log("entre aca");
         if(req.session.user){
             return res.render("perfile",{user:req.session.user});
         }
@@ -41,37 +40,29 @@ const controlador = {
     processRegister : (req,res) => {
         let validaciones = validationResult(req);
         let userInDb = funcionesGenericas.archivoJSON(db);
-
+        let img = req.files?.filename ? req.files.filename : "default-image.png";
         if(validaciones.errors.length > 0){
-            funcionesGenericas.eliminarArchivo(path.join(__dirname,"../../public/img/user",req.file.filename))
+            console.log("entre al error");
+            if(img != "default-image.png"){
+                funcionesGenericas.eliminarArchivo(path.join(__dirname,"../../public/img/user",img))
+            }
             return res.render("register",{error:validaciones.mapped()});
         }
-
         let userToCreate = {
             id : funcionesGenericas.crearID(userInDb),
             ...req.body,
             contraseña: bcrypt.hashSync(req.body.contraseña,10),     
-            img: req.file.filename,
+            img: img,
             favoritos: [],
             ComprasAnteriores: []
         };
-
-        /*if(req.body.guardarCook){
-            res.cookie(user,userToCreate.id,{maxAge: 90000000000000000000000000000000000})
-        }*/
-
-        
+        if(req.body.guardarCook){
+            res.cookie(user,userToCreate.id,{maxAge: new Date(Date.now() + (30*24*3600000))})
+        }
         req.session.user = userToCreate
         userInDb.push(userToCreate);
         funcionesGenericas.subirArchivo(db,userInDb);
-
-        return res.redirect ("/");
-        
-        /* 
-            -imagen generica
-            -validar mail duplicado
-            -campo de guardar perfil
-        */
+        return res.redirect ("/user/perfile");
     }
 }
 

@@ -6,7 +6,7 @@ main{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 800px;
+    height: 880px;
 }
     form{
         display: flex;
@@ -26,7 +26,14 @@ main{
             padding: 6px;
             color: #010203;
             }
-
+        .guardarCook{
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+            .guardarCook input{
+                width: 100px;
+                height: 20px;
+            }
         .crear{
             width: 30%;
             line-height: 50px;
