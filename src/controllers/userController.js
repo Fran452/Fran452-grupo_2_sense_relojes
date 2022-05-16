@@ -2,6 +2,7 @@ const funcionesGenericas = require("../generalFuction");
 const path = require("path");
 const bcrypt = require("bcrypt");
 const {validationResult} = require("express-validator");
+const { fstat } = require("fs");
 const db = path.join(__dirname,"../database/clientes.json");
 // base datos ruta
 
@@ -9,9 +10,7 @@ const controlador = {
     login:(req,res) => {
         res.render("login")
     },
-    fuctionloLogin: (req,res) => {
-        console.log("entre a la funcion");
-        console.log(`${typeof req.body[user]}`);
+    fuctionLogin: (req,res) => {
         if(!(req.body.user)){
             console.log(`la proiedad dio undefined`);
             return res.redirect("/user")
@@ -19,19 +18,20 @@ const controlador = {
         let usuario = funcionesGenericas.archivoJSON(db).find(usuario => usuario.email == req.body.user);
         console.log(`recibi el objeto de ${usuario.nombre}`);
         if(bcrypt.compareSync(req.body.pass,usuario.contraseña)){
-            req.session.user = usuario.id;
+            req.session.user = usuario;
             if(req.body.profile){
-                res.cookies(user,usuario.id,{maxAge: 900000**10000000000000000000000000000});
+                res.cookie("user",req.session.user.id,{ expires: new Date(Date.now() + (30*24*3600000)) }); // no funca las cookies
                 console.log(`se guardo las cookies`);
             }
             
-        return res.redirect("/perfile");
+        return res.redirect("/user/perfile");
         }
         return res.redirect("/user")
     },
     perfile : (req,res) => {
+        console.log("entre aca");
         if(req.session.user){
-            return res.render("user",{user:req.session.user});
+            return res.render("perfile",{user:req.session.user});
         }
         return res.redirect("/user");
     },
@@ -41,13 +41,9 @@ const controlador = {
     processRegister : (req,res) => {
         let validaciones = validationResult(req);
         let userInDb = funcionesGenericas.archivoJSON(db);
-        let mailRepetido = userInDb.find(user => req.body.email == user.email);
-
-        /*if (mailRepetido) {
-            validaciones.errors.email.msg = "Este email ya esta registrado";
-        };*/
 
         if(validaciones.errors.length > 0){
+            funcionesGenericas.eliminarArchivo(path.join(__dirname,"../../public/img/user",req.file.filename))
             return res.render("register",{error:validaciones.mapped()});
         }
 
