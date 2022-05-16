@@ -4,6 +4,7 @@ const path = require ("path")
 const multer = require ("multer")
 const router = express.Router();
 const userController = require("../controllers/userController");
+const middleware = require("../middlewares/userMiddlewares")
 
 const funcionesGenericas = require("../generalFuction");
 const db = path.join(__dirname,"../database/clientes.json");
@@ -46,12 +47,12 @@ const upload = multer({ storage});
 
 router.get('/',userController.login);
 
-router.get('/register',userController.register);
-router.post('/',upload.single("img"),validaciones,userController.processRegister);
+router.get('/register',middleware.,userController.register);
+router.post('/',middleware.redirectPerfil,upload.single("img"),validaciones,userController.processRegister);
 
 router.get('/login',userController.login);
-router.post('/login',userController.fuctionLogin);
+router.post('/login',middleware.redirectPerfil,userController.fuctionLogin);
 
-router.get('/perfile',userController.perfile);
+router.get('/perfile',middleware.userRegister,userController.perfile);
 
 module.exports = router
