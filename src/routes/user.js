@@ -47,11 +47,11 @@ const upload = multer({ storage});
 
 router.get('/',userController.login);
 
-router.get('/register',middleware.,userController.register);
-router.post('/',middleware.redirectPerfil,upload.single("img"),validaciones,userController.processRegister);
+router.get('/register',middleware.redirectPerfil,userController.register);
+router.post('/',upload.single("img"),validaciones,userController.processRegister);
 
-router.get('/login',userController.login);
-router.post('/login',middleware.redirectPerfil,userController.fuctionLogin);
+router.get('/login',middleware.redirectPerfil,userController.login);
+router.post('/login',userController.fuctionLogin);
 
 router.get('/perfile',middleware.userRegister,userController.perfile);
 
