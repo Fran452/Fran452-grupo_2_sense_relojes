@@ -12,4 +12,7 @@ router.get('/',userController.login);
 router.get('/login',userController.login);
 /*router.post('/login',userController.fuctionloLogin);*/
 
+router.get('/paginausuario',userController.paginausuario);
+/*router.post('/login',userController.fuctionloLogin);*/
+
 module.exports = router

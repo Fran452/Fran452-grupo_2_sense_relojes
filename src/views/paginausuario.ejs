@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('./partials/head') %>
+    <link rel="stylesheet" type="text/css" href="/css/stylepaginausuario.css" media="screen">
+</head>
+<body>
+    <%-include('./partials/header') %>
+    <main>
+        <div class = "formulario">
+            <h1>¡¡¡BIENVENIDO!!!</h1>
+            <div id ="infocliente">
+                <h2> Datos Personales </h2>
+                <form action="/" method="POST">
+                    <br>
+                    <label for="Nombre">Nombre:</label>
+                    <input class="Controles" type="text" name="Nombre" id="Nombre">
+                    <br>
+                    <label  for="Apellido">Apellido: </label>
+                    <input class="Controles" type="text" name="Apellido" id="Apellido">
+                    <br>
+                    <label for="Email">Email: </label>
+                    <input class="Controles" type="text" name="Email id="Email">
+                    <br>
+                    <label for="Domicilio">Domicilio: </label>
+                    <input class="Controles" type="text" name="Domicilio" id="Domicilio">
+                    <br>
+                    <label for="Localidad">Localidad</label>
+                    <input class="Controles" type="text" name="Localidad" id="Localidad">
+                    <br>
+                    <label for="Codigo Postal">Codigo Postal </label>
+                    <input class="Controles" type="text" name="Codigo Postal" id="Codigo Postal">
+                    <br>
+                    <label for="Mobile">Mobile</label>
+                    <input class="Controles" type="number" name="Mobile" id="Mobile">
+                    <br>
+                    <div id = botonesCarrito>
+                        <input class="button botones" type="submit" value="Editar">
+                    </div> 
+                    <br>
+                </form>
+            </div>
+            
+            <div id = "metodoDeEnvio">
+                <h2>Mis pedidos</h2>
+                <% if(productRecomiend[0].img[0].length - 1 >0) { %>
+                    <% for(let i = 1 ; i < productRecomiend[0].img[0].length;i++){ %>
+                <img src = "/img/product/<%= productRecomiend[0].img[0] %> " name= "logo">
+                <% } %>
+                 <% } else { %> 
+                    <p>No hay productos</p>
+                <% } %>
+            </div>            
+    </main>
+    <%-include('./partials/footer') %>
+</body>
+</html>
