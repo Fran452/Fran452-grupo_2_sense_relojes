@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <%-include('./partials/head') %>
+    <link rel="stylesheet" type="text/css" href="/css/stylepaginausuario.css" media="screen"> 
 </head>
 <body>
-    <h1>Hola usuario : <%= user.nombre %> </h1>
+    <%-include('./partials/header') %>
+    <main>
+        <h1>Bienvenido: <%= user.nombre %> </h1>
+      <div>
+          <img src="" alt="">
+        <h2> Datos Personales: </h2>
+        <ul>
+            <li>Mail : <%= user.email %> </li>
+            <li>Telefono: <%= user.telefono %>  </li>
+            <li>Fecha De Nacimiento: <%= user.fechaDeNacimiento %> </li>
+        </ul>
+      </div>
+      <div>
+        <h2> Ultimas compras </h2>
+        <% if(user.ComprasAnteriores.length > 0){ %>
+        <% }else{ %>
+            <h3> No se encuentran Ultimas compras</h3>
+        <% } %>   
+      </div>
+      <div>
+        <h2> Datos Personales: </h2>
+        <% if(user.ComprasAnteriores.length > 0){ %>
+        <% }else{ %>
+            <h3> No se encuentran favoritos</h3>
+        <% } %>   
+      </div>
+             
+    </main>
+    <%-include('./partials/footer') %>
 </body>
 </html>

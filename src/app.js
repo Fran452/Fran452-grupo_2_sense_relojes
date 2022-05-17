@@ -36,3 +36,7 @@ app.listen(PORT, () => {
     console.log("Servidor en funcionamiento en el puerto "+ PORT);
 });
 
+/**************** Error 404 ***************************/
+app.use((req,res,next) => {
+    res.status(404).render("not-found")
+})

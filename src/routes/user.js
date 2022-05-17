@@ -54,5 +54,6 @@ router.get('/login',middleware.redirectPerfil,userController.login);
 router.post('/login',userController.fuctionLogin);
 
 router.get('/perfile',middleware.userRegister,userController.perfile);
+/*router.post('/login',userController.fuctionloLogin);*/
 
 module.exports = router
