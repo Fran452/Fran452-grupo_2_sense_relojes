@@ -59,6 +59,7 @@ CREATE TABLE `Producto` (
   `stock` int(11) DEFAULT NULL,
   `id_venta` smallint(6) NOT NULL,
   `img`  text NOT NULL,
+  `tipo` varchar(26) NOT NULL,
   PRIMARY KEY (`id`),
   FOREIGN KEY (`id_venta`) REFERENCES Venta (`id`)
 );
