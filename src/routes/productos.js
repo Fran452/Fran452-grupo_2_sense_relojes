@@ -20,7 +20,7 @@ let fileUpload = multer({storage: storage});
 //****************  Rutas ******************/
 
 // Producto general
-router.get('/',productoController.index);
+router.get('/?pag',productoController.index);
 
 // Creacion de producto
 router.get('/new',productoController.create);

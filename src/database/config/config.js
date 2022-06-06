@@ -2,22 +2,25 @@ module.exports = {
   "development": {
     "username": "root",
     "password": null,
-    "database": "database_development",
+    "database": "Human",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "local": "3307"
   },
   "test": {
     "username": "root",
     "password": null,
-    "database": "database_test",
+    "database": "Human",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "local": "3307"
   },
   "production": {
     "username": "root",
     "password": null,
-    "database": "database_production",
+    "database": "Human",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "local": "3307"
   }
 }
