@@ -4,19 +4,20 @@ const dataBase = path.join(__dirname,"../database/product.json")
 const dataBaseSQL = require("../database/models");
 const controlador = {
 
-    /*
-    index:(req,res) => {
+    
+    /*index:(req,res) => {
         let productos = fuctionGeneric.archivoJSON(dataBase).filter(producto => producto.show);
         res.render("productosGeneral",{productos : productos});
     },*/
     index : async (req,res) => {
-        let productos = await dataBaseSQL.findAll(
+        let pagina = req.params.pag ?  req.params.pag : 0;
+        let productos = await dataBaseSQL.productos.findAll( 
             {
                 where: {
                     show : 1
                 },
                 limit: 5,
-                offset: req.params.pag * 5
+                offset : pagina * 5,
             },
 
         )
@@ -28,17 +29,22 @@ const controlador = {
         res.render("productDetail",{producto:productoSeleccionado, productRecomiend : fuctionGeneric.archivoJSON(dataBase)})
     },*/
     id : async (req,res) => {
-        let productoSeleccionado = await dataBaseSQL.findByPk(req.params.id);
-        let productos = await dataBaseSQL.findAll(
+        let productoSeleccionadoDB = await dataBaseSQL.productos.findByPk(req.params.id,{include : [{association : "productImg"}]});
+        let productos = await dataBaseSQL.productos.findAll(
             {
                 where: {
                     show : 1
                 },
                 limit: 3,
-                offset: valor
             },
 
-        )
+        );
+        let productoSeleccionado = {
+            ...productoSeleccionadoDB.dataValues,
+            productImg : productoSeleccionadoDB.dataValues.productImg.map(valor  => valor.dataValues.img)
+        }
+        console.log(productoSeleccionado.productImg);
+        productoSeleccionado.formaDePago = ["1","2"]
         res.render("productDetail",{producto:productoSeleccionado,productRecomiend : productos });
     },
 
@@ -65,7 +71,8 @@ const controlador = {
     
     createFuction: async (req,res) => {
         let img = req.files.map(foto => foto.filename).length > 0 ? req.files.map(foto => foto.filename) : ["default-image.png","default-image.png","default-image.png","default-image.png"];
-        await dataBaseSQL.productos.create({
+        let formaDePago = [].concat(req.body.formaDePago)
+        let producto = await dataBaseSQL.productos.create({
             nombre: req.body.nombre,
             detalle: req.body.detalle,
             precio: req.body.precio,
@@ -76,18 +83,22 @@ const controlador = {
         });
         for(let i = 1 ; i < img.length ; i++){
             await dataBaseSQL.productImg.create({
-            id_producto:  "",
+            id_producto: producto.id ,
             img: img[i]
         })
         }
     },
 
-    editProduct: (req,res) => {
+    /*editProduct: (req,res) => {
         let productoSeleccionado = fuctionGeneric.archivoJSON(dataBase).find(producto => producto.id == req.params.id )
         res.render("modificarproducto",{product : productoSeleccionado});
-    },
+    },*/
+    /*editProduct: async(req,res) => {
+        let productoSeleccionado = await dataBaseSQL.productos.findByPk(req.params.id);
+        res.render("modificarproducto",{product : productoSeleccionado});
+    },*/
     
-    editProductFuction: (req,res) => {
+    /*editProductFuction: (req,res) => {
         let products =  fuctionGeneric.archivoJSON(dataBase);
         products.forEach(producto => {
             if(producto.id == req.params.id){
@@ -100,9 +111,22 @@ const controlador = {
         });
         fuctionGeneric.subirArchivo(dataBase,products);
         res.redirect(`/product`);
-    },
+    },*/
 
-    delete: (req,res) => {
+    /*editProductFuction: async (req,res) => {
+        dataBaseSQL.producto.update({
+            nombre : req.body.name,
+            detalle:req.body.descripcion,
+            precio: req.body.precio,
+            img: req.body.foto,
+            //formasDePago: req.body.formaDePago
+        },{
+            where : {id : req.params.id}
+        });
+        res.redirect(`/product`);
+    },*/
+
+    /*delete: (req,res) => {
         let listaSinProducto = fuctionGeneric.archivoJSON(dataBase)
         listaSinProducto.forEach(producto => {
             if(producto.id == req.params.id){
@@ -111,8 +135,9 @@ const controlador = {
         })
         fuctionGeneric.subirArchivo(dataBase,listaSinProducto);
         res.redirect("/product");
-    }
+    }*/
 
 }
+
 module.exports = controlador;
 

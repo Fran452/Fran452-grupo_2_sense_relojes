@@ -1,6 +1,6 @@
 const database = require("mime-db");
 
-module.exports = (sequelize,DataTypes) => {
+module.exports = (sequelize,dataTypes) => {
 
     let nombre = "productos";
     let columnas = {
@@ -36,13 +36,28 @@ module.exports = (sequelize,DataTypes) => {
         show: {
             type :dataTypes.STRING(100)
         },
-    }
+    };
     let config =  {
         timestamps: false,
-        tablename : "Producto"
-    }
+        tableName : "Producto"
+    };
 
-    const productos = sequelize.define(nombre,columnas,config)
+    const productos = sequelize.define(nombre,columnas,config);
+
+    productos.associate = models => {
+        productos.hasMany(models.productImg,{
+            foreignKey : 'id_producto',
+            as : 'productImg'
+        });
+        /*productos.belongsToMany(models.FormaDePago,{
+            as: 'formaDePago',
+            through : 'productos_FormasDePago',
+            foreignKey : 'id_producto',
+            otherKey: 'id_FormaDePago',
+            timestamps : false
+            
+        });*/
+    }
     return productos;
 
 };

@@ -1,6 +1,6 @@
-module.exports = (sequelize,DataTypes) => {
+module.exports = (sequelize,dataTypes) => {
 
-    let nombre = "productosImg";
+    let nombre = "productImg";
     let columnas = {
         id:{
             primaryKey: true,
@@ -19,17 +19,17 @@ module.exports = (sequelize,DataTypes) => {
     };
     let config =  {
         timestamps: false,
-        tablename : "ProductImg"
+        tableName : "ProductImg"
     };
     
-    const productosImg = sequelize.define(nombre,columnas,config);
+    const productImg = sequelize.define(nombre,columnas,config);
 
-    productosImg.associate = models => {
-        productosImg.belongTo(models.productos,{
-            foreingKey : 'id_producto',
+    productImg.associate = models => {
+        productImg.belongsTo(models.productos,{
+            foreignKey : 'id_producto',
             as : 'productos'
         })
     }
-    return productosImg;
+    return productImg;
 
 };
