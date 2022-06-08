@@ -49,14 +49,14 @@ module.exports = (sequelize,dataTypes) => {
             foreignKey : 'id_producto',
             as : 'productImg'
         });
-        /*productos.belongsToMany(models.FormaDePago,{
+        productos.belongsToMany(models.formaDePago,{
             as: 'formaDePago',
             through : 'productos_FormasDePago',
             foreignKey : 'id_producto',
             otherKey: 'id_FormaDePago',
             timestamps : false
             
-        });*/
+        });
     }
     return productos;
 

@@ -103,7 +103,7 @@ CREATE TABLE `ProductImg`(
 
 CREATE TABLE `FormasDePago`(
   `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
-  `formaDePago` char(6) NOT NULL,
+  `formaDePago` text NOT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -120,9 +120,9 @@ CREATE TABLE `Productos_FormasDePago`(
 
 -- Valores de ejemplo 
 
-INSERT INTO `Producto` VALUES (1,"Tesla Sepia","El Reloj Tesla Sepia fue diseñado como el compañero para todo el día. Es un reloj que te lo vas a querer sacar nunca más.",23000,3,"TeslaSepia01.webp",1,"reloj");
-INSERT INTO `Producto` VALUES (2,"Hades Acero","igual que el dios fuerte como el acero",2000,5,"1649273314571.webp",1,"reloj");
-INSERT INTO `Producto` VALUES (3,"Enrico Toffee","No vas a conocer un reloj tan clásico y minimalista como el Enrico Toffee.",15000,3,"EnricoToffee01.webp",1,"reloj");
+INSERT INTO `Producto` VALUES (1,"Tesla Sepia","El Reloj Tesla Sepia fue diseñado como el compañero para todo el día. Es un reloj que te lo vas a querer sacar nunca más.",23000,3,"TeslaSepia01.webp","reloj",1);
+INSERT INTO `Producto` VALUES (2,"Hades Acero","igual que el dios fuerte como el acero",2000,5,"1649273314571.webp","reloj",1);
+INSERT INTO `Producto` VALUES (3,"Enrico Toffee","No vas a conocer un reloj tan clásico y minimalista como el Enrico Toffee.",15000,3,"EnricoToffee01.webp","reloj",1);
 
 INSERT INTO `ProductImg` VALUES (1,1,"TeslaSepia02.webp");
 INSERT INTO `ProductImg` VALUES (2,1,"TeslaSepia03.webp");
@@ -136,7 +136,7 @@ INSERT INTO `ProductImg` VALUES (8,3,"EnricoToffee04.webp");
 
 INSERT INTO `FormasDePago` VALUES (1,"Mercado Pago");
 INSERT INTO `FormasDePago` VALUES (2,"Tranferencia");
-INSERT INTO `FormasDePago` VALUES (3,"Targeta De Credito");
+INSERT INTO `FormasDePago` VALUES (3,"Tarjeta De Credito");
 INSERT INTO `FormasDePago` VALUES (4,"Tarjeta de Debito");
 INSERT INTO `FormasDePago` VALUES (5,"Efectivo");
 

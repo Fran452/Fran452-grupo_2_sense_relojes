@@ -17,7 +17,7 @@ const controlador = {
                     show : 1
                 },
                 limit: 5,
-                offset : pagina * 5,
+                //offset : pagina * 5,
             },
 
         )
@@ -29,7 +29,7 @@ const controlador = {
         res.render("productDetail",{producto:productoSeleccionado, productRecomiend : fuctionGeneric.archivoJSON(dataBase)})
     },*/
     id : async (req,res) => {
-        let productoSeleccionadoDB = await dataBaseSQL.productos.findByPk(req.params.id,{include : [{association : "productImg"}]});
+        let productoSeleccionadoDB = await dataBaseSQL.productos.findByPk(req.params.id,{include : [{association : "productImg"},{association : "formaDePago"}]});
         let productos = await dataBaseSQL.productos.findAll(
             {
                 where: {
@@ -41,10 +41,11 @@ const controlador = {
         );
         let productoSeleccionado = {
             ...productoSeleccionadoDB.dataValues,
-            productImg : productoSeleccionadoDB.dataValues.productImg.map(valor  => valor.dataValues.img)
+            productImg : productoSeleccionadoDB.dataValues.productImg.map(valor  => valor.dataValues.img),
+            formaDePago : productoSeleccionadoDB.dataValues.formaDePago.map(valor  => valor.dataValues.FormaDePago)
         }
-        console.log(productoSeleccionado.productImg);
-        productoSeleccionado.formaDePago = ["1","2"]
+        //console.log(productoSeleccionadoDB.dataValues.formaDePago);
+        //productoSeleccionado.formaDePago = ["1","2"]
         res.render("productDetail",{producto:productoSeleccionado,productRecomiend : productos });
     },
 
@@ -86,17 +87,22 @@ const controlador = {
             id_producto: producto.id ,
             img: img[i]
         })
-        }
+        };
+        /*for(let i = 0 ; i < req.body.formaDePago ; i++){
+            await dataBaseSQL.productos_FormasDePago.create({
+            id_producto: producto.id ,
+            img: img[i]
+        })*/
     },
 
     /*editProduct: (req,res) => {
         let productoSeleccionado = fuctionGeneric.archivoJSON(dataBase).find(producto => producto.id == req.params.id )
         res.render("modificarproducto",{product : productoSeleccionado});
     },*/
-    /*editProduct: async(req,res) => {
+    editProduct: async(req,res) => {
         let productoSeleccionado = await dataBaseSQL.productos.findByPk(req.params.id);
         res.render("modificarproducto",{product : productoSeleccionado});
-    },*/
+    },
     
     /*editProductFuction: (req,res) => {
         let products =  fuctionGeneric.archivoJSON(dataBase);
@@ -113,18 +119,19 @@ const controlador = {
         res.redirect(`/product`);
     },*/
 
-    /*editProductFuction: async (req,res) => {
-        dataBaseSQL.producto.update({
-            nombre : req.body.name,
+    editProductFuction: async (req,res) => {
+        console.log(req.body);
+        await dataBaseSQL.productos.update({
+            nombre : req.body.nombre,
             detalle:req.body.descripcion,
             precio: req.body.precio,
-            img: req.body.foto,
+            //img: req.body.foto,
             //formasDePago: req.body.formaDePago
         },{
             where : {id : req.params.id}
         });
         res.redirect(`/product`);
-    },*/
+    },
 
     /*delete: (req,res) => {
         let listaSinProducto = fuctionGeneric.archivoJSON(dataBase)
@@ -136,6 +143,15 @@ const controlador = {
         fuctionGeneric.subirArchivo(dataBase,listaSinProducto);
         res.redirect("/product");
     }*/
+    delete: async(req,res) => {
+        let producto = await dataBaseSQL.productos.update({
+            show: 0,
+        },{
+            where : {id : req.params.id}
+        });
+        
+        res.redirect("/product")
+    }
 
 }
 

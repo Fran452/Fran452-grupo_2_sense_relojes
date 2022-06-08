@@ -21,9 +21,9 @@ module.exports = (sequelize,dataTypes) => {
     
     const formaDePago = sequelize.define(nombre,columnas,config);
 
-    /*
+    
     formaDePago.associate = models => {    
-        formaDePago.belongsToMany(models.Productos,{
+        formaDePago.belongsToMany(models.productos,{
             as: 'productos',
             through : 'productos_FormasDePago',
             foreignKey : 'id_FormaDePago',
@@ -31,7 +31,7 @@ module.exports = (sequelize,dataTypes) => {
             timestamps : false
             
         })
-    };*/
+    };
     return formaDePago;
 
 };

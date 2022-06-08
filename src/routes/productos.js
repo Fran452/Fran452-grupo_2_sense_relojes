@@ -30,7 +30,7 @@ router.post('/new',fileUpload.any('img'),productoController.createFuction);
 
 // Detalle de producto
 router.get('/:id',productoController.id);
-/*
+
 // Edicion de producto
 router.get('/:id/edit',productoController.editProduct);
 router.put('/:id/edit',productoController.editProductFuction);
@@ -38,5 +38,5 @@ router.put('/:id/edit',productoController.editProductFuction);
 // Eliminar producto
 router.delete('/:id/delete',productoController.delete)
 
-*/
+
 module.exports = router
