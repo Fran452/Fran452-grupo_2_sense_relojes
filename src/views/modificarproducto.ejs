@@ -9,10 +9,10 @@
 <body>
     <%-include('./partials/header') %>
     <main>
-        <img src = "/img/product/<%=product.img[0] %>">
+        <img src = "/img/product/<%=product.img %>">
         <div class = "descripcion">
             <h1> <%= product.nombre  %> </h1>
-            <h2> <%= product.descripcion %> </h2>
+            <h2> <%= product.detalle %> </h2>
             <ul>
                 <% if(product.datosDestacados ){ %> 
                     <% for(detalles of product.datosDestacados){ %>
@@ -34,27 +34,11 @@
             <input type="text" name="nombre" value = "<%= product.nombre %>" >
 
             <label for="descripcion">descripcion</label>
-            <input type="text" name="descripcion" value = "<%= product.descripcion %>" >
+            <input type="text" name="descripcion" value = "<%= product.detalle %>" >
 
             <label for="precio">precio</label>
             <input type="number" name="precio" value = "<%= product.precio %>" >
 
-            <label for = "foto">cambiar foto</label>
-            <input type="file" accept = ".jpg, .png" name = "foto" value = "<%= product.img %>">
-
-            <label for = "formaDePago"> Formas de pago aceptadas</label>
-            <div> 
-                <div>
-                    <input type="checkbox" name = "formaDePago" <%= product.formaDePago.includes('efectivo')? "checked" : null%> value = "Efectivo">
-                    <label for="efectivo">efectivo</label>
-                </div>
-                <div>
-                    <input type="checkbox"  name = "formaDePago" <%= product.formaDePago.includes('tarjeta')? "checked" : null%> value = "tarjeta">
-                    <label for="tarjeta">tarjeta</label></div>
-                <div>
-                    <input type="checkbox"  name = "formaDePago" <%= product.formaDePago.includes('cuotas')? "checked" : null%> value = "cuotas">
-                    <label for="cuotas">cuotas</label>
-                </div>  
             </div>
 
 
