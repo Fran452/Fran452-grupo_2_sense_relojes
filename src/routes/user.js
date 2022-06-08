@@ -8,7 +8,6 @@ router.get('/register',userController.crear);
 router.post('/register',userController.newUser)
 
 router.get('/',userController.login);
-
 router.get('/login',userController.login);
 /*router.post('/login',userController.fuctionloLogin);*/
 
@@ -16,6 +15,8 @@ router.get('/login',userController.login);
 router.get('/:id',userController.detalle);
 
 // Edicion
-router.get('/editar/:id',userController.editar);
+router.get('/:id/editar',userController.editar);
+
+
 
 module.exports = router

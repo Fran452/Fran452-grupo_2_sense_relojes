@@ -25,20 +25,7 @@ module.exports = (sequelize,DataTypes) => {
         } ,
 		"contraseña":{
             type:"" ,
-        } ,
-		"Domicilio": {
-			"calle":{
-                type:"" ,
-            } ,
-			"codigoPostar":{
-                type:"" ,
-            } ,
-			"Localidad":{
-                type:"" ,
-            } ,
-		},
-		"favoritos" : [],
-		"ComprasAnteriores" : []
+        }
     }
 
     const usuarios = sequelize.define(nombre,columnas)
