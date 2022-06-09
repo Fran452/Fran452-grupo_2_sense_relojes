@@ -3,44 +3,50 @@ const path = require("path");
 const bcrypt = require("bcrypt");
 const {validationResult} = require("express-validator");
 const { fstat } = require("fs");
-const db = path.join(__dirname,"../database/clientes.json");
-// base datos ruta
+const dbJSON = path.join(__dirname,"../database/clientes.json");
+const db = require("../database/models")
 
 const controlador = {
-    login:(req,res) => {
-        res.render("login")
+    login:(req,res) => {res.render("login")},
+    // register:(req,res) => {res.render("register")},
+    crear: async (req,res) => {
+        let usuario = await db.usuarios.findAll()
+
+        res.render("register", {usuarios:usuarios})
     },
-    fuctionLogin: (req,res) => {
+    /*id : async (req,res) => {
+         let usuarioDB = await dataBaseSQL.usuarios.findByPk(req.params.id,{include : [{association : "usuarioImg"},]});
+         let usuario = await dataBaseSQL.ususarios.findAll(
+             {
+                 where: {
+                     show : 1
+                },
+     })
+    },*/
+    loginFuction : async (req,res)=> {
         if(!(req.body.user)){
             console.log(`la proiedad dio undefined`);
             return res.redirect("/user")
         }
-        let usuario = funcionesGenericas.archivoJSON(db).find(usuario => usuario.email == req.body.user);
-        console.log(`recibi el objeto de ${usuario.nombre}`);
+
+        let usuario = await db.usuario.findOne({
+            where : {
+                email : req.body.user
+            }
+        })
         if(bcrypt.compareSync(req.body.pass,usuario.contraseña)){
-            req.session.user = usuario;
+            req.session.user = usuario.id;
             if(req.body.profile){
                 res.cookie("user",req.session.user.id,{ expires: new Date(Date.now() + (30*24*3600000)) }); // no funca las cookies
-                console.log(`se guardo las cookies`);
             }
-            
-        return res.redirect("/user/perfile");
+            return res.redirect("/user/perfile");
         }
         return res.redirect("/user")
     },
-    perfile : (req,res) => {
-        if(req.session.user){
-            return res.render("perfile",{user:req.session.user});
-        }
-        return res.redirect("/user");
-    },
-    register:(req,res) => {
-        res.render("register")
-    },
-    processRegister : (req,res) => {
+    newUser: async (req,res) => {
+        let img = req.files.map(foto => foto.filename).length > 0 ? req.files.map(foto => foto.filename) : ["default-image.png"];
         let validaciones = validationResult(req);
-        let userInDb = funcionesGenericas.archivoJSON(db);
-        let img = req.files?.filename ? req.files.filename : "default-image.png";
+        // errores al momento de completar mal el formulario
         if(validaciones.errors.length > 0){
             console.log("entre al error");
             if(img != "default-image.png"){
@@ -48,23 +54,37 @@ const controlador = {
             }
             return res.render("register",{error:validaciones.mapped()});
         }
-        let userToCreate = {
-            id : funcionesGenericas.crearID(userInDb),
-            ...req.body,
+        
+        let userToCreate  = await db.usuarios.create({
+            nombre:req.body.name,
+            apellido: req.body.apellido,
+            email:req.body.email ,
+            telefono: req.body.telefono,
+            fechaDeNacimiento: req.body.birth_date ,
+            img: img[0],
             contraseña: bcrypt.hashSync(req.body.contraseña,10),     
-            img: img,
-            favoritos: [],
-            ComprasAnteriores: []
-        };
+        });
+
+        
+        req.session.user = userToCreate.id
         if(req.body.guardarCook){
             res.cookie(user,userToCreate.id,{maxAge: new Date(Date.now() + (30*24*3600000))})
         }
-        req.session.user = userToCreate
-        userInDb.push(userToCreate);
-        funcionesGenericas.subirArchivo(db,userInDb);
-        return res.redirect ("/user/perfile");
+        res.redirect("/user/perfile");
+    },
+    
+    detalle: (req,res) => {
+        db.Usuarios.findByPk(req.session.user)
+        .then (usuario => {
+            res.render("perfile",{usuario})
+        })
+    },
+    editar: async(req,res) => {
+        let pedidoUsuario = await db.Usuario.findByPk(req.session.user);
+       
+    },
     }
-}
+
 
 module.exports = controlador;
 

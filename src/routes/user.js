@@ -47,13 +47,18 @@ const upload = multer({ storage});
 
 router.get('/',userController.login);
 
-router.get('/register',middleware.redirectPerfil,userController.register);
-router.post('/',upload.single("img"),validaciones,userController.processRegister);
+router.get('/register',middleware.redirectPerfil,userController.crear);
+router.post('/',upload.single("img"),validaciones,userController.newUser);
 
 router.get('/login',middleware.redirectPerfil,userController.login);
-router.post('/login',userController.fuctionLogin);
+router.post('/login',userController.loginFuction);
 
-router.get('/perfile',middleware.userRegister,userController.perfile);
+router.get('/perfile',middleware.userRegister,userController.detalle);
 /*router.post('/login',userController.fuctionloLogin);*/
+
+// Edicion
+router.get('/:id/editar',userController.editar);
+
+
 
 module.exports = router
