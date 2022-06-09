@@ -27,6 +27,7 @@ const controlador = {
             telefono: req.body.telefono,
             fechaDeNacimiento: req.body.birth_date ,
             img: img[0],
+            // contraseña: bcrypt
         });
         for(let i = 1 ; i < img.length ; i++){
             await dataBaseSQL.userImg.create({
