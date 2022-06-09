@@ -9,22 +9,22 @@ module.exports = (sequelize,DataTypes) => {
             autoIncrement: true,
         },
 		"nombre":{
-            type: DataTypes.STRING,
+            type: DataTypes.varchar(26),
         },
 		"apellido":{
-            type: DataTypes.STRING,
+            type: DataTypes.varchar(26),
         },
 		"email":{
-            type:"" ,
+            type:DataTypes.varchar(26) ,
         },
 		"telefono":{
-            type:"" ,
+            type:DataTypes.smallint(6) ,
         } ,
 		"fechaDeNacimiento":{
             type: DataTypes.DATE ,
         } ,
 		"contraseña":{
-            type:"" ,
+            type:DataTypes.varchar(26) ,
         }
     }
 
