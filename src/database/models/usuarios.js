@@ -10,21 +10,26 @@ module.exports = (sequelize,DataTypes) => {
         },
 		"nombre":{
             type: DataTypes.varchar(26),
+            allowNull: false
         },
 		"apellido":{
             type: DataTypes.varchar(26),
+            allowNull: false
         },
 		"email":{
-            type:DataTypes.varchar(26) ,
+            type: DataTypes.varchar(26) ,
+            allowNull: false,
+            isEmail: true
         },
 		"telefono":{
-            type:DataTypes.smallint(6) ,
+            type: DataTypes.smallint(6),
         } ,
 		"fechaDeNacimiento":{
-            type: DataTypes.DATE ,
+            type: DataTypes.DATE,
         } ,
 		"contraseña":{
-            type:DataTypes.varchar(26) ,
+            type: DataTypes.varchar(26),
+            allowNull: false
         }
     }
 
