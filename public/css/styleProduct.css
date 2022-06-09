@@ -119,6 +119,13 @@ main{
     right: 20px;
 
 }
+.setting{
+    width: 50%;
+}
+    .setting button{
+        width: 100%;
+        border-radius: 50px;
+    }
 
 /*OTROS PRODUCTOS*/
 .productos-recomendados{
@@ -142,6 +149,9 @@ main{
 }
 .descripcion-recomendado p{
     font-family: 'League Spartan', sans-serif;
+}
+.detallesD{
+    display: none;
 }
 
 #tercer-Producto{
@@ -184,7 +194,9 @@ main{
       right: 30px;
       width: 50%;
     }
-
+    .setting{
+        margin-top: 20px;
+    }
 
     .productos-recomendados section a{
         width: 40%;
@@ -306,7 +318,9 @@ main{
     .descripcion-recomendado p{
         font-size: 15px;
     }
-
+    .detallesD{
+        display: block;
+    }
     .baners{
         width: 100%;
         max-width: 100%;

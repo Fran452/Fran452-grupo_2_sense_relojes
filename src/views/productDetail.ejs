@@ -46,6 +46,9 @@
                 <div id = "comprarProducto">
                     <p> Precio : <%= producto.precio %>  </p>
                     <button type="button" class="button carrito"><i class="fa-solid fa-cart-shopping"></i></button>
+                    <% if(local.user &&  local.user.admin){ %>   
+                        <a href="/product/ <%= producto.id %>/edit" class="setting"><button type="button" class="button"><i class="fa-solid fa-hammer"></i></button></a>
+                    <% } %>
                 </div>
             </div>
         </div>
@@ -54,7 +57,9 @@
                 <a href="<%= productRecomiend[0].id %>"><img src = "/img/product/<%= productRecomiend[0].img %> "name= "logo"></a>
                 <div class="descripcion-recomendado">
                     <h3><%= productRecomiend[0].nombre %></h3>
-                    <p><%= productRecomiend[0].detalle %></p>
+                    <p class="Precio"> Precio : <%= productRecomiend[0].precio %> </p>
+                    <p class="detallesD"><%= productRecomiend[0].detalle %></p>
+                    
                 </div>
             </section>
 
@@ -62,7 +67,9 @@
                 <a href="<%= productRecomiend[1].id %>"><img src = "/img/product/<%= productRecomiend[1].img %> "name= "logo"></a>
                 <div class="descripcion-recomendado">
                     <h3><%= productRecomiend[1].nombre %></h3>
-                    <p><%= productRecomiend[1].detalle %></p>
+                    <p class="Precio">Precio : <%= productRecomiend[1].precio %> </p>
+                    <p class="detallesD"><%= productRecomiend[1].detalle %></p>
+                    
                 </div>
             </section>
 
@@ -70,7 +77,9 @@
                 <a href="<%= productRecomiend[2].id %>"><img src = "/img/product/<%= productRecomiend[2].img %>"name= "logo"></a>
                 <div class="descripcion-recomendado">
                     <h3><%= productRecomiend[2].nombre %></h3>
-                    <p><%= productRecomiend[2].detalle %></p>
+                    <p class="Precio">Precio :<%= productRecomiend[2].precio %> </p>
+                    <p class="detallesD"><%= productRecomiend[2].detalle %></p>
+                    
                 </div>
             </section>
 

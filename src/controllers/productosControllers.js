@@ -50,8 +50,10 @@ const controlador = {
         res.render("productDetail",{producto:productoSeleccionado,productRecomiend : productos });
     },
 
-    create: (req,res) => {
-        res.render("agregarProducto");
+    create: async (req,res) => {
+        let formasDePago = await dataBaseSQL.formaDePago.findAll();
+        console.log(formasDePago.map(valor => valor.dataValues));
+        res.render("agregarProducto",{formasDePago : formasDePago.map(valor => valor.dataValues)});
     },
     /*
     createFuction: (req,res) => {
@@ -90,11 +92,14 @@ const controlador = {
             img: img[i]
         })
         };
-        /*for(let i = 0 ; i < req.body.formaDePago ; i++){
+        for(let i = 0 ; i < req.body.formaDePago.length ; i++){
             await dataBaseSQL.productos_FormasDePago.create({
             id_producto: producto.id ,
-            img: img[i]
-        })*/
+            id_FormaDePago: req.body.formaDePago[i]
+        })
+        }
+        console.log(producto);
+        res.redirect(`/product/${producto.id}`)
     },
 
     /*editProduct: (req,res) => {

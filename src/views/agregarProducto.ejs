@@ -35,12 +35,10 @@
 
                 <div id = "formaDePagoDiv" >
                     <label for="Forma de Pago">Forma de Pago Aceptada </label> 
-                    <input class="check"  type="checkbox" name="formaDePago" value="efectivo">
-                    <label for="Forma de Pago" class = "formaDePago">Efectivo</label> 
-                    <input class="check"  type="checkbox" name="formaDePago" value="targetaD">
-                    <label for="Forma de Pago" class = "formaDePago"> Tarjeta Débito</label> 
-                    <input class="check"  type="checkbox" name="formaDePago" value="targetaC">   
-                    <label for="Forma de Pago" class = "formaDePago">Tarjeta Crédito  </label> 
+                    <% for(pago of formasDePago){ %> 
+                    <input class="check"  type="checkbox" name="formaDePago" value=<%= pago.id %> >
+                    <label for="Forma de Pago" class = "formaDePago"><%= pago.FormaDePago %> </label> 
+                    <% } %> 
                 </div>
 
                 

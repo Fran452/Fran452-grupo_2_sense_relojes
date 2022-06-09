@@ -1,7 +1,7 @@
 const userMiddlewares = {
     
     admin : (req,res,next) => {
-        if(req.session.user.admin){
+        if(req.session.user?.admin){
             next();
         }
         res.send("no tiene los permisos de administrador");
