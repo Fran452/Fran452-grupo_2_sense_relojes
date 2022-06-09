@@ -15,18 +15,18 @@ CREATE TABLE `Direccion` (
 
 CREATE TABLE `Usuario` (
   `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
-  `id_direccion` smallint(6) unsigned NOT NULL,
-  `id_favorito` smallint(6) unsigned NOT NULL,
-  `id_venta` smallint(6) unsigned NOT NULL,
+-- `id_direccion` smallint(6) unsigned NOT NULL,
   `nombre` varchar(26) DEFAULT NULL,
   `apellido` varchar(26) DEFAULT NULL,
-  `email` varchar(26) DEFAULT NULL,
-  `telefono` smallint(6) NOT NULL,
-  `contraseña` varchar(26) DEFAULT NULL,
+  `email` text DEFAULT NULL,
+  `telefono` int unsigned NOT NULL,
+  `contraseña` text DEFAULT NULL,
   `img`  text NOT NULL,
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (`id_direccion`) REFERENCES Direccion (`id`)
+  `admin` smallint(2) unsigned NOT NULL,
+  PRIMARY KEY (`id`)
+-- FOREIGN KEY (`id_direccion`) REFERENCES Direccion (`id`)
 );
+
 
 -- Tabla 'Venta'
 
@@ -120,6 +120,8 @@ CREATE TABLE `Productos_FormasDePago`(
 
 -- Valores de ejemplo 
 
+
+
 INSERT INTO `Producto` VALUES (1,"Tesla Sepia","El Reloj Tesla Sepia fue diseñado como el compañero para todo el día. Es un reloj que te lo vas a querer sacar nunca más.",23000,3,"TeslaSepia01.webp","reloj",1);
 INSERT INTO `Producto` VALUES (2,"Hades Acero","igual que el dios fuerte como el acero",2000,5,"1649273314571.webp","reloj",1);
 INSERT INTO `Producto` VALUES (3,"Enrico Toffee","No vas a conocer un reloj tan clásico y minimalista como el Enrico Toffee.",15000,3,"EnricoToffee01.webp","reloj",1);
@@ -151,4 +153,4 @@ INSERT INTO `Productos_FormasDePago` VALUES (8,3,1);
 INSERT INTO `Productos_FormasDePago` VALUES (9,3,2);
 
 
-
+INSERT INTO `Usuario` VALUES (1,"Francisco", "Lema","franciscolemacr@gmail.com",45221515,"$2b$10$LNcQGxnvO5.R4sUGq/IuxOhvK1EdkexMMM.sRcaCWVUhUMdz29Cau","default-image.png",1);

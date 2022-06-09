@@ -9,31 +9,48 @@ module.exports = (sequelize,DataTypes) => {
             autoIncrement: true,
         },
 		"nombre":{
-            type: DataTypes.varchar(26),
+            type: DataTypes.STRING(26),
             allowNull: false
         },
 		"apellido":{
-            type: DataTypes.varchar(26),
+            type: DataTypes.STRING(26),
             allowNull: false
         },
 		"email":{
-            type: DataTypes.varchar(26) ,
+            type: DataTypes.TEXT() ,
             allowNull: false,
             isEmail: true
         },
 		"telefono":{
-            type: DataTypes.smallint(6),
+            type: DataTypes.STRING(6),
         } ,
-		"fechaDeNacimiento":{
+		/*"fechaDeNacimiento":{
             type: DataTypes.DATE,
-        } ,
+        } ,*/
 		"contraseña":{
-            type: DataTypes.varchar(26),
+            type: DataTypes.TEXT(),
             allowNull: false
+        },
+        "img" : {
+            type: DataTypes.TEXT(),
+            allowNull: false
+        },
+        /*"id_direccion":{
+            allowNull: false,
+            type : DataTypes.INTEGER
+        },*/
+        "admin": {
+            allowNull: false,
+            type : DataTypes.INTEGER
         }
     }
 
-    const usuarios = sequelize.define(nombre,columnas)
+    let config =  {
+        timestamps: false,
+        tableName : "Usuario"
+    };
+
+    const usuarios = sequelize.define(nombre,columnas,config)
     return usuarios;
 
 };

@@ -12,7 +12,7 @@ const controlador = {
     crear: async (req,res) => {
         let usuario = await db.usuarios.findAll()
 
-        res.render("register", {usuarios:usuarios})
+        res.render("register", {usuarios:usuario})
     },
     /*id : async (req,res) => {
          let usuarioDB = await dataBaseSQL.usuarios.findByPk(req.params.id,{include : [{association : "usuarioImg"},]});
@@ -29,7 +29,7 @@ const controlador = {
             return res.redirect("/user")
         }
 
-        let usuario = await db.usuario.findOne({
+        let usuario = await db.usuarios.findOne({
             where : {
                 email : req.body.user
             }
@@ -43,6 +43,7 @@ const controlador = {
         }
         return res.redirect("/user")
     },
+    
     newUser: async (req,res) => {
         let img = req.files.map(foto => foto.filename).length > 0 ? req.files.map(foto => foto.filename) : ["default-image.png"];
         let validaciones = validationResult(req);
@@ -62,7 +63,8 @@ const controlador = {
             telefono: req.body.telefono,
             fechaDeNacimiento: req.body.birth_date ,
             img: img[0],
-            contraseña: bcrypt.hashSync(req.body.contraseña,10),     
+            contraseña: bcrypt.hashSync(req.body.contraseña,10),
+            admin : 0     
         });
 
         
