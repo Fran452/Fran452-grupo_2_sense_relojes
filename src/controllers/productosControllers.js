@@ -23,13 +23,6 @@ const controlador = {
         )
         res.render("productosGeneral",{productos : productos})
     },
-    categorias : async (req,res) => {
-        let productos = await dataBaseSQL.productos.findAll({
-            where : [{show : 1}, {id_tipo : req.params.id}],
-            limit: 5,
-        });
-        res.render("productosGeneral",{productos : productos});
-    },
     /*
     id:(req,res) => {
         let productoSeleccionado = fuctionGeneric.archivoJSON(dataBase).find(producto => producto.id == req.params.id)
@@ -60,9 +53,8 @@ const controlador = {
 
     create: async (req,res) => {
         let formasDePago = await dataBaseSQL.formaDePago.findAll();
-        let categorias = await dataBaseSQL.categorias.findAll()
         console.log(formasDePago.map(valor => valor.dataValues));
-        res.render("agregarProducto",{formasDePago : formasDePago.map(valor => valor.dataValues), categorias: categorias.map(valor => valor.dataValues)});
+        res.render("agregarProducto",{formasDePago : formasDePago.map(valor => valor.dataValues)});
     },
     /*
     createFuction: (req,res) => {
@@ -85,13 +77,14 @@ const controlador = {
     
     createFuction: async (req,res) => {
         let img = req.files.map(foto => foto.filename).length > 0 ? req.files.map(foto => foto.filename) : ["default-image.png","default-image.png","default-image.png","default-image.png"];
+        let formaDePago = [].concat(req.body.formaDePago)
         let producto = await dataBaseSQL.productos.create({
             nombre: req.body.nombre,
             detalle: req.body.detalle,
             precio: req.body.precio,
             stock: req.body.cantidad,
             img : img[0],
-            id_tipo: req.body.tipo,
+            tipo: req.body.tipo,
             show : 1
         });
         for(let i = 1 ; i < img.length ; i++){
