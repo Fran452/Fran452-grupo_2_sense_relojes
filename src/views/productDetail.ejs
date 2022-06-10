@@ -46,7 +46,7 @@
                 <div id = "comprarProducto">
                     <p> Precio : <%= producto.precio %>  </p>
                     <button type="button" class="button carrito"><i class="fa-solid fa-cart-shopping"></i></button>
-                    <% if(local.user &&  local.user.admin){ %>   
+                    <% if(user &&  user.admin == 1){ %>   
                         <a href="/product/ <%= producto.id %>/edit" class="setting"><button type="button" class="button"><i class="fa-solid fa-hammer"></i></button></a>
                     <% } %>
                 </div>

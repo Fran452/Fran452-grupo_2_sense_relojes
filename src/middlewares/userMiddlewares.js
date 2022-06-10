@@ -3,14 +3,16 @@ const userMiddlewares = {
     admin : (req,res,next) => {
         if(req.session.user?.admin){
             next();
+        }else{
+            return res.send("no tiene los permisos de administrador");
         }
-        res.send("no tiene los permisos de administrador");
     },
     userRegister: (req,res,next) => {
         if(req.session.user){
             next();
+        }else{
+            return res.redirect("/user/register");
         }
-        res.redirect("/user/register");
     },
     reinCookies: (req,res,next) => {
         if(req.cookies?.user){
@@ -28,7 +30,7 @@ const userMiddlewares = {
     },
     redirectPerfil : (req,res,next) => {
         if(req.session.user){
-            res.redirect("/user/perfile");
+            return res.redirect("/user/perfile");
         }
         next();
     }

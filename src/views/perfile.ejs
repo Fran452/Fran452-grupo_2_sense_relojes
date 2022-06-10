@@ -17,20 +17,7 @@
             <li>Fecha De Nacimiento: <%= user.fechaDeNacimiento %> </li>
         </ul>
       </div>
-      <div>
-        <h2> Ultimas compras </h2>
-        <% if(user.ComprasAnteriores.length > 0){ %>
-        <% }else{ %>
-            <h3> No se encuentran Ultimas compras</h3>
-        <% } %>   
-      </div>
-      <div>
-        <h2> Datos Personales: </h2>
-        <% if(user.ComprasAnteriores.length > 0){ %>
-        <% }else{ %>
-            <h3> No se encuentran favoritos</h3>
-        <% } %>   
-      </div>
+      
              
     </main>
     <%-include('./partials/footer') %>

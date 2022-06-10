@@ -47,7 +47,8 @@ const controlador = {
         }
         //console.log(productoSeleccionadoDB.dataValues.formaDePago);
         //productoSeleccionado.formaDePago = ["1","2"]
-        res.render("productDetail",{producto:productoSeleccionado,productRecomiend : productos });
+        console.log(req.session.user);
+        res.render("productDetail",{producto:productoSeleccionado,productRecomiend : productos , user : req.session.user});
     },
 
     create: async (req,res) => {

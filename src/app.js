@@ -11,7 +11,7 @@ const rutasProductos = require("./routes/productos");
 const rutasMain = require("./routes/main");
 
 /******** Diferentes funcionamientos ****************/
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 const app = express();
 const publicPath = path.join(__dirname,"../","public");
 

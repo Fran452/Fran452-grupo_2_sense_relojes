@@ -28,20 +28,21 @@ const controlador = {
             console.log(`la proiedad dio undefined`);
             return res.redirect("/user")
         }
-
+        
         let usuario = await db.usuarios.findOne({
             where : {
                 email : req.body.user
             }
         })
         if(bcrypt.compareSync(req.body.pass,usuario.contraseña)){
-            req.session.user = usuario.id;
+            req.session.user = { id : usuario.id,
+                            admin : usuario.admin }
             if(req.body.profile){
                 res.cookie("user",req.session.user.id,{ expires: new Date(Date.now() + (30*24*3600000)) }); // no funca las cookies
             }
             return res.redirect("/user/perfile");
         }
-        return res.redirect("/user")
+        return res.redirect("/user");
     },
     
     newUser: async (req,res) => {
@@ -76,9 +77,9 @@ const controlador = {
     },
     
     detalle: (req,res) => {
-        db.Usuarios.findByPk(req.session.user)
+        db.usuarios.findByPk(req.session.user.id)
         .then (usuario => {
-            res.render("perfile",{usuario})
+           return res.render("perfile",{user : usuario})
         })
     },
     editar: async(req,res) => {
