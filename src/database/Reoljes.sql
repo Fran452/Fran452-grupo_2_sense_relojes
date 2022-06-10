@@ -38,6 +38,15 @@ CREATE TABLE `Venta` (
   FOREIGN KEY (`id_usuario`) REFERENCES Usuario (`id`)
 );
 
+
+-- Tabla de 'Categorias'
+CREATE TABLE `Categoria`(
+  `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(26) NOT NULL, 
+  `img` text DEFAULT Null,
+  PRIMARY KEY (`id`)
+);
+
 -- Tabla 'Carrito'
 
 CREATE TABLE `Carrito` (
@@ -58,9 +67,10 @@ CREATE TABLE `Producto` (
   `precio` int DEFAULT NULL,
   `stock` int(11) DEFAULT NULL,
   `img`  text NOT NULL,
-  `tipo` text NOT NULL,
+  `id_tipo` smallint(6) unsigned NOT NULL,
   `show` smallint(2) NOT NULL ,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`id_tipo`) REFERENCES Categoria (`id`)
 );
 
 -- Tabla 'CompraIndividual'
@@ -118,13 +128,19 @@ CREATE TABLE `Productos_FormasDePago`(
   FOREIGN KEY (`id_formaDePago`) REFERENCES FormasDePago (`id`)
 );
 
+
 -- Valores de ejemplo 
 
+INSERT INTO `Usuario` VALUES (1,"Francisco", "Lema","franciscolemacr@gmail.com",45221515,"$2b$10$LNcQGxnvO5.R4sUGq/IuxOhvK1EdkexMMM.sRcaCWVUhUMdz29Cau","default-image.png",1);
 
+INSERT INTO `Categoria` VALUES (1,"reloj","banerRelojes.webp");
+INSERT INTO `Categoria` VALUES (2,"billetera","pulseraBaner.jpg");
+INSERT INTO `Categoria` VALUES (3,"pulseras","billeteras-banner.webp");
+INSERT INTO `Categoria` VALUES (4,"otros","");
 
-INSERT INTO `Producto` VALUES (1,"Tesla Sepia","El Reloj Tesla Sepia fue diseñado como el compañero para todo el día. Es un reloj que te lo vas a querer sacar nunca más.",23000,3,"TeslaSepia01.webp","reloj",1);
-INSERT INTO `Producto` VALUES (2,"Hades Acero","igual que el dios fuerte como el acero",2000,5,"1649273314571.webp","reloj",1);
-INSERT INTO `Producto` VALUES (3,"Enrico Toffee","No vas a conocer un reloj tan clásico y minimalista como el Enrico Toffee.",15000,3,"EnricoToffee01.webp","reloj",1);
+INSERT INTO `Producto` VALUES (1,"Tesla Sepia","El Reloj Tesla Sepia fue diseñado como el compañero para todo el día. Es un reloj que te lo vas a querer sacar nunca más.",23000,3,"TeslaSepia01.webp",1,1);
+INSERT INTO `Producto` VALUES (2,"Hades Acero","igual que el dios fuerte como el acero",2000,5,"1649273314571.webp",1,1);
+INSERT INTO `Producto` VALUES (3,"Enrico Toffee","No vas a conocer un reloj tan clásico y minimalista como el Enrico Toffee.",15000,3,"EnricoToffee01.webp",1,1);
 
 INSERT INTO `ProductImg` VALUES (1,1,"TeslaSepia02.webp");
 INSERT INTO `ProductImg` VALUES (2,1,"TeslaSepia03.webp");
@@ -134,7 +150,6 @@ INSERT INTO `ProductImg` VALUES (5,2,"1649273314575.webp");
 INSERT INTO `ProductImg` VALUES (6,3,"EnricoToffee02.webp");
 INSERT INTO `ProductImg` VALUES (7,3,"EnricoToffee03.webp");
 INSERT INTO `ProductImg` VALUES (8,3,"EnricoToffee04.webp");
-
 
 INSERT INTO `FormasDePago` VALUES (1,"Mercado Pago");
 INSERT INTO `FormasDePago` VALUES (2,"Tranferencia");
@@ -153,4 +168,4 @@ INSERT INTO `Productos_FormasDePago` VALUES (8,3,1);
 INSERT INTO `Productos_FormasDePago` VALUES (9,3,2);
 
 
-INSERT INTO `Usuario` VALUES (1,"Francisco", "Lema","franciscolemacr@gmail.com",45221515,"$2b$10$LNcQGxnvO5.R4sUGq/IuxOhvK1EdkexMMM.sRcaCWVUhUMdz29Cau","default-image.png",1);
+

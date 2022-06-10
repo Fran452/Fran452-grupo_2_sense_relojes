@@ -23,8 +23,10 @@ let fileUpload = multer({storage: storage});
 // Producto general
 router.get('/',productoController.index);
 
-// Creacion de producto
+// Porducto Categorias
+router.get('/categoria/:id',productoController.categorias)
 
+// Creacion de producto
 router.get('/new',productoController.create);
 router.post('/new',fileUpload.any('img'),productoController.createFuction);
 
