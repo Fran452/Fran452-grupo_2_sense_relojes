@@ -23,6 +23,20 @@ const controlador = {
         )
         res.render("productosGeneral",{productos : productos})
     },
+    categorias : async (req,res) => {
+        let productos = await dataBaseSQL.productos.findAll( 
+            {
+                where: {
+                    show : 1,
+                    id_tipo : req.params.id
+                },
+                limit: 5,
+                //offset : pagina * 5,
+            },
+
+        )
+        res.render("productosGeneral",{productos : productos})
+    },
     /*
     id:(req,res) => {
         let productoSeleccionado = fuctionGeneric.archivoJSON(dataBase).find(producto => producto.id == req.params.id)
