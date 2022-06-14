@@ -43,7 +43,8 @@ CREATE TABLE `Venta` (
 CREATE TABLE `Categoria`(
   `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
   `nombre` varchar(26) NOT NULL, 
-  `img` text DEFAULT Null,
+  `img_Baner` text DEFAULT Null,
+  `img_Port` text DEFAULT Null,
   PRIMARY KEY (`id`)
 );
 
@@ -133,10 +134,10 @@ CREATE TABLE `Productos_FormasDePago`(
 
 INSERT INTO `Usuario` VALUES (1,"Francisco", "Lema","franciscolemacr@gmail.com",45221515,"$2b$10$LNcQGxnvO5.R4sUGq/IuxOhvK1EdkexMMM.sRcaCWVUhUMdz29Cau","default-image.png",1);
 
-INSERT INTO `Categoria` VALUES (1,"reloj","banerRelojes.webp");
-INSERT INTO `Categoria` VALUES (2,"billetera","pulseraBaner.jpg");
-INSERT INTO `Categoria` VALUES (3,"pulseras","billeteras-banner.webp");
-INSERT INTO `Categoria` VALUES (4,"otros","");
+INSERT INTO `Categoria` VALUES (1,"reloj","reloj.jpg","reloj4x4.jpeg");
+INSERT INTO `Categoria` VALUES (2,"billetera","pulsera.jpg","pulsera4x4.jpeg");
+INSERT INTO `Categoria` VALUES (3,"pulseras","billetera.jpg","billetera4x4.jpeg");
+INSERT INTO `Categoria` VALUES (4,"otros","otros.jpg","otros4x4.jpeg");
 
 INSERT INTO `Producto` VALUES (1,"Tesla Sepia","El Reloj Tesla Sepia fue diseñado como el compañero para todo el día. Es un reloj que te lo vas a querer sacar nunca más.",23000,3,"TeslaSepia01.webp",1,1);
 INSERT INTO `Producto` VALUES (2,"Hades Acero","igual que el dios fuerte como el acero",2000,5,"1649273314571.webp",1,1);

@@ -12,10 +12,14 @@ module.exports = (sequelize,dataTypes) => {
             allowNull: false,
             type : dataTypes.STRING
         },
-        img:{
+        img_Baner:{
             allowNull: false,
             type : dataTypes.STRING
         },
+        img_Port:{
+            allowNull: false,
+            type : dataTypes.STRING 
+        }
         
     };
     let config =  {

@@ -65,6 +65,7 @@ h2{
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
     margin-right: 10px;
     margin-left: 10px;
+    margin-bottom: 2%;
 }
 
 .categorias h3{
@@ -78,15 +79,6 @@ h2{
     font-size: 12px;
     margin-left:10px;
     margin-bottom: 5px;
-}
-
-.left{
-    order: -1;
-    font-size: 20px;
-}
-
-.right{
-    font-size: 20px;
 }
 
 .imagenCategoria{
@@ -106,47 +98,62 @@ h2{
     justify-content:space-around;
     padding: 15px;
 }
-
-.productoDestacado{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    margin-right: 10px;
-    margin-left: 10px;
-}
-
-.productoDestacado h3{
-    font-size: 20px;
-    margin-left:10px;
-    margin-top:5px;
-    margin-bottom: 2px;
-}
-
-.productoDestacado p{
-    font-size: 12px;
-    margin-left:10px;
-    margin-bottom: 3px;
-}
-
-.productoDestacado h4{
-    font-size: 20;
-    margin-left:10px;
-    margin-bottom:5px
-}
-
-.imagenProductoDestacado{
-    width: 100%;
-}
-
-#producto2{
-    display: none;
-}
-
-#producto3{
-    display: none;
-}
-
+    .bloqueItems{
+        display: flex;
+        margin-bottom: 2%;
+    }
+        .productoDestacado{
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            box-shadow: 0px 0px 10px rgb(100, 100, 100);
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+            .productoDestacado h3{
+                font-size: 20px;
+                margin-left:10px;
+                margin-top:5px;
+                margin-bottom: 2px;
+            }
+            .productoDestacado p{
+                font-size: 12px;
+                margin-left:10px;
+                margin-bottom: 3px;
+            }
+            .productoDestacado h4{
+                font-size: 20px;
+                margin-left:10px;
+                margin-bottom:5px
+            }
+            .imagenProductoDestacado{
+                width: 100%;
+            }
+                #producto2{
+                    display: none;
+                }
+                #producto3{
+                    display: none;
+                }
+            
+                .carousel-control-next, .carousel-control-prev {
+                    position: absolute;
+                    top: 40%;
+                    bottom: 0;
+                    z-index: 1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 10%;
+                    height: 15%;
+                    padding: 0;
+                    background-color: var(--rojo);
+                    text-align: center;
+                    border: 0;
+                    opacity: 1;
+                    transition: opacity .15s ease;
+                    align-content: center;
+                } 
 .bannerHistoria{
     display: flex;
     flex-direction: column;
@@ -303,8 +310,11 @@ h2{
     }
 
     .bannerCategorias{
-        width: 80%;
+        width: 40%;
         margin: auto;
+    }
+    .imagenCategoria{
+        max-width: 500px;
     }
     #segundaCategoria{
         display: block;
