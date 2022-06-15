@@ -2,13 +2,12 @@ const express = require("express");
 const {body} = require("express-validator")
 const path = require ("path")
 const multer = require ("multer")
+
 const router = express.Router();
 const userController = require("../controllers/userController");
 const middleware = require("../middlewares/userMiddlewares")
 
-const funcionesGenericas = require("../generalFuction");
-const db = path.join(__dirname,"../database/clientes.json");
-
+/****************  Validaciones ****************/ 
 const validaciones = [
     body("nombre").isLength({ min: 5 }).withMessage('El nombre debe tener al menos 5 caracteres'),
     body("email").isEmail().withMessage('El campo debe ser un email').custom((value) => {
@@ -31,7 +30,7 @@ const validaciones = [
     }).withMessage('Las contraseñas no coinciden'),
 ]
  
-
+/****************   Multer  ****************/
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, path.resolve (__dirname,"../../public/img/user"))
@@ -42,9 +41,9 @@ const storage = multer.diskStorage({
   }
 })
 
-const upload = multer({ storage});
+const upload = multer({storage});
 
-
+/****************  Rutas ******************/
 router.get('/',userController.login);
 
 router.get('/register',middleware.redirectPerfil,userController.crear);
