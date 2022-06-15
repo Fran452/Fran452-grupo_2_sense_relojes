@@ -1,5 +1,10 @@
-let config = document.querySelector(".setting")
+window.addEventListener('load',() => {
 
-config.addEventListener("click",event => {
-    window.location.assign("/edit")
+    let config = document.querySelector(".setting")
+    
+    config.addEventListener("click",event => {
+        window.location.assign("/edit")
+    })
+
 })
+
