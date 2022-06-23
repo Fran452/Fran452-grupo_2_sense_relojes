@@ -23,7 +23,7 @@
                     <% if(locals.error && error.email){ %>
                         <p class="error"> <%= error.email.msg %> </p>
                     <% } %>
-                    <p class="error" id = 'nombreError'> </p>
+                    <p class="error" id = 'errorMail'> </p>
                 </div>
                 <div class = "formuItem">
                     <label>Telefono</label>
@@ -31,7 +31,7 @@
                     <% if(locals.error && error.telefono){ %>
                         <p class="error"> <%= error.telefono.msg %> </p>
                     <% } %>
-                    <p class="error" id = 'nombreError'> </p>
+                    <p class="error" id = 'telefonoError'> </p>
                 </div>
                 <div class = "formuItem">
                     <label>Fecha de Nacimiento</label>
@@ -39,7 +39,7 @@
                     <% if(locals.error && error.fechaDeNacimiento){ %>
                         <p class="error"> <%= error.fechaDeNacimiento.msg %> </p>
                     <% } %>
-                    <p class="error" id = 'nombreError'> </p>
+                    <p class="error" id = 'errorEdad'> </p>
                 </div>
                 <div class = "formuItem">
                     <label>Foto de Usuario</label>
