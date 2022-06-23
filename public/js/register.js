@@ -44,9 +44,20 @@ window.addEventListener('load',() => {
     })    
 
     pasword.addEventListener('blur', e => {
-
+        let error = document.querySelector('#errorPasword')
+        if(pasword.value.length < 8){
+            error.innerText = 'La contraseña debe contener al menos 8 caracteres'
+        }else{
+            error.innerText = ""
+        }
     })   
     paswordConfirm.addEventListener('blur', e => {
+        let error = document.querySelector('#errorPaswordC')
+        if(pasword.value != paswordConfirm.value ){
+            error.innerText = 'Las contraseñas no son las mismas'
+        }else{
+            error.innerText = ""
+        }
 
     })    
 })

@@ -23,6 +23,7 @@
                     <% if(locals.error && error.email){ %>
                         <p class="error"> <%= error.email.msg %> </p>
                     <% } %>
+                    <p class="error" id = 'nombreError'> </p>
                 </div>
                 <div class = "formuItem">
                     <label>Telefono</label>
@@ -30,6 +31,7 @@
                     <% if(locals.error && error.telefono){ %>
                         <p class="error"> <%= error.telefono.msg %> </p>
                     <% } %>
+                    <p class="error" id = 'nombreError'> </p>
                 </div>
                 <div class = "formuItem">
                     <label>Fecha de Nacimiento</label>
@@ -37,6 +39,7 @@
                     <% if(locals.error && error.fechaDeNacimiento){ %>
                         <p class="error"> <%= error.fechaDeNacimiento.msg %> </p>
                     <% } %>
+                    <p class="error" id = 'nombreError'> </p>
                 </div>
                 <div class = "formuItem">
                     <label>Foto de Usuario</label>
@@ -48,12 +51,14 @@
                     <% if(locals.error && error.contraseña){ %>
                         <p class="error"> <%= error.contraseña.msg %> </p>
                     <% } %>
+                    <p class="error" id = 'errorPasword'> </p>
                 <div class = "formuItem">
                     <label for="contraseñaConfirm"> repite tu contraseña</label>
                     <input type="password" name="contraseñaConfirm" id = 'contraseñaConfirm' placeholder="Confirmá tu contraseña" class="inputt">
                     <% if(locals.error && error.contraseñaConfirm){ %>
                         <p class="error"> <%= error.contraseñaConfirm.msg %> </p>
                     <% } %>
+                    <p class="error" id = 'errorPaswordC'> </p>
                 </div>
 
                 <div class = "guardarCook">
