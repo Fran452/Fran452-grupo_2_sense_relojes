@@ -9,6 +9,7 @@ const cookieParser = require("cookie-parser");
 const rutasUser = require("./routes/user");
 const rutasProductos = require("./routes/productos");
 const rutasMain = require("./routes/main");
+const apisUSer = require("./apis/routes")
 
 /******** Diferentes funcionamientos ****************/
 const PORT = process.env.PORT || 3000;
@@ -30,6 +31,7 @@ app.use('/user', rutasUser);
 
 app.use('/product',rutasProductos);
 
+app.use('/apis', apisUSer)
 /**************** Inicio de apliacion ***************************/
 
 app.listen(PORT, () => {
