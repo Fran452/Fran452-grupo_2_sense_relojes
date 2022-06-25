@@ -13,7 +13,7 @@ const controlador = {
 
     detalle : async (req,res) => {
         let producto = dataBaseSQL.producto.findByPk(req.params);
-        
+         
     }
 
 }
