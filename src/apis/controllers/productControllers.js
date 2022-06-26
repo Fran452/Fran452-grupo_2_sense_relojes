@@ -12,8 +12,9 @@ const controlador = {
     },
 
     detalle : async (req,res) => {
-        let producto = dataBaseSQL.producto.findByPk(req.params);
-         
+        let producto = await dataBaseSQL.productos.findByPk(req.params.id,{include : [{association : "productImg"},{association : "formaDePago"}]});
+        console.log(producto);
+        res.json(producto);
     }
 
 }
