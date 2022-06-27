@@ -12,6 +12,13 @@ h1{
     text-align: center
 
 }
+#datosPersonales{
+    display: flex;
+    flex-direction: row;
+}
+    #datosPersonales img{
+        width: 40%;
+    }
 h2{
     margin-bottom: 5%;
     margin-top: 5%;
@@ -22,6 +29,9 @@ h2{
 label{
     font-size: 70%;
     margin-bottom: 5%;
+}
+ul{
+    list-style: none;
 }
 input{
     width: 100%;

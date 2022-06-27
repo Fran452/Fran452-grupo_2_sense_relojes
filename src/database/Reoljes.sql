@@ -22,6 +22,7 @@ CREATE TABLE `Usuario` (
   `telefono` int unsigned NOT NULL,
   `contraseña` text DEFAULT NULL,
   `img`  text NOT NULL,
+  `fechaDeNacimiento` DATE Not null,
   `admin` smallint(2) unsigned NOT NULL,
   PRIMARY KEY (`id`)
 -- FOREIGN KEY (`id_direccion`) REFERENCES Direccion (`id`)
@@ -162,4 +163,5 @@ INSERT INTO `Productos_FormasDePago` VALUES
 
 
 INSERT INTO `Usuario` VALUES 
-  (1,"Francisco", "Lema","franciscolemacr@gmail.com",45221515,"$2b$10$LNcQGxnvO5.R4sUGq/IuxOhvK1EdkexMMM.sRcaCWVUhUMdz29Cau","default-image.png",1);
+  (1,"Francisco", "Lema","franciscolemacr@gmail.com",45221515,"$2b$10$LNcQGxnvO5.R4sUGq/IuxOhvK1EdkexMMM.sRcaCWVUhUMdz29Cau","default-image.png","11-06-2002",1),
+  (2,"Juan Manuel", "Carlos Ferre", "JuancarlosF@gmail.com",45221515,'12345678',"default-image.png","12-07-2002",0);
