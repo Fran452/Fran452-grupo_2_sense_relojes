@@ -128,6 +128,7 @@ INSERT INTO `Producto` VALUES
   (2,"Hades Acero","igual que el dios fuerte como el acero",2000,5,"1649273314571.webp","reloj",1),
   (3,"Enrico Toffee","No vas a conocer un reloj tan clásico y minimalista como el Enrico Toffee.",15000,3,"EnricoToffee01.webp","reloj",1),
   (4,"BILLETERA HERNAN","Billetera echa de cuero super resistente.",5000,3,"12ad25d9527bb45f7b47f7831d80a1.jpg","billetera",1);
+  
 
 INSERT INTO `ProductImg` VALUES 
   (1,1,"TeslaSepia02.webp"),
