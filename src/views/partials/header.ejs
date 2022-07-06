@@ -8,14 +8,23 @@
         <a href="#"><img src="/img/Lupa.png"></a>                 
         <a href="/carrito"><img src ="/img/Tienda.png"></a>  
         <a id = "menuHamburguesa"><img src="/img/Menu.png"></a>
-        <a id = "usuario" href="/user/login"><img src = "/img/Usuario.png"></a> 
+        <a id = "usuario" href="/user/login"><img src = "/img/Usuario.png"></a>
+        <div class="MenuPerson">
+            <h2> Bienvenido: <%= locals.user ? user.id : 'usuario' %> </h2>
+            <div id="botonesPerson"> 
+                <button class="button"> boton de favoritos </button>
+                <button class="button"> boton de ultima compra </button>
+            </div>
+            
+        </div> 
         <nav class = "menu-productos-expand"> 
             <ul>
-                <li><a href="/product"> Relojes </a></li>
-                <li><a href="/product"> Billeteras </a></li>
-                <li><a href="/product"> Accesorios</a></li>
-                <li><a href="/product"> Otros </a></li>
+                <li><a href="/product/categoria/1"> Relojes </a></li>
+                <li><a href="/product/categoria/2"> Billeteras </a></li>
+                <li><a href="/product/categoria/3"> Pulseras </a></li>
+                <li><a href="/product/categoria/4"> Otros </a></li>
             </ul> 
-        </nav>                 
-    </nav> 
+        </nav>
+                         
+    </nav>
 </header>

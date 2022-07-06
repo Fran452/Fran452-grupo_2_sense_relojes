@@ -23,6 +23,21 @@ const controlador = {
         )
         res.render("productosGeneral",{productos : productos})
     },
+    categorias : async (req,res) => {
+        let productos = await dataBaseSQL.productos.findAll( 
+            {
+                where: {
+                    show : 1,
+                    id_tipo : req.params.id
+                },
+                limit: 5,
+                //offset : pagina * 5,
+            },
+
+        )
+        console.log(productos.length);
+        res.render("productosGeneral",{productos : productos})
+    },
     /*
     id:(req,res) => {
         let productoSeleccionado = fuctionGeneric.archivoJSON(dataBase).find(producto => producto.id == req.params.id)
@@ -49,9 +64,6 @@ const controlador = {
         //productoSeleccionado.formaDePago = ["1","2"]
         console.log(req.session.user);
         res.render("productDetail",{producto:productoSeleccionado,productRecomiend : productos , user : req.session.user});
-    },
-    addCarrito: async (req,res) => {
-
     },
     
     create: async (req,res) => {

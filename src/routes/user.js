@@ -1,11 +1,10 @@
 const express = require("express");
-const {body} = require("express-validator")
-const path = require ("path")
-const multer = require ("multer")
-
+const {body} = require("express-validator");
+const path = require ("path");
+const multer = require ("multer");
 const router = express.Router();
 const userController = require("../controllers/userController");
-const middleware = require("../middlewares/userMiddlewares")
+const middleware = require("../middlewares/userMiddlewares");
 
 /****************  Validaciones ****************/ 
 const validaciones = [
@@ -58,6 +57,7 @@ router.get('/perfile',middleware.userRegister,userController.detalle);
 // Edicion
 router.get('/:id/editar',userController.editar);
 
-
+// Agregar al carrito
+router.get('/addCarrito/:id',middleware.userRegister, userController.addCarrito);
 
 module.exports = router

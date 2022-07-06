@@ -35,8 +35,16 @@ const controlador = {
             }
         })
         if(bcrypt.compareSync(req.body.pass,usuario.contraseña)){
+            let carrito = await db.carrito.findOne({
+                where : {
+                    id_usuario :  usuario.id
+                }
+            })
             req.session.user = { id : usuario.id,
-                            admin : usuario.admin }
+                                admin : usuario.admin };
+
+            req.session.carrito =  carrito.id
+
             if(req.body.profile){
                 res.cookie("user",req.session.user.id,{ expires: new Date(Date.now() + (30*24*3600000)) }); // no funca las cookies
             }
@@ -56,10 +64,12 @@ const controlador = {
             }
             return res.render("register",{error:validaciones.mapped()});
         }
+        let nombre = req.body.name.split(',')[0]; 
+        let apellido =req.body.name.split(',')[1];
         
         let userToCreate  = await db.usuarios.create({
-            nombre:req.body.name,
-            apellido: req.body.apellido,
+            nombre,
+            apellido,
             email:req.body.email ,
             telefono: req.body.telefono,
             fechaDeNacimiento: req.body.birth_date ,
@@ -68,8 +78,13 @@ const controlador = {
             admin : 0     
         });
 
+        let carrito  = await db.carrito.create({
+            id_usuario : userToCreate.id
+        });
+
         
         req.session.user = userToCreate.id
+        req.session.carrito = carrito.id
         if(req.body.guardarCook){
             res.cookie(user,userToCreate.id,{maxAge: new Date(Date.now() + (30*24*3600000))})
         }
@@ -86,7 +101,16 @@ const controlador = {
         let pedidoUsuario = await db.Usuario.findByPk(req.session.user);
        
     },
+
+    addCarrito: async (req,res) => {
+        let agregarCarrito = await db.carritoProducto.create({
+            id_producto : req.params.id,
+            id_carrito : req.session.carrito
+        })
+
+        res.json(agregarCarrito)
     }
+}
 
 
 module.exports = controlador;

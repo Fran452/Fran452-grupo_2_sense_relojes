@@ -3,6 +3,8 @@
 
 <head>
     <%-include('./partials/head') %>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/styleHome.css">
 </head>
 
@@ -15,18 +17,33 @@
         </section>
         <h2>Categorias</h2>
         <section class="bannerCategorias">
-            <article class="categorias">
-                <a href="/product"><img class="imagenCategoria"  src="/img/product/Abaco Black S.jpg"></a>
-                <h3>Relojes</h3>
-                <p>Diseñado para usted</p>
-            </article>
-            <article class="categorias" id = "segundaCategoria">
-                <a href="/product"><img class="imagenCategoria"  src="/img/product/Abaco Black S.jpg"></a>
-                <h3>Relojes</h3>
-                <p>Diseñado para usted</p>
-            </article>
-            <button class="left"> < </button>
-            <button class="right"> > </button>
+            <div id="carrucel1" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <article class="categorias" >
+                        <a href="/product/categoria/<%= categorias[0].id %> "><img class="imagenCategoria"  src="/img/Categorias/<%= categorias[0].img_Port %>"></a>
+                        <h3> <%= categorias[0].nombre %></h3>
+                    </article>
+                  </div>
+                  <% for(let i = 1 ; i < categorias.length ; i ++){ %> 
+                  <div class="carousel-item ">
+                    <article class="categorias" >
+                        <a href="/product/categoria/<%= categorias[i].id %>"><img class="imagenCategoria"  src="/img/Categorias/<%= categorias[i].img_Port %>"> </a>
+                        <h3> <%= categorias[i].nombre %></h3>
+                    </article>
+                  </div>
+                  <% } %> 
+                  
+                </div>
+                <button class="carousel-control-prev button" type="button" data-bs-target="#carrucel1" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next button" type="button" data-bs-target="#carrucel1" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
         </section>
         <section class="bannerHistoria">
             <div>
@@ -35,31 +52,58 @@
             </div>
             <img class="fotoBannerHistoria" src="/img/banerHistoria.jpg">
         </section>
+
         <h2 class="tituloProductosDestacados">Productos Destacados</h2>
         <section class="bannerProductosDestacados">
-            <article class="productoDestacado">
-                <a href="/product/1"><img class="imagenProductoDestacado" src="/img/product/Onix S.jpg"></a>
-                <h3>Onix</h3>
-                <p>Silver</p>
-                <h4>$1700</h4>
-            </article>
-            <article class="productoDestacado" id = "producto2">
-                <a href="/product/1"><img class="imagenProductoDestacado" src="/img/product/Onix S.jpg"></a>
-                <h3>Onix</h3>
-                <p>Silver</p>
-                <h4>$1700</h4>
-            </article>
-            <article class="productoDestacado" id="producto3">
-                <a href="/product/1"><img class="imagenProductoDestacado" src="/img/product/Onix S.jpg"></a>
-                <h3>Onix</h3>
-                <p>Silver</p>
-                <h4>$1700</h4>
-            </article>
-            
-            <button class="left">
-                < </button>
-                    <button class="right">></button>
+            <div id="carrucel2" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class = "bloqueItems">
+                        <% for(let i = 0 ; i < 3  ; i++ ){ %> 
+                        
+                            <article class="productoDestacado">
+                                <a href="/product/<%=productos[i].id  %> "><img class="imagenProductoDestacado" src="/img/product/<%= productos[i].img %>"></a>
+                                <h3><%=productos[i].nombre  %></h3>
+                                <h4>$<%=productos[i].precio  %></h4>
+                            </article>
+                        
+                        <% } %>
+                    </div> 
+                    </div>
+                    <div class="carousel-item">
+                    <div class = "bloqueItems">
+                        <article class="productoDestacado">
+                            <a href="/product/1"><img class="imagenProductoDestacado" src="/img/product/Onix S.jpg"></a>
+                            <h3>Onix</h3>
+                            <p>Silver</p>
+                            <h4>$1700</h4>
+                        </article>
+                        <article class="productoDestacado" id = "producto2">
+                            <a href="/product/1"><img class="imagenProductoDestacado" src="/img/product/Onix S.jpg"></a>
+                            <h3>Onix</h3>
+                            <p>Silver</p>
+                            <h4>$1700</h4>
+                        </article>
+                        <article class="productoDestacado" id="producto3">
+                            <a href="/product/1"><img class="imagenProductoDestacado" src="/img/product/Onix S.jpg"></a>
+                            <h3>Onix</h3>
+                            <p>Silver</p>
+                            <h4>$1700</h4>
+                        </article>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev button" type="button" data-bs-target="#carrucel2" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next button" type="button" data-bs-target="#carrucel2" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
         </section>
+        
         <h2 class="ubicacion">Ubicaciones</h2>
         <section class="bannerUbicaciones">
             <article class="ubicaciones">
@@ -83,6 +127,39 @@
         </section>
     </main>
     <%-include('./partials/footer') %>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 
 </html>
+
+
+<!------
+<div class = "bloqueItems">
+    <article class="productoDestacado">
+        <a href="/product/1"><img class="imagenProductoDestacado" src="/img/product/Onix S.jpg"></a>
+        <h3>Onix</h3>
+        <p>Silver</p>
+        <h4>$1700</h4>
+    </article>
+    <article class="productoDestacado" id = "producto2">
+        <a href="/product/1"><img class="imagenProductoDestacado" src="/img/product/Onix S.jpg"></a>
+        <h3>Onix</h3>
+        <p>Silver</p>
+        <h4>$1700</h4>
+    </article>
+    <article class="productoDestacado" id="producto3">
+        <a href="/product/1"><img class="imagenProductoDestacado" src="/img/product/Onix S.jpg"></a>
+        <h3>Onix</h3>
+        <p>Silver</p>
+        <h4>$1700</h4>
+    </article>
+</div>
+
+
+<article class="categorias" id = "segundaCategoria">
+    <a href="/product"><img class="imagenCategoria"  src="/img/product/Abaco Black S.jpg"></a>
+    <h3>Relojes</h3>
+    <p>Diseñado para usted</p>
+</article>
+-->

@@ -1,4 +1,7 @@
 @import url(./styles.css); 
+main{
+    margin-bottom: 5%;
+}
 .Opciones{
     display: flex;
     flex-direction: column;
@@ -16,7 +19,17 @@
         padding: 0;
         letter-spacing: 0; 
     }
-
+    .MainProductos{
+        display: flex;
+        flex-direction: column;
+        align-content: space-around;
+        justify-content: center;
+        align-items: center;
+        
+    }
+        .MainProductos h1{
+            text-align: center;
+        }
     .productoDestacado{
         display: flex;
         justify-content: space-around;
@@ -28,20 +41,14 @@
     }
     
         .productoDestacado h3{
-            font-size: 20px;
+            font-size: 17px;
             margin-left:10px;
-            margin-top:5px;
+            margin-top: 5px;
             margin-bottom: 2px;
         }
         
-        .productoDestacado p{
-            font-size: 12px;
-            margin-left:10px;
-            margin-bottom: 3px;
-        }
-        
         .productoDestacado h4{
-            font-size: 20;
+            font-size: 15px;
             margin-left:10px;
             margin-bottom:5px
         }
@@ -51,13 +58,13 @@
 
 @media(min-width:480px){
     .MainProductos{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: space-around;
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(30%  ,1fr));
     }
         .productoDestacado{
-            width: 40%;
+            width: 90%;
+            
+
         }
 }
 @media(min-width:1080px){

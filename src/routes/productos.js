@@ -1,9 +1,9 @@
 const express = require("express");
 const path = require("path");
 const productoController = require("../controllers/productosControllers");
-const multer = require("multer")
+const multer = require("multer");
 const router = express.Router();
-const middleware = require("../middlewares/userMiddlewares")
+const middleware = require("../middlewares/userMiddlewares");
 
 //***************** MULTER ********************/
 const storage = multer.diskStorage({
@@ -23,8 +23,10 @@ let fileUpload = multer({storage: storage});
 // Producto general
 router.get('/',productoController.index);
 
-// Creacion de producto
+// Porducto Categorias
+router.get('/categoria/:id',productoController.categorias)
 
+// Creacion de producto
 router.get('/new',productoController.create);
 router.post('/new',fileUpload.any('img'),productoController.createFuction);
 
@@ -37,9 +39,8 @@ router.get('/:id/edit',middleware.admin,productoController.editProduct);
 router.put('/:id/edit',productoController.editProductFuction);
 
 // Eliminar producto
-router.delete('/:id/delete',middleware.admin,productoController.delete)
+router.delete('/:id/delete',middleware.admin,productoController.delete);
 
-// Agregar al carrito
-router.get('/addCarrito/:id',productoController.addCarrito);
+
 
 module.exports = router
