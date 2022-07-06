@@ -1,0 +1,9 @@
+.Cards{
+    display: grid;
+    gap: 10px;
+
+}
+
+.Container{
+    width: 100%;
+}
