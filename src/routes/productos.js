@@ -39,5 +39,7 @@ router.put('/:id/edit',productoController.editProductFuction);
 // Eliminar producto
 router.delete('/:id/delete',middleware.admin,productoController.delete)
 
+// Agregar al carrito
+router.get('/addCarrito/:id',productoController.addCarrito);
 
 module.exports = router

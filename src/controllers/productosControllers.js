@@ -50,7 +50,10 @@ const controlador = {
         console.log(req.session.user);
         res.render("productDetail",{producto:productoSeleccionado,productRecomiend : productos , user : req.session.user});
     },
+    addCarrito: async (req,res) => {
 
+    },
+    
     create: async (req,res) => {
         let formasDePago = await dataBaseSQL.formaDePago.findAll();
         console.log(formasDePago.map(valor => valor.dataValues));
