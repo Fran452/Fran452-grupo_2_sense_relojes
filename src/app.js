@@ -12,7 +12,7 @@ const rutasMain = require("./routes/main");
 const apisUSer = require("./routes/apis")
 
 /******** Diferentes funcionamientos ****************/
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3002;
 const app = express();
 const publicPath = path.join(__dirname,"../","public");
 

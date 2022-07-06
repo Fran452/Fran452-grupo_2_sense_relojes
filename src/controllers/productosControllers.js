@@ -35,6 +35,7 @@ const controlador = {
             },
 
         )
+        console.log(productos.length);
         res.render("productosGeneral",{productos : productos})
     },
     /*

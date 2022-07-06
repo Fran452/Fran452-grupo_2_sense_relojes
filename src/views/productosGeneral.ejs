@@ -21,6 +21,9 @@
             </select>
         </div>
         <div class="MainProductos"> 
+            <% if(productos.length == 0){ %>
+                <h1> Aun no se tiene productos de esta categorias</h1>    
+            <% } %> 
             <% for(producto of productos){ %> 
             <article class="productoDestacado">
                 <a href="/product/<%= producto.id %> "><img class="imagenProductoDestacado" src="/img/product/<%= producto.img %> "></a>
