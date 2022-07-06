@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import "../Card/CardStyle.css";
 
-const Card = (props) => {
+function Card (props)  {
 
   const [setExpanded] = useState(false);
   return (
     <div>
       {(
-        <CardCompacta param={props} setExpanded={() => setExpanded(true)} />
+        <CardCompacta param={props}/>
       )}
         </div>
   );
 };
 
-function CardCompacta({ param, setExpanded }) {
+function CardCompacta({ param }) {
   const Png = param.png;
   return (
     <div
@@ -22,8 +22,7 @@ function CardCompacta({ param, setExpanded }) {
         background: param.color.backGround,
         boxShadow: param.color.boxShadow,
       }}
-      layoutId="expandableCard"
-      onClick={setExpanded}
+      
     >
       <div className="radialBar">
 
