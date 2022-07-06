@@ -1,46 +1,41 @@
-import React from "react";
-import Human from "../../assets/Images/Human.png";
-import "./SidebarStyle.css"
-
+import React, { useState } from "react";
+import "./SidebarStyle.css";
+import Logo from "../../assets/Images/Human.png";
+import { SidebarData } from "../Data/Data";
 
 function Sidebar() {
 
-	return (
+  const [selected, setSelected] = useState(0);
 
-		<div className="Sidebar">
+  return (
 
+    <div className='sidebar'>
+      {/* logo */}
 
-			<div className="logo">
-				<img src={Human} alt=" " />
-			</div>
+      <div className="logo">
+        <img src={Logo} />
+      </div>
 
-			<div className= "menu">
-				<div className="menuItem active">
+      <div className="menu">
 
-					<div>
-					<i class="fa-solid fa-house"></i>
-					</div>
-					<span>Dashboard</span>
+        {SidebarData.map((item, index) => {
 
-					<div>
-					<i class="fa-solid fa-users"></i>
-					</div>
-					<span>Usuarios</span>
+          return (
 
-					<div>
-					<i class="fa-solid fa-chart-line"></i>
-					</div>
-					<span>Metricas</span>
-						
-				</div>
-			</div>
-
-
-
-		</div>
-	)
-
-}
+            <div
+              className={selected === index ? "menuItem active" : "menuItem"}
+              key={index}
+              onClick={() => setSelected(index)}
+            >
+              <item.icon />
+              <span>{item.heading}</span>
+            </div>
+          );
+        })}
+        
+       </div>
+    </div>
+  );
+};
 
 export default Sidebar;
-
