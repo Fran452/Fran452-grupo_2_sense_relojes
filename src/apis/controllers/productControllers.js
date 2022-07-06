@@ -3,7 +3,7 @@ const dataBaseSQL = require("../../database/models");
 const controlador = {
     index : async (req,res) => {
         let count = await dataBaseSQL.productos.findAll();
-        let countByCategory = await dataBaseSQL.sequelize.query('SELECT id_tipo,COUNT(*) FROM `Producto` GROUP By id_tipo;');
+        let countByCategory = await dataBaseSQL.sequelize.query('SELECT Categoria.nombre,COUNT(*) FROM `Producto` INNER JOIN Categoria ON Producto.id_tipo = Categoria.id GROUP By id_tipo;');
         let products= await dataBaseSQL.productos.findAll();
         count = count.length;
         countByCategory = countByCategory[0];
