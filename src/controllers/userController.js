@@ -56,10 +56,12 @@ const controlador = {
             }
             return res.render("register",{error:validaciones.mapped()});
         }
+        let nombre = req.body.name.split(',')[0]; 
+        let apellido =req.body.name.split(',')[1];
         
         let userToCreate  = await db.usuarios.create({
-            nombre:req.body.name,
-            apellido: req.body.apellido,
+            nombre,
+            apellido,
             email:req.body.email ,
             telefono: req.body.telefono,
             fechaDeNacimiento: req.body.birth_date ,

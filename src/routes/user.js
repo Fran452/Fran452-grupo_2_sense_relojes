@@ -1,10 +1,10 @@
 const express = require("express");
-const {body} = require("express-validator")
-const path = require ("path")
-const multer = require ("multer")
+const {body} = require("express-validator");
+const path = require ("path");
+const multer = require ("multer");
 const router = express.Router();
 const userController = require("../controllers/userController");
-const middleware = require("../middlewares/userMiddlewares")
+const middleware = require("../middlewares/userMiddlewares");
 
 const funcionesGenericas = require("../generalFuction");
 const db = path.join(__dirname,"../database/clientes.json");

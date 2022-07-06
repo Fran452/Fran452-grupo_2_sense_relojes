@@ -22,6 +22,7 @@ CREATE TABLE `Usuario` (
   `telefono` int unsigned NOT NULL,
   `contraseña` text DEFAULT NULL,
   `img`  text NOT NULL,
+  `fechaDeNacimiento` DATE Not null,
   `admin` smallint(2) unsigned NOT NULL,
   PRIMARY KEY (`id`)
 -- FOREIGN KEY (`id_direccion`) REFERENCES Direccion (`id`)
@@ -132,41 +133,45 @@ CREATE TABLE `Productos_FormasDePago`(
 
 -- Valores de ejemplo 
 
-INSERT INTO `Usuario` VALUES (1,"Francisco", "Lema","franciscolemacr@gmail.com",45221515,"$2b$10$LNcQGxnvO5.R4sUGq/IuxOhvK1EdkexMMM.sRcaCWVUhUMdz29Cau","default-image.png",1);
+INSERT INTO `Categoria` VALUES (1,"reloj","reloj.jpg","reloj4x4.jpeg"),
+ (2,"billetera","pulsera.jpg","pulsera4x4.jpeg"),
+ (3,"pulseras","billetera.jpg","billetera4x4.jpeg"),
+ (4,"otros","otros.jpg","otros4x4.jpeg");
 
-INSERT INTO `Categoria` VALUES (1,"reloj","reloj.jpg","reloj4x4.jpeg");
-INSERT INTO `Categoria` VALUES (2,"billetera","pulsera.jpg","pulsera4x4.jpeg");
-INSERT INTO `Categoria` VALUES (3,"pulseras","billetera.jpg","billetera4x4.jpeg");
-INSERT INTO `Categoria` VALUES (4,"otros","otros.jpg","otros4x4.jpeg");
+INSERT INTO `Producto` VALUES (1,"Tesla Sepia","El Reloj Tesla Sepia fue diseñado como el compañero para todo el día. Es un reloj que te lo vas a querer sacar nunca más.",23000,3,"TeslaSepia01.webp",1,1),
+ (2,"Hades Acero","igual que el dios fuerte como el acero",2000,5,"1649273314571.webp",1,1),
+ (3,"Enrico Toffee","No vas a conocer un reloj tan clásico y minimalista como el Enrico Toffee.",15000,3,"EnricoToffee01.webp",1,1);
 
-INSERT INTO `Producto` VALUES (1,"Tesla Sepia","El Reloj Tesla Sepia fue diseñado como el compañero para todo el día. Es un reloj que te lo vas a querer sacar nunca más.",23000,3,"TeslaSepia01.webp",1,1);
-INSERT INTO `Producto` VALUES (2,"Hades Acero","igual que el dios fuerte como el acero",2000,5,"1649273314571.webp",1,1);
-INSERT INTO `Producto` VALUES (3,"Enrico Toffee","No vas a conocer un reloj tan clásico y minimalista como el Enrico Toffee.",15000,3,"EnricoToffee01.webp",1,1);
-
-INSERT INTO `ProductImg` VALUES (1,1,"TeslaSepia02.webp");
-INSERT INTO `ProductImg` VALUES (2,1,"TeslaSepia03.webp");
-INSERT INTO `ProductImg` VALUES (3,1,"TeslaSepia04.webp");
-INSERT INTO `ProductImg` VALUES (4,2,"1649273314573.webp");
-INSERT INTO `ProductImg` VALUES (5,2,"1649273314575.webp");
-INSERT INTO `ProductImg` VALUES (6,3,"EnricoToffee02.webp");
-INSERT INTO `ProductImg` VALUES (7,3,"EnricoToffee03.webp");
-INSERT INTO `ProductImg` VALUES (8,3,"EnricoToffee04.webp");
-
-INSERT INTO `FormasDePago` VALUES (1,"Mercado Pago");
-INSERT INTO `FormasDePago` VALUES (2,"Tranferencia");
-INSERT INTO `FormasDePago` VALUES (3,"Tarjeta De Credito");
-INSERT INTO `FormasDePago` VALUES (4,"Tarjeta de Debito");
-INSERT INTO `FormasDePago` VALUES (5,"Efectivo");
-
-INSERT INTO `Productos_FormasDePago` VALUES (1,1,1);
-INSERT INTO `Productos_FormasDePago` VALUES (2,1,2);
-INSERT INTO `Productos_FormasDePago` VALUES (3,1,3);
-INSERT INTO `Productos_FormasDePago` VALUES (4,2,1);
-INSERT INTO `Productos_FormasDePago` VALUES (5,2,5);
-INSERT INTO `Productos_FormasDePago` VALUES (6,2,2);
-INSERT INTO `Productos_FormasDePago` VALUES (7,3,5);
-INSERT INTO `Productos_FormasDePago` VALUES (8,3,1);
-INSERT INTO `Productos_FormasDePago` VALUES (9,3,2);
+INSERT INTO `ProductImg` VALUES 
+  (1,1,"TeslaSepia02.webp"),
+  (2,1,"TeslaSepia03.webp"),
+  (3,1,"TeslaSepia04.webp"),
+  (4,2,"1649273314573.webp"),
+  (5,2,"1649273314575.webp"),
+  (6,3,"EnricoToffee02.webp"),
+  (7,3,"EnricoToffee03.webp"),
+  (8,3,"EnricoToffee04.webp");
 
 
+INSERT INTO `FormasDePago` VALUES 
+  (1,"Mercado Pago"),
+  (2,"Tranferencia"),
+  (3,"Tarjeta De Credito"),
+  (4,"Tarjeta de Debito"),
+  (5,"Efectivo");
 
+INSERT INTO `Productos_FormasDePago` VALUES 
+  (1,1,1),
+  (2,1,2),
+  (3,1,3),
+  (4,2,1),
+  (5,2,5),
+  (6,2,2),
+  (7,3,5),
+  (8,3,1),
+  (9,3,2);
+
+
+INSERT INTO `Usuario` VALUES 
+  (1,"Francisco", "Lema","franciscolemacr@gmail.com",45221515,"$2b$10$LNcQGxnvO5.R4sUGq/IuxOhvK1EdkexMMM.sRcaCWVUhUMdz29Cau","default-image.png","11-06-2002",1),
+  (2,"Juan Manuel", "Carlos Ferre", "JuancarlosF@gmail.com",45221515,'12345678',"default-image.png","12-07-2002",0);
