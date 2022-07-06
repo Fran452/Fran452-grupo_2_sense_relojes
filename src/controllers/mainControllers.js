@@ -11,7 +11,7 @@ const controlador = {
         );
         let categorias  = await dataBaseSQL.categorias.findAll();
         
-        console.log(`estos productos se envian al index : ${productos.map(product => product.dataValues.id)} con estas categorias: ${categorias}`);
+        console.log(`estos productos se envian al index : ${productos.map(product => product.dataValues.id)} con estas categorias: ${categorias.map(product => product.dataValues.img_Port)}`);
         res.render("home.ejs", {productos : productos.map(product => product.dataValues), categorias : categorias.map(categoria => categoria.dataValues)});
     },
     carrito:(req,res) => {res.render("carrito")},

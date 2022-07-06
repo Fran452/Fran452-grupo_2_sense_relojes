@@ -349,6 +349,9 @@ h2{
     #producto3{
         display: block;
     }
+    #carrucel2  .carousel-control-next, #carrucel2  .carousel-control-prev{
+        width: 5%;
+    }
 
     .bannerUbicaciones{
         flex-direction: row;
