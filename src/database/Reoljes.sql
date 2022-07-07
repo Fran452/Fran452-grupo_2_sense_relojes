@@ -90,7 +90,9 @@ CREATE TABLE IF NOT EXISTS `CarritoProducto` (
   `id_producto` smallint(6) unsigned NOT NULL,
   `id_carrito` smallint(6) unsigned NOT NULL,
   PRIMARY KEY (`id`),
-  FOREIGN KEY (`id_usuario`) REFERENCES Usuario (`id`)
+  FOREIGN KEY (`id_producto`) REFERENCES Producto (`id`),
+  FOREIGN KEY (`id_carrito`) REFERENCES Carrito (`id`)
+
 );
 
 -- Tabla 'CompraIndividual'

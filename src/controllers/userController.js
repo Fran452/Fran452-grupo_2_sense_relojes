@@ -109,6 +109,15 @@ const controlador = {
         })
 
         res.json(agregarCarrito)
+    },
+
+    elinarCarrito : async (req,res) => {
+        let carritoEliminado = await db.carritoProducto.delete({
+            where : {
+                id : req.params.id
+            }
+        })
+        res.json(carritoEliminado);
     }
 }
 
