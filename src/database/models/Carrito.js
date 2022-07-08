@@ -25,11 +25,11 @@ module.exports = (sequelize,dataTypes) => {
 
     carrito.associate = models => {
         carrito.belongsTo(models.usuarios,{
-            foreignKey : 'id_user',
+            foreignKey : 'id_usuario',
             as : 'usuarios'
         });
         carrito.belongsToMany(models.productos,{
-            as: 'producto',
+            as: 'productos',
             through : 'CarritoProducto',
             foreignKey : 'id_carrito',
             otherKey: 'id_producto',

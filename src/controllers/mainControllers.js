@@ -14,7 +14,20 @@ const controlador = {
         console.log(`estos productos se envian al index : ${productos.map(product => product.dataValues.id)} con estas categorias: ${categorias.map(product => product.dataValues.img_Port)}`);
         res.render("home.ejs", {productos : productos.map(product => product.dataValues), categorias : categorias.map(categoria => categoria.dataValues)});
     },
-    carrito:(req,res) => {res.render("carrito")},
+    carrito: async (req,res) => {
+        if(req.session?.user){
+            let carrito = await dataBaseSQL.carrito.findByPk(
+                req.session.user.carrito,
+                {
+                    include : [{association: "productos"}]
+                });
+            
+            console.log(carrito);
+            //return res.json(carrito);
+            return res.render("carrito.ejs",{carrito : carrito})
+        }
+      res.send("no entro");  
+    },
 }
 
 module.exports = controlador;

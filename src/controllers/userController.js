@@ -4,7 +4,8 @@ const bcrypt = require("bcrypt");
 const {validationResult} = require("express-validator");
 const { fstat } = require("fs");
 const dbJSON = path.join(__dirname,"../database/clientes.json");
-const db = require("../database/models")
+const db = require("../database/models");
+const { get } = require("dottie");
 
 const controlador = {
     login:(req,res) => {res.render("login")},
@@ -41,12 +42,14 @@ const controlador = {
                 }
             })
             req.session.user = { id : usuario.id,
-                                admin : usuario.admin };
-
-            req.session.carrito =  carrito.id
-
+                                admin : usuario.admin,
+                                nombre : usuario.nombre,
+                                carrito : carrito.id}; 
+            console.log(req.body.profile);
             if(req.body.profile){
-                res.cookie("user",req.session.user.id,{ expires: new Date(Date.now() + (30*24*3600000)) }); // no funca las cookies
+                console.log("entre a la cookies");
+                res.cookie("user",{id : req.session.user.id, admin : req.session.user.admin, nombre : req.session.user.nombre, carrito:req.session.user.carrito },{ expires: new Date(Date.now() + (30*24*3600000)) }); // no funca las cookies
+                console.log(req.cookies);
             }
             return res.redirect("/user/perfile");
         }
@@ -94,7 +97,7 @@ const controlador = {
     detalle: (req,res) => {
         db.usuarios.findByPk(req.session.user.id)
         .then (usuario => {
-           return res.render("perfile",{user : usuario})
+            return res.render("perfile",{user : usuario})
         })
     },
     editar: async(req,res) => {
@@ -103,12 +106,31 @@ const controlador = {
     },
 
     addCarrito: async (req,res) => {
-        let agregarCarrito = await db.carritoProducto.create({
-            id_producto : req.params.id,
-            id_carrito : req.session.carrito
-        })
+        if(req.session.user){
+            let producto = await db.carritoProducto.findOne({
+                where : {id_producto : parseInt(req.params.id)}
+            });
+            console.log(producto);
+            if(producto){
+                let cantidadUnicial = producto.cantidad;
+                console.log(cantidadUnicial);
+                console.log("Entre al producto existente");
+                producto = await db.carritoProducto.update({cantidad : cantidadUnicial + 1},{where : {id_producto : req.params.id}});
+                return res.json(producto);
+            }else{
+                console.log("Entre al producto nuevo");
+                let agregarCarrito = await db.carritoProducto.create({
+                id_producto : parseInt(req.params.id),
+                id_carrito : req.session.user.carrito,
+                cantidad : 1
+                });
+                return res.json(agregarCarrito);
+            }
+        
+        
 
-        res.json(agregarCarrito)
+        }
+        return res.send("registrate");
     },
 
     elinarCarrito : async (req,res) => {

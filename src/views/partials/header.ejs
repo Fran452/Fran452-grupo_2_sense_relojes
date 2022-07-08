@@ -10,7 +10,7 @@
         <a id = "menuHamburguesa"><img src="/img/Menu.png"></a>
         <a id = "usuario" href="/user/login"><img src = "/img/Usuario.png"></a>
         <div class="MenuPerson">
-            <h2> Bienvenido: <%= locals.user ? user.id : 'usuario' %> </h2>
+            <h2> Bienvenido: <%= locals.user ? user.nombre : 'usuario' %> </h2>
             <div id="botonesPerson"> 
                 <button class="button"> boton de favoritos </button>
                 <button class="button"> boton de ultima compra </button>

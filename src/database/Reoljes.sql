@@ -48,16 +48,6 @@ CREATE TABLE `Categoria`(
   PRIMARY KEY (`id`)
 );
 
--- Tabla 'Carrito'
-
-CREATE TABLE `Carrito` (
-  `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
-  `id_venta` smallint(6) unsigned NOT NULL,
-  `id_usuario` smallint(6) unsigned NOT NULL,
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (`id_venta`) REFERENCES Venta (`id`),
-  FOREIGN KEY (`id_usuario`) REFERENCES Usuario (`id`)
-);
 
 -- Tabla 'Productos'
 
@@ -89,6 +79,7 @@ CREATE TABLE IF NOT EXISTS `CarritoProducto` (
   `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
   `id_producto` smallint(6) unsigned NOT NULL,
   `id_carrito` smallint(6) unsigned NOT NULL,
+  `cantidad` smallint(6) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   FOREIGN KEY (`id_producto`) REFERENCES Producto (`id`),
   FOREIGN KEY (`id_carrito`) REFERENCES Carrito (`id`)
@@ -191,9 +182,8 @@ INSERT INTO `Productos_FormasDePago` VALUES
 
 
 INSERT INTO `Usuario` VALUES 
-<<<<<<< HEAD
-  (1,"Francisco", "Lema","franciscolemacr@gmail.com",45221515,"$2b$10$LNcQGxnvO5.R4sUGq/IuxOhvK1EdkexMMM.sRcaCWVUhUMdz29Cau","default-image.png",1);
-=======
   (1,"Francisco", "Lema","franciscolemacr@gmail.com",45221515,"$2b$10$LNcQGxnvO5.R4sUGq/IuxOhvK1EdkexMMM.sRcaCWVUhUMdz29Cau","default-image.png","2002-06-11",1),
   (2,"Juan Manuel", "Carlos Ferre", "JuancarlosF@gmail.com",45221515,'12345678',"default-image.png","2002-07-12",0);
->>>>>>> develop
+
+INSERT INTO `Carrito` VALUES
+  (1,1)

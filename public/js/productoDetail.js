@@ -3,11 +3,15 @@ const botonCompra = document.querySelector('.carrito');
 
 botonCompra.addEventListener('click',e => {
     let idProducto = document.URL.split('/')[4]
-    fetch(`${link}/user/addCarrito/${idProducto}`)
+    console.log("ENTRE AL BOTON");
+    console.log(`${link}user/addCarrito/${idProducto}`);
+    fetch(`${link}user/addCarrito/${idProducto}`)
         .then(valor => {
-            valor.json();
+           
+            return valor.json();
+            console.log(valor);
         })
-        .then(valor =>{
-            console.log(enviadoAlCarrito); 
+        .then(final => {
+            console.log(final); 
         })
 })

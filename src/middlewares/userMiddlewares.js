@@ -21,6 +21,17 @@ const userMiddlewares = {
         }
         next();
     },
+    integrarCookies: (req,res,next) => {
+        if(req.cookies && req.cookies.user){
+            req.session.user = {
+                ...req.cookies.user
+            }
+            res.locals.user = {
+                ...req.cookies.user
+            }
+        }
+        next();
+    },
     guardarRegistro: (req,res,next) => {
         if(req.session.user){
             res.locals.user = req.session.user;

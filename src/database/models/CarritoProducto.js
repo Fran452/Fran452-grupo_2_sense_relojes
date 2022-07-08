@@ -16,6 +16,10 @@ module.exports = (sequelize,dataTypes) => {
             allowNull: false,
             type : dataTypes.INTEGER
         },
+        cantidad : {
+            allowNull: false,
+            type : dataTypes.INTEGER
+        }
         
     };
     let config =  {
