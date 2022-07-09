@@ -8,7 +8,7 @@ const userMiddlewares = {
         }
     },
     userRegister: (req,res,next) => {
-        if(req.session.user){
+        if(req.session.user != undefined){
             next();
         }else{
             return res.redirect("/user/register");

@@ -45,12 +45,12 @@ option{
     }
     .x{
         width: 10%;
-    }    
-        #eliminar{
+    }
+        .eliminar{
                 border : none;
                 background-color: white;
             }
-                #eliminar img{
+                .eliminar img{
                     width: 60%;
                     background: #FFF;
                 }

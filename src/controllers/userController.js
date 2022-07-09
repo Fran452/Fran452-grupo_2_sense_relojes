@@ -95,8 +95,10 @@ const controlador = {
     },
     
     detalle: (req,res) => {
+        console.log(req.session.user.id);
+        console.log(req.cookies.user.id);
         db.usuarios.findByPk(req.session.user.id)
-        .then (usuario => {
+            .then (usuario => {
             return res.render("perfile",{user : usuario})
         })
     },
@@ -126,9 +128,6 @@ const controlador = {
                 });
                 return res.json(agregarCarrito);
             }
-        
-        
-
         }
         return res.send("registrate");
     },
@@ -136,7 +135,8 @@ const controlador = {
     elinarCarrito : async (req,res) => {
         let carritoEliminado = await db.carritoProducto.delete({
             where : {
-                id : req.params.id
+                id_producto : req.params.id,
+                id_carrito : req.session.user.carrito
             }
         })
         res.json(carritoEliminado);

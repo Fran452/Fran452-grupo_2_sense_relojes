@@ -1,3 +1,4 @@
+const { retry } = require("async");
 const dataBaseSQL = require("../database/models");
 const controlador = {
     index: async (req,res) => {
@@ -16,15 +17,28 @@ const controlador = {
     },
     carrito: async (req,res) => {
         if(req.session?.user){
+            let productosVista = []
             let carrito = await dataBaseSQL.carrito.findByPk(
                 req.session.user.carrito,
                 {
                     include : [{association: "productos"}]
                 });
-            
-            console.log(carrito);
+                let cantidadDeCadaProducto = await dataBaseSQL.carritoProducto.findAll({
+                    where : {id_carrito : carrito.id} 
+                });
+
+                for (producto of carrito.productos){
+                    for (objeto of cantidadDeCadaProducto){
+                        if(objeto.id_producto == producto.id){
+                            producto.dataValues.cantidad = objeto.dataValues.cantidad;
+                        }
+                    }
+                    productosVista.push({...producto.dataValues})
+                }
+
+            console.log(carrito.productos);
             //return res.json(carrito);
-            return res.render("carrito.ejs",{carrito : carrito})
+            return res.render("carrito.ejs",{productos : productosVista})
         }
       res.send("no entro");  
     },
