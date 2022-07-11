@@ -31,14 +31,17 @@ const controlador = {
                     for (objeto of cantidadDeCadaProducto){
                         if(objeto.id_producto == producto.id){
                             producto.dataValues.cantidad = objeto.dataValues.cantidad;
+                            producto.dataValues.precioTotal = producto.dataValues.cantidad * producto.dataValues.precio
                         }
                     }
                     productosVista.push({...producto.dataValues})
                 }
-
-            console.log(carrito.productos);
-            //return res.json(carrito);
-            return res.render("carrito.ejs",{productos : productosVista})
+            let precioTotalPrductos = productosVista.reduce( function(acc,elemento){
+                return acc + elemento.precioTotal
+            },0)
+            
+            //return res.json({productosVista,precioTotalPrductos});
+            return res.render("carrito.ejs",{productos : productosVista, valorTotal : precioTotalPrductos})
         }
       res.send("no entro");  
     },

@@ -115,12 +115,9 @@ const controlador = {
             console.log(producto);
             if(producto){
                 let cantidadUnicial = producto.cantidad;
-                console.log(cantidadUnicial);
-                console.log("Entre al producto existente");
                 producto = await db.carritoProducto.update({cantidad : cantidadUnicial + 1},{where : {id_producto : req.params.id}});
                 return res.json(producto);
             }else{
-                console.log("Entre al producto nuevo");
                 let agregarCarrito = await db.carritoProducto.create({
                 id_producto : parseInt(req.params.id),
                 id_carrito : req.session.user.carrito,
@@ -133,7 +130,7 @@ const controlador = {
     },
 
     elinarCarrito : async (req,res) => {
-        let carritoEliminado = await db.carritoProducto.delete({
+        let carritoEliminado = await db.carritoProducto.destroy({
             where : {
                 id_producto : req.params.id,
                 id_carrito : req.session.user.carrito

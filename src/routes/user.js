@@ -61,6 +61,6 @@ router.get('/:id/editar',userController.editar);
 router.get('/addCarrito/:id',middleware.userRegister, userController.addCarrito);
 
 // Agregar al carrito
-router.get('/deleteCarrito/:id',middleware.userRegister, userController.elinarCarrito);
+router.get('/deleteProduc/:id',middleware.userRegister, userController.elinarCarrito);
 
 module.exports = router

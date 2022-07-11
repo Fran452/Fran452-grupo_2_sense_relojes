@@ -24,10 +24,7 @@
                     <% for(producto of productos){ %> 
                         <tr>
                             <td class = "x">
-                                <form action="/" class="elim">
-                                    <input name = "idProduct" type="number" value="<%= producto.id %>">
-                                    <button type="submit"><img src="/img/x-solid.svg"></button>
-                                </form>
+                                    <button class="eliminar" value="<%= producto.id %>"><img src="/img/x-solid.svg"></button>
                             </td> 
                             <td class="imagenProducto"> <img src="img/product/<%=  producto.img %> "> </td>
                             <td class = "cantidadProducto">
@@ -38,13 +35,13 @@
                                 </select> 
                             </td>
                             <td class = "precioProducto"> $<%= producto.precio  %> </td>
-                            <td class = "precioTotalProducto">$19.000</td>
+                            <td class = "precioTotalProducto">$<%= producto.precioTotal  %> </td>
                         </tr>
                     <% } %>  
                 
             </tbody>
         </table> 
-        <p class = "total"> Precio Total: $xxxx </p>
+        <p class = "total"> Precio Total: <%= valorTotal %> </p>
         <div class = "formulario">
 
             <div id ="infocliente">
