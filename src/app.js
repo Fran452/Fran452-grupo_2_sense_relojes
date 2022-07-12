@@ -5,7 +5,8 @@ const methodOverride = require ("method-override");
 const session = require("express-session");
 const { applyEachSeries } = require("async");
 const cookieParser = require("cookie-parser");
-const userMiddlewares = require("./middlewares/userMiddlewares")
+const userMiddlewares = require("./middlewares/userMiddlewares");
+require("dotenv").config()
 /*********** Rutas inportada ***************************/
 const rutasUser = require("./routes/user");
 const rutasProductos = require("./routes/productos");
@@ -14,6 +15,7 @@ const apisUSer = require("./routes/apis")
 
 /******** Diferentes funcionamientos ****************/
 const PORT = process.env.PORT || 3030;
+console.log(process.env.casa);
 const app = express();
 const publicPath = path.join(__dirname,"../","public");
 
