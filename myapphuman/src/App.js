@@ -13,7 +13,7 @@ function App() {
         <Sidebar/>
         <TablaPrincipal/>
         <TablaDerecha/>
-        {/* <TablaUsers/> */}
+        <TablaUsers/>
         <Tabla/>
       </div>
     </div>

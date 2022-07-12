@@ -1,27 +1,28 @@
-// import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 
-// function TablaUsers () {
-//     const url = "http://localhost:3001/apis/users"
-//     const [todos, setTodos] = useState()                        
-//     const fetchApi = async () => {
-//         const response = await fetch (url)
-//         const responseJSON = await response.json()
-//         console.log(responseJSON);
-//         setTodos(responseJSON)
-//     }
-//     useEffect(() => {
-//         fetchApi()
-
-//     } )
-    
-//     return (
-//         <ul>
-//         {! todos ? "cargando.." : todos.map((todo,index) =>{
-//             return <li> {todo.nombre} </li>
-//         })
-//         }
-//         </ul>
-//     )
-// }
-
-// export default TablaUsers
+const fetchApi = (url) => {
+        fetch(url)
+        .then(response => {
+                console.log(response.json());
+                return response.json()}  )
+            .then(responseJSON => console.log(responseJSON))
+            .catch(Error => console.log(Error))
+        };
+        
+        function TablaUsers() {
+                const [apiUser, setApiUser] = useState([]);
+                useEffect(() => {
+                        fetchApi("http://localhost:3001/apis/users")
+                    },[]);
+                    return (
+                            <ul>
+                                {apiUser.length <= 0
+                                    ? "cargando.."
+                                    : apiUser.map((apiUser, index) => {
+                                                return <li> {apiUser.usuariosFinal.nombre} </li>;
+                                          })}
+                                </ul>
+                            );
+                        }
+                        
+                        export default TablaUsers;

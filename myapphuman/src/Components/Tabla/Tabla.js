@@ -17,7 +17,7 @@ function Table ({data = [], columns = []})  {
         fetchProduct(url)
     },[]);
 
-    const mapper = (movie, index) => (
+    const mapper = (product, index) => (
         <Row
         product= { product }
         columns = { columns }
@@ -29,7 +29,7 @@ function Table ({data = [], columns = []})  {
         <table className = "table"> 
             <thead>
                 <tr>
-                   {columns.map((elem, index) => <th key={index + elem}>{elem} </th>)}
+                   {columns.map((e, index) => <th key={index + e}>{e} </th>)}
                 </tr>
             </thead>
 
