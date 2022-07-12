@@ -6,7 +6,7 @@ import "./TablaDerechaStyle.css";
 
 function TablaDerecha() {
   return (
-    <div className="TablaIzquierda">
+    <div className="TablaDerecha">
       <div>
         <h3>Actualizaciones</h3>
         <Actualizaciones />

@@ -1,5 +1,5 @@
 
-.TablaIzquierda{
+.TablaDerecha{
     display: flex;
     padding-top: 1rem;
     width: 95%;
@@ -8,7 +8,7 @@
 
 
 @media screen and (max-width: 1200px) {
-    .TablaIzquierda{
+    .TablaDerecha{
         justify-content: flex-start;
         margin-top: 3rem;
     }
@@ -16,11 +16,11 @@
 
 @media screen and (max-width: 768px)
 {
-    .TablaIzquierda{
+    .TablaDerecha{
         width: 100%;
         margin-top: 0;
     }
-    .TablaIzquierda>div{
+    .TablaDerecha>div{
         display: flex;
         flex-direction: column;
         align-items: center;
