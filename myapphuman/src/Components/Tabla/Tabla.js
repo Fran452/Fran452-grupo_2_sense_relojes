@@ -1,20 +1,13 @@
 import React, {useEffect, useState } from "react";
 import Row from "./Subcomponent/Row";
 import "./TablaStyle.css";
-
+import general from "../Data/Data"
 function Table ({data = [], columns = []})  {
 
     const [product,setProduct] = useState({});
      
     useEffect ( () => {
-
-        const url = "http://localhost:3001/apis/product"
-        async function fetchProduct(url) {
-            const result = await fetch(url)
-            const data = result.json()
-            setProduct(data)
-        }
-        fetchProduct(url)
+        general.fetchApi("http://localhost:3001/apis/product")
     },[]);
 
     const mapper = (product, index) => (

@@ -95,3 +95,11 @@ import {
       time: "4 hours ago",
     },
   ];
+
+export const fetchApi = (url) => {
+  return fetch(url)
+  .then(response => response.json())
+  .then(responseJSON =>responseJSON)
+  .catch(Error => console.log(Error))
+  
+};

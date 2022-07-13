@@ -1,19 +1,12 @@
 import React, {useEffect, useState} from "react";
 
-
-const fetchApi = (url) => {
-    return fetch(url)
-    .then(response => response.json())
-    .then(responseJSON =>responseJSON)
-    .catch(Error => console.log(Error))
-    
-};
+const fetchApi = require("../Data/Data")
 
 function TablaUsers() {
     const [apiUser, setApiUser] = useState([]);
   
     useEffect(() => {
-        fetchApi("http://localhost:3001/apis/users")
+        fetchApi.fetchApi("http://localhost:3001/apis/users")
         .then(respuesta => setApiUser(respuesta));
     },[]);
 
