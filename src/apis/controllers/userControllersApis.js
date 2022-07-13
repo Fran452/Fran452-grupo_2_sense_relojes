@@ -1,4 +1,5 @@
 const dataBaseSQL = require("../../database/models");
+const link = process.env.link || "http://localhost:3030";
 
 const controlador = {
     users : async (req,res) => {
@@ -11,7 +12,7 @@ const controlador = {
                 nombre: usuario.dataValues.nombre,
                 apellido: usuario.dataValues.apellido,
                 email : usuario.dataValues.email,
-                detail: `http://localhost:3000/apis/users/${usuario.dataValues.id}`
+                detail: `${link}/apis/users/${usuario.dataValues.id}`
             }
             usuario.dataValues = user  
         })
@@ -24,7 +25,7 @@ const controlador = {
         let camposRequeridos = {
             ...user.dataValues,
             "contraseña" : null,
-            imgUrl:`http://localhost:3000/img/user/${user.img}`,
+            imgUrl:`${link}/img/user/${user.img}`,
         } 
         res.json({camposRequeridos})
     }

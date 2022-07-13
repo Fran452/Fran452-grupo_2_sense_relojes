@@ -27,23 +27,25 @@ function Table () {
         <table className = "table"> 
             <tbody>
                <tr>
-                     
+                    <th> Nombre Producto </th>   
+                    <th> Tipo Poructo</th>
+                    <th> Cantidad </th>
+                    <th> Precio </th>
                </tr>
-               {/*data.map(mapper)*/}   
+               
+                {Array.isArray(product) && product.length > 0 ? product.map( product => {
+                    return( 
+                        <tr> 
+                            <th> {product.nombre} </th> 
+                            <th> {product.tipo} </th>
+                            <th> {product.stock} </th> 
+                            <th> {product.precio} </th> 
+                        </tr>
+                            )
+                    }) : "cargando"}   
             </tbody>
-            <thead>
-                {Array.isArray(product) && product.length > 0 ? product.map((product, index) => {
-                    return <tr> {product.nombre} </tr>
-                }) : "cargando"}
-            </thead>
-
-            
-
         </table>
-
-
     )
-
 }
 
 export default Table;
