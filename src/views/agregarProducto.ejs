@@ -16,9 +16,9 @@
                 <input class="Controles" type="text" name="nombre" id="Nombre">
 
                 <select  class="button Productos" name="tipo">
-                    <option value = "Reojes"> Relojes </option>
-                    <option value="Pulseras">Pulseras</option>
-                    <option value="Lentes">Lentes</option>
+                    <% for(tipo of categorias){%>   
+                    <option value = "<%=tipo.id%>" > <%=tipo.nombre%> </option>
+                    <% } %>
                 </select>
 
                 <label for="Imagen de producto">Imágen de Producto</label>

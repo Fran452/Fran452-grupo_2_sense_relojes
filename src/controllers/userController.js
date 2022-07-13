@@ -4,7 +4,8 @@ const bcrypt = require("bcrypt");
 const {validationResult} = require("express-validator");
 const { fstat } = require("fs");
 const dbJSON = path.join(__dirname,"../database/clientes.json");
-const db = require("../database/models")
+const db = require("../database/models");
+const { get } = require("dottie");
 
 const controlador = {
     login:(req,res) => {res.render("login")},
@@ -35,10 +36,20 @@ const controlador = {
             }
         })
         if(bcrypt.compareSync(req.body.pass,usuario.contraseña)){
+            let carrito = await db.carrito.findOne({
+                where : {
+                    id_usuario :  usuario.id
+                }
+            })
             req.session.user = { id : usuario.id,
-                            admin : usuario.admin }
+                                admin : usuario.admin,
+                                nombre : usuario.nombre,
+                                carrito : carrito.id}; 
+            console.log(req.body.profile);
             if(req.body.profile){
-                res.cookie("user",req.session.user.id,{ expires: new Date(Date.now() + (30*24*3600000)) }); // no funca las cookies
+                console.log("entre a la cookies");
+                res.cookie("user",{id : req.session.user.id, admin : req.session.user.admin, nombre : req.session.user.nombre, carrito:req.session.user.carrito },{ expires: new Date(Date.now() + (30*24*3600000)) }); // no funca las cookies
+                console.log(req.cookies);
             }
             return res.redirect("/user/perfile");
         }
@@ -70,8 +81,13 @@ const controlador = {
             admin : 0     
         });
 
+        let carrito  = await db.carrito.create({
+            id_usuario : userToCreate.id
+        });
+
         
         req.session.user = userToCreate.id
+        req.session.carrito = carrito.id
         if(req.body.guardarCook){
             res.cookie(user,userToCreate.id,{maxAge: new Date(Date.now() + (30*24*3600000))})
         }
@@ -79,16 +95,67 @@ const controlador = {
     },
     
     detalle: (req,res) => {
+        console.log(req.session.user.id);
+        console.log(req.cookies.user.id);
         db.usuarios.findByPk(req.session.user.id)
-        .then (usuario => {
-           return res.render("perfile",{user : usuario})
+            .then (usuario => {
+            return res.render("perfile",{user : usuario})
         })
     },
     editar: async(req,res) => {
         let pedidoUsuario = await db.Usuario.findByPk(req.session.user);
        
     },
+    salir: (req,res) => {
+
+    },
+    // Carrito Funciones
+    addCarrito: async (req,res) => {
+        if(req.session.user){
+            let producto = await db.carritoProducto.findOne({
+                where : {id_producto : parseInt(req.params.id)}
+            });
+            console.log(producto);
+            if(producto){
+                let cantidadUnicial = producto.cantidad;
+                producto = await db.carritoProducto.update({cantidad : cantidadUnicial + 1},{where : {id_producto : req.params.id}});
+                return res.json(producto);
+            }else{
+                let agregarCarrito = await db.carritoProducto.create({
+                id_producto : parseInt(req.params.id),
+                id_carrito : req.session.user.carrito,
+                cantidad : 1
+                });
+                return res.json(agregarCarrito);
+            }
+        }
+        return res.send("registrate");
+    },
+
+    elinarCarrito : async (req,res) => {
+        let carritoEliminado = await db.carritoProducto.destroy({
+            where : {
+                id_producto : req.params.id,
+                id_carrito : req.session.user.carrito
+            }
+        })
+        res.json(carritoEliminado);
+    },
+
+    modificarCarrito : async (req,res) => {
+        console.log("valor:",req.body);
+        let carritoModificado = await db.carritoProducto.update(
+        {
+            cantidad: req.query.cant
+        },{
+            where : {
+                id_producto : req.params.id,
+                id_carrito : req.session.user.carrito
+            }
+        })
+        res.json(carritoModificado);
     }
+}
 
 
 module.exports = controlador;

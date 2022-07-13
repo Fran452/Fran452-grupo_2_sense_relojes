@@ -24,9 +24,9 @@ module.exports = (sequelize,DataTypes) => {
 		"telefono":{
             type: DataTypes.STRING(6),
         } ,
-		/*"fechaDeNacimiento":{
+		"fechaDeNacimiento":{
             type: DataTypes.DATE,
-        } ,*/
+        } ,
 		"contraseña":{
             type: DataTypes.TEXT(),
             allowNull: false
@@ -50,7 +50,15 @@ module.exports = (sequelize,DataTypes) => {
         tableName : "Usuario"
     };
 
-    const usuarios = sequelize.define(nombre,columnas,config)
+    const usuarios = sequelize.define(nombre,columnas,config);
+
+    usuarios.associate = (models) => {
+        usuarios.hasMany(models.carrito,{
+            foreignKey : 'id_usuario',
+            as : 'usuarios'
+        })
+    }
+
     return usuarios;
 
 };

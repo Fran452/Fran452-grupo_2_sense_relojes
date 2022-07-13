@@ -6,7 +6,7 @@ function TablaUsers() {
     const [apiUser, setApiUser] = useState([]);
   
     useEffect(() => {
-        fetchApi.fetchApi("http://localhost:3001/apis/users")
+        fetchApi.fetchApi("http://localhost:3030/apis/users")
         .then(respuesta => setApiUser(respuesta));
     },[]);
 

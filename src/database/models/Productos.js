@@ -29,7 +29,7 @@ module.exports = (sequelize,dataTypes) => {
             type :dataTypes.STRING(100),
             defaultValue: "default-image.png"
         },
-        tipo : {
+        id_tipo : {
             type :dataTypes.STRING(100),
             allowNull: false
         },
@@ -54,6 +54,18 @@ module.exports = (sequelize,dataTypes) => {
             through : 'productos_FormasDePago',
             foreignKey : 'id_producto',
             otherKey: 'id_FormaDePago',
+            timestamps : false
+            
+        });
+        productos.belongsTo(models.categorias,{
+            foreignKey : 'id_tipo',
+            as : 'categorias'
+        });
+        productos.belongsToMany(models.carrito,{
+            as: 'carrito',
+            through : 'CarritoProducto',
+            foreignKey : 'id_producto',
+            otherKey: 'id_carrito',
             timestamps : false
             
         });

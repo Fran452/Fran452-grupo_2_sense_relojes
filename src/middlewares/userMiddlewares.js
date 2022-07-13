@@ -8,7 +8,7 @@ const userMiddlewares = {
         }
     },
     userRegister: (req,res,next) => {
-        if(req.session.user){
+        if(req.session.user != undefined){
             next();
         }else{
             return res.redirect("/user/register");
@@ -18,6 +18,17 @@ const userMiddlewares = {
         if(req.cookies?.user){
             res.cookie("user",req.cookies.user,{maxAge : 3000000000**1000000000000});
             next();
+        }
+        next();
+    },
+    integrarCookies: (req,res,next) => {
+        if(req.cookies && req.cookies.user){
+            req.session.user = {
+                ...req.cookies.user
+            }
+            res.locals.user = {
+                ...req.cookies.user
+            }
         }
         next();
     },

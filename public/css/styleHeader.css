@@ -86,10 +86,11 @@ header{
     display: none;
     position: absolute;
     right: -18px;
-    top: 40px;
+    top: 65%;
     z-index: 3;
     background-color: black;
     padding: 2%;
+    padding-top: 1%;
 }
     .MenuPerson h2 {
         font-size: 20px;

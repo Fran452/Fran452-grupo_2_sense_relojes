@@ -20,43 +20,28 @@
                 </tr> 
             </thead>
             <tbody>
-                <tr>
-                    <td class = "x"> <button id = "eliminar"><img src="/img/x-solid.svg" alt="" ></button></td>
-                    <td class="imagenProducto"> <img src="img/product/default-image.png"> </td>
-                    <td class = "cantidadProducto">
-                        <select name="cantidad"> 
-                            <option value="1"> 1 </option>
-                            <option value="2"> 2 </option>
-                            <option value="3"> 3 </option>
-                            <option value="4"> 4 </option>
-                            <option value="5"> 5 </option>
-                            <option value="6"> 6 </option>
-                        </select> 
-                        </td>
-                    <td class = "precioProducto">$19.000</td>
-                    <td class = "precioTotalProducto">$19.000</td>
-                </tr>
-                <tr>
-                    <td > <button id = "eliminar"><img src="/img/x-solid.svg" alt=""></button></td>
-                    <td class="imagenProducto"><img src="img/product/default-image.png"> </td>
-                    <td class = "cantidadProducto">
-                        <select name="cantidad"> 
-                            <option value="1"> 1 </option>
-                            <option value="2"> 2 </option>
-                            <option value="3"> 3 </option>
-                            <option value="4"> 4 </option>
-                            <option value="5"> 5 </option>
-                            <option value="6"> 6 </option>
-                        </select> 
-                             
-                    </td>
-                    <td class = "precioProducto">$19.000</td>
-                    <td class = "precioTotalProducto">$19.000</td>
-                </tr>
+               
+                    <% for(producto of productos){ %> 
+                        <tr>
+                            <td class = "x">
+                                    <button class="eliminar" value="<%= producto.id %>"><img src="/img/x-solid.svg"></button>
+                            </td> 
+                            <td class="imagenProducto"> <img src="img/product/<%=  producto.img %> "> </td>
+                            <td class = "cantidadProducto">
+                                <select name="cantidad" class="cantidad" id="<%= producto.id %> "> 
+                                    <% for(let i = 1; i <= producto.stock ;  i++){ %>
+                                        <option <%= producto.cantidad == i? "selected" : "" %> value = <%= i %> > <%= i %> </option>
+                                    <% } %> 
+                                </select> 
+                            </td>
+                            <td class = "precioProducto"> $<%= producto.precio  %> </td>
+                            <td class = "precioTotalProducto">$ <%= producto.precioTotal  %> </td>
+                        </tr>
+                    <% } %>  
                 
             </tbody>
         </table> 
-        <p class = "total"> Precio Total: $xxxx </p>
+        <p class = "total"> Precio Total: $ <%= valorTotal %> </p>
         <div class = "formulario">
 
             <div id ="infocliente">
@@ -158,6 +143,7 @@
         </div>
     </main>
     <%-include('./partials/footer') %>
+    <script src= "/js/carrito.js"></script>
 </body>
 
 </html>

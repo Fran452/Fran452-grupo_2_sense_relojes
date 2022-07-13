@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `Human` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `Human`;
 -- Tabla 'Direccion'
 
-CREATE TABLE `Direccion` (
+CREATE TABLE IF NOT EXISTS `Direccion` (
   `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
   `calle` smallint(6) NOT NULL,
   `numero` smallint(6) NOT NULL,
@@ -13,7 +13,7 @@ CREATE TABLE `Direccion` (
 
 -- Tabla `Usuarios`
 
-CREATE TABLE `Usuario` (
+CREATE TABLE IF NOT EXISTS `Usuario` (
   `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
 -- `id_direccion` smallint(6) unsigned NOT NULL,
   `nombre` varchar(26) DEFAULT NULL,
@@ -28,7 +28,6 @@ CREATE TABLE `Usuario` (
 -- FOREIGN KEY (`id_direccion`) REFERENCES Direccion (`id`)
 );
 
-
 -- Tabla 'Venta'
 
 CREATE TABLE `Venta` (
@@ -39,49 +38,70 @@ CREATE TABLE `Venta` (
   FOREIGN KEY (`id_usuario`) REFERENCES Usuario (`id`)
 );
 
--- Tabla 'Carrito'
+-- Tabla de 'Categorias'
 
-CREATE TABLE `Carrito` (
+CREATE TABLE `Categoria`(
   `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
-  `id_venta` smallint(6) unsigned NOT NULL,
-  `id_usuario` smallint(6) unsigned NOT NULL,
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (`id_venta`) REFERENCES Venta (`id`),
-  FOREIGN KEY (`id_usuario`) REFERENCES Usuario (`id`)
+  `nombre` varchar(26) NOT NULL, 
+  `img_Baner` text DEFAULT Null,
+  `img_Port` text DEFAULT Null,
+  PRIMARY KEY (`id`)
 );
+
 
 -- Tabla 'Productos'
 
-CREATE TABLE `Producto` (
+CREATE TABLE IF NOT EXISTS `Producto` (
   `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
   `nombre` varchar(26) DEFAULT NULL,
   `detalle` text DEFAULT NULL,
   `precio` int DEFAULT NULL,
   `stock` int(11) DEFAULT NULL,
   `img`  text NOT NULL,
-  `tipo` text NOT NULL,
+  `id_tipo` smallint(6) unsigned NOT NULL,
   `show` smallint(2) NOT NULL ,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`id_tipo`) REFERENCES Categoria (`id`)
+);
+
+-- Tabla 'Carrito'
+
+CREATE TABLE IF NOT EXISTS `Carrito` (
+  `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
+  `id_usuario` smallint(6) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`id_usuario`) REFERENCES Usuario (`id`)
+);
+
+-- Tabla 'CarritoProducto'
+
+CREATE TABLE IF NOT EXISTS `CarritoProducto` (
+  `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
+  `id_producto` smallint(6) unsigned NOT NULL,
+  `id_carrito` smallint(6) unsigned NOT NULL,
+  `cantidad` smallint(6) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`id_producto`) REFERENCES Producto (`id`),
+  FOREIGN KEY (`id_carrito`) REFERENCES Carrito (`id`)
+
 );
 
 -- Tabla 'CompraIndividual'
 
-CREATE TABLE `CompraIndividual` (
+CREATE TABLE IF NOT EXISTS `CompraIndividual` (
   `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
   `id_producto` smallint(6) unsigned NOT NULL,
-  `id_usuario` smallint(6)unsigned  NOT NULL,
-  `id_venta` smallint(6)  unsigned NOT NULL,
+  `id_carrito` smallint(6) unsigned  NOT NULL,
   `precio` decimal(3,2) DEFAULT NULL,
   `cantidad` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   FOREIGN KEY (`id_producto`) REFERENCES Producto (`id`),
-  FOREIGN KEY (`id_usuario`) REFERENCES Usuario (`id`),
-  FOREIGN KEY (`id_venta`) REFERENCES Venta (`id`)
+  FOREIGN KEY (`id_carrito`) REFERENCES Carrito (`id`)
 );
 
 -- Tabla 'Favoritos'
 
-CREATE TABLE `Favorito` (
+CREATE TABLE IF NOT EXISTS `Favorito` (
  `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
   `id_producto` smallint(6) unsigned  NOT NULL,
   `id_usuario` smallint(6) unsigned NOT NULL,
@@ -92,17 +112,17 @@ CREATE TABLE `Favorito` (
 
 -- Tabla de 'ProductImg'
 
-CREATE TABLE `ProductImg`(
+CREATE TABLE IF NOT EXISTS `ProductImg`(
   `id` smallint(6) NOT NULL,
   `id_producto` smallint(6) unsigned NOT NULL,
   `img` text NOT NULL UNIQUE,
   PRIMARY KEY (`id`),
-  FOREIGN KEY(`id_producto`) REFERENCES Producto (`id`)
+  FOREIGN KEY(`id_producto`) REFERENCES Producto (`id`) ON DELETE CASCADE
 );
 
 -- Tabla de 'FormasDePago'
 
-CREATE TABLE `FormasDePago`(
+CREATE TABLE IF NOT EXISTS `FormasDePago`(
   `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
   `formaDePago` text NOT NULL,
   PRIMARY KEY (`id`)
@@ -110,7 +130,7 @@ CREATE TABLE `FormasDePago`(
 
 -- Tabla de 'Productos_FormasDePago'
 
-CREATE TABLE `Productos_FormasDePago`(
+CREATE TABLE IF NOT EXISTS `Productos_FormasDePago`(
   `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
   `id_producto` smallint(6) unsigned NOT NULL,
   `id_formaDePago` smallint(6) unsigned NOT NULL,
@@ -119,15 +139,17 @@ CREATE TABLE `Productos_FormasDePago`(
   FOREIGN KEY (`id_formaDePago`) REFERENCES FormasDePago (`id`)
 );
 
+
 -- Valores de ejemplo 
 
+INSERT INTO `Categoria` VALUES (1,"reloj","reloj.jpg","reloj4x4.jpg"),
+ (2,"billetera","pulsera.jpg","pulsera4x4.jpg"),
+ (3,"pulseras","billetera.jpg","billetera4x4.jpg"),
+ (4,"otros","otros.jpg","otros4x4.jpg");
 
-
-INSERT INTO `Producto` VALUES 
-  (1,"Tesla Sepia","El Reloj Tesla Sepia fue diseñado como el compañero para todo el día. Es un reloj que te lo vas a querer sacar nunca más.",23000,3,"TeslaSepia01.webp","reloj",1),
-  (2,"Hades Acero","igual que el dios fuerte como el acero",2000,5,"1649273314571.webp","reloj",1),
-  (3,"Enrico Toffee","No vas a conocer un reloj tan clásico y minimalista como el Enrico Toffee.",15000,3,"EnricoToffee01.webp","reloj",1),
-  (4,"BILLETERA HERNAN","Billetera echa de cuero super resistente.",5000,3,"12ad25d9527bb45f7b47f7831d80a1.jpg","billetera",1);
+INSERT INTO `Producto` VALUES (1,"Tesla Sepia","El Reloj Tesla Sepia fue diseñado como el compañero para todo el día. Es un reloj que te lo vas a querer sacar nunca más.",23000,3,"TeslaSepia01.webp",1,1),
+ (2,"Hades Acero","igual que el dios fuerte como el acero",2000,5,"1649273314571.webp",1,1),
+ (3,"Enrico Toffee","No vas a conocer un reloj tan clásico y minimalista como el Enrico Toffee.",15000,3,"EnricoToffee01.webp",1,1);
 
 INSERT INTO `ProductImg` VALUES 
   (1,1,"TeslaSepia02.webp"),
@@ -156,12 +178,12 @@ INSERT INTO `Productos_FormasDePago` VALUES
   (6,2,2),
   (7,3,5),
   (8,3,1),
-  (9,3,2),
-  (10,4,2),
-  (11,4,3),
-  (12,4,5);
+  (9,3,2);
 
 
 INSERT INTO `Usuario` VALUES 
-  (1,"Francisco", "Lema","franciscolemacr@gmail.com",45221515,"$2b$10$LNcQGxnvO5.R4sUGq/IuxOhvK1EdkexMMM.sRcaCWVUhUMdz29Cau","default-image.png","11-06-2002",1),
-  (2,"Juan Manuel", "Carlos Ferre", "JuancarlosF@gmail.com",45221515,'12345678',"default-image.png","12-07-2002",0);
+  (1,"Francisco", "Lema","franciscolemacr@gmail.com",45221515,"$2b$10$LNcQGxnvO5.R4sUGq/IuxOhvK1EdkexMMM.sRcaCWVUhUMdz29Cau","default-image.png","2002-06-11",1),
+  (2,"Juan Manuel", "Carlos Ferre", "JuancarlosF@gmail.com",45221515,'12345678',"default-image.png","2002-07-12",0);
+
+INSERT INTO `Carrito` VALUES
+  (1,1)

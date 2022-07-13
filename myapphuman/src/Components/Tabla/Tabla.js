@@ -1,15 +1,20 @@
 import React, {useEffect, useState } from "react";
 import Row from "./Subcomponent/Row";
 import "./TablaStyle.css";
-import general from "../Data/Data"
-function Table ({data = [], columns = []})  {
+const funciones = require("../Data/Data")
 
-    const [product,setProduct] = useState({});
+function Table () {
+
+    const [product,setProduct] = useState([]);
      
     useEffect ( () => {
-        general.fetchApi("http://localhost:3001/apis/product")
+        funciones.fetchApi("http://localhost:3030/apis/product/productos").
+        then(resultado => {
+            console.log(resultado);
+            setProduct(resultado)
+        })
     },[]);
-
+/*
     const mapper = (product, index) => (
         <Row
         product= { product }
@@ -17,18 +22,22 @@ function Table ({data = [], columns = []})  {
         key= {product.nombre + index}
         />
     )
-
+*/
     return (
         <table className = "table"> 
+            <tbody>
+               <tr>
+                     
+               </tr>
+               {/*data.map(mapper)*/}   
+            </tbody>
             <thead>
-                <tr>
-                   {columns.map((e, index) => <th key={index + e}>{e} </th>)}
-                </tr>
+                {Array.isArray(product) && product.length > 0 ? product.map((product, index) => {
+                    return <tr> {product.nombre} </tr>
+                }) : "cargando"}
             </thead>
 
-            <tbody>
-               {data.map (mapper)}   
-            </tbody>
+            
 
         </table>
 
