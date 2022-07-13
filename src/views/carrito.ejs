@@ -28,20 +28,20 @@
                             </td> 
                             <td class="imagenProducto"> <img src="img/product/<%=  producto.img %> "> </td>
                             <td class = "cantidadProducto">
-                                <select name="cantidad"> 
+                                <select name="cantidad" class="cantidad" id="<%= producto.id %> "> 
                                     <% for(let i = 1; i <= producto.stock ;  i++){ %>
                                         <option <%= producto.cantidad == i? "selected" : "" %> value = <%= i %> > <%= i %> </option>
                                     <% } %> 
                                 </select> 
                             </td>
                             <td class = "precioProducto"> $<%= producto.precio  %> </td>
-                            <td class = "precioTotalProducto">$<%= producto.precioTotal  %> </td>
+                            <td class = "precioTotalProducto">$ <%= producto.precioTotal  %> </td>
                         </tr>
                     <% } %>  
                 
             </tbody>
         </table> 
-        <p class = "total"> Precio Total: <%= valorTotal %> </p>
+        <p class = "total"> Precio Total: $ <%= valorTotal %> </p>
         <div class = "formulario">
 
             <div id ="infocliente">

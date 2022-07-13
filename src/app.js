@@ -6,7 +6,7 @@ const session = require("express-session");
 const { applyEachSeries } = require("async");
 const cookieParser = require("cookie-parser");
 const userMiddlewares = require("./middlewares/userMiddlewares");
-require("dotenv").config()
+require("dotenv").config() //! No funciona
 /*********** Rutas inportada ***************************/
 const rutasUser = require("./routes/user");
 const rutasProductos = require("./routes/productos");
@@ -15,13 +15,14 @@ const apisUSer = require("./routes/apis")
 
 /******** Diferentes funcionamientos ****************/
 const PORT = process.env.PORT || 3030;
-console.log(process.env.casa);
+// console.log(process.env.casa); //! No funciona
 const app = express();
 const publicPath = path.join(__dirname,"../","public");
 
 /*************** Middlewares *************************/
 app.use(express.static(publicPath));
 app.use(methodOverride('_method'));
+app.use(express.json())
 app.use(express.urlencoded({extended : false}));
 app.use(session({secret : "contraseñaLinda",resave : false, saveUninitialized : false}));
 app.set("view engine","ejs");
@@ -43,7 +44,7 @@ app.use('/apis', apisUSer);
 /**************** Inicio de apliacion ***************************/
 
 app.listen(PORT, () => {
-    console.log(`Servidor en funcionamiento en el puerto http://localhost:${PORT}` );
+    console.log(`Servidor en funcionamiento en el puerto http://localhost:${PORT}`);
 });
 
 /**************** Error 404 ***************************/

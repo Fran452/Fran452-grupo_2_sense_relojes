@@ -60,7 +60,10 @@ router.get('/:id/editar',userController.editar);
 // Agregar al carrito
 router.get('/addCarrito/:id',middleware.userRegister, userController.addCarrito);
 
-// Agregar al carrito
+// Eliminar del carrito
 router.get('/deleteProduc/:id',middleware.userRegister, userController.elinarCarrito);
+
+// Modificar cantidad
+router.post('/cantidadCarrito/:id',middleware.userRegister, userController.modificarCarrito);
 
 module.exports = router

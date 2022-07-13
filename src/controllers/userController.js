@@ -106,7 +106,10 @@ const controlador = {
         let pedidoUsuario = await db.Usuario.findByPk(req.session.user);
        
     },
+    salir: (req,res) => {
 
+    },
+    // Carrito Funciones
     addCarrito: async (req,res) => {
         if(req.session.user){
             let producto = await db.carritoProducto.findOne({
@@ -137,6 +140,20 @@ const controlador = {
             }
         })
         res.json(carritoEliminado);
+    },
+
+    modificarCarrito : async (req,res) => {
+        console.log("valor:",req.body);
+        let carritoModificado = await db.carritoProducto.update(
+        {
+            cantidad: req.query.cant
+        },{
+            where : {
+                id_producto : req.params.id,
+                id_carrito : req.session.user.carrito
+            }
+        })
+        res.json(carritoModificado);
     }
 }
 

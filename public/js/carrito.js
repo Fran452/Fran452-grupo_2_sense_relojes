@@ -9,8 +9,25 @@ eliminar.forEach( boton =>{
         fetch(`${link}user/deleteProduc/${boton.value}`)
             .then( producto => producto.json())
             .then( json => console.log(json));
-        location.reload()
+        location.reload();
+    })
+});
+
+const modificar = document.querySelectorAll(".cantidad");
+
+modificar.forEach( boton => {
+    boton.addEventListener("blur", e => {
+        console.log(boton.value);
+        let productoID = boton.id
+        fetch(`${link}user/cantidadCarrito/${productoID}/?cant=${boton.value}`,{
+            method : 'POST',
+            headers: {
+                "Content-Type" : "application/json"
+            },
+            body: JSON.stringify({cantidad : boton.value})
+        })
+        .then(retorno => retorno.json())
+        .then(json => console.log(json))
+        location.reload();
     })
 })
-
-
