@@ -1,9 +1,9 @@
 const express = require("express");
 const path = require("path");
 const productoController = require("../controllers/productosControllers");
-const multer = require("multer")
+const multer = require("multer");
 const router = express.Router();
-const middleware = require("../middlewares/userMiddlewares")
+const middleware = require("../middlewares/userMiddlewares");
 
 //***************** MULTER ********************/
 const storage = multer.diskStorage({
@@ -37,7 +37,7 @@ router.get('/:id/edit',middleware.admin,productoController.editProduct);
 router.put('/:id/edit',productoController.editProductFuction);
 
 // Eliminar producto
-router.delete('/:id/delete',middleware.admin,productoController.delete)
+router.delete('/:id/delete',middleware.admin,productoController.delete);
 
 
 module.exports = router
