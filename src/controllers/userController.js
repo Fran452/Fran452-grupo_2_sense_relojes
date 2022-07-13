@@ -95,8 +95,6 @@ const controlador = {
     },
     
     detalle: (req,res) => {
-        console.log(req.session.user.id);
-        console.log(req.cookies.user.id);
         db.usuarios.findByPk(req.session.user.id)
             .then (usuario => {
             return res.render("perfile",{user : usuario})

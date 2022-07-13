@@ -61,7 +61,7 @@
                         <div class = "bloqueItems">
                         <% for(let i = 0 ; i < 3  ; i++ ){ %> 
                         
-                            <article class="productoDestacado">
+                            <article class="productoDestacado" id = <%= i == 2 ? "producto3" : "producto2" %> >
                                 <a href="/product/<%=productos[i].id  %> "><img class="imagenProductoDestacado" src="/img/product/<%= productos[i].img %>"></a>
                                 <h3><%=productos[i].nombre  %></h3>
                                 <h4>$<%=productos[i].precio  %></h4>
