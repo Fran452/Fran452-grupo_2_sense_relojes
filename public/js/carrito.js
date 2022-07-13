@@ -16,7 +16,7 @@ eliminar.forEach( boton =>{
 const modificar = document.querySelectorAll(".cantidad");
 
 modificar.forEach( boton => {
-    boton.addEventListener("blur", e => {
+    boton.addEventListener("change", e => {
         console.log(boton.value);
         let productoID = boton.id
         fetch(`${link}user/cantidadCarrito/${productoID}/?cant=${boton.value}`,{
