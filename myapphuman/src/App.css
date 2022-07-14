@@ -5,7 +5,7 @@
     --negro:#010203;
     --Iconos: #ce394854;
     --fondo:#FFFFFF;
-    --fondo2: rgba(231, 222, 222, 0.808);
+    --fondo2: rgba(185, 179, 179, 0.808);
     --azul-oscuro:#0d3a66;
     --blanco:#FFFFFF;
     --rojo:#880200;
@@ -20,8 +20,8 @@
   }
 
   .AppHuman{
-      display: grid;
-      width: 97%;
+      display: block;
+      width: 75%;
       border-radius: 2rem;
       background-color: var(--fondo2);
       overflow: hidden;

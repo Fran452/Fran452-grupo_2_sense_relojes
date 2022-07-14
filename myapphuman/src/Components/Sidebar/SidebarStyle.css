@@ -16,7 +16,7 @@
 }
 
 .logo img {
-  width: 8rem;
+  width: 15rem;
 }
 
 
@@ -36,7 +36,8 @@
   position: relative;
   transition: all 300ms ease;
   border-radius: 0.7rem;
-  font-size: 14px;
+  font-size: 20px;
+  text-decoration: none;
 }
 
 .menuItem:hover {
@@ -46,6 +47,7 @@
 .active {
   background: var(--Iconos);
   margin-left: 0;
+  max-width: 30%;
 }
 
 

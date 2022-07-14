@@ -1,3 +1,4 @@
+
 // Importacion de Iconos
 import {
     UilEstate,
@@ -21,36 +22,36 @@ import {
     {
       icon: UilEstate,
       heading: "Dashboard",
+      link:"/"
+      
     },
     {
       icon: UilUsersAlt,
       heading: "Clientes",
+      link:"/users",
     },
     {
       icon: UilPackage,
-      heading: 'Productos'
-    },
-    {
-      icon: UilChart,
-      heading: 'Metricas'
+      heading: 'Productos',
+      link:"/products"
     },
   ];
   
   // Metricas Cards Data
   export const cardsData = [
     {
-      title: "Ventas",
+      title: "Ultimo Producto",
       color: {
-        backGround: "linear-gradient(180deg, #d84e3c 0%, #663131 100%)",
+      backGround: "linear-gradient(180deg, #d84e3c 0%, #663131 100%)",
         boxShadow: "0px 10px 20px 0px #e0c6f5",
       },
       value: "25,000",
       png: UilUsdSquare,
     },
     {
-      title: "Ingresos",
+      title: "Ultimo Usuario",
       color: {
-        backGround: "linear-gradient(180deg, #d84e3c 0%, #663131 100%)",
+      backGround: "linear-gradient(180deg, #d84e3c 0%, #663131 100%)",
         boxShadow: "0px 10px 20px 0px #FDC0C7",
       },
       value: "14,270",
@@ -59,7 +60,7 @@ import {
     {
       title: "Gastos",
       color: {
-        backGround:
+      backGround:
           "linear-gradient(180deg, #d84e3c 0%, #663131 100%)",
         boxShadow: "0px 10px 20px 0px #F9D59B",
       },

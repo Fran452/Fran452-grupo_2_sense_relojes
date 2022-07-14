@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./SidebarStyle.css";
 import Logo from "../../assets/Images/Human.png";
 import { SidebarData } from "../Data/Data";
+import { Link } from "react-router-dom"
+
 
 function Sidebar() {
 
@@ -10,7 +12,6 @@ function Sidebar() {
   return (
 
     <div className='sidebar'>
-      {/* logo */}
 
       <div className="logo">
         <img src={Logo} />
@@ -22,18 +23,22 @@ function Sidebar() {
 
           return (
 
-            <div
-              className={selected === index ? "menuItem active" : "menuItem"}
-              key={index}
-              onClick={() => setSelected(index)}
-            >
+            
+            <Link onClick={() => setSelected(index)} 
+            className={selected === index ? "menuItem active" : "menuItem"} 
+            to={item.link}> 
               <item.icon />
               <span>{item.heading}</span>
-            </div>
+              </Link>
+            
+            
+            
+           
+
           );
         })}
-        
-       </div>
+
+      </div>
     </div>
   );
 };
