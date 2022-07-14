@@ -3,7 +3,7 @@ import React, {useEffect, useState } from "react";
 import "./TablaStyle.css";
 const funciones = require("../Data/Data")
 
-function Table () {
+function TablaProductos () {
 
     const [product,setProduct] = useState([]);
      
@@ -40,4 +40,4 @@ function Table () {
     )
 }
 
-export default Table;
+export default TablaProductos;

@@ -1,7 +1,6 @@
 
 import React from "react";
-import CustomerReview from "../Tabla/Tabla";
-import Actualizaciones from "../Actualizaciones/Actualizaciones";
+import Actualizaciones from "./Subcomponent/Actualizaciones/Actualizaciones";
 import "./TablaDerechaStyle.css";
 
 function TablaDerecha() {

@@ -4,7 +4,7 @@ import TablaPrincipal from './Components/TablaPrincipal/TablaPrincipal';
 import TablaDerecha from './Components/TablaDerecha/TablaDerecha';
 import Sidebar from './Components/Sidebar/Sidebar';
 import TablaUsers from './Components/TablaUsers/TablaUsers';
-import Tabla from "./Components/Tabla/Tabla";
+import TablaProductos from "./Components/TablaProductos/TablaProductos";
 import { Route, Routes} from "react-router-dom";
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
           <Route path="/" element= {  <TablaPrincipal/> }/>
           <Route path="/actualizaciones" element= {  <TablaDerecha/>   }/>
           <Route path="/users" element= {  <TablaUsers/>   }/>
-          <Route path="/products" element= {  <Tabla/>   }/>
+          <Route path="/products" element= {  <TablaProductos/>   }/>
         </Routes>
       </div>
     </div>

@@ -1,7 +1,7 @@
 
 import React from "react";
 import "./ActualizacionesStyle.css";
-import { UpdatesData } from "../Data/Data";
+import { UpdatesData } from "../../../Data/Data";
 
 function Actualizaciones() {
   return (

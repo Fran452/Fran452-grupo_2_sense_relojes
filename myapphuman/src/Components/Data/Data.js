@@ -2,12 +2,9 @@
 // Importacion de Iconos
 import {
     UilEstate,
-    UilClipboardAlt,
     UilUsersAlt,
     UilPackage,
-    UilChart,
-    UilMoneyWithdrawal,
-    UilUsdSquare
+
     
   } from "@iconscout/react-unicons";
    
@@ -22,8 +19,7 @@ import {
     {
       icon: UilEstate,
       heading: "Dashboard",
-      link:"/"
-      
+      link:"/" 
     },
     {
       icon: UilUsersAlt,
@@ -41,31 +37,15 @@ import {
   export const cardsData = [
     {
       title: "Ultimo Producto",
-      color: {
-      backGround: "linear-gradient(180deg, #d84e3c 0%, #663131 100%)",
-        boxShadow: "0px 10px 20px 0px #e0c6f5",
-      },
-      value: "25,000",
-      png: UilUsdSquare,
+      value: "PRODUCTO",
     },
     {
       title: "Ultimo Usuario",
-      color: {
-      backGround: "linear-gradient(180deg, #d84e3c 0%, #663131 100%)",
-        boxShadow: "0px 10px 20px 0px #FDC0C7",
-      },
-      value: "14,270",
-      png: UilMoneyWithdrawal,
+      value: "USUARIO",
     },
     {
       title: "Gastos",
-      color: {
-      backGround:
-          "linear-gradient(180deg, #d84e3c 0%, #663131 100%)",
-        boxShadow: "0px 10px 20px 0px #F9D59B",
-      },
       value: "4,270",
-      png: UilClipboardAlt,
     },
   ];
   
