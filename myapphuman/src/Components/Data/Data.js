@@ -1,4 +1,3 @@
-
 // Importacion de Iconos
 import {
     UilEstate,
@@ -32,7 +31,8 @@ import {
       link:"/products"
     },
   ];
-  
+      
+
   // Metricas Cards Data
   export const cardsData = [
     {

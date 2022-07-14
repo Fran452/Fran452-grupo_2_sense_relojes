@@ -12,9 +12,7 @@ function Cards () {
           <div className="Container" key={id}>
             <Card
               title={card.title}
-              color={card.color}
               value={card.value}
-              png={card.png}
             />
           </div>
         );
