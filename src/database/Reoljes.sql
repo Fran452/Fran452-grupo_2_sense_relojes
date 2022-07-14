@@ -143,8 +143,8 @@ CREATE TABLE IF NOT EXISTS `Productos_FormasDePago`(
 -- Valores de ejemplo 
 
 INSERT INTO `Categoria` VALUES (1,"reloj","reloj.jpg","reloj4x4.jpg"),
- (2,"billetera","pulsera.jpg","pulsera4x4.jpg"),
- (3,"pulseras","billetera.jpg","billetera4x4.jpg"),
+ (2,"billetera","billetera.jpg","billetera4x4.jpg"),
+ (3,"pulceras","pulsera.jpg","pulsera4x4.jpg"),
  (4,"otros","otros.jpg","otros4x4.jpg");
 
 INSERT INTO `Producto` VALUES (1,"Tesla Sepia","El Reloj Tesla Sepia fue diseñado como el compañero para todo el día. Es un reloj que te lo vas a querer sacar nunca más.",23000,3,"TeslaSepia01.webp",1,1),

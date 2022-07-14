@@ -83,14 +83,14 @@ header{
 }
 
 .MenuPerson{
+    width: 30vw;
     display: none;
     position: absolute;
     right: -18px;
     top: 65%;
     z-index: 3;
-    background-color: black;
-    padding: 2%;
-    padding-top: 1%;
+    background-color: var(--negro);
+    padding: 1% 5% 3% 5%;
 }
     .MenuPerson h2 {
         font-size: 20px;
@@ -99,7 +99,14 @@ header{
         color: wheat;
         margin: 3%;
     }
+    .MenuPerson #botonesPerson{
+        width: 100%;
+    }
+    .MenuPerson #botonesPerson .button{
+        width: 49%;
+    }
 
+/* Pc    */
 @media(min-width: 1080px){
     header{
         position: relative;
@@ -130,10 +137,14 @@ header{
     .menu-productos-expand ul{
         display: flex;
         flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 0;
     }
     .menu-productos-expand  ul li{
         font-size: 1vw;
-        margin-right: 4vw;       
+        margin-left: 10%;
+        text-align: center;       
     }
 
     #usuario:hover ~ .MenuPerson{

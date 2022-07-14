@@ -2,6 +2,7 @@ const path = require("path");
 const fuctionGeneric = require("../generalFuction");
 const dataBase = path.join(__dirname, "../database/product.json");
 const dataBaseSQL = require("../database/models");
+const database = require("mime-db");
 const controlador = {
 	/*index:(req,res) => {
         let productos = fuctionGeneric.archivoJSON(dataBase).filter(producto => producto.show);
@@ -27,8 +28,10 @@ const controlador = {
 			limit: 5
 			//offset : pagina * 5,
 		});
+		let categoria = await dataBaseSQL.categorias.findByPk(req.params.id);
 		console.log(productos.length);
-		res.render("productosGeneral", {productos: productos});
+		//return res.json( {productos: productos , categoria})
+		return res.render("productosGeneral", {productos: productos, categoria} );
 	},
 	/*
     id:(req,res) => {

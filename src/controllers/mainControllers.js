@@ -43,7 +43,7 @@ const controlador = {
             //return res.json({productosVista,precioTotalPrductos});
             return res.render("carrito.ejs",{productos : productosVista, valorTotal : precioTotalPrductos})
         }
-      res.send("no entro");  
+      res.render("not-found");  
     },
 }
 

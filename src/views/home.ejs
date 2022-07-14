@@ -21,14 +21,14 @@
                 <div class="carousel-inner">
                   <div class="carousel-item active">
                     <article class="categorias" >
-                        <a href="/product/categoria/<%= categorias[0].id %> "><img class="imagenCategoria"  src="/img/Categorias/<%= categorias[0].img_Port %>"></a>
+                        <a href="/product/categoria/<%= categorias[0].id %> "><img class="imagenCategoria"  src="/img/categorias/<%= categorias[0].img_Port %>"></a>
                         <h3> <%= categorias[0].nombre %></h3>
                     </article>
                   </div>
                   <% for(let i = 1 ; i < categorias.length ; i ++){ %> 
                   <div class="carousel-item ">
                     <article class="categorias" >
-                        <a href="/product/categoria/<%= categorias[i].id %>"><img class="imagenCategoria"  src="/img/Categorias/<%= categorias[i].img_Port %>"> </a>
+                        <a href="/product/categoria/<%= categorias[i].id %>"><img class="imagenCategoria"  src="/img/categorias/<%= categorias[i].img_Port %>"> </a>
                         <h3> <%= categorias[i].nombre %></h3>
                     </article>
                   </div>
