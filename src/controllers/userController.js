@@ -126,7 +126,8 @@ const controlador = {
 			return res.render("perfile", {user: usuario});
 		});
 	},
-	//? Editar el usuario //! Proximamente
+	//? Editar el usuario 
+	//! Proximamente
 	editar: async (req, res) => {
 		let pedidoUsuario = await db.Usuario.findByPk(req.session.user);
 	},

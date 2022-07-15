@@ -9,6 +9,7 @@ const controlador = {
         res.render("productosGeneral",{productos : productos});
     },*/
 
+	//? Pagina de index
 	index: async (req, res) => {
 		let pagina = req.params.pag ? req.params.pag : 0;
 		let productos = await dataBaseSQL.productos.findAll({
@@ -23,6 +24,7 @@ const controlador = {
 		res.render("productosGeneral", {productos: productos, categoria});
 	},
 
+	//? Pagina de categorias
 	categorias: async (req, res) => {
 		let productos = await dataBaseSQL.productos.findAll({
 			where: {
@@ -45,6 +47,7 @@ const controlador = {
         res.render("productDetail",{producto:productoSeleccionado, productRecomiend : funcionesGenericas.archivoJSON(dataBase)})
     },*/
 
+	//? Pagia de detalle del producto
 	id: async (req, res) => {
 		let productoSeleccionadoDB = await dataBaseSQL.productos.findByPk(
 			req.params.id,
@@ -65,8 +68,6 @@ const controlador = {
 				valor => valor.dataValues.FormaDePago
 			)
 		};
-		//console.log(productoSeleccionadoDB.dataValues.formaDePago);
-		//productoSeleccionado.formaDePago = ["1","2"]
 		funcionesGenericas.newLog(`Entre a la producto: ${productoSeleccionado.nombre} link: ${process.env.link}/product/${productoSeleccionado.id}\n`)
 		res.render("productDetail", {
 			producto: productoSeleccionado,
@@ -75,6 +76,7 @@ const controlador = {
 		});
 	},
 
+	//? Pagina visual de creacion
 	create: async (req, res) => {
 		let formasDePago = await dataBaseSQL.formaDePago.findAll();
 		let categorias = await dataBaseSQL.categorias.findAll()
@@ -87,7 +89,7 @@ const controlador = {
 		
 	},
 	
-	/* //? createFuction para JSON
+	/* //? CreateFuction para JSON
 	createFuction: (req,res) => {
         let products =  funcionesGenericas.archivoJSON(dataBase);
         let img = req.files.map(foto => foto.filename).length > 0 ? req.files.map(foto => foto.filename) : ["default-image.png","default-image.png","default-image.png","default-image.png"];
@@ -106,6 +108,7 @@ const controlador = {
         res.redirect(`/product/${newProduct.id}`);
     },*/
 
+	//? Funcion de cracion
 	createFuction: async (req, res) => {
 		let img =
 			req.files.map(foto => foto.filename).length > 0
@@ -152,12 +155,13 @@ const controlador = {
 		res.redirect(`/product/${producto.id}`);
 	},
 
-	/* //? editProduct para JSON
+	/* //? EditProduct para JSON
 	editProduct: (req,res) => {
         let productoSeleccionado = funcionesGenericas.archivoJSON(dataBase).find(producto => producto.id == req.params.id )
         res.render("modificarproducto",{product : productoSeleccionado});
     },*/
 
+	//? Vista editar producto
 	editProduct: async (req, res) => {
 		let productoSeleccionado = await dataBaseSQL.productos.findByPk(
 			req.params.id
@@ -166,7 +170,7 @@ const controlador = {
 		res.render("modificarproducto", {product: productoSeleccionado});
 	},
 
-	/* //? editProductFuction para JSON
+	/* //? EditProductFuction para JSON
 	editProductFuction: (req,res) => {
         let products =  funcionesGenericas.archivoJSON(dataBase);
         products.forEach(producto => {
@@ -183,6 +187,7 @@ const controlador = {
         res.redirect(`/product`);
     },*/
 
+	//? Funcion editar producto
 	editProductFuction: async (req, res) => {
 		console.log(req.body);
 		await dataBaseSQL.productos.update(
@@ -204,7 +209,7 @@ const controlador = {
 		res.redirect(`/product`);
 	},
 
-	/* //? delete para JSON
+	/* //? Delete para JSON
 	delete: (req,res) => {
         let listaSinProducto = funcionesGenericas.archivoJSON(dataBase)
         listaSinProducto.forEach(producto => {
@@ -217,6 +222,7 @@ const controlador = {
         res.redirect("/product");
     }*/
 
+	//? Funcion eliminar prodcuto
 	delete: async (req, res) => {
 		await dataBaseSQL.productos.update(
 			{

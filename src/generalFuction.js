@@ -32,6 +32,11 @@ function eliminarArchivo(direccion){
 	fs.unlinkSync(direccion)
 }
 
+/**
+ * @desc Crea logs de documentacion
+ * @param {string} direccion Infromacion del log
+ * @returns {void}
+*/
 function newLog(log){
 	fs.appendFile(logs,log, () => {});
 }

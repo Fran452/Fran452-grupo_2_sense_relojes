@@ -40,7 +40,7 @@ CREATE TABLE `Venta` (
 
 -- Tabla de 'Categorias'
 
-CREATE TABLE `Categoria`(
+CREATE TABLE IF`Categoria`(
   `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
   `nombre` varchar(26) NOT NULL, 
   `img_Baner` text DEFAULT Null,
@@ -84,19 +84,6 @@ CREATE TABLE IF NOT EXISTS `CarritoProducto` (
   FOREIGN KEY (`id_producto`) REFERENCES Producto (`id`),
   FOREIGN KEY (`id_carrito`) REFERENCES Carrito (`id`)
 
-);
-
--- Tabla 'CompraIndividual'
-
-CREATE TABLE IF NOT EXISTS `CompraIndividual` (
-  `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
-  `id_producto` smallint(6) unsigned NOT NULL,
-  `id_carrito` smallint(6) unsigned  NOT NULL,
-  `precio` decimal(3,2) DEFAULT NULL,
-  `cantidad` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (`id_producto`) REFERENCES Producto (`id`),
-  FOREIGN KEY (`id_carrito`) REFERENCES Carrito (`id`)
 );
 
 -- Tabla 'Favoritos'
