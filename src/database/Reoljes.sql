@@ -1,4 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `Human` /*!40100 DEFAULT CHARACTER SET latin1 */;
+CREATE DATABASE IF NOT EXISTS `Human` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `Human`;
 -- Tabla 'Direccion'
 
@@ -10,7 +10,6 @@ CREATE TABLE IF NOT EXISTS `Direccion` (
   `provincia` varchar(26) DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
-
 -- Tabla `Usuarios`
 
 CREATE TABLE IF NOT EXISTS `Usuario` (
