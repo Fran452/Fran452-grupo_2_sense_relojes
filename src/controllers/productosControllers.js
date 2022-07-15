@@ -118,7 +118,7 @@ const controlador = {
 				  ];
 		let producto = await dataBaseSQL.productos.create({
 			nombre: req.body.nombre,
-			detalle: req.body.detalle,
+			detalle: req.body.descripcion,
 			precio: req.body.precio,
 			stock: req.body.cantidad,
 			img: img[0],
@@ -126,8 +126,9 @@ const controlador = {
 			show: 1
 		});
 		funcionesGenericas.newLog(`Se creo un nuevo producto:
+	id: ${producto.id}
 	nombre: ${producto.nombre}
-	detalle: ${producto.detalle}
+	detalle: ${producto.descripcion}
 	precio: ${producto.precio}
 	stock: ${producto.stock}
 	imgPrincipal: ${producto.img}
@@ -139,6 +140,7 @@ const controlador = {
 			});
 			funcionesGenericas.newLog(`	Imagenes asociadas: ${imgSecundaria.img}\n`)
 		}
+		let formaDePago = [].concat(req.body.formaDePago)
 		for (let i = 0; i < req.body.formaDePago.length; i++) {
 			let formaDePagos = await dataBaseSQL.productos_FormasDePago.create({
 				id_producto: producto.id,

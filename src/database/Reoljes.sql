@@ -142,21 +142,23 @@ CREATE TABLE IF NOT EXISTS `Productos_FormasDePago`(
 
 -- Valores de ejemplo 
 
-INSERT INTO `Categoria` VALUES (1,"reloj","reloj.jpg","reloj4x4.jpg"),
- (2,"billetera","billetera.jpg","billetera4x4.jpg"),
- (3,"pulceras","pulsera.jpg","pulsera4x4.jpg"),
- (4,"otros","otros.jpg","otros4x4.jpg");
+INSERT INTO `Categoria` VALUES 
+  (1,"reloj","reloj.jpg","reloj4x4.jpg"),
+  (2,"billetera","billetera.jpg","billetera4x4.jpg"),
+  (3,"pulceras","pulsera.jpg","pulsera4x4.jpg"),
+  (4,"otros","otros.jpg","otros4x4.jpg");
 
-INSERT INTO `Producto` VALUES (1,"Tesla Sepia","El Reloj Tesla Sepia fue diseñado como el compañero para todo el día. Es un reloj que te lo vas a querer sacar nunca más.",23000,3,"TeslaSepia01.webp",1,1),
- (2,"Hades Acero","igual que el dios fuerte como el acero",2000,5,"1649273314571.webp",1,1),
- (3,"Enrico Toffee","No vas a conocer un reloj tan clásico y minimalista como el Enrico Toffee.",15000,3,"EnricoToffee01.webp",1,1);
+INSERT INTO `Producto` VALUES 
+  (1,"Tesla Sepia","El Reloj Tesla Sepia fue diseñado como el compañero para todo el día. Es un reloj que te lo vas a querer sacar nunca más.",23000,3,"TeslaSepia01.webp",1,1),
+  (2,"Hades Acero","igual que el dios fuerte como el acero",2000,5,"Hades_Acero1.webp",1,1),
+  (3,"Enrico Toffee","No vas a conocer un reloj tan clásico y minimalista como el Enrico Toffee.",15000,3,"EnricoToffee01.webp",1,1);
 
 INSERT INTO `ProductImg` VALUES 
   (1,1,"TeslaSepia02.webp"),
   (2,1,"TeslaSepia03.webp"),
   (3,1,"TeslaSepia04.webp"),
-  (4,2,"1649273314573.webp"),
-  (5,2,"1649273314575.webp"),
+  (4,2,"Hades_Acero2.webp"),
+  (5,2,"Hades_Acero3.webp"),
   (6,3,"EnricoToffee02.webp"),
   (7,3,"EnricoToffee03.webp"),
   (8,3,"EnricoToffee04.webp");

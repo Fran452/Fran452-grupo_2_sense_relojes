@@ -12,7 +12,7 @@ module.exports = (sequelize,dataTypes) => {
             allowNull: false,
             type : dataTypes.INTEGER
         } ,
-        id_FormaDePago:{
+        id_formaDePago:{
             allowNull: false,
             type : dataTypes.INTEGER
         }
