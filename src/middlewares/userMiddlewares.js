@@ -8,21 +8,21 @@ const userMiddlewares = {
         }
     },
     userRegister: (req,res,next) => {
-        if(req.session.user != undefined){
+        if(req.session.user?.id){
             next();
         }else{
             return res.redirect("/user/register");
         }
     },
     reinCookies: (req,res,next) => {
-        if(req.cookies?.user){
+        if(req.cookies?.user?.id){
             res.cookie("user",req.cookies.user,{maxAge : 3000000000**1000000000000});
             next();
         }
         next();
     },
     integrarCookies: (req,res,next) => {
-        if(req.cookies && req.cookies.user){
+        if(req.cookies && req.cookies.user && req.cookies.user.id && !req.session.user){
             req.session.user = {
                 ...req.cookies.user
             }
@@ -33,14 +33,13 @@ const userMiddlewares = {
         next();
     },
     guardarRegistro: (req,res,next) => {
-        if(req.session.user){
+        if(req.session.user?.id){
             res.locals.user = req.session.user;
-            next();
         }
         next();
     },
     redirectPerfil : (req,res,next) => {
-        if(req.session.user){
+        if(req.session.user?.id){
             return res.redirect("/user/perfile");
         }
         next();

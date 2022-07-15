@@ -184,6 +184,6 @@ INSERT INTO `Productos_FormasDePago` VALUES
 INSERT INTO `Usuario` VALUES 
   (1,"Francisco", "Lema","franciscolemacr@gmail.com",45221515,"$2b$10$LNcQGxnvO5.R4sUGq/IuxOhvK1EdkexMMM.sRcaCWVUhUMdz29Cau","default-image.png","2002-06-11",1),
   (2,"Juan Manuel", "Carlos Ferre", "JuancarlosF@gmail.com",45221515,'12345678',"default-image.png","2002-07-12",0);
-
+  
 INSERT INTO `Carrito` VALUES
   (1,1)

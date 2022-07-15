@@ -5,14 +5,16 @@ const multer = require ("multer");
 const router = express.Router();
 const userController = require("../controllers/userController");
 const middleware = require("../middlewares/userMiddlewares");
+const funcionesGenericas = require("../generalFuction");
+const db = require("../database/models")
 
 /****************  Validaciones ****************/ 
 const validaciones = [
     body("nombre").isLength({ min: 5 }).withMessage('El nombre debe tener al menos 5 caracteres'),
-    body("email").isEmail().withMessage('El campo debe ser un email').custom((value) => {
-        let userInDb = funcionesGenericas.archivoJSON(db) 
-        let mailRepetido = userInDb.find(user => value == user.email);
-        if(mailRepetido){
+    body("email").isEmail().withMessage('El campo debe ser un email').custom(async(value) => {
+        let userInDb = await db.usuarios.findOne({where:{email: value}})
+        console.log(userInDb?.id);
+        if(userInDb?.id){
             throw new Error('Mail ya utiliado');
         }
         return true;
@@ -43,22 +45,29 @@ const storage = multer.diskStorage({
 const upload = multer({storage});
 
 /****************  Rutas ******************/
+// Home: Login
 router.get('/',userController.login);
 
+// Registro
 router.get('/register',middleware.redirectPerfil,userController.crear);
 router.post('/',upload.single("img"),validaciones,userController.newUser);
 
+// Login
 router.get('/login',middleware.redirectPerfil,userController.login);
 router.post('/login',userController.loginFuction);
 
-router.get('/perfile',middleware.userRegister,userController.detalle);
-/*router.post('/login',userController.fuctionloLogin);*/
+// Perfil
+router.get('/perfile',middleware.userRegister,middleware.guardarRegistro,userController.detalle);
 
 // Edicion
 router.get('/:id/editar',userController.editar);
 
+// Salir
+router.get('/salir',userController.salir);
+
+/************************************ Carrito ***********************************/
 // Agregar al carrito
-router.get('/addCarrito/:id',middleware.userRegister, userController.addCarrito);
+router.get('/addCarrito/:id', userController.addCarrito);
 
 // Eliminar del carrito
 router.get('/deleteProduc/:id',middleware.userRegister, userController.elinarCarrito);

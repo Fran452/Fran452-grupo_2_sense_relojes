@@ -1,13 +1,14 @@
-const path = require("path");
-const fuctionGeneric = require("../generalFuction");
-const dataBase = path.join(__dirname, "../database/product.json");
-const dataBaseSQL = require("../database/models");
-const database = require("mime-db");
+const path = require("path"); //? Busqueda de la base de datos de JSON
+const funcionesGenericas = require("../generalFuction"); //? Exporto funciones para Base de datos JSON y para los logs
+const dataBase = path.join(__dirname, "../database/product.json"); //? Base de datos de JSON
+const dataBaseSQL = require("../database/models"); //? Base de datos SQL
 const controlador = {
-	/*index:(req,res) => {
-        let productos = fuctionGeneric.archivoJSON(dataBase).filter(producto => producto.show);
+	/* //? index para JSON
+	index:(req,res) => {
+        let productos = funcionesGenericas.archivoJSON(dataBase).filter(producto => producto.show);
         res.render("productosGeneral",{productos : productos});
     },*/
+
 	index: async (req, res) => {
 		let pagina = req.params.pag ? req.params.pag : 0;
 		let productos = await dataBaseSQL.productos.findAll({
@@ -17,8 +18,11 @@ const controlador = {
 			limit: 5
 			//offset : pagina * 5,
 		});
-		res.render("productosGeneral", {productos: productos});
+		let categoria = await dataBaseSQL.categorias.findByPk(4);
+		funcionesGenericas.newLog(`Entre al index de Productos link: ${process.env.link}/product\n`)
+		res.render("productosGeneral", {productos: productos, categoria});
 	},
+
 	categorias: async (req, res) => {
 		let productos = await dataBaseSQL.productos.findAll({
 			where: {
@@ -29,16 +33,18 @@ const controlador = {
 			//offset : pagina * 5,
 		});
 		let categoria = await dataBaseSQL.categorias.findByPk(req.params.id);
-		console.log(productos.length);
+		funcionesGenericas.newLog(`Entre a la categorias: ${categoria.nombre} de Productos link: ${process.env.link}/product/${categoria.id}\n`)
 		//return res.json( {productos: productos , categoria})
 		return res.render("productosGeneral", {productos: productos, categoria} );
 	},
-	/*
-    id:(req,res) => {
-        let productoSeleccionado = fuctionGeneric.archivoJSON(dataBase).find(producto => producto.id == req.params.id)
+
+	/* //? Id para JSON
+	id:(req,res) => {
+        let productoSeleccionado = funcionesGenericas.archivoJSON(dataBase).find(producto => producto.id == req.params.id)
         console.log(`Se ingreso al producto: ${productoSeleccionado}`);
-        res.render("productDetail",{producto:productoSeleccionado, productRecomiend : fuctionGeneric.archivoJSON(dataBase)})
+        res.render("productDetail",{producto:productoSeleccionado, productRecomiend : funcionesGenericas.archivoJSON(dataBase)})
     },*/
+
 	id: async (req, res) => {
 		let productoSeleccionadoDB = await dataBaseSQL.productos.findByPk(
 			req.params.id,
@@ -61,7 +67,7 @@ const controlador = {
 		};
 		//console.log(productoSeleccionadoDB.dataValues.formaDePago);
 		//productoSeleccionado.formaDePago = ["1","2"]
-		console.log(req.session.user);
+		funcionesGenericas.newLog(`Entre a la producto: ${productoSeleccionado.nombre} link: ${process.env.link}/product/${productoSeleccionado.id}\n`)
 		res.render("productDetail", {
 			producto: productoSeleccionado,
 			productRecomiend: productos,
@@ -71,18 +77,23 @@ const controlador = {
 
 	create: async (req, res) => {
 		let formasDePago = await dataBaseSQL.formaDePago.findAll();
+		let categorias = await dataBaseSQL.categorias.findAll()
 		console.log(formasDePago.map(valor => valor.dataValues));
+		funcionesGenericas.newLog(`Se ingreso al Get de cracion de productos link: ${process.env.link}/product/new\n`)
 		res.render("agregarProducto", {
-			formasDePago: formasDePago.map(valor => valor.dataValues)
+			formasDePago: formasDePago.map(valor => valor.dataValues),
+			categorias
 		});
+		
 	},
-	/*
-    createFuction: (req,res) => {
-        let products =  fuctionGeneric.archivoJSON(dataBase);
+	
+	/* //? createFuction para JSON
+	createFuction: (req,res) => {
+        let products =  funcionesGenericas.archivoJSON(dataBase);
         let img = req.files.map(foto => foto.filename).length > 0 ? req.files.map(foto => foto.filename) : ["default-image.png","default-image.png","default-image.png","default-image.png"];
         let formaDePago = [].concat(req.body.formaDePago)
         let newProduct = {
-            id : fuctionGeneric.crearID(products),
+            id : funcionesGenericas.crearID(products),
             ... req.body,
             formaDePago : formaDePago,
             datosDetacados : [],
@@ -91,7 +102,7 @@ const controlador = {
         }
         products.push(newProduct);
         console.log(`Se creo el producto: ${newProduct}`);
-        fuctionGeneric.subirArchivo(dataBase,products);
+        funcionesGenericas.subirArchivo(dataBase,products);
         res.redirect(`/product/${newProduct.id}`);
     },*/
 
@@ -105,45 +116,57 @@ const controlador = {
 						"default-image.png",
 						"default-image.png"
 				  ];
-		let formaDePago = [].concat(req.body.formaDePago);
 		let producto = await dataBaseSQL.productos.create({
 			nombre: req.body.nombre,
 			detalle: req.body.detalle,
 			precio: req.body.precio,
 			stock: req.body.cantidad,
 			img: img[0],
-			tipo: req.body.tipo,
+			id_tipo: req.body.tipo,
 			show: 1
 		});
+		funcionesGenericas.newLog(`Se creo un nuevo producto:
+	nombre: ${producto.nombre}
+	detalle: ${producto.detalle}
+	precio: ${producto.precio}
+	stock: ${producto.stock}
+	imgPrincipal: ${producto.img}
+	tipo: ${producto.id_tipo}\n`)
 		for (let i = 1; i < img.length; i++) {
-			await dataBaseSQL.productImg.create({
+			let imgSecundaria = await dataBaseSQL.productImg.create({
 				id_producto: producto.id,
 				img: img[i]
 			});
+			funcionesGenericas.newLog(`	Imagenes asociadas: ${imgSecundaria.img}\n`)
 		}
 		for (let i = 0; i < req.body.formaDePago.length; i++) {
-			await dataBaseSQL.productos_FormasDePago.create({
+			let formaDePagos = await dataBaseSQL.productos_FormasDePago.create({
 				id_producto: producto.id,
-				id_FormaDePago: req.body.formaDePago[i]
+				id_formaDePago: req.body.formaDePago[i]
 			});
+			funcionesGenericas.newLog(`	Formas de pago asociadas: ${formaDePagos.id_formaDePago}\n`)
 		}
-		console.log(producto);
+		funcionesGenericas.newLog(`Fin de la creacion\n`)
 		res.redirect(`/product/${producto.id}`);
 	},
 
-	/*editProduct: (req,res) => {
-        let productoSeleccionado = fuctionGeneric.archivoJSON(dataBase).find(producto => producto.id == req.params.id )
+	/* //? editProduct para JSON
+	editProduct: (req,res) => {
+        let productoSeleccionado = funcionesGenericas.archivoJSON(dataBase).find(producto => producto.id == req.params.id )
         res.render("modificarproducto",{product : productoSeleccionado});
     },*/
+
 	editProduct: async (req, res) => {
 		let productoSeleccionado = await dataBaseSQL.productos.findByPk(
 			req.params.id
 		);
+		funcionesGenericas.newLog(`Es ingreso a modificar el producto: ${productoSeleccionado.nombre} link: ${process.env.link}/product/${productoSeleccionado.id}/edit\n`)
 		res.render("modificarproducto", {product: productoSeleccionado});
 	},
 
-	/*editProductFuction: (req,res) => {
-        let products =  fuctionGeneric.archivoJSON(dataBase);
+	/* //? editProductFuction para JSON
+	editProductFuction: (req,res) => {
+        let products =  funcionesGenericas.archivoJSON(dataBase);
         products.forEach(producto => {
             if(producto.id == req.params.id){
                 producto.name = req.body.name;
@@ -154,7 +177,7 @@ const controlador = {
                 console.log(`Se edito el producto: ${product}`);
             }
         });
-        fuctionGeneric.subirArchivo(dataBase,products);
+        funcionesGenericas.subirArchivo(dataBase,products);
         res.redirect(`/product`);
     },*/
 
@@ -172,22 +195,28 @@ const controlador = {
 				where: {id: req.params.id}
 			}
 		);
+		funcionesGenericas.newLog(`se modifico del producto:
+		nombre: ${req.body.nombre}
+		descripcion: ${req.body.descripcion}
+		precio: ${req.body.precio}\n`)
 		res.redirect(`/product`);
 	},
 
-	/*delete: (req,res) => {
-        let listaSinProducto = fuctionGeneric.archivoJSON(dataBase)
+	/* //? delete para JSON
+	delete: (req,res) => {
+        let listaSinProducto = funcionesGenericas.archivoJSON(dataBase)
         listaSinProducto.forEach(producto => {
             if(producto.id == req.params.id){
                 producto.show = false;
                 console.log(`Producto a eliminar ${producto}`);
             }
         })
-        fuctionGeneric.subirArchivo(dataBase,listaSinProducto);
+        funcionesGenericas.subirArchivo(dataBase,listaSinProducto);
         res.redirect("/product");
     }*/
+
 	delete: async (req, res) => {
-		let producto = await dataBaseSQL.productos.update(
+		await dataBaseSQL.productos.update(
 			{
 				show: 0
 			},
@@ -195,7 +224,7 @@ const controlador = {
 				where: {id: req.params.id}
 			}
 		);
-
+		funcionesGenericas.newLog(`Se elimino el siguiente producto:${req.params.id}\n`)
 		res.redirect("/product");
 	}
 };

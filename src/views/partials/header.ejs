@@ -12,8 +12,8 @@
         <div class="MenuPerson">
             <h2> Bienvenido: <%= locals.user ? user.nombre : 'usuario' %> </h2>
             <div id="botonesPerson"> 
-                <button class="button">  Favoritos </button>
-                <button class="button">   Salir </button>
+                <button class="button" id = "favorito">  Favoritos </button>
+                <button class="button" id = "salir">   Salir </button>
             </div>
             
         </div> 
@@ -27,4 +27,5 @@
         </nav>
                          
     </nav>
+    <script src="/js/header.js"></script>
 </header>

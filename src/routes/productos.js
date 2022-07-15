@@ -27,7 +27,7 @@ router.get('/',productoController.index);
 router.get('/categoria/:id',productoController.categorias)
 
 // Creacion de producto
-router.get('/new',productoController.create);
+router.get('/new',middleware.admin,productoController.create);
 router.post('/new',fileUpload.any('img'),productoController.createFuction);
 
 

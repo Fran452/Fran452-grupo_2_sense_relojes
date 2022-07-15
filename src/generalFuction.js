@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
-const bcrypt = require("bcrypt");
-
+const logs = path.join(__dirname,"logs.txt");
+console.log(logs);
 /** 
  * @desc Trae un archivo JSON a objetos para utilizar en js
  * @param {string} direccion 
@@ -32,5 +32,9 @@ function eliminarArchivo(direccion){
 	fs.unlinkSync(direccion)
 }
 
+function newLog(log){
+	fs.appendFile(logs,log, () => {});
+}
 
-module.exports = {archivoJSON ,subirArchivo,crearID,eliminarArchivo};
+
+module.exports = {archivoJSON ,subirArchivo,crearID,eliminarArchivo,newLog};

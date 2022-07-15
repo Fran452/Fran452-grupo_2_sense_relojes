@@ -1,5 +1,5 @@
 /************* Metodos requeridos ****************/ 
-require("dotenv").config()//! No funciona
+require("dotenv").config()
 const express = require("express");
 const path = require("path");
 const methodOverride = require ("method-override");
@@ -16,7 +16,6 @@ const apisUSer = require("./routes/apis")
 
 /******** Diferentes funcionamientos ****************/
 const PORT = process.env.PORT || 3030;
-console.log(process.env.casa); //! No funciona
 const app = express();
 const publicPath = path.join(__dirname,"../","public");
 
@@ -32,7 +31,7 @@ app.set("views","./src/views");
 
 /***** Middlewares Propios *************************************/
 app.use(userMiddlewares.integrarCookies);
-
+app.use(userMiddlewares.guardarRegistro)
 /***************** Rutas **********************/
 app.use('/',rutasMain);
 

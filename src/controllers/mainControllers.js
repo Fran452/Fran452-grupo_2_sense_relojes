@@ -1,4 +1,4 @@
-const { retry } = require("async");
+const funcionesGenericas = require("../generalFuction");
 const dataBaseSQL = require("../database/models");
 const controlador = {
     index: async (req,res) => {
@@ -11,7 +11,8 @@ const controlador = {
             }
         );
         let categorias  = await dataBaseSQL.categorias.findAll();
-        
+        funcionesGenericas.newLog(`Ingrese al index link ${process.env.link}/
+`)
         console.log(`estos productos se envian al index : ${productos.map(product => product.dataValues.id)} con estas categorias: ${categorias.map(product => product.dataValues.img_Port)}`);
         res.render("home.ejs", {productos : productos.map(product => product.dataValues), categorias : categorias.map(categoria => categoria.dataValues)});
     },
@@ -39,11 +40,12 @@ const controlador = {
             let precioTotalPrductos = productosVista.reduce( function(acc,elemento){
                 return acc + elemento.precioTotal
             },0)
-            
+            funcionesGenericas.newLog(`Se ingreso al carrito del usuario: ${req.session.user.nombre}\n`)
             //return res.json({productosVista,precioTotalPrductos});
             return res.render("carrito.ejs",{productos : productosVista, valorTotal : precioTotalPrductos})
         }
-      res.render("not-found");  
+      res.render("not-found");
+      
     },
 }
 
