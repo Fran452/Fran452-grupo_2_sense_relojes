@@ -59,7 +59,7 @@ const controlador = {
 	Se registro el siguiente cookies: ${cookiesActive? "cookies activada" : "no registro cookies"}\n`);
 			return res.redirect("/user/perfile");
 		}
-        funcionesGenericas.newLog(` no se pudo registrar por un fallo de la contraseña`);
+        funcionesGenericas.newLog(` no se pudo registrar por un fallo de la contraseña\n`);
 		return res.redirect("/user");
 	},
 	//? Crear nuevo usuario
