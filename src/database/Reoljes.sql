@@ -99,7 +99,7 @@ CREATE TABLE IF NOT EXISTS `Favorito` (
 -- Tabla de 'ProductImg'
 
 CREATE TABLE IF NOT EXISTS `ProductImg`(
-  `id` smallint(6) NOT NULL,
+  `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
   `id_producto` smallint(6) unsigned NOT NULL,
   `img` text NOT NULL UNIQUE,
   PRIMARY KEY (`id`),
