@@ -15,6 +15,8 @@ function Cards () {
               value={card.value}
             />
           </div>
+
+
         );
       })}
     </div>

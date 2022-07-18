@@ -22,9 +22,11 @@ function CardCompacta({ param }) {
       <div className="detail">
         <span> {param.value} </span>
       </div>
-      
 
     </div>
+    
+
+
   );
 }
 

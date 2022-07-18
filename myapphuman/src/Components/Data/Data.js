@@ -1,3 +1,4 @@
+import imagenUsuario from "../../assets/Images/img-2.png"
 // Importacion de Iconos
 import {
     UilEstate,
@@ -9,9 +10,7 @@ import {
    
   // Importar imagenes Usuario
   
-  // import img1 
-  // import img2 
-  // import img3
+
 
   // Sidebar Data
   export const SidebarData = [
@@ -31,7 +30,7 @@ import {
       link:"/products"
     },
   ];
-      
+    
 
   // Metricas Cards Data
   export const cardsData = [
@@ -44,35 +43,37 @@ import {
       value: "USUARIO",
     },
     {
-      title: "Gastos",
-      value: "4,270",
+      title: "Ventas Totales",
+      value: "$25.000",
     },
   ];
   
   // Actualizaciones Clientes
+
+
   export const UpdatesData = [
     {
-      img: "img1",
+      img: {imagenUsuario},
       name: "Agustin",
-      noti: "Realizo una compra x reloj",
+      noti: "Realizo la compra del reloj Hades Acero",
       time: "25 seconds ago",
     },
     {
-      img: "img2",
+      img: {imagenUsuario},
       name: "Federico",
-      noti: "Recibio venta numero xxxxx ",
+      noti: "Recibio la venta numero 584-5896 ",
       time: "30 minutes ago",
     },
     {
-      img: "img3",
+      img: "../../assets/Images/img-2.png",
       name: "Francisco",
-      noti: "Realizo la compra numero xxxx por reloj modelo xxxx",
+      noti: "Realizo la compra del reloj Enrico Toffee",
       time: "2 hours ago",
     },
     {
-      img: "img3",
+      img: "img4",
       name: "Yamila",
-      noti: "envio un mensaje directo con reclamo xxxxx",
+      noti: "Ha enviado un mensaje",
       time: "4 hours ago",
     },
   ];
