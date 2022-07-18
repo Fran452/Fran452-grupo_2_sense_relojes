@@ -27,19 +27,9 @@ CREATE TABLE IF NOT EXISTS `Usuario` (
 -- FOREIGN KEY (`id_direccion`) REFERENCES Direccion (`id`)
 );
 
--- Tabla 'Venta'
-
-CREATE TABLE `Venta` (
-  `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
-  `id_usuario` smallint(6) unsigned NOT NULL,
-  `id_carrito` smallint(6) unsigned NOT NULL,
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (`id_usuario`) REFERENCES Usuario (`id`)
-);
-
 -- Tabla de 'Categorias'
 
-CREATE TABLE IF`Categoria`(
+TABLE IF NOT EXISTS `Categoria`(
   `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
   `nombre` varchar(26) NOT NULL, 
   `img_Baner` text DEFAULT Null,
@@ -149,7 +139,6 @@ INSERT INTO `ProductImg` VALUES
   (7,3,"EnricoToffee03.webp"),
   (8,3,"EnricoToffee04.webp");
 
-
 INSERT INTO `FormasDePago` VALUES 
   (1,"Mercado Pago"),
   (2,"Tranferencia"),
@@ -174,4 +163,4 @@ INSERT INTO `Usuario` VALUES
   (2,"Juan Manuel", "Carlos Ferre", "JuancarlosF@gmail.com",45221515,'12345678',"default-image.png","2002-07-12",0);
   
 INSERT INTO `Carrito` VALUES
-  (1,1)
+  (1,1);
