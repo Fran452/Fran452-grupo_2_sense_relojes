@@ -115,9 +115,6 @@ const controlador = {
 				? req.files.map(foto => foto.filename)
 				: [
 						"default-image.png",
-						"default-image.png",
-						"default-image.png",
-						"default-image.png"
 				  ];
 		let producto = await dataBaseSQL.productos.create({
 			nombre: req.body.nombre,
