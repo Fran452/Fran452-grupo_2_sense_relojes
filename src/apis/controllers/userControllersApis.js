@@ -1,4 +1,5 @@
 const dataBaseSQL = require("../../database/models");
+const funciones = require("../../generalFuction");
 const link = process.env.link || "http://localhost:3030";
 
 const controlador = {
@@ -16,6 +17,7 @@ const controlador = {
             }
             usuario.dataValues = user  
         })
+        funciones.newLog(`Se ingreso al apis de user: ${link}/apis/users\n`);
         console.log(users);
         res.json({count,users});
     },
@@ -27,6 +29,7 @@ const controlador = {
             "contraseña" : null,
             imgUrl:`${link}/img/user/${user.img}`,
         } 
+        funciones.newLog(`Se ingreso al detalle del usuario: ${user.id} ${link}/apis/users/${user.id}\n`)
         res.json({camposRequeridos})
     }
 }
