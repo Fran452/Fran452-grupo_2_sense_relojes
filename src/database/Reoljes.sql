@@ -128,7 +128,10 @@ INSERT INTO `Producto` VALUES
   (1,"Tesla Sepia","El Reloj Tesla Sepia fue diseñado como el compañero para todo el día. Es un reloj que te lo vas a querer sacar nunca más.",23000,3,"TeslaSepia01.webp",1,1),
   (2,"Hades Acero","igual que el dios fuerte como el acero",2000,5,"Hades_Acero1.webp",1,1),
   (3,"Enrico Toffee","No vas a conocer un reloj tan clásico y minimalista como el Enrico Toffee.",15000,3,"EnricoToffee01.webp",1,1);
-
+  (4,"Billetera Bifold","Creada con cuero vacuno, nuestra billetera Bifold Camel con cierre YKK cuenta con seis bolsillos para tarjetas, un compartimento interno para billetes y dos bolsillos ocultos.",7200,3,"Billetera Bifold.PNG",2,1);
+  (5,"Tarjetero Camel","Creada con cuero vacuno, nuestro Tarjetero Camel cuenta con seis bolsillos para tarjetas y un compartimento interno para billetes",4500,3,"Tarjetero Camel.PNG",2,1);
+  (6,"Billetera Bifold Preto","Creada con cuero vacuno graneado, nuestra billetera Bifold Preto cuenta con seis bolsillos para tarjetas, un compartimento interno para billetes y dos bolsillos ocultos.",5850,3,"Billetera Bifold Preto.PNG",2,1);
+ 
 INSERT INTO `ProductImg` VALUES 
   (1,1,"TeslaSepia02.webp"),
   (2,1,"TeslaSepia03.webp"),
@@ -161,6 +164,11 @@ INSERT INTO `Productos_FormasDePago` VALUES
 INSERT INTO `Usuario` VALUES 
   (1,"Francisco", "Lema","franciscolemacr@gmail.com",45221515,"$2b$10$LNcQGxnvO5.R4sUGq/IuxOhvK1EdkexMMM.sRcaCWVUhUMdz29Cau","default-image.png","2002-06-11",1),
   (2,"Juan Manuel", "Carlos Ferre", "JuancarlosF@gmail.com",45221515,'12345678',"default-image.png","2002-07-12",0);
-  
+  (3,"Agustin", "Enriquez", "agustinenriquez12@gmail.com",45221515,'12345678',"default-image.png","2002-08-12",0); 
+  (4,"Laura", "Rodriguez", "lauraRodriguez@gmail.com",45221515,'12345678',"default-image.png","2002-07-02",0);
+  (5,"Sandra", "Salomon", "ssalomon@gmail.com",45221515,'12345678',"default-image.png","2002-07-12",0);
+  (6,"Pablo", "Coll", "Pablocoll@gmail.com",45221515,'12345678',"default-image.png","2002-07-12",0);
+  (7,"Sergio", "Aguero", "Sergiokun@gmail.com",45221515,'12345678',"default-image.png","2002-06-06",0);
+  (8,"Daniel", "Montenegro", "rolfi23@gmail.com",45221515,'12345678',"default-image.png","2002-07-12",0);
 INSERT INTO `Carrito` VALUES
   (1,1);
