@@ -18,7 +18,6 @@ const controlador = {
             usuario.dataValues = user  
         })
         funciones.newLog(`Se ingreso al apis de user: ${link}/apis/users\n`);
-        console.log(users);
         res.json({count,users});
     },
 
