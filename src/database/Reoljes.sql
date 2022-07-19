@@ -158,7 +158,13 @@ INSERT INTO `Productos_FormasDePago` VALUES
   (6,2,2),
   (7,3,5),
   (8,3,1),
-  (9,3,2);
+  (9,3,2),
+  (10,4,1),
+  (11,4,3),
+  (12,5,1),
+  (13,5,2),
+  (14,6,1),
+  (15,6,5);
 
 
 INSERT INTO `Usuario` VALUES 
