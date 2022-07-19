@@ -6,6 +6,7 @@ const methodOverride = require ("method-override");
 const session = require("express-session");
 const { applyEachSeries } = require("async");
 const cookieParser = require("cookie-parser");
+const cors = require ("cors");
 const userMiddlewares = require("./middlewares/userMiddlewares");
  
 /*********** Rutas inportada ***************************/
@@ -28,6 +29,7 @@ app.use(session({secret : "contraseñaLinda",resave : false, saveUninitialized :
 app.set("view engine","ejs");
 app.use(cookieParser());
 app.set("views","./src/views");
+app.use(cors());
 
 /***** Middlewares Propios *************************************/
 app.use(userMiddlewares.integrarCookies);
@@ -44,7 +46,7 @@ app.use('/apis', apisUSer);
 /**************** Inicio de apliacion ***************************/
 
 app.listen(PORT, () => {
-    console.log(`Servidor en funcionamiento en el puerto http://localhost:${PORT}`);
+    console.log(`Servidor en funcionamiento en el puerto ${process.env.link||`http://localhost:${PORT}`}`);
 });
 
 /**************** Error 404 ***************************/

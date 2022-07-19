@@ -13,7 +13,7 @@ module.exports = {
     "database": "Human",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "local": "3307"
+    "local": "3306"
   },
   "production": {
     "username": "root",
@@ -21,6 +21,6 @@ module.exports = {
     "database": "Human",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "local": "3307"
+    "local": "3306"
   }
 }
