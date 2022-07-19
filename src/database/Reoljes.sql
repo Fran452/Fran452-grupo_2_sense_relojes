@@ -39,7 +39,7 @@ CREATE TABLE `Venta` (
 
 -- Tabla de 'Categorias'
 
-CREATE TABLE IF`Categoria`(
+CREATE TABLE IF NOT EXISTS `Categoria`(
   `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
   `nombre` varchar(26) NOT NULL, 
   `img_Baner` text DEFAULT Null,
