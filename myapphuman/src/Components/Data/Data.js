@@ -33,20 +33,7 @@ import {
     
 
   // Metricas Cards Data
-  export const cardsData = [
-    {
-      title: "Ultimo Producto",
-      value: "PRODUCTO",
-    },
-    {
-      title: "Ultimo Usuario",
-      value: "USUARIO",
-    },
-    {
-      title: "Ventas Totales",
-      value: "$25.000",
-    },
-  ];
+
   
   // Actualizaciones Clientes
 

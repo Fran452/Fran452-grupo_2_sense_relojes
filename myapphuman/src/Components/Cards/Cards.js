@@ -1,7 +1,6 @@
 
 import "./CardsStyle.css";
-import { cardsData } from "../Data/Data";
-import React, {Children, useEffect, useState} from "react";
+import React, { useEffect, useState} from "react";
 import Card from "./Subcomponent/Card/Card";
 
 const funciones = require("../Data/Data")
@@ -16,14 +15,14 @@ function Cards () {
 
           let producto = {
             ultimo : resultado[resultado.length-1],
-            title: 'ultimo producto'
+            title: 'Ultimo Producto'
           };
           arrayObjeto.push(producto);
             funciones.fetchApi('http://localhost:3030/apis/users')
             .then(respuesta => {
               let usuario = {
                 ultimo: respuesta.users[respuesta.users.length-1],
-                title: 'ultimo usuario'
+                title: 'Ultimo Usuario'
               };
               arrayObjeto.push(usuario);
               setValores(arrayObjeto);
