@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%-include('./partials/head') %>
+    <link rel="stylesheet" href="/css/styleLogin.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap" rel="stylesheet">
+    <style>
+
+        *{            
+            font-family: 'Jost', sans-serif !important;
+        }   
+
+        form{
+            width: 60%;
+            margin: auto;
+            font-weight: bolder;
+
+        }
+        .inputText{
+            background: none;
+            color:#c6c6c6;
+            padding: 6px;
+            display: block;    
+            margin-bottom: 0;        
+            border-bottom: 1px solid #49454567;
+            width: 100%;
+        }
+
+        .inputText:focus{
+            outline: none;
+            color:#5e4d5d;
+        }        
+
+        .barra{
+            position: relative;
+            display: block;
+        }
+
+        .barra::before{
+            content: "";
+            height: 2px;
+            width: 0%;
+            bottom: 0;            
+            position: absolute;            
+            background:linear-gradient(to right, #860301, #222);
+            transition: 0.3s ease width;
+            left: 0;
+        }
+
+        .inputText:focus~.barra::before{
+            width: 100%;
+        }
+
+        .error{
+            color:#880200;
+        }
+
+
+        
+    </style>
+</head>
+<body>
+    <%-include('./partials/header') %>
+
+    <main>
+        <div class="Inicio">
+            <h3>Iniciar sesión</h3>
+        </div>
+
+        <form action="/user/login" method="POST">
+            <div>
+                <div class="group">
+                    <input class="Usuario inputText" type="text" name="user" id="email" placeholder="Ingrese su email" required>
+                    <span class="barra"></span>                    
+                        <% if(locals.error && error.email ){ %>
+                            <p class="error"> <%= error.email.msg %> </p>
+                        <% } %>  
+                        <p class="error" id = 'errorMail'> </p>     
+                </div>
+                <div class="group">
+                    <input class="Usuario inputText" type="password" name="pass" id="password" placeholder = "Elegí tu contraseña" required>
+                    <span class="barra"></span>                    
+                        <% if(locals.error && error.password ){ %>
+                            <p class="error"> <%= error.password.msg %> </p>
+                        <% } %>  
+                        <p class="error" id = 'errorPassword'> </p>     
+                </div>
+                
+                
+            </div>
+            <div id = "GuardarPassword">
+                <input type="radio" name="profile">
+                <label for="buy">Recuérdame</label>
+            </div>
+            <input class="button botonRegistro" href="/user/register" type="submit" value="Entrar">
+            <input class="botonContraseña" href=" " type="submit" value="¿Olvidaste tu contraseña?">
+        </form>
+    </main>
+    <script>
+         const enviar = document.getElementById('enviar');
+
+    let email = document.querySelector('#email');
+    let password = document.querySelector('#password');    
+
+    let n, em, t, fn, p, pc = false;
+    let validate = [];
+
+    
+    email.addEventListener('blur', e => {
+        const validateEmail = (email) => {
+            return String(email)
+              .toLowerCase()
+              .match(
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+              );
+          };
+          let error = document.querySelector('#errorMail');
+          if(email.value==''){
+            error.innerText = 'Campo Requerido';
+          }else{
+
+            if (!validateEmail(email.value)){
+                error.innerText = "No se cumple con el formato de un mail convencional";
+                //console.log(!validateEmail(email.value));
+            }else{
+                //console.log(!validateEmail(email.value));
+                error.innerText = '';
+                em=true;
+                validate.push(em)                                
+
+            }
+          }          
+    })    
+    password.addEventListener('blur', e => {
+        let error = document.querySelector('#errorPassword')
+        if(password.value==''){
+            error.innerText='Campo Requerido';
+        }else{
+            if(password.value.length < 8){
+                error.innerText = 'La contraseña debe contener al menos 8 caracteres'
+            }else{
+                error.innerText = ""
+                p=true;
+                validate.push(p);
+
+            }    
+        }
+        
+    })     
+
+    enviar.onclick = function (){
+    console.log(validate);
+    //return false;
+
+    if(validate.length>=6){
+        alert("enviado");
+        nombre.value='';        
+        email.value='';        
+        telefono.value='';
+        fechaNacimiento.value='';
+        password.value='';
+        paswordConfirm.value='';
+        validate = [];
+        return false;
+    }else{
+        alert("algun campo esta vacio o corregirse")
+        return false;
+    }
+
+   }   
+    </script>
+    <%-include('./partials/footer') %>
+</body>
+</html>

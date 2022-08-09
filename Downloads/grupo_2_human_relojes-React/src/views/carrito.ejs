@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <%-include('./partials/head') %>
+    <link rel="stylesheet" href="/css/styleCarrito.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap" rel="stylesheet">
+    <style>
+        *{            
+            font-family: 'Jost', sans-serif !important;
+        }       
+        table{            
+            width: 90% !important;
+            
+        }
+
+        th{
+            border-bottom: 1px solid !important;
+            color:white;            
+            padding:4px 10px;
+            /*background: gray;*/
+            background-image: linear-gradient(#3c0303,#860301);
+            border-radius: 3px;
+
+        }        
+
+        .img-card{
+            border:1px solid;
+            width: 50% !important;
+        }
+        .x{
+            display: flex;                        
+            width: 100%;
+            justify-content: center;                        
+        }
+        .x button{                          
+            display: inline-block;
+            font-weight: bold;
+            font-family: Arial !important;            
+            margin-top: 25px;
+            cursor: pointer;
+            background-color: white !important;
+            color:#f44336;
+            border:2px solid #f44336 !important;
+            padding:3px 8px;
+            border-radius: 5px;
+        }
+
+        @media screen and (max-width:500px){
+            table{
+                display: block;
+                overflow: auto;
+            }
+
+        }
+
+        select{
+            background: transparent;
+            border-top:none;            
+            border-left:none;
+            border-right: none;
+            border-bottom: 1px solid;            
+        }
+        option{
+            background: #ccc;
+            font-size: 12px !important;            
+        }
+
+        .hr-barra{
+            width: 90%;
+            margin:auto;
+            border-top:1px solid #000;
+        }        
+
+        /* estilos formulario */        
+        .inputText{
+            background: none;
+            color:#c6c6c6;
+            padding: 6px;
+            display: block;    
+            margin-bottom: 0;        
+            border-bottom: 1px solid #49454567;
+        }
+
+        .inputText:focus{
+            outline: none;
+            color:#5e4d5d;
+        }        
+
+        .barra{
+            position: relative;
+            display: block;
+        }
+
+        .barra::before{
+            content: "";
+            height: 2px;
+            width: 0%;
+            bottom: 0;            
+            position: absolute;            
+            background:linear-gradient(to right, #860301, #222);
+            transition: 0.3s ease width;
+            left: 0;
+        }
+
+        .inputText:focus~.barra::before{
+            width: 100%;
+        }
+
+        /*  estilo de validaciones de formulario */
+        .error{
+           color:#880200;
+           font-size: 12px;
+        }
+
+        /*estilos h2*/
+        .subtitle{
+            border-bottom:0 !important;
+            color:#fff;
+            text-align: center;
+            background: #860301;
+            border-radius: 3px;
+            padding: 5px;
+
+        }
+
+        /*estilos input radio*/
+        .classInputRadio{            
+            padding:5px;
+        }
+
+        .inputRadio{            
+            margin: 0 !important; 
+            width: 10% !important;
+        }
+        
+        .inputRadio[type="radio"]:checked+label { font-weight: bold; }
+    </style>
+</head>
+
+<body>
+    <%-include('./partials/header') %>
+    <main>
+        <form action="/" method="POST">
+        <table class ="table">
+            <thead>
+                <tr>
+                <th>Eliminar</th>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio Unitario</th>
+                <th>Total</th>
+                </tr> 
+            </thead>
+            <tbody>
+                <tr>
+                    <td class = "x"><button class="btn" id = "eliminar"><!--<img src="/img/x-solid.svg" alt="" >-->x</button></td>
+                    <td class="imagenProducto"><img class="img-card" src="img/product/default-image.png"></td>
+                    <td class = "cantidadProducto">
+                        <select name="cantidad"> 
+                            <option value="1"> 1 </option>
+                            <option value="2"> 2 </option>
+                            <option value="3"> 3 </option>
+                            <option value="4"> 4 </option>
+                            <option value="5"> 5 </option>
+                            <option value="6"> 6 </option>
+                        </select> 
+                        </td>
+                    <td class = "precioProducto">$19.000</td>
+                    <td class = "precioTotalProducto">$19.000</td>
+                </tr>
+                <tr>
+                    <td class="x" > <button id = "eliminar"><!--<img src="/img/x-solid.svg" alt="">-->x</button></td>
+                    <td class="imagenProducto"><img class="img-card" src="img/product/default-image.png"> </td>
+                    <td class = "cantidadProducto">
+                        <select name="cantidad"> 
+                            <option value="1"> 1 </option>
+                            <option value="2"> 2 </option>
+                            <option value="3"> 3 </option>
+                            <option value="4"> 4 </option>
+                            <option value="5"> 5 </option>
+                            <option value="6"> 6 </option>
+                        </select> 
+                             
+                    </td>
+                    <td class = "precioProducto">$19.000</td>
+                    <td class = "precioTotalProducto">$19.000</td>
+                </tr>
+                
+            </tbody>
+        </table> 
+        <p class="total hr-barra"> Precio Total: $xxxx </p>
+        <div class = "formulario">
+                <div id ="infocliente">
+                    <div class="group">
+                        <h2 class="subtitle"> Datos del Cliente </h2>
+                        <label for="Nombre">Nombre: </label>
+                        <input class="inputText Controles" type="text" name="Nombre" id="nombre">
+                        <span class="barra"></span>
+                        <% if(locals.error && error.nombre ){ %>
+                            <p class="error"> <%= error.nombre.msg %> </p>
+                        <% } %>  
+                        <p class="error" id = 'nombreError'> </p>            
+                    </div>
+                    <div class="group">
+                        <label  for="Apellido">Apellido: </label>
+                        <input class="inputText Controles" type="text" name="Apellido" id="apellido">
+                        <span class="barra"></span>                        
+                        <% if(locals.error && error.apellido ){ %>
+                            <p class="error"> <%= error.apellido.msg %> </p>
+                        <% } %>  
+                        <p class="error" id = 'apellidoError'> </p>
+                    </div>
+                    <div class="group">
+                        <label for="Email">Email: </label>
+                        <input class="inputText Controles" type="text" name="Email" id="email">
+                        <span class="barra"></span>
+                        <% if(locals.error && error.email){ %>
+                            <p class="error"> <%= error.email.msg %> </p>
+                        <% } %>
+                            <p class="error" id = 'errorMail'> </p>                  
+                    </div>
+                    <div class="group">
+                        <label for="Domicilio">Domicilio: </label>
+                        <input class="inputText Controles" type="text" name="Domicilio" id="domicilio">
+                        <span class="barra"></span>
+                        <% if(locals.error && error.domicilio ){ %>
+                            <p class="error"> <%= error.domicilio.msg %> </p>
+                        <% } %>  
+                        <p class="error" id = 'domicilioError'> </p>                        
+                    </div>
+                    <div class="group">
+                        <label for="Localidad">Localidad</label>
+                        <input class="inputText Controles" type="text" name="Localidad" id="localidad">
+                        <span class="barra"></span>
+                        <% if(locals.error && error.localidad ){ %>
+                            <p class="error"> <%= error.localidad.msg %> </p>
+                        <% } %>  
+                        <p class="error" id = 'localidadError'> </p>                                                                        
+                    </div>                    
+                    <div class="group">
+                        <label for="Codigo Postal">Codigo Postal </label>
+                        <input class="inputText Controles" type="text" name="Codigo Postal" id="cp">
+                        <span class="barra"></span>
+                        <% if(locals.error && error.cp ){ %>
+                            <p class="error"> <%= error.cp.msg %> </p>
+                        <% } %>  
+                        <p class="error" id = 'cpError'> </p>                        
+                    </div>
+                    <div class="group">
+                        <label for="Mobile">Mobile</label>
+                        <input class="inputText Controles" type="number" name="Mobile" id="mobile">
+                        <span class="barra"></span>
+                        <% if(locals.error && error.mobile){ %>
+                            <p class="error"> <%= error.mobile.msg %> </p>
+                        <% } %>
+                            <p class="error" id = 'mobileError'> </p>
+                    </div>
+                </div>
+                <div id="metodoDeEnvio">
+                    <h2 class="subtitle">Metodo de envío</h2>                    
+                    <div class="classInputRadio">
+                        <input class="inputRadio" type="radio" name="hm" id="hm" value="h">
+                        <label for = "Domicilio"> Mismo Domicilio </label> 
+                    </div>
+                    <div class="classInputRadio">
+                        <input class="inputRadio" type="radio" name="hm" id="hm" value="m">
+                        <label for ="camDomicilio"> Cambiar Domicilio Destino</label>
+                    </div>
+                    <div class="classInputRadio">
+                        <input class="inputRadio" type="radio" name="hm" id="hm" value="m">
+                        <label> Buscar en Sucursal </label> 
+                    </div>                            
+                     <% if(locals.error && error.hm){ %>
+                        <p class="error"> <%= error.hm.msg %> </p>
+                    <% } %>
+                        <p class="error" id = 'hmError'> </p>
+                </div>
+
+                <div id = "lugaresDeEnvio">
+                    <h2 class="subtitle">Lugar de envío</h2>                    
+                    <!--<div class="group">
+                        <label for="Nombre">Nombre: </label>
+                        <input class="inputText Controles" type="text" name="Nombre" id="Nombre">
+                        <span class="barra"></span>                                                
+                    </div>
+                    <div class="group">
+                        <label  for="Apellido">Apellido: </label> 
+                        <input class="inputText Controles" type="text" name="Apellido" id="Apellido">  
+                        <span class="barra"></span>                                         
+                    </div>-->
+                    <div class="group">
+                        <label for="DNI">DNI: </label> 
+                        <input  class="inputText Controles" type="DNI" name="DNI" id="dni">    
+                        <span class="barra"></span>                        
+                        <% if(locals.error && error.dni){ %>
+                            <p class="error"> <%= error.dni.msg %> </p>
+                        <% } %>
+                            <p class="error" id = 'dniError'> </p>
+                    </div>
+                    <div class="group">
+                        <label for="Horario">Horario: </label> 
+                        <input  class="inputText Controles" type="text" name="Horario" id="horario">
+                        <span class="barra"></span>
+                        <% if(locals.error && error.horario){ %>
+                            <p class="error"> <%= error.horario.msg %> </p>
+                        <% } %>
+                            <p class="error" id = 'horarioError'> </p>
+                    </div>
+                    <div class="group">
+                        <select   class="Controles" name="envio">
+                            <option>  Sucursal : Direccion: XXXXX</option>
+                            <option value="3">Sucursal : Direccion: XXXXX</option>
+                            <option value="4">Sucursal : Direccion: XXXXX</option>
+                        </select>                        
+                    </div>                    
+                </div>
+                <div id = "fp">                 
+                    <h2 class="subtitle">Forma de pago</h2>                
+                    <div class="group">
+                        <select  class="Controles" name="fp">
+                            <option>Efectivo </option>
+                            <option value="2">Credito Visa</option>
+                            <option value="3">Debito Visa</option>
+                            <option value="4">Credito MasterCard</option>
+                            <option value="5">Debito MasterCard</option>
+                            <option value="6">Credito Amex</option>
+                            <option value="7">Debito Amex</option>
+                        </select>                        
+                    </div>
+                    <div class="group">
+                        <label for="Adjuntar Comprobante">Adjuntar Comprobante</label>
+                        <input id = "comprobante" type="file" name="Adjuntar Comprobante" accept=".pdf,.jpg,.png" multiple />       
+                    </div>
+                    <div class="group">
+                        <label for="Numero de la tarjeta">Numero de la tarjeta</label>
+                        <input class="inputText Controles" type="text" name="Numero de la tarjeta" id="numTarjeta">
+                        <span class="barra"></span>
+                        <% if(locals.error && error.numTarjeta){ %>
+                            <p class="error"> <%= error.numTarjeta.msg %> </p>
+                        <% } %>
+                            <p class="error" id = 'numTarjetaError'> </p>                                                                
+                    </div>
+                    <div class="group">
+                        <label for="Fecha de vencimiento">Fecha de vencimiento</label>
+                        <input  class="inputText Controles" type="text" name="Fecha de venc" id="fechaV">
+                        <span class="barra"></span>
+                        <% if(locals.error && error.fechaV){ %>
+                            <p class="error"> <%= error.fechaV.msg %> </p>
+                        <% } %>
+                            <p class="error" id = 'fechaVError'> </p>                                                                
+                    </div>
+                    <div class="group">
+                        <label for="CVV">CVV</label>
+                        <input class="inputText Controles"  type="text" name="CVV" id="cvv">    
+                        <span class="barra"></span>
+                        <% if(locals.error && error.cvv){ %>
+                            <p class="error"> <%= error.cvv.msg %> </p>
+                        <% } %>
+                            <p class="error" id = 'cvvError'> </p>                                        
+                    </div>                    
+                    <div id = botonesCarrito>
+                        <input class="button botones" type="submit" value="Enviar" id="enviar">
+                        <input class="button botones" type="submit" value="Cancelar">
+                    </div>                  
+                </div>           
+        </div>
+    </form>
+    </main>
+    <%-include('./partials/footer') %>
+    <script>
+    //window.addEventListener('load',() => {       
+
+        const enviar = document.getElementById('enviar');
+
+        let nombre = document.querySelector('#nombre');
+        let apellido = document.querySelector('#apellido');
+        let email = document.querySelector('#email');
+        let domicilio = document.querySelector('#domicilio');
+        let localidad = document.querySelector('#localidad');
+        let cp = document.querySelector('#cp');
+        let mobile = document.querySelector('#mobile');
+        let hm = document.querySelector('#hm');
+        let dni = document.querySelector('#dni');
+        let horario = document.querySelector('#horario');
+        let envio = document.querySelector('#envio');        
+        let fp = document.querySelector('#fp');         
+        let comprobante = document.querySelector('#comprobante');
+        let numTarjeta = document.querySelector('#numTarjeta');
+        let fechaV = document.querySelector('#fechaV');
+        let cvv = document.querySelector('#cvv');
+        let vn, va, ve, vd, vl, vcp, vm, vdni, vh, vnumT, vf, vcvv =  false;
+        let validate = [];
+
+        nombre.addEventListener('blur', e => {
+            let error = document.querySelector('#nombreError');
+            let numerror = 0
+            if(nombre.value==''){
+                error.innerText = 'Campo Requerido';                
+            }else{
+                if(nombre.value.length < 5){ 
+                    error.innerText = 'El nombre debe contener por lo menos 5 letras \n';
+                    numerror ++;                
+                    return;
+                }else{
+                    numerror --;
+                    error.innerHTML = ''                                                             
+                    vn = true;
+                    validate.push(vn);
+                }               
+            }            
+        })
+
+        apellido.addEventListener('blur', e => {
+            let error = document.querySelector('#apellidoError');            
+            let numerror = 0
+            if(apellido.value==''){
+                error.innerText = 'Campo Requerido';                
+            }else{
+                if(apellido.value.length < 5){ 
+                    error.innerText = 'El apellido debe contener por lo menos 5 letras \n';
+                    numerror ++;                                    
+                    return;
+                }else{
+                    numerror --;
+                    error.innerHTML = '';                                                     
+                    va=true;
+                    validate.push(va)
+                }               
+            }
+            
+        })
+
+        email.addEventListener('blur', e => {
+            const validateEmail = (email) => {
+                return String(email)
+                  .toLowerCase()
+                  .match(
+                    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                  );
+              };
+              let error = document.querySelector('#errorMail');
+              if(email.value==''){
+                error.innerText = 'Campo Requerido';
+              }else{
+
+                if (!validateEmail(email.value)){
+                    error.innerText = "No se cumple con el formato de un mail convencional";
+                    //console.log(!validateEmail(email.value));
+                }else{
+                    //console.log(!validateEmail(email.value));
+                    error.innerText = ''; 
+                    ve=true;                   
+                    validate.push(ve)
+                }
+              }
+
+              
+        })
+        domicilio.addEventListener('blur', e => {
+            let error = document.querySelector('#domicilioError');            
+            let numerror = 0
+            if(domicilio.value==''){
+                error.innerText = 'Campo Requerido';
+            }else{
+                if(domicilio.value.length < 5){ 
+                    error.innerText = 'El domicilio debe contener por lo menos 5 letras \n';
+                    numerror ++;                
+                    return;
+                }else{
+                    numerror --;
+                    error.innerHTML = ''                                           
+                    vd=true;    
+                    validate.push(vd);                
+                }               
+            }
+            
+        })
+
+         localidad.addEventListener('blur', e => {
+            let error = document.querySelector('#localidadError');            
+            let numerror = 0
+            if(localidad.value==''){
+                error.innerText = 'Campo Requerido';
+            }else{
+                if(localidad.value.length < 5){ 
+                    error.innerText = 'el campo debe contener por lo menos 5 letras \n';
+                    numerror ++;                
+                    return;
+                }else{
+                    numerror --;
+                    error.innerHTML = ''                                                    
+                    vl=true;
+                    validate.push(vl);
+                }               
+            }
+            
+        })
+
+         cp.addEventListener('blur', e => {
+            let error = document.querySelector('#cpError');            
+            let numerror = 0
+            if(cp.value==''){
+                error.innerText = 'Campo Requerido';
+            }else{
+                if(cp.value.length < 4){ 
+                    error.innerText = 'El campo codigo postal debe contener por lo menos 4 digitos \n';
+                    numerror ++;                
+                    return;
+                }else{
+                    numerror --;
+                    error.innerHTML = ''     
+                    vcp=true;
+                    validate.push(vcp);                   
+                }               
+            }
+            
+        })    
+
+        mobile.addEventListener('blur', e => {
+            let error = document.querySelector('#mobileError');
+            if(mobile.value==''){
+                error.innerText = 'Campo Requerido';
+            }else{
+                if(mobile.value.length < 10){
+                    error.innerText = 'El telefono tiene que contener 10 digitos';
+                    //console.log(mobile.value.length)
+                }else{
+                    error.innerText = ''; 
+                    vm=true;     
+                    validate.push(vm)              
+                }
+            }
+            
+        })    
+        ///
+        /*hm.addEventListener('click', e => {
+            let error = document.querySelector('#hmError')
+            if(hm.value==null){
+                error.innerText='Campo Requerido';
+            }else{                
+                error.innerText = ""                
+            }
+            
+        })*/   
+        dni.addEventListener('blur', e => {
+            let error = document.querySelector('#dniError')
+            if(dni.value==''){
+                error.innerText='Campo Requerido';
+            }else{
+                if(dni.value.length < 8){
+                    error.innerText = 'El campo dni tiene que contener 8 digitos';
+                    //console.log(mobile.value.length)
+                }else{
+                    error.innerText = '';     
+                    vdni=true;    
+                    validate.push(vdni)           
+                }
+            }        
+
+        })
+        horario.addEventListener('blur', e => {
+             const validateHorario = (hora) => {
+                return String(hora)                  
+                  .match(
+                    /^(0[1-9]|1\d|2[0-3]):([0-5]\d):([0-5]\d)$/
+                  );
+              };
+              let error = document.querySelector('#horarioError');
+              if(horario.value==''){
+                error.innerText = 'Campo Requerido';
+              }else{
+
+                if (!validateHorario(horario.value)){
+                    error.innerText = "No se cumple con el formato del horario";
+                    //console.log(!validateEmail(email.value));
+                }else{
+                    //console.log(!validateEmail(email.value));
+                    error.innerText = ''; 
+                    vh=true;
+                    validate.push(vh)                   
+                }
+              }
+        })             
+
+        numTarjeta.addEventListener('blur',e=>{
+            let error = document.querySelector('#numTarjetaError')
+            if(numTarjeta.value==''){
+                error.innerText='Campo Requerido';
+            }else{
+                if(numTarjeta.value.length < 16){
+                    error.innerText = 'Debe tener 16 digitos';
+                    //console.log(mobile.value.length)
+                }else{
+                    error.innerText = '';
+                    vnumT=true;                    
+                    validate.push(vnumT)
+                }
+            }        
+        })
+
+        fechaV.addEventListener('blur',e=>{
+            const validatefecha = (fecha) => {
+                return String(fecha)                  
+                  .match(
+                    /^(0[1-9]|[1-2]\d|3[01])(\/)(0[1-9]|1[012])\2(\d{4})$/
+                  );
+              };
+              let error = document.querySelector('#fechaVError');
+              if(fechaV.value==''){
+                error.innerText = 'Campo Requerido';
+              }else{
+
+                if (!validatefecha(fechaV.value)){
+                    error.innerText = "No se cumple con el formato del horario";
+                    //console.log(!validateEmail(email.value));
+                }else{
+                    //console.log(!validateEmail(email.value));
+                    error.innerText = '';  
+                    vf=true; 
+                    validate.push(vf)                 
+                }
+              }    
+        })
+
+        cvv.addEventListener('blur', e => {
+            let error = document.querySelector('#cvvError')
+            if(cvv.value==''){
+                error.innerText='Campo Requerido';
+            }else{
+                if(cvv.value.length < 3){
+                    error.innerText = 'El campo dni tiene que contener 3 digitos';
+                    //console.log(mobile.value.length)
+                }else{
+                    error.innerText = ''; 
+                    vcvv =true;
+                    validate.push(vcvv)                   
+                }
+            }        
+
+        })
+   //})
+
+   enviar.onclick = function (){
+    console.log(validate);
+    //return false;
+
+    if(validate.length>=12){
+        alert("enviado");
+        nombre.value='';
+        apellido.value='';
+        email.value='';
+        domicilio.value='';
+        localidad.value='';
+        cp.value='';
+        mobile.value='';
+        dni.value='';
+        horario.value='';
+        numTarjeta.value='';
+        fechaV.value='';
+        cvv.value='';
+        validate = [];
+        return false;
+    }else{
+        alert("algun campo esta vacio o corregirse")
+        return false;
+    }
+
+   }
+    
+    </script>               
+</body>
+
+</html>

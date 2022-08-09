@@ -1,0 +1,52 @@
+ 
+ 
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('./partials/head') %>
+    <link rel="stylesheet" href="/css/styleModificarproducto.css">
+</head>
+<body>
+    <%-include('./partials/header') %>
+    <main>
+        <img src = "/img/product/<%=product.img %>">
+        <div class = "descripcion">
+            <h1> <%= product.nombre  %> </h1>
+            <h2> <%= product.detalle %> </h2>
+            <ul>
+                <% if(product.datosDestacados ){ %> 
+                    <% for(detalles of product.datosDestacados){ %>
+                        <li> <%= detalles %> </li>     
+                    <% } %> 
+                <% } %>  
+            </ul>
+        </div>
+
+        <div id = botonesUno>
+            <button type="button" class = "button"> sin stock</button>
+            <form action="/product/<%=product.id%>/delete?_method=DELETE" method="post"  class = "button"> 
+                <button type="submit" class = "button" id = "botonDeEliminar"> eliminar producto</button>
+            </form>
+        </div>
+
+        <form action="/product/<%= product.id%>/edit?_method=PUT" method="post">
+            <label for="nombre">nombre</label>
+            <input type="text" name="nombre" value = "<%= product.nombre %>" >
+
+            <label for="descripcion">descripcion</label>
+            <input type="text" name="descripcion" value = "<%= product.detalle %>" >
+
+            <label for="precio">precio</label>
+            <input type="number" name="precio" value = "<%= product.precio %>" >
+
+            </div>
+
+
+            <div id = botonesDos>
+                <button type= "reset" class= "button">resetear</button>
+                <button type= "submit"  class= "button">enviar</button> 
+            </div>
+        </form>
+    </main>
+    <%-include('./partials/footer') %>
+</body>

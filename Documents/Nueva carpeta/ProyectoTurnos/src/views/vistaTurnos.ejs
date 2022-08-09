@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('./partials/header') %>
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/vistaturnos.css">
+</head>
+<body>
+    <main>
+        <table>
+            <tr>
+              <th>Numero</th>
+            </tr>
+            <% for(turno of listadoDeTurnos){
+              
+            %>
+            <tr>
+              <td><%= turno.code %></td>
+            </tr>
+            <%
+            }
+            %>
+          </table>
+          <script src = "/javascript/vistaTurnos.js"></script>
+    </main>
+</body>
+</html>

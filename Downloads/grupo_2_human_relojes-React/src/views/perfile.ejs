@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('./partials/head') %>
+    <link rel="stylesheet" type="text/css" href="/css/stylepaginausuario.css" media="screen"> 
+</head>
+<body>
+    <%-include('./partials/header') %>
+    <main>
+        <h1>Bienvenido: <%= user.nombre %> </h1>
+      <div id = 'datosPersonales'>
+        <img src="/img/user/<%= user.img%>" id="imagenUser">
+        <div> 
+          <h2> Datos Personales: </h2>
+        <ul>
+            <li>Mail : <%= user.email %> </li>
+            <li>Telefono: <%= user.telefono %>  </li>
+            <li>Fecha De Nacimiento: <%= user.fechaDeNacimiento %> </li>
+        </ul>
+        </div>
+      </div>
+      
+             
+    </main>
+    <%-include('./partials/footer') %>
+</body>
+</html>

@@ -1,0 +1,17 @@
+00:00:00.489015 VirtualBox GUI VM Selector Window 6.1.26 r145957 win.amd64 (Jul 28 2021 17:15:09) release log
+00:00:00.489015 Log opened 2021-09-04T20:50:29.358937700Z
+00:00:00.489015 Build Type: release
+00:00:00.489015 OS Product: Windows 8.1
+00:00:00.489015 OS Release: 6.3.9600
+00:00:00.489015 OS Service Pack: 
+00:00:00.498987 DMI Product Name: HP 1000 Notebook PC
+00:00:00.502490 DMI Product Version: 088A130000305910000610100
+00:00:00.502490 Firmware type: UEFI
+00:00:00.502991 Secure Boot: VERR_PRIVILEGE_NOT_HELD
+00:00:00.502991 Host RAM: 8081MB (7.8GB) total, 3048MB (2.9GB) available
+00:00:00.502991 Executable: C:\Program Files\Oracle\VirtualBox\VirtualBox.exe
+00:00:00.502991 Process ID: 540
+00:00:00.502991 Package type: WINDOWS_64BITS_GENERIC
+00:00:00.502991 Qt version: 5.6.2
+00:00:00.521626 GUI: UIMediumEnumerator: Medium-enumeration started...
+00:00:01.248295 GUI: UIMediumEnumerator: Medium-enumeration finished!

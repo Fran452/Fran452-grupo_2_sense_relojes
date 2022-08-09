@@ -1,0 +1,372 @@
+@import url(normalize.css);
+@import url(./sty.css); 
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Oswald', sans-serif;
+    text-transform:uppercase;
+}
+p{
+    text-transform:none;
+}
+main{
+    width: 100%;
+    display: block;
+    margin-bottom: 2vw;
+}
+h2{
+    text-align: center;
+    padding-bottom: 5px;
+    border-bottom: var(--negro) 1px solid;
+    display: block;
+    margin:auto;
+    width: 50%;
+}
+.bannerShop{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fotoBanner{
+    width: 100%;
+}
+
+
+
+.botonShop {
+    width: 25%;
+    position: absolute;
+    bottom: 8vw;
+    width: 160px;
+    height: 34px;
+}
+
+.tituloCategoria{
+    text-align: center;
+    font-size: 25px;
+}  
+
+.bannerCategorias{
+    width: 100%;
+    display: flex;
+    align-items:center;
+    justify-content:space-around;
+    padding: 15px;
+}
+
+.categorias{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.categorias h3{
+    font-size: 20px;
+    margin-left:10px;
+    margin-top:5px;
+    margin-bottom: 2px;
+}
+
+.categorias p{
+    font-size: 12px;
+    margin-left:10px;
+    margin-bottom: 5px;
+}
+
+.left{
+    order: -1;
+    font-size: 20px;
+}
+
+.right{
+    font-size: 20px;
+}
+
+.imagenCategoria{
+    width: 100%;
+}
+
+.tituloProductosDestacados{
+    text-align: center;
+    font-size: 25px;
+    width: 90%;
+}
+
+.bannerProductosDestacados{
+    width: 100%;
+    display: flex;
+    align-items:center;
+    justify-content:space-around;
+    padding: 15px;
+}
+
+.productoDestacado{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.productoDestacado h3{
+    font-size: 20px;
+    margin-left:10px;
+    margin-top:5px;
+    margin-bottom: 2px;
+}
+
+.productoDestacado p{
+    font-size: 12px;
+    margin-left:10px;
+    margin-bottom: 3px;
+}
+
+.productoDestacado h4{
+    font-size: 20;
+    margin-left:10px;
+    margin-bottom:5px
+}
+
+.imagenProductoDestacado{
+    width: 100%;
+}
+
+#producto2{
+    display: none;
+}
+
+#producto3{
+    display: none;
+}
+
+.bannerHistoria{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top:10px;
+    margin-bottom: 15px;
+}
+
+.bannerHistoria div{
+    display: flex;
+    flex-wrap:wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position:absolute;
+    top: 18vw;
+}
+
+.bannerHistoria h3{
+    color:white;
+    display: block;
+    margin-top: 40px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.bannerHistoria p{
+    color: white;
+    font-size: 30px;
+    width: 80%;
+    display: block;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.fotoBannerHistoria{
+    width: 100%;
+}
+
+.ubicacion{
+    text-align: center;
+    font-size: 25px;
+}
+
+.bannerUbicaciones{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.ubicaciones{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.ubicacionLocal{
+    width: 30%;
+    height: 160px;
+    margin:5px
+}
+
+.ubicaciones div{
+    width: 60%;
+    margin: 5px;
+}
+
+.ubicaciones div h3{
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.ubicaciones div a{
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.ubicaciones div p{
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+#segundaCategoria{
+    display: none;
+}
+@media(min-width:480px){
+    .botonShop{
+        width: 320px;
+        height: 68px;
+        font-size: 21px;
+        padding-top: 20px;
+    }
+
+    .bannerCategorias{
+        width: 90%;
+        margin: auto;
+    }
+    .bannerCategorias article h3{
+        font-size: 30px;
+    }
+    .bannerCategorias article p{
+        font-size: 20px;
+    }   
+
+    .bannerHistoria div{
+        top: 27vw;
+    }
+
+    .productoDestacado h3{
+        font-size: 25px;
+        font-weight: 700;
+        margin-bottom: 3px ;
+    }
+    .productoDestacado p{
+        font-size: 20px;
+        margin-bottom: 8px;
+        font-weight: 500;
+    }
+    .productoDestacado h4{
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: 5px ;
+    }
+
+    .bannerHistoria div{
+        top: 19vw;
+    }
+    .bannerHistoria p{
+        font-size: 35px;
+    }
+    .botonHistoria{
+        top: 20vw;
+    }
+    #producto2{
+        display: block;
+    }
+
+}
+
+@media(min-width:1080px){
+    
+    .fotoBanner{
+        height: 45vw;
+    }
+    h2{
+        font-size: 3vw;
+        border-width: 2px;
+    }
+
+    .bannerCategorias{
+        width: 80%;
+        margin: auto;
+    }
+    #segundaCategoria{
+        display: block;
+    }
+
+    .fotoBannerHistoria{
+        height: 45vw;
+    }
+
+    .bannerHistoria div{
+        top: 6vw;
+    }
+
+    .bannerHistoria h3{
+        font-size: 2vw;
+    }
+    .bannerHistoria p{
+        font-size: 5vw;
+        width: 55%;
+    }
+
+    .botonHistoria{
+        font-size: 3vw;
+        width: 40vw;
+        text-align: center;
+        top: 10vw;
+    }
+    .tituloProductosDestacados{
+        width: 60%;
+        font-size: 3vw;
+    }
+    #producto3{
+        display: block;
+    }
+
+    .bannerUbicaciones{
+        flex-direction: row;
+    }
+    .ubicaciones{
+        display: flex;
+        flex-direction: column;
+        width: 45%;
+    }
+    .ubicaciones img{
+        width: 90%;
+    }
+    .ubicaciones div{
+        width: 60%;
+        align-self: baseline;
+    }
+    .ubicaciones div h3{
+        font-size: 150%;
+    }
+
+    .ubicaciones div p{
+        font-size: 15px;
+    }
+    .ubicaciones div a{
+        font-size: 15px;
+    }
+   
+    .ubicacion{
+        font-size: 3vw;
+    }
+}

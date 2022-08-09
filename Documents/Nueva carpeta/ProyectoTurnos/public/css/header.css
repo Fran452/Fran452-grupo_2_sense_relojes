@@ -1,0 +1,26 @@
+@import url(normalize.css);
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+.mainNavBar{
+    display: flex;
+    justify-content: space-around;
+}
+
+.mainNavBar ul{
+    display: flex;
+    list-style: none;
+}
+
+.mainNavBar li{
+    margin: 0 15px
+}

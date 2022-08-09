@@ -1,0 +1,120 @@
+@import url(./styles.css); 
+*{
+    box-sizing: border-box;
+}
+
+
+footer{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: baseline;
+    background-color: #000;
+    color: white;
+    padding: 5%;
+    text-align: center;
+}
+    footer section{
+        margin-bottom: 5%;
+    }
+
+    footer img{
+        width: 30%;
+        margin: auto;
+        padding-bottom: 3%;
+        border-bottom: 1px var(--blanco) solid ;
+    }
+
+    #tel-Direc{
+        display: none;
+    }
+    #registrateFoot{
+        border-bottom: 1px var(--blanco) solid ;
+        width: 30%;
+        margin: auto;
+    }
+        #registrateFoot a{
+            display: block;
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            
+        }
+
+    #redesSocialesFoot{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: baseline;
+        color: white;
+        width: 30%;
+        margin: auto;
+    }
+        #redesSocialesFoot a{
+            display: flex;
+            color: white;
+            text-align: center;
+            font-size: 129%;
+            margin-top: 9%;
+            text-decoration: none;
+        }
+    #copyright{
+        width: 30%;
+        margin: auto;
+        margin-top: 10%;
+        font-size: 50%;
+    }
+
+@media(min-width: 1080px){
+    footer{
+       text-align: start;
+       position: relative;
+       padding: 20px;
+       flex-direction: row;
+       display: flex;
+       justify-content: center;
+    }
+        footer img{
+            border-bottom:none ;
+            margin: 0px;
+            padding-bottom: 0px;
+            padding: 3%;
+        }
+        #registrateFoot{
+            margin: 0px;
+            border-bottom:none ;
+            border-right: 1px var(--blanco) solid ;
+            border-left: 1px var(--blanco) solid ;
+            padding-bottom: 0px;
+            padding-right: 3%;
+            padding-left: 3%;
+            
+        }
+            #registrateFoot a{
+                height: 25%;
+            }
+
+            
+        #redesSocialesFoot{
+            width: 20%;
+            margin: 0px;
+            flex-direction: column;
+            margin: 0;
+            padding: 1%;
+            padding-left: 3%;
+        }
+            #redesSocialesFoot a{
+                margin: 0;
+            }
+        #copyright{
+            width: 100%;
+            margin-top:3%;
+            text-align: center;
+
+        }
+
+}

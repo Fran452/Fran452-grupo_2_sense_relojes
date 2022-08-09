@@ -1,0 +1,542 @@
+[
+  {
+    "id": 9003886,
+    "nombre": "JERONIMO",
+    "apellido": "QUIRICO",
+    "email": "ventas@freiberg.com.ar",
+    "telefono": 1141930102,
+    "fechaDeNacimiento": "5/3/1998",
+    "contraseña": "********",
+    "Domicilio": {
+      "calle": "LIBERTAD 943",
+      "codigoPostar": 1278,
+      "Localidad": "BUENOS AIRES"
+    },
+    "favoritos": [],
+    "ComprasAnteriores": []
+  },
+  {
+    "id": 9005435,
+    "nombre": "MAURICIO",
+    "Apellido": "LAIOLO",
+    "email": "enzo@intermaco.com.ar",
+    "telefono": 1141930103,
+    "fechaDeNacimiento": "5/3/1998",
+    "contraseña": "********",
+    "Domicilio": {
+      "calle": "25 DE MAYO 1075",
+      "codigoPostar": 5000,
+      "Localidad": "BUENOS AIRES"
+    },
+    "favoritos": [],
+    "ComprasAnteriores": []
+  },
+  {
+    "id": 18005795,
+    "nombre": "JUAN",
+    "Apellido": "SANCHEZ",
+    "email": "info@elmundodelasplacas.com.ar",
+    "telefono": 1141930104,
+    "fechaDeNacimiento": "5/3/1998",
+    "contraseña": "********",
+    "Domicilio": {
+      "calle": "J.B.JUSTO 352",
+      "codigoPostar": 5967,
+      "Localidad": "BUENOS AIRES"
+    },
+    "favoritos": [],
+    "ComprasAnteriores": []
+  },
+  {
+    "id": 73008304,
+    "nombre": "ANA",
+    "Apellido": "JOHN",
+    "email": "mdapena@protectionnow.com.ar",
+    "telefono": 1141930105,
+    "fechaDeNacimiento": "5/3/1998",
+    "contraseña": "********",
+    "Domicilio": {
+      "calle": "BELELLI 1264 E/ GRIGERA Y LARROQUE",
+      "codigoPostar": 5500,
+      "Localidad": "MENDOZA"
+    },
+    "favoritos": [],
+    "ComprasAnteriores": []
+  },
+  {
+    "id": 37004560,
+    "nombre": "RAMON",
+    "Apellido": "FRANCO",
+    "email": "fabian.servetto@balsamo.com.ar",
+    "telefono": 1141930106,
+    "fechaDeNacimiento": "5/3/1998",
+    "contraseña": "********",
+    "Domicilio": {
+      "calle": "AMEGHINO 515",
+      "codigoPostar": 1437,
+      "Localidad": "CABA"
+    },
+    "favoritos": [],
+    "ComprasAnteriores": []
+  },
+  {
+    "id": 9002215,
+    "nombre": "CHOFER",
+    "Apellido": "SIN",
+    "email": "sdangelo@kimsa.com.ar",
+    "telefono": 1141930107,
+    "fechaDeNacimiento": "5/3/1998",
+    "contraseña": "********",
+    "Domicilio": {
+      "calle": "25 DE MAYO S/N",
+      "codigoPostar": 1440,
+      "Localidad": "BUENOS AIRES"
+    },
+    "favoritos": [],
+    "ComprasAnteriores": []
+  },
+  {
+    "id": 9004075,
+    "nombre": "RODRIGO",
+    "Apellido": "MARTIN",
+    "email": "rovafarm@rovafarm.com",
+    "telefono": 1141930108,
+    "fechaDeNacimiento": "5/3/1998",
+    "contraseña": "********",
+    "Domicilio": {
+      "calle": "MADRID 6991 1º C",
+      "codigoPostar": 5000,
+      "Localidad": "CORDOBA"
+    },
+    "favoritos": [],
+    "ComprasAnteriores": []
+  },
+  {
+    "id": 9005527,
+    "nombre": "RUBEN",
+    "Apellido": "OLMEDO",
+    "email": "diego@dietascormillot.com.ar",
+    "telefono": 1141930109,
+    "fechaDeNacimiento": "5/3/1998",
+    "contraseña": "********",
+    "Domicilio": {
+      "calle": "CANNING 116",
+      "codigoPostar": 5008,
+      "Localidad": "CORDOBA"
+    },
+    "favoritos": [],
+    "ComprasAnteriores": []
+  },
+  {
+    "id": 37007438,
+    "nombre": "EMILIO",
+    "Apellido": "SCILIPOTI",
+    "email": "mtonelli@arcor.com ",
+    "telefono": 1141930110,
+    "fechaDeNacimiento": "5/3/1998",
+    "contraseña": "********",
+    "Domicilio": {
+      "calle": "ALBERDI 965",
+      "codigoPostar": 5016,
+      "Localidad": "CORDOBA"
+    },
+    "favoritos": [],
+    "ComprasAnteriores": []
+  },
+  {
+    "id": 20010679,
+    "nombre": "RUBEN",
+    "Apellido": "HORN",
+    "email": "contable@agenorsa.com",
+    "telefono": 1141930111,
+    "fechaDeNacimiento": "5/3/1998",
+    "contraseña": "********",
+    "Domicilio": {
+      "calle": "MITRE 1660",
+      "codigoPostar": 1057,
+      "Localidad": "BUENOS AIRES"
+    },
+    "favoritos": [],
+    "ComprasAnteriores": []
+  },
+  {
+    "id": 37003192,
+    "nombre": "MIGUEL",
+    "Apellido": "GARCIA",
+    "email": "mdefelippe@tycoint.com",
+    "telefono": 1141930112,
+    "fechaDeNacimiento": "5/3/1998",
+    "contraseña": "********",
+    "Domicilio": {
+      "calle": "MITRE 554",
+      "codigoPostar": 4600,
+      "Localidad": "JUJUY"
+    },
+    "favoritos": [],
+    "ComprasAnteriores": []
+  },
+  {
+    "id": 60001722,
+    "nombre": "GUSTAVO/LEIVA",
+    "Apellido": "VELAZQUEZ",
+    "email": "recicor@sinectis.com.ar",
+    "telefono": 1141930113,
+    "fechaDeNacimiento": "5/3/1998",
+    "contraseña": "********",
+    "Domicilio": {
+      "calle": "LIBERTAD 168",
+      "codigoPostar": 1098,
+      "Localidad": "BUENOS AIRES"
+    },
+    "favoritos": [],
+    "ComprasAnteriores": []
+  },
+  {
+    "id": 37001837,
+    "nombre": "PABLO",
+    "Apellido": "PAOLI",
+    "email": "medina@gexal.com.ar",
+    "telefono": 1141930114,
+    "fechaDeNacimiento": "5/3/1998",
+    "contraseña": "********",
+    "Domicilio": {
+      "calle": "VAQUERIAS 116",
+      "codigoPostar": 1602,
+      "Localidad": "BUENOS AIRES"
+    },
+    "favoritos": [],
+    "ComprasAnteriores": []
+  },
+  {
+    "id": 2005411,
+    "nombre": "PABLO",
+    "Apellido": "ISMAEL",
+    "email": "ventas@casaflorian.com.ar",
+    "telefono": 1141930115,
+    "fechaDeNacimiento": "5/3/1998",
+    "contraseña": "********",
+    "Domicilio": {
+      "calle": "CANGALLO 2222",
+      "codigoPostar": 1640,
+      "Localidad": "BUENOS AIRES"
+    },
+    "favoritos": [],
+    "ComprasAnteriores": []
+  },
+  {
+    "id": 17009954,
+    "nombre": "MATIAS",
+    "Apellido": "MOLINA",
+    "email": "judith@blaque.com.ar",
+    "telefono": 1141930116,
+    "fechaDeNacimiento": "5/3/1998",
+    "contraseña": "********",
+    "Domicilio": {
+      "calle": "B°JOSE DOLORES M A - C 4",
+      "codigoPostar": 3080,
+      "Localidad": "SANTA FE"
+    },
+    "favoritos": [],
+    "ComprasAnteriores": []
+  },
+  {
+    "id": 20007496,
+    "nombre": "ORLANDO",
+    "Apellido": "RE",
+    "email": "ventas@jeanrivier.com",
+    "telefono": 1141930117,
+    "fechaDeNacimiento": "5/3/1998",
+    "contraseña": "********",
+    "Domicilio": {
+      "calle": "LUIS BRAILE 3666",
+      "codigoPostar": 4400,
+      "Localidad": "BUENOS AIRES"
+    },
+    "favoritos": [],
+    "ComprasAnteriores": []
+  },
+  {
+    "id": 37008820,
+    "nombre": "ESTEBAN",
+    "Apellido": "NIEVAS",
+    "email": "drogueriadelsud@drogdelsud.com.ar",
+    "telefono": 1141930118,
+    "fechaDeNacimiento": "5/3/1998",
+    "contraseña": "********",
+    "Domicilio": {
+      "calle": "MENDOZA 997",
+      "codigoPostar": 4600,
+      "Localidad": "JUJUY"
+    },
+    "favoritos": [],
+    "ComprasAnteriores": []
+  },
+  {
+    "id": 25008060,
+    "nombre": "MATIAS",
+    "Apellido": "ALTAMIRANO",
+    "email": "marketing@gray.com.ar",
+    "telefono": 1141930119,
+    "fechaDeNacimiento": "5/3/1998",
+    "contraseña": "********",
+    "Domicilio": {
+      "calle": "GUITIERREZ 3458",
+      "codigoPostar": 1748,
+      "Localidad": "BUENOS AIRES"
+    },
+    "favoritos": [],
+    "ComprasAnteriores": []
+  },
+  {
+    "id": 11004143,
+    "nombre": "CHRISTIAN",
+    "Apellido": "URBANO",
+    "email": "administracion@otanohnos.com.ar",
+    "telefono": 1141930120,
+    "fechaDeNacimiento": "5/3/1998",
+    "contraseña": "********",
+    "Domicilio": {
+      "calle": "PASAJE QUINTANA 4645",
+      "codigoPostar": 5300,
+      "Localidad": "LA RIOJA"
+    },
+    "favoritos": [],
+    "ComprasAnteriores": []
+  },
+  {
+    "id": 18001207,
+    "nombre": "JOSE",
+    "Apellido": "ARRUIZ",
+    "email": "ingortiz@supernet.com.ar",
+    "telefono": 1141930121,
+    "fechaDeNacimiento": "5/3/1998",
+    "contraseña": "********",
+    "Domicilio": {
+      "calle": "URQUIZA 1947",
+      "codigoPostar": 3300,
+      "Localidad": "MISIONES"
+    },
+    "favoritos": [],
+    "ComprasAnteriores": []
+  },
+  {
+    "id": 37005075,
+    "nombre": "JOSE",
+    "Apellido": "ROMERO",
+    "email": "southpostn@ciudad.com.ar",
+    "telefono": 1141930122,
+    "fechaDeNacimiento": "5/3/1998",
+    "contraseña": "********",
+    "Domicilio": {
+      "calle": "CONESA 1676",
+      "codigoPostar": 5531,
+      "Localidad": "MENDOZA"
+    },
+    "favoritos": [],
+    "ComprasAnteriores": []
+  },
+  {
+    "id": 26002039,
+    "nombre": "JORGE",
+    "Apellido": "FARA",
+    "email": "biosyst@biosyst.com.ar",
+    "telefono": 1141930123,
+    "fechaDeNacimiento": "5/3/1998",
+    "contraseña": "********",
+    "Domicilio": {
+      "calle": "Bº 50 VIV NORTE - 1º ETAPA - CASA Nº 20",
+      "codigoPostar": 1096,
+      "Localidad": "BUENOS AIRES"
+    },
+    "favoritos": [],
+    "ComprasAnteriores": []
+  },
+  {
+    "id": 646003245,
+    "nombre": "CESAR",
+    "Apellido": "ESQUIVEL",
+    "email": "brunomanino@fideosrivoli.com",
+    "telefono": 1141930124,
+    "fechaDeNacimiento": "5/3/1998",
+    "contraseña": "********",
+    "Domicilio": {
+      "calle": "MENDOZA 2190",
+      "codigoPostar": 4700,
+      "Localidad": "CATAMARCA"
+    },
+    "favoritos": [],
+    "ComprasAnteriores": []
+  },
+  {
+    "id": 37008449,
+    "nombre": "JUAN",
+    "Apellido": "MOTTA",
+    "email": "gmolinari@buloneraatlas.com.ar",
+    "telefono": 1141930125,
+    "fechaDeNacimiento": "5/3/1998",
+    "contraseña": "********",
+    "Domicilio": {
+      "calle": "BUSCHIAZZO N° 1743",
+      "codigoPostar": 1868,
+      "Localidad": "BUENOS AIRES"
+    },
+    "favoritos": [],
+    "ComprasAnteriores": []
+  },
+  {
+    "id": 37005551,
+    "nombre": "FELIPE",
+    "Apellido": "ROBLES",
+    "email": "info@pharmadelplata.com",
+    "telefono": 1141930126,
+    "fechaDeNacimiento": "5/3/1998",
+    "contraseña": "********",
+    "Domicilio": {
+      "calle": "Bª MUNICIPAL M:45 C:19",
+      "codigoPostar": 1430,
+      "Localidad": "BUENOS AIRES"
+    },
+    "favoritos": [],
+    "ComprasAnteriores": []
+  },
+  {
+    "id": 37002541,
+    "nombre": "FERNANDO",
+    "Apellido": "BARBERIAN",
+    "email": "aparicior@olega.com.ar",
+    "telefono": 1141930127,
+    "fechaDeNacimiento": "5/3/1998",
+    "contraseña": "********",
+    "Domicilio": {
+      "calle": "RIO PARANA 1678",
+      "codigoPostar": 1231,
+      "Localidad": "BUENOS AIRES"
+    },
+    "favoritos": [],
+    "ComprasAnteriores": []
+  },
+  {
+    "id": 60008600,
+    "nombre": "MARTIN",
+    "Apellido": "SAN",
+    "email": "mmendez@imposudamericana.com.ar",
+    "telefono": 1141930128,
+    "fechaDeNacimiento": "5/3/1998",
+    "contraseña": "********",
+    "Domicilio": {
+      "calle": "ELPIDIO GONZALEZ 5686",
+      "codigoPostar": 1704,
+      "Localidad": "BUENOS AIRES"
+    },
+    "favoritos": [],
+    "ComprasAnteriores": []
+  },
+  {
+    "id": 37010486,
+    "nombre": "EDGARDO",
+    "Apellido": "VELASTEGUI",
+    "email": ".malamute@covidex.com.ar",
+    "telefono": 1141930129,
+    "fechaDeNacimiento": "5/3/1998",
+    "contraseña": "********",
+    "Domicilio": {
+      "calle": "RUMIPAL 2742",
+      "codigoPostar": 1614,
+      "Localidad": "BUENOS AIRES"
+    },
+    "favoritos": [],
+    "ComprasAnteriores": []
+  },
+  {
+    "id": 37005407,
+    "nombre": "DARIO",
+    "Apellido": "ROSS",
+    "email": "panalab@infovia.com.ar",
+    "telefono": 1141930130,
+    "fechaDeNacimiento": "5/3/1998",
+    "contraseña": "********",
+    "Domicilio": {
+      "calle": "SAN JUAN 521",
+      "codigoPostar": 1687,
+      "Localidad": "BUENOS AIRES"
+    },
+    "favoritos": [],
+    "ComprasAnteriores": []
+  },
+  {
+    "id": 61007154,
+    "nombre": "EQUICE",
+    "Apellido": "CORO",
+    "email": "jamartin@lexmark.com",
+    "telefono": 1141930131,
+    "fechaDeNacimiento": "5/3/1998",
+    "contraseña": "********",
+    "Domicilio": {
+      "calle": "QUINQUELA MARTIN 478",
+      "codigoPostar": 1618,
+      "Localidad": "BUENOS AIRES"
+    },
+    "favoritos": [],
+    "ComprasAnteriores": []
+  },
+  {
+    "id": 243010120,
+    "nombre": "LEANDRO",
+    "Apellido": "PIOLETTI",
+    "email": "j.bertolino@patopampa.com.ar",
+    "telefono": 1141930151,
+    "fechaDeNacimiento": "5/3/1998",
+    "contraseña": "********",
+    "Domicilio": {
+      "calle": "FONAVI DON BOSCO T 6 P 1 DPTO 257",
+      "codigoPostar": 1003,
+      "Localidad": "CAPITAL FEDERAL"
+    },
+    "favoritos": [],
+    "ComprasAnteriores": []
+  },
+  {
+    "id": 9007636,
+    "nombre": "JULIO",
+    "Apellido": "COLASSO",
+    "email": "sergio.flores@sitrack.com",
+    "telefono": 1141930171,
+    "fechaDeNacimiento": "5/3/1998",
+    "contraseña": "********",
+    "Domicilio": {
+      "calle": "B° OBRERO RAWSON - CATAMARCA 139 SUR",
+      "codigoPostar": 1868,
+      "Localidad": "BUENOS AIRES"
+    },
+    "favoritos": [],
+    "ComprasAnteriores": []
+  },
+  {
+    "id": 6001850,
+    "nombre": "ESTEBAN",
+    "Apellido": "FRENCIA",
+    "email": "s.guay@essen.com.ar",
+    "telefono": 1141930191,
+    "fechaDeNacimiento": "5/3/1998",
+    "contraseña": "********",
+    "Domicilio": {
+      "calle": "JUAN LUIS NOUGUES 518",
+      "codigoPostar": 5000,
+      "Localidad": "CORDOBA"
+    },
+    "favoritos": [],
+    "ComprasAnteriores": []
+  },
+  {
+    "id": 6001851,
+    "nombre": "Francisco F. Lema Estevez",
+    "email": "franciscolemacr@gmail.com",
+    "telefono": "12345678912",
+    "fechaDeNacimiento": "2022-05-19",
+    "contraseña": "$2b$10$vTZe1nkUQPnTsyOxsGMJuuyl3Cm2VQpjHac5fNGWHivyQx64iQbdW",
+    "contraseñaConfirm": "12345678",
+    "img": "default-image.png",
+    "favoritos": [],
+    "ComprasAnteriores": []
+  }
+]
