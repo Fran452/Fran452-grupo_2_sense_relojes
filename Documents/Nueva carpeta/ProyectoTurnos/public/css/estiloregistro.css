@@ -1,0 +1,75 @@
+@import url(./estilos.css); 
+
+main{
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 800px;
+}
+    form{
+        display: flex;
+        flex-direction: column;
+        padding-top: 5%;
+    }
+        .formuItem{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 2%;
+        }
+            .formuItem input{
+            border: 0px;
+            border-bottom: 2px solid #010203;
+            margin-top: 2% ;
+            opacity: 50%;
+            padding: 6px;
+            color: #010203;
+            }
+
+        .crear{
+            width: 30%;
+            line-height: 50px;
+            margin: auto;
+        }
+
+        .cuentaRegistrada{
+            margin: auto;
+            margin-top: 2%;
+        }
+        .redes{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 2%
+        }
+            .Facebook{
+                background-color: #3b5998;
+                color: white;
+                position: relative;
+                cursor: pointer;
+                display: inline-block;
+                vertical-align: middle;
+                padding: 10px;
+                width: 200px;
+                height: 50px;
+            }
+            .Google{
+                background-color: #dd4b39;
+                color: white;
+                position: relative;
+                cursor: pointer;
+                display: inline-block;
+                vertical-align: middle;
+                padding: 10px;
+                width: 200px;
+                height: 50px;
+            }
+
+@media (min-width:361px){
+  nav ul{
+display: none;
+  }
+
+}
