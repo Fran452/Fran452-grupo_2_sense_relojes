@@ -6,7 +6,7 @@ const controlador = {
     login:(req,res) => {
         res.render("login")
     },
-
+    
     newUser : (req,res) => {
         let validaciones = validationResult(req);
 

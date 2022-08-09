@@ -1,5 +1,3 @@
-
-
 const express = require("express");
 const {body} = require("express-validator")
 
@@ -20,9 +18,11 @@ const validaciones = [
 ]
 
 
-router.post('/',validaciones,userController.newUser);
+/*router.post('/',validaciones,userController.newUser);*/
 
 router.get('/login',userController.login);
-/*router.post('/login',userController.fuctionloLogin);*/
+router.post('/login',userController.login);
+
+
 
 module.exports = router
